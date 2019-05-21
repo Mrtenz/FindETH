@@ -4,8 +4,8 @@ import TrezorConnect from 'trezor-connect';
 export default class Trezor implements Wallet {
   public async initialize(): Promise<void> {
     TrezorConnect.manifest({
-      email: 'developer@xyz.com',
-      appUrl: 'http://your.application.com'
+      email: 'maarten@zuidhoorn.com',
+      appUrl: 'https://findeth.io'
     });
 
     await TrezorConnect.ethereumGetAddress({
