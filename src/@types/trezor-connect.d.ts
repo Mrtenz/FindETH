@@ -4,10 +4,11 @@ declare module 'trezor-connect' {
   interface Data {
     id: number;
     payload: {
-      address: string;
+      chainCode: string;
+      publicKey: string;
     };
     success: boolean;
   }
 
-  export function ethereumGetAddress(params: { path: string | number[] }): Promise<Data>;
+  export function getPublicKey(params: { path: string | number[] }): Promise<Data>;
 }

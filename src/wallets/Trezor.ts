@@ -1,25 +1,27 @@
-import Wallet from './Wallet';
+import HardwareWallet, { KeyInfo } from './HardwareWallet';
 import TrezorConnect from 'trezor-connect';
 
-export default class Trezor implements Wallet {
+export default class Trezor extends HardwareWallet {
   public async initialize(): Promise<void> {
     TrezorConnect.manifest({
       email: 'maarten@zuidhoorn.com',
       appUrl: 'https://findeth.io'
     });
 
-    await TrezorConnect.ethereumGetAddress({
-      path: `m/44'/60'/0'/0/0`
-    });
+    // Fetch a random address to ensure the connection works
+    await this.getAddress(`m/44'/60'/0'/0`, 0);
   }
 
-  public async getAddress(dPath: string, index: number): Promise<string> {
-    // TODO: This implementation is far from ideal, as you have to press to export for every new
-    // address
-    const data = await TrezorConnect.ethereumGetAddress({
-      path: `${dPath}/${index}`
-    });
+  protected async getKeyInfo(dPath: string): Promise<KeyInfo> {
+    /**
+     * TODO: Add support for getting multiple public keys / chain codes at the same time. For
+     * reference: https://github.com/trezor/connect/blob/develop/docs/methods/getPublicKey.md
+     */
+    const response = await TrezorConnect.getPublicKey({ path: dPath });
 
-    return data.payload.address;
+    return {
+      publicKey: response.payload.publicKey,
+      chainCode: response.payload.chainCode
+    };
   }
 }
