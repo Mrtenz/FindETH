@@ -8,7 +8,7 @@ import {
   setAddressIndex,
   setAddressNotFound,
   setDerivationPath,
-  setIndex
+  setIndex, setSearching
 } from './actions';
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
@@ -42,12 +42,18 @@ function* searchNextSaga (): SagaIterator {
     currentIndex,
     currentAddressIndex,
     depth,
-    address
+    address,
+    isSearching
   }: SearchState = yield select(getSearchState);
   const implementation: Wallet = yield select(getImplementation);
 
+  if (!isSearching) {
+    return;
+  }
+
   if (!currentPath) {
     yield put(setAddressNotFound(true));
+    yield put(setSearching(false));
     return;
   }
 
@@ -67,10 +73,12 @@ function* searchNextSaga (): SagaIterator {
     );
     if (foundAddress.toLowerCase() === address!.toLowerCase()) {
       yield put(setAddressFound(true));
+      yield put(setSearching(false));
       return;
     }
   } catch (error) {
     yield put(checkFailed());
+    console.error(error);
   }
 
   yield put(setAddressIndex(currentAddressIndex + 1));

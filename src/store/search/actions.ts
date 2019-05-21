@@ -13,13 +13,13 @@ import {
   SET_ADDRESS_INDEX, SET_ADDRESS_NOT_FOUND,
   SET_DEPTH,
   SET_DERIVATION_PATH,
-  SET_INDEX,
+  SET_INDEX, SET_SEARCHING,
   SetAddressAction,
   SetAddressFoundAction,
   SetAddressIndexAction, SetAddressNotFoundAction,
   SetDepthAction,
   SetDerivationPathAction,
-  SetIndexAction
+  SetIndexAction, SetSearchingAction
 } from './types';
 import { DerivationPath } from '../../constants';
 
@@ -84,4 +84,9 @@ export const setAddressNotFound: ActionCreator<SetAddressNotFoundAction> = (payl
 
 export const checkFailed: ActionCreator<CheckFailedAction> = () => ({
   type: CHECK_FAILED
+});
+
+export const setSearching: ActionCreator<SetSearchingAction> = (payload: boolean) => ({
+  type: SET_SEARCHING,
+  payload
 });

@@ -82,6 +82,12 @@ export interface CheckFailedAction {
   type: typeof CHECK_FAILED;
 }
 
+export const SET_SEARCHING = 'SET_SEARCHING';
+export interface SetSearchingAction {
+  type: typeof SET_SEARCHING;
+  payload: boolean;
+}
+
 export type SearchActions =
   | SetAddressAction
   | SetDepthAction
@@ -94,4 +100,5 @@ export type SearchActions =
   | SetAddressIndexAction
   | SetAddressFoundAction
   | SetAddressNotFoundAction
-  | CheckFailedAction;
+  | CheckFailedAction
+  | SetSearchingAction;

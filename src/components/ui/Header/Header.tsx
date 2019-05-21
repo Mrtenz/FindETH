@@ -1,14 +1,34 @@
 import React, { FunctionComponent } from 'react';
-import { Heading } from '@mycrypto/ui';
 import { Container } from 'styled-bootstrap-grid';
-import { StyledHeader } from './StyledHeader';
+import { StyledHeading } from './StyledHeader';
+import { connect, MapStateToProps } from 'react-redux';
+import { ApplicationState } from '../../../store';
+import { history } from '../../../App';
 
-const Header: FunctionComponent = () => (
-  <Container>
-    <StyledHeader>
-      <Heading as='h1'>FindETH</Heading>
-    </StyledHeader>
-  </Container>
-);
+interface StateProps {
+  isSearching: boolean;
+}
 
-export default Header;
+type Props = StateProps;
+
+const Header: FunctionComponent<Props> = ({ isSearching }) => {
+  const handleClick = () => {
+    if (isSearching && !confirm('Are you sure you want to cancel?')) {
+      return;
+    }
+
+    history.navigate('/');
+  };
+
+  return (
+    <Container>
+      <StyledHeading as='h1' onClick={handleClick}>FindETH</StyledHeading>
+    </Container>
+  );
+};
+
+const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = (state) => ({
+  isSearching: state.search.isSearching
+});
+
+export default connect(mapStateToProps)(Header);

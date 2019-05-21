@@ -10,7 +10,7 @@ import {
   SET_ADDRESS_INDEX, SET_ADDRESS_NOT_FOUND,
   SET_DEPTH,
   SET_DERIVATION_PATH,
-  SET_INDEX
+  SET_INDEX, SET_SEARCHING
 } from './types';
 import { ALL_DERIVATION_PATHS } from '../../constants';
 
@@ -84,6 +84,11 @@ export const searchReducer: Reducer<SearchState, SearchActions> = (
       return {
         ...state,
         failedChecks: state.failedChecks + 1
+      };
+    case SET_SEARCHING:
+      return {
+        ...state,
+        isSearching: action.payload
       };
     default:
       return state;
