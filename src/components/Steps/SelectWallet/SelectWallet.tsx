@@ -4,16 +4,15 @@ import { ItemContainer } from './StyledSelectWallet';
 import { connect, MapStateToProps } from 'react-redux';
 import { Heading, Typography } from '@mycrypto/ui';
 import WalletItem from './WalletItem';
+import MnemonicWalletItem from './WalletItem/MnemonicWalletItem';
 import ledgerIcon from '../../../assets/images/logos/ledger.svg';
 import LedgerUSB from '../../../wallets/LedgerUSB';
 import LedgerBLE from '../../../wallets/LedgerBLE';
 import trezorIcon from '../../../assets/images/logos/trezor.svg';
-import keyIcon from '../../../assets/images/key.svg';
 import Loader from '../../ui/Loader';
 import { ApplicationState } from '../../../store';
 import { Row } from 'styled-bootstrap-grid';
 import Trezor from '../../../wallets/Trezor';
-import MnemonicPhrase from '../../../wallets/MnemonicPhrase';
 
 interface StateProps {
   isLoading: boolean;
@@ -49,12 +48,7 @@ const SelectWallet: FunctionComponent<Props> = ({ isLoading }) => (
           icon={ledgerIcon}
           wallet={LedgerBLE}
         />
-        <WalletItem
-          name="Mnemonic phrase"
-          description="Connect using a mnemonic phrase."
-          icon={keyIcon}
-          wallet={MnemonicPhrase}
-        />
+        <MnemonicWalletItem />
       </ItemContainer>
     </Row>
   </Loader>

@@ -16,7 +16,8 @@ interface OwnProps {
   name: string;
   description: string;
   icon: string;
-  wallet: new () => Wallet;
+  wallet?: new () => Wallet;
+  onClick?(): void;
 }
 
 interface StateProps {
@@ -29,9 +30,15 @@ interface DispatchProps {
 
 type Props = OwnProps & StateProps & DispatchProps;
 
-const WalletItem: FunctionComponent<Props> = ({ name, description, icon, handleClick }) => {
+const WalletItem: FunctionComponent<Props> = ({
+  name,
+  description,
+  icon,
+  handleClick,
+  onClick
+}) => {
   return (
-    <StyledWalletItem onClick={handleClick}>
+    <StyledWalletItem onClick={onClick || handleClick}>
       <Heading as="h3">{name}</Heading>
       <AccountTypeImage src={icon} alt={name} />
       <Typography muted={true}>{description}</Typography>
@@ -45,8 +52,10 @@ const mapStateToProps: MapStateToProps<StateProps, OwnProps, ApplicationState> =
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (dispatch, { wallet }) => ({
   handleClick(): void {
-    const implementation = new wallet();
-    dispatch(setImplementation(implementation));
+    if (wallet) {
+      const implementation = new wallet();
+      dispatch(setImplementation(implementation));
+    }
   }
 });
 
