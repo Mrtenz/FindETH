@@ -1,14 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import { RouteComponentProps } from '@reach/router';
 import { Container } from 'styled-bootstrap-grid';
 import { Heading, Typography } from '@mycrypto/ui';
 import Steps from './Steps';
 import StartButton from './StartButton';
 
-
-type Props = RouteComponentProps<{ step: string }>;
-
-const Home: FunctionComponent<Props> = ({ step = '0' }) => (
+const Home: FunctionComponent = () => (
   <Container>
     <section>
       <Heading as='h2'>Find your lost Ethereum address</Heading>
