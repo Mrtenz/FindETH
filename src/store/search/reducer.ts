@@ -1,0 +1,91 @@
+import { Reducer } from 'redux';
+import {
+  ADD_DERIVATION_PATH, CHECK_FAILED,
+  REMOVE_DERIVATION_PATH,
+  SEARCH,
+  SearchActions,
+  SearchState,
+  SET_ADDRESS,
+  SET_ADDRESS_FOUND,
+  SET_ADDRESS_INDEX, SET_ADDRESS_NOT_FOUND,
+  SET_DEPTH,
+  SET_DERIVATION_PATH,
+  SET_INDEX
+} from './types';
+import { ALL_DERIVATION_PATHS } from '../../constants';
+
+const INITIAL_STATE: SearchState = {
+  depth: 50,
+  derivationPaths: ALL_DERIVATION_PATHS,
+  isSearching: false,
+  currentIndex: 0,
+  currentAddressIndex: 0,
+  addressFound: false,
+  addressNotFound: false,
+  failedChecks: 0
+};
+
+export const searchReducer: Reducer<SearchState, SearchActions> = (
+  state = INITIAL_STATE,
+  action
+): SearchState => {
+  switch (action.type) {
+    case SET_ADDRESS:
+      return {
+        ...state,
+        address: action.payload
+      };
+    case SET_DEPTH:
+      return {
+        ...state,
+        depth: action.payload
+      };
+    case ADD_DERIVATION_PATH:
+      return {
+        ...state,
+        derivationPaths: [...state.derivationPaths, action.payload]
+      };
+    case REMOVE_DERIVATION_PATH:
+      return {
+        ...state,
+        derivationPaths: state.derivationPaths.filter(dPath => dPath !== action.payload)
+      };
+    case SEARCH:
+      return {
+        ...state,
+        isSearching: true
+      };
+    case SET_DERIVATION_PATH:
+      return {
+        ...state,
+        currentPath: action.payload
+      };
+    case SET_INDEX:
+      return {
+        ...state,
+        currentIndex: action.payload
+      };
+    case SET_ADDRESS_INDEX:
+      return {
+        ...state,
+        currentAddressIndex: action.payload
+      };
+    case SET_ADDRESS_FOUND:
+      return {
+        ...state,
+        addressFound: action.payload
+      };
+    case SET_ADDRESS_NOT_FOUND:
+      return {
+        ...state,
+        addressNotFound: action.payload
+      };
+    case CHECK_FAILED:
+      return {
+        ...state,
+        failedChecks: state.failedChecks + 1
+      };
+    default:
+      return state;
+  }
+};

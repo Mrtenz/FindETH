@@ -1,0 +1,25 @@
+language: node_js
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - "$HOME/.cache"
+
+install:
+  - yarn --silent
+
+script:
+  - yarn run prettier:diff
+  - yarn run tslint
+
+before_deploy:
+  - yarn run build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: "$GITHUB_TOKEN"
+  local-dir: dist
+  on:
+    branch: master
