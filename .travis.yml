@@ -7,7 +7,7 @@ cache:
     - "$HOME/.cache"
 
 install:
-  - yarn --silent
+  - yarn --verbose
 
 script:
   - yarn run prettier:diff
