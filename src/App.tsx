@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const source = createMemorySource('/steps/0');
+const source = createMemorySource('/');
 export const history = createHistory(source);
 
 const store = createStore();
