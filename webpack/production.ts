@@ -11,12 +11,12 @@ const configuration: Configuration = {
   plugins: [
     new FaviconsWebpackPlugin(join(__dirname, '../src/assets/images/logos/ethereum.svg')),
     new CspHtmlWebpackPlugin({
-      'default-src': 'none',
-      'script-src': 'self',
-      'style-src': 'unsafe-inline',
-      'img-src': 'self',
-      'font-src': 'self',
-      'connect-src': 'self'
+      'default-src': `'none'`,
+      'script-src': `'self'`,
+      'style-src': `'unsafe-inline'`,
+      'img-src': `'self'`,
+      'font-src': `'self'`,
+      'connect-src': `'self'`
     })
   ]
 };
