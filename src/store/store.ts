@@ -4,8 +4,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { ApplicationActions, reducer } from './reducer';
 import { searchRootSaga, SearchState } from './search';
 import { walletSaga, WalletState } from './wallet';
+import { ModalState } from './modal';
 
 export interface ApplicationState {
+  modal: ModalState;
   search: SearchState;
   wallet: WalletState;
 }

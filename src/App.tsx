@@ -12,6 +12,7 @@ import Footer from './components/ui/Footer';
 import { Provider } from 'react-redux';
 import { createStore } from './store';
 import { createHistory, createMemorySource, LocationProvider } from '@reach/router';
+import GlobalModal from './components/GlobalModal';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -43,6 +44,7 @@ const App: FunctionComponent = () => (
     <Provider store={store}>
       <LocationProvider history={history}>
         <ToastContainer position="bottom-center" pauseOnHover={true} />
+        <GlobalModal />
         <GlobalStyle />
         <BaseCSS />
 
