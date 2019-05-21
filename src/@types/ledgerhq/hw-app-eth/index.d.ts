@@ -18,7 +18,7 @@ declare module '@ledgerhq/hw-app-eth' {
      * @param {string} scrambleKey An optional scramble key to use. This may not be implemented by
      *   all transports.
      */
-    public constructor (transport: Transport<any>, scrambleKey?: string);
+    public constructor(transport: Transport<any>, scrambleKey?: string);
 
     /**
      * Get an Ethereum address for a given BIP-32 path.
@@ -29,7 +29,7 @@ declare module '@ledgerhq/hw-app-eth' {
      * @return {Promise<{ publicKey: string, address: string, chainCode?: string }>} A Promise with
      *   the publicKey and address, and optional chain code.
      */
-    public getAddress (
+    public getAddress(
       path: string,
       display?: boolean,
       chainCode?: boolean
@@ -42,7 +42,7 @@ declare module '@ledgerhq/hw-app-eth' {
      *
      * @param {TokenInfo} tokenInfo The token info that contains all the token information.
      */
-    public provideERC20TokenInformation (tokenInfo: TokenInfo): Promise<boolean>;
+    public provideERC20TokenInformation(tokenInfo: TokenInfo): Promise<boolean>;
 
     /**
      * Sign a transaction and retrieve v, r and s given the raw transaction and the BIP-32 path of
@@ -52,7 +52,7 @@ declare module '@ledgerhq/hw-app-eth' {
      * @param {string} rawTransactionHex The raw unsigned transaction as hexadecimal string.
      * @return {Promise<Signature>} A Promise with the Signature.
      */
-    public signTransaction (path: string, rawTransactionHex: string): Promise<Signature>;
+    public signTransaction(path: string, rawTransactionHex: string): Promise<Signature>;
 
     /**
      * Get the configuration for the Ethereum app on the Ledger device.
@@ -60,7 +60,7 @@ declare module '@ledgerhq/hw-app-eth' {
      * @return {Promise<{ arbitraryDataEnabled: number, version: string }>} A Promise with the
      *   configuration info.
      */
-    public getAppConfiguration (): Promise<{ arbitraryDataEnabled: number; version: string; }>;
+    public getAppConfiguration(): Promise<{ arbitraryDataEnabled: number; version: string }>;
 
     /**
      * Sign a message according to the `eth_sign` RPC call and retrieve v, r and s given the
@@ -70,6 +70,6 @@ declare module '@ledgerhq/hw-app-eth' {
      * @param {string} messageHex The raw unsigned message as hexadecimal string.
      * @return {Promise<Signature>} A Promise with the Signature.
      */
-    public signPersonalMessage (path: string, messageHex: string): Promise<Signature>;
+    public signPersonalMessage(path: string, messageHex: string): Promise<Signature>;
   }
 }

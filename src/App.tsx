@@ -52,7 +52,7 @@ const App: FunctionComponent = () => (
           <Header />
           <Routes />
         </Main>
-        <Footer/>
+        <Footer />
       </LocationProvider>
     </Provider>
   </ThemeProvider>

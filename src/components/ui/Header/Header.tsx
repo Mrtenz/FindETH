@@ -37,16 +37,16 @@ const Header: FunctionComponent<Props> = ({ isSearching }) => {
   return (
     <Container>
       <Modal isVisible={isVisible} onConfirm={handleConfirm} onClose={handleClose}>
-        <Typography>
-          Are you sure you want to stop searching?
-        </Typography>
+        <Typography>Are you sure you want to stop searching?</Typography>
       </Modal>
-      <StyledHeading as='h1' onClick={handleClick}>FindETH</StyledHeading>
+      <StyledHeading as="h1" onClick={handleClick}>
+        FindETH
+      </StyledHeading>
     </Container>
   );
 };
 
-const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = (state) => ({
+const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
   isSearching: state.search.isSearching
 });
 

@@ -29,8 +29,8 @@ const Search: FunctionComponent<Props> = ({
   depth,
   derivationPaths,
   addressFound,
-                                            addressNotFound,
-                                            failedChecks
+  addressNotFound,
+  failedChecks
 }) => {
   const total = depth * derivationPaths.length;
   const processed = currentIndex * depth + currentAddressIndex;
@@ -48,7 +48,7 @@ const Search: FunctionComponent<Props> = ({
         </Typography>
       )}
       {addressFound && <AddressFound path={currentPath!} index={currentAddressIndex} />}
-      {addressNotFound && <AddressNotFound failedChecks={failedChecks}/>}
+      {addressNotFound && <AddressNotFound failedChecks={failedChecks} />}
     </Container>
   );
 };

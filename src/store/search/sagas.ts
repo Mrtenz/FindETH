@@ -8,20 +8,21 @@ import {
   setAddressIndex,
   setAddressNotFound,
   setDerivationPath,
-  setIndex, setSearching
+  setIndex,
+  setSearching
 } from './actions';
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
 import { history } from '../../App';
 
-export function* searchRootSaga (): SagaIterator {
+export function* searchRootSaga(): SagaIterator {
   yield all([takeLatest(SEARCH, searchSaga), takeLatest(SEARCH_NEXT, searchNextSaga)]);
 }
 
 const getSearchState = (state: ApplicationState) => state.search;
 const getImplementation = (state: ApplicationState) => state.wallet.implementation;
 
-function* searchSaga (): SagaIterator {
+function* searchSaga(): SagaIterator {
   const { derivationPaths }: SearchState = yield select(getSearchState);
 
   yield put(setDerivationPath(derivationPaths[0]));
@@ -35,7 +36,7 @@ function* searchSaga (): SagaIterator {
   yield put(searchNext());
 }
 
-function* searchNextSaga (): SagaIterator {
+function* searchNextSaga(): SagaIterator {
   const {
     derivationPaths,
     currentPath,

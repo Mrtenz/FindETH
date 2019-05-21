@@ -11,28 +11,29 @@ interface StateProps {
 }
 
 interface DispatchProps {
-  hide (): void;
+  hide(): void;
 }
 
 type Props = StateProps & DispatchProps;
 
 const GlobalModal: FunctionComponent<Props> = ({ isVisible, content, hide }) => (
   <Modal isVisible={isVisible} onClose={hide}>
-    <Typography>
-      {content}
-    </Typography>
+    <Typography>{content}</Typography>
   </Modal>
 );
 
-const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = (state) => ({
+const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
   isVisible: state.modal.isVisible,
   content: state.modal.content
 });
 
-const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = (dispatch) => ({
-  hide (): void {
+const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
+  hide(): void {
     dispatch(setVisible(false));
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GlobalModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GlobalModal);

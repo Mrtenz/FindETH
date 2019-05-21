@@ -8,7 +8,7 @@ export const StyledStep = styled.div`
   margin-bottom: 25px;
   display: flex;
   flex-flow: row wrap;
-  
+
   @media ${MEDIA_TAG} {
     flex-flow: column nowrap;
   }
@@ -28,7 +28,7 @@ export const StyledLine = styled.div`
   top: 55px;
   left: 25px;
   background: ${({ theme }) => theme.headline};
-  
+
   @media ${MEDIA_TAG} {
     display: none;
   }
@@ -36,7 +36,7 @@ export const StyledLine = styled.div`
 
 export const StyledStepContents = styled.div`
   margin-left: 18px;
-  
+
   @media ${MEDIA_TAG} {
     margin-left: 0;
   }

@@ -7,11 +7,7 @@ const StartButton: FunctionComponent = () => {
     history.navigate('/steps/0');
   };
 
-  return (
-  <StyledStartButton onClick={handleClick}>
-    Start searching
-  </StyledStartButton>
-  );
+  return <StyledStartButton onClick={handleClick}>Start searching</StyledStartButton>;
 };
 
 export default StartButton;

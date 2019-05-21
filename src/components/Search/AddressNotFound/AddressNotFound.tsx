@@ -8,9 +8,7 @@ interface Props {
 
 const AddressNotFound: FunctionComponent<Props> = ({ failedChecks }) => (
   <StyledAddressNotFound>
-    <Typography>
-      Address not found :( Failed to check {failedChecks} addresses.
-    </Typography>
+    <Typography>Address not found :( Failed to check {failedChecks} addresses.</Typography>
   </StyledAddressNotFound>
 );
 

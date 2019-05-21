@@ -18,14 +18,10 @@ export const Step: FunctionComponent<Props> = ({ icon, children, showLine = true
     <Col>
       <StyledStep>
         <StyledStepIcon>
-          <IconTypography>
-            {icon}
-          </IconTypography>
+          <IconTypography>{icon}</IconTypography>
         </StyledStepIcon>
-        {showLine && <StyledLine/>}
-        <StyledStepContents>
-          {children}
-        </StyledStepContents>
+        {showLine && <StyledLine />}
+        <StyledStepContents>{children}</StyledStepContents>
       </StyledStep>
     </Col>
   </Row>

@@ -9,7 +9,7 @@ const Footer: FunctionComponent = () => (
     <StyledFooter>
       <Typography>
         Made by Maarten Zuidhoorn
-        <GitHubIcon/>
+        <GitHubIcon />
       </Typography>
     </StyledFooter>
   </Container>

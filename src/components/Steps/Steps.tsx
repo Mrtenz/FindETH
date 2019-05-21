@@ -20,7 +20,7 @@ const Steps: FunctionComponent<Props> = ({ step = '0' }) => (
       <Stepper current={Number(step)} total={3} />
     </StepperContainer>
 
-    <Router basepath='steps'>
+    <Router basepath="steps">
       <SelectAddress path="0" />
       <SelectWallet path="1" />
       <SelectOptions path="2" />

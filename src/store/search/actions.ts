@@ -1,7 +1,9 @@
 import { ActionCreator } from 'redux';
 import {
   ADD_DERIVATION_PATH,
-  AddDerivationPathAction, CHECK_FAILED, CheckFailedAction,
+  AddDerivationPathAction,
+  CHECK_FAILED,
+  CheckFailedAction,
   REMOVE_DERIVATION_PATH,
   RemoveDerivationPathAction,
   SEARCH,
@@ -10,16 +12,20 @@ import {
   SearchNextAction,
   SET_ADDRESS,
   SET_ADDRESS_FOUND,
-  SET_ADDRESS_INDEX, SET_ADDRESS_NOT_FOUND,
+  SET_ADDRESS_INDEX,
+  SET_ADDRESS_NOT_FOUND,
   SET_DEPTH,
   SET_DERIVATION_PATH,
-  SET_INDEX, SET_SEARCHING,
+  SET_INDEX,
+  SET_SEARCHING,
   SetAddressAction,
   SetAddressFoundAction,
-  SetAddressIndexAction, SetAddressNotFoundAction,
+  SetAddressIndexAction,
+  SetAddressNotFoundAction,
   SetDepthAction,
   SetDerivationPathAction,
-  SetIndexAction, SetSearchingAction
+  SetIndexAction,
+  SetSearchingAction
 } from './types';
 import { DerivationPath } from '../../constants';
 

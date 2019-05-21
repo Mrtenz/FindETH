@@ -8,8 +8,8 @@ import {
 
 interface Props {
   isVisible: boolean;
-  onClose? (): void;
-  onConfirm? (): void;
+  onClose?(): void;
+  onConfirm?(): void;
 }
 
 const Modal: FunctionComponent<Props> = ({ isVisible, children, onClose, onConfirm }) => (
@@ -20,7 +20,7 @@ const Modal: FunctionComponent<Props> = ({ isVisible, children, onClose, onConfi
       <StyledModalButtons>
         {onConfirm && <StyledModalButton onClick={onConfirm}>Confirm</StyledModalButton>}
         <StyledModalButton large={false} secondary={!!onConfirm} onClick={onClose}>
-          {onConfirm && 'Cancel' || 'Close'}
+          {(onConfirm && 'Cancel') || 'Close'}
         </StyledModalButton>
       </StyledModalButtons>
     </StyledModal>
