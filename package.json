@@ -1,7 +1,7 @@
 {
   "name": "findeth",
   "version": "0.2.0",
-  "description": "A tool to help you find your Ethereum address, by scanning a bunch of derivation paths",
+  "description": "A tool to help you find your Ether or Ethereum address, by scanning a bunch of derivation paths",
   "main": "src/index.tsx",
   "repository": "https://github.com/Mrtenz/findeth",
   "author": "Maarten Zuidhoorn <maarten@zuidhoorn.com>",

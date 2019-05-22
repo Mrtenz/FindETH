@@ -1,6 +1,6 @@
 # FindETH
 
-A tool to help you find your Ethereum address, by scanning a bunch of derivation paths. It currently supports Ledger and Trezor devices (partially), but support for mnemonic phrases is planned.
+A tool to help you find your Ether or Ethereum address, by scanning a bunch of derivation paths. It currently supports Ledger and Trezor devices and mnemonic phrases.
 
 <https://findeth.io>
 
