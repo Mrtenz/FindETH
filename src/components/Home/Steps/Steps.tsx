@@ -5,7 +5,7 @@ import { StepsTypography } from './StyledSteps';
 export const Steps: FunctionComponent = () => (
   <>
     <Step icon={'1'}>
-      <StepsTypography>Select your address</StepsTypography>
+      <StepsTypography>Select what to search for</StepsTypography>
     </Step>
     <Step icon={'2'}>
       <StepsTypography>Choose your wallet type and settings</StepsTypography>

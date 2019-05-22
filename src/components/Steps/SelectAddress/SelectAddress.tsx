@@ -1,11 +1,12 @@
 import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Heading, Input, Typography } from '@mycrypto/ui';
-import { navigate, RouteComponentProps } from '@reach/router';
+import { RouteComponentProps } from '@reach/router';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
 import { setAddress } from '../../../store/search';
 import { history } from '../../../App';
+import { SearchType } from '../../../constants';
 
 const ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;
 
@@ -20,6 +21,7 @@ const CustomButton = styled(Button)`
 `;
 
 interface StateProps {
+  type: SearchType;
   address: string;
 }
 
@@ -29,7 +31,11 @@ interface DispatchProps {
 
 type Props = StateProps & DispatchProps & RouteComponentProps;
 
-const SelectAddress: FunctionComponent<Props> = ({ address, handleChange }) => {
+const SelectAddress: FunctionComponent<Props> = ({ type, address, handleChange }) => {
+  if (type === SearchType.Ether) {
+    history.navigate('/steps/2');
+  }
+
   const [isValid, setValid] = useState<boolean>(false);
 
   useEffect(() => {
@@ -38,7 +44,7 @@ const SelectAddress: FunctionComponent<Props> = ({ address, handleChange }) => {
 
   const handleNext = () => {
     if (isValid) {
-      history.navigate('/steps/1');
+      history.navigate('/steps/2');
     }
   };
 
@@ -60,6 +66,7 @@ const SelectAddress: FunctionComponent<Props> = ({ address, handleChange }) => {
 };
 
 const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
+  type: state.search.type,
   address: state.search.address || ''
 });
 

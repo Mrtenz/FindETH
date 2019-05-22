@@ -1,6 +1,7 @@
-import { DerivationPath } from '../../constants';
+import { DerivationPath, SearchType } from '../../constants';
 
 export interface SearchState {
+  type: SearchType;
   address?: string;
   depth: number;
   derivationPaths: DerivationPath[];
@@ -11,6 +12,12 @@ export interface SearchState {
   addressFound: boolean;
   addressNotFound: boolean;
   failedChecks: number;
+}
+
+export const SET_SEARCH_TYPE = 'SET_SEARCH_TYPE';
+export interface SetSearchTypeAction {
+  type: typeof SET_SEARCH_TYPE;
+  payload: SearchType;
 }
 
 export const SET_ADDRESS = 'SET_ADDRESS';
@@ -89,6 +96,7 @@ export interface SetSearchingAction {
 }
 
 export type SearchActions =
+  | SetSearchTypeAction
   | SetAddressAction
   | SetDepthAction
   | AddDerivationPathAction

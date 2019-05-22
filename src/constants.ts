@@ -3,6 +3,11 @@ export interface DerivationPath {
   prefix: string;
 }
 
+export enum SearchType {
+  Ether,
+  Address
+}
+
 /**
  * All derivation paths used by MyCrypto.
  */

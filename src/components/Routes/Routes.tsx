@@ -9,7 +9,7 @@ const Routes: FunctionComponent = () => {
     <Router>
       <Home path="/" default={true} />
       <Steps path="steps/:step" />
-      <Search path="search" />
+      <Search path="search/:type" />
     </Router>
   );
 };

@@ -14,7 +14,7 @@ function* setImplementationSaga(action: SetImplementationAction): SagaIterator {
   try {
     yield call([action.payload, action.payload.initialize]);
     yield put(setLoading(false));
-    history.navigate('/steps/2');
+    history.navigate('/steps/3');
   } catch (error) {
     console.error(error);
     yield put(showModal(error.toString()));

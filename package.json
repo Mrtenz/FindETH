@@ -36,6 +36,7 @@
     "@types/trezor-connect": "^6.0.3",
     "@types/w3c-web-usb": "^1.0.3",
     "@types/web-bluetooth": "^0.0.4",
+    "@types/web3": "^1.0.18",
     "@types/webpack-merge": "^4.1.5",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^2.0.2",
@@ -84,7 +85,8 @@
     "rxjs": "^6.5.2",
     "styled-bootstrap-grid": "^3.0.3",
     "styled-components": "4.0.2",
-    "trezor-connect": "^7.0.3"
+    "trezor-connect": "^7.0.3",
+    "web3": "^1.0.0-beta.55"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

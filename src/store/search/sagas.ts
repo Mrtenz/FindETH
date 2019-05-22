@@ -1,5 +1,5 @@
 import { SagaIterator } from 'redux-saga';
-import { all, call, put, select, takeLatest, delay } from 'redux-saga/effects';
+import { all, call, delay, put, select, takeLatest } from 'redux-saga/effects';
 import { SEARCH, SEARCH_NEXT, SearchState } from './types';
 import {
   checkFailed,
@@ -14,6 +14,8 @@ import {
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
 import { history } from '../../App';
+import { SearchType } from '../../constants';
+import { addAddress, clearBalances } from '../balance';
 
 export function* searchRootSaga(): SagaIterator {
   yield all([takeLatest(SEARCH, searchSaga), takeLatest(SEARCH_NEXT, searchNextSaga)]);
@@ -23,15 +25,16 @@ const getSearchState = (state: ApplicationState) => state.search;
 const getImplementation = (state: ApplicationState) => state.wallet.implementation;
 
 function* searchSaga(): SagaIterator {
-  const { derivationPaths }: SearchState = yield select(getSearchState);
+  const { derivationPaths, type }: SearchState = yield select(getSearchState);
 
+  yield put(clearBalances());
   yield put(setDerivationPath(derivationPaths[0]));
   yield put(setIndex(0));
   yield put(setAddressIndex(0));
   yield put(setAddressFound(false));
   yield put(setAddressNotFound(false));
 
-  history.navigate('/search');
+  history.navigate(`/search/${type === SearchType.Ether ? 'ether' : 'address'}`);
 
   yield put(searchNext());
 }
@@ -44,7 +47,8 @@ function* searchNextSaga(): SagaIterator {
     currentAddressIndex,
     depth,
     address,
-    isSearching
+    isSearching,
+    type
   }: SearchState = yield select(getSearchState);
   const implementation: Wallet = yield select(getImplementation);
 
@@ -53,7 +57,10 @@ function* searchNextSaga(): SagaIterator {
   }
 
   if (!currentPath) {
-    yield put(setAddressNotFound(true));
+    if (type === SearchType.Address) {
+      yield put(setAddressNotFound(true));
+    }
+
     yield put(setSearching(false));
     return;
   }
@@ -72,10 +79,14 @@ function* searchNextSaga(): SagaIterator {
       currentPath.prefix,
       currentAddressIndex
     );
-    if (foundAddress.toLowerCase() === address!.toLowerCase()) {
-      yield put(setAddressFound(true));
-      yield put(setSearching(false));
-      return;
+
+    if (type === SearchType.Ether) {
+      yield call(searchNextEther, foundAddress, `${currentPath.prefix}/${currentAddressIndex}`);
+    } else {
+      const done = yield call(searchNextAddress, foundAddress, address!);
+      if (done) {
+        return;
+      }
     }
   } catch (error) {
     yield put(checkFailed());
@@ -85,4 +96,22 @@ function* searchNextSaga(): SagaIterator {
   yield put(setAddressIndex(currentAddressIndex + 1));
   yield delay(1);
   yield put(searchNext());
+}
+
+function* searchNextEther(address: string, path: string): SagaIterator {
+  yield put(
+    addAddress({
+      address,
+      path
+    })
+  );
+}
+
+function* searchNextAddress(foundAddress: string, address: string): SagaIterator {
+  if (foundAddress.toLowerCase() === address.toLowerCase()) {
+    yield put(setAddressFound(true));
+    yield put(setSearching(false));
+    return true;
+  }
+  return false;
 }

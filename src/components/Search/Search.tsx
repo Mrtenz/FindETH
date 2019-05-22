@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { Heading, Typography } from '@mycrypto/ui';
 import { connect, MapStateToProps } from 'react-redux';
-import { DerivationPath } from '../../constants';
+import { DerivationPath, SearchType } from '../../constants';
 import { ApplicationState } from '../../store';
-import { RouteComponentProps } from '@reach/router';
+import { RouteComponentProps, Router } from '@reach/router';
 import { Container } from 'styled-bootstrap-grid';
 import { BigTypography } from './StyledSearch';
-import AddressFound from './AddressFound';
-import AddressNotFound from './AddressNotFound';
+import SearchAddress from './SearchAddress';
+import SearchEther from './SearchEther';
 
 interface StateProps {
   currentPath?: DerivationPath;
@@ -15,9 +15,7 @@ interface StateProps {
   currentAddressIndex: number;
   depth: number;
   derivationPaths: DerivationPath[];
-  addressFound: boolean;
-  addressNotFound: boolean;
-  failedChecks: number;
+  type: SearchType;
 }
 
 type Props = StateProps & RouteComponentProps;
@@ -28,16 +26,14 @@ const Search: FunctionComponent<Props> = ({
   currentAddressIndex,
   depth,
   derivationPaths,
-  addressFound,
-  addressNotFound,
-  failedChecks
+  type
 }) => {
   const total = depth * derivationPaths.length;
   const processed = currentIndex * depth + currentAddressIndex;
 
   return (
     <Container>
-      <Heading as="h2">Searching for address...</Heading>
+      <Heading as="h2">Searching for {type === SearchType.Ether ? 'Ether' : 'address'}...</Heading>
       <Typography>This may take a while.</Typography>
       <BigTypography>
         {processed} / {total} addresses
@@ -47,8 +43,11 @@ const Search: FunctionComponent<Props> = ({
           {currentPath.prefix}/{currentAddressIndex}
         </Typography>
       )}
-      {addressFound && <AddressFound path={currentPath!} index={currentAddressIndex} />}
-      {addressNotFound && <AddressNotFound failedChecks={failedChecks} />}
+
+      <Router basepath="/search">
+        <SearchAddress path="address" />
+        <SearchEther path="ether" />
+      </Router>
     </Container>
   );
 };
@@ -59,9 +58,7 @@ const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state
   currentAddressIndex: state.search.currentAddressIndex,
   depth: state.search.depth,
   derivationPaths: state.search.derivationPaths,
-  addressFound: state.search.addressFound,
-  addressNotFound: state.search.addressNotFound,
-  failedChecks: state.search.failedChecks
+  type: state.search.type
 });
 
 export default connect(mapStateToProps)(Search);

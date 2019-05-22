@@ -13,11 +13,13 @@ import {
   SET_DEPTH,
   SET_DERIVATION_PATH,
   SET_INDEX,
+  SET_SEARCH_TYPE,
   SET_SEARCHING
 } from './types';
-import { ALL_DERIVATION_PATHS } from '../../constants';
+import { ALL_DERIVATION_PATHS, SearchType } from '../../constants';
 
 const INITIAL_STATE: SearchState = {
+  type: SearchType.Address,
   depth: 50,
   derivationPaths: ALL_DERIVATION_PATHS,
   isSearching: false,
@@ -33,6 +35,11 @@ export const searchReducer: Reducer<SearchState, SearchActions> = (
   action
 ): SearchState => {
   switch (action.type) {
+    case SET_SEARCH_TYPE:
+      return {
+        ...state,
+        type: action.payload
+      };
     case SET_ADDRESS:
       return {
         ...state,

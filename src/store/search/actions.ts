@@ -17,6 +17,7 @@ import {
   SET_DEPTH,
   SET_DERIVATION_PATH,
   SET_INDEX,
+  SET_SEARCH_TYPE,
   SET_SEARCHING,
   SetAddressAction,
   SetAddressFoundAction,
@@ -25,9 +26,15 @@ import {
   SetDepthAction,
   SetDerivationPathAction,
   SetIndexAction,
-  SetSearchingAction
+  SetSearchingAction,
+  SetSearchTypeAction
 } from './types';
-import { DerivationPath } from '../../constants';
+import { DerivationPath, SearchType } from '../../constants';
+
+export const setSearchType: ActionCreator<SetSearchTypeAction> = (payload: SearchType) => ({
+  type: SET_SEARCH_TYPE,
+  payload
+});
 
 export const setAddress: ActionCreator<SetAddressAction> = (payload: string) => ({
   type: SET_ADDRESS,
