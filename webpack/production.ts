@@ -14,9 +14,9 @@ const configuration: Configuration = {
       'default-src': `'none'`,
       'script-src': `'self'`,
       'style-src': `'unsafe-inline'`,
-      'img-src': `'self'`,
+      'img-src': `'self' data:`,
       'font-src': `'self'`,
-      'connect-src': `'self'`
+      'connect-src': `'none' https://api.mycryptoapi.com/eth`
     })
   ]
 };
