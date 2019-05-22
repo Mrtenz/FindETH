@@ -1,5 +1,5 @@
 import { SagaIterator } from 'redux-saga';
-import { all, call, put, select, takeLatest } from 'redux-saga/effects';
+import { all, call, put, select, takeLatest, delay } from 'redux-saga/effects';
 import { SEARCH, SEARCH_NEXT, SearchState } from './types';
 import {
   checkFailed,
@@ -83,5 +83,6 @@ function* searchNextSaga(): SagaIterator {
   }
 
   yield put(setAddressIndex(currentAddressIndex + 1));
+  yield delay(1);
   yield put(searchNext());
 }
