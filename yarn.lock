@@ -804,9 +804,9 @@
     "@ledgerhq/errors" "^4.58.0"
     events "^3.0.0"
 
-"@mycrypto/ui@git://github.com/Mrtenz/ui.git#074acc06134899c93e249ff374e7c5c66f07278e":
+"@mycrypto/ui@https://github.com/Mrtenz/ui.git#074acc06134899c93e249ff374e7c5c66f07278e":
   version "0.14.0"
-  resolved "git://github.com/Mrtenz/ui.git#074acc06134899c93e249ff374e7c5c66f07278e"
+  resolved "https://github.com/Mrtenz/ui.git#074acc06134899c93e249ff374e7c5c66f07278e"
   dependencies:
     "@types/dom-clipboard-api" "^1.0.1"
     "@types/lodash.throttle" "^4.1.4"
