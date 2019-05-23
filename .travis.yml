@@ -10,7 +10,7 @@ before_install:
   - npm install -g yarn
 
 install:
-  - yarn --silent
+  - yarn --silent --network-concurrency 1
 
 script:
   - yarn run prettier:diff
