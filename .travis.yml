@@ -6,6 +6,9 @@ cache:
     - node_modules
     - "$HOME/.cache"
 
+before_install:
+  - npm install -g yarn
+
 install:
   - yarn --silent
 
