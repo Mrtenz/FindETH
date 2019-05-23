@@ -7,8 +7,24 @@ import {
   Address,
   Balance,
   CLEAR_BALANCES,
-  ClearBalancesAction
+  ClearBalancesAction,
+  CONNECT,
+  ConnectAction,
+  SET_NETWORK,
+  SetNetworkAction
 } from './types';
+import Web3 from 'web3';
+import { Network } from '../../constants';
+
+export const connectWeb3: ActionCreator<ConnectAction> = (payload: Web3) => ({
+  type: CONNECT,
+  payload
+});
+
+export const setNetwork: ActionCreator<SetNetworkAction> = (payload: Network) => ({
+  type: SET_NETWORK,
+  payload
+});
 
 export const clearBalances: ActionCreator<ClearBalancesAction> = () => ({
   type: CLEAR_BALANCES

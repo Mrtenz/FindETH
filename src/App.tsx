@@ -5,7 +5,7 @@ import { light } from '@mycrypto/ui';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BaseCSS } from 'styled-bootstrap-grid';
-import Main from './components/ui/Main';
+import Main from './components/Main';
 import Header from './components/ui/Header';
 import Routes from './components/Routes';
 import Footer from './components/ui/Footer';

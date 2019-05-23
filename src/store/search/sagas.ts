@@ -15,7 +15,7 @@ import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
 import { history } from '../../App';
 import { SearchType } from '../../constants';
-import { addAddress, clearBalances } from '../balance';
+import { addAddress, clearBalances } from '../network';
 
 export function* searchRootSaga(): SagaIterator {
   yield all([takeLatest(SEARCH, searchSaga), takeLatest(SEARCH_NEXT, searchNextSaga)]);

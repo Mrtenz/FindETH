@@ -3,7 +3,7 @@ import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
 import { Table } from '@mycrypto/ui';
 import { RouteComponentProps } from '@reach/router';
-import { Balance } from '../../../store/balance';
+import { Balance } from '../../../store/network';
 import { StyledIdenticon } from './StyledSearchEther';
 
 interface StateProps {
@@ -31,7 +31,7 @@ const SearchEther: FunctionComponent<Props> = ({ balances }) => (
 );
 
 const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
-  balances: state.balance.balances
+  balances: state.network.balances
 });
 
 export default connect(mapStateToProps)(SearchEther);

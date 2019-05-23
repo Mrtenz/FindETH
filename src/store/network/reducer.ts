@@ -1,16 +1,34 @@
 import { Reducer } from 'redux';
-import { ADD_ADDRESS, ADD_BALANCE, BalanceActions, BalanceState, CLEAR_BALANCES } from './types';
+import {
+  ADD_ADDRESS,
+  ADD_BALANCE,
+  NetworkActions,
+  NetworkState,
+  CLEAR_BALANCES,
+  CONNECT,
+  SET_NETWORK
+} from './types';
 
-const INITIAL_STATE: BalanceState = {
+const INITIAL_STATE: NetworkState = {
   addresses: [],
   balances: []
 };
 
-export const balanceReducer: Reducer<BalanceState, BalanceActions> = (
+export const networkReducer: Reducer<NetworkState, NetworkActions> = (
   state = INITIAL_STATE,
   action
-): BalanceState => {
+): NetworkState => {
   switch (action.type) {
+    case CONNECT:
+      return {
+        ...state,
+        web3: action.payload
+      };
+    case SET_NETWORK:
+      return {
+        ...state,
+        current: action.payload
+      };
     case CLEAR_BALANCES:
       return {
         ...state,

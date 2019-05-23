@@ -1,4 +1,6 @@
 import { Action } from 'redux';
+import Web3 from 'web3';
+import { Network } from '../../constants';
 
 export interface Address {
   address: string;
@@ -11,9 +13,23 @@ export interface Balance {
   balance: string;
 }
 
-export interface BalanceState {
+export interface NetworkState {
+  web3?: Web3;
+  current?: Network;
   addresses: Address[];
   balances: Balance[];
+}
+
+export const CONNECT = 'CONNECT';
+export interface ConnectAction extends Action {
+  type: typeof CONNECT;
+  payload: Web3;
+}
+
+export const SET_NETWORK = 'SET_NETWORK';
+export interface SetNetworkAction extends Action {
+  type: typeof SET_NETWORK;
+  payload: Network;
 }
 
 export const CLEAR_BALANCES = 'CLEAR_BALANCES';
@@ -33,4 +49,9 @@ export interface AddBalanceAction extends Action {
   payload: Balance;
 }
 
-export type BalanceActions = ClearBalancesAction | AddAddressAction | AddBalanceAction;
+export type NetworkActions =
+  | ConnectAction
+  | SetNetworkAction
+  | ClearBalancesAction
+  | AddAddressAction
+  | AddBalanceAction;
