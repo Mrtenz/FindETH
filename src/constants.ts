@@ -133,3 +133,5 @@ export const ALL_DERIVATION_PATHS: DerivationPath[] = [
     prefix: "m/44'/237'/0'/0"
   }
 ];
+
+export const SMALL_DISPLAYS = 'screen and (max-width: 550px)';

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Typography } from '@mycrypto/ui';
-
-const MEDIA_TAG = 'screen and (max-width: 550px)';
+import { SMALL_DISPLAYS } from '../../../../constants';
 
 export const StyledStep = styled.div`
   position: relative;
@@ -9,7 +8,7 @@ export const StyledStep = styled.div`
   display: flex;
   flex-flow: row wrap;
 
-  @media ${MEDIA_TAG} {
+  @media ${SMALL_DISPLAYS} {
     flex-flow: column nowrap;
   }
 `;
@@ -29,7 +28,7 @@ export const StyledLine = styled.div`
   left: 25px;
   background: ${({ theme }) => theme.headline};
 
-  @media ${MEDIA_TAG} {
+  @media ${SMALL_DISPLAYS} {
     display: none;
   }
 `;
@@ -37,7 +36,7 @@ export const StyledLine = styled.div`
 export const StyledStepContents = styled.div`
   margin-left: 18px;
 
-  @media ${MEDIA_TAG} {
+  @media ${SMALL_DISPLAYS} {
     margin-left: 0;
   }
 `;
