@@ -10,8 +10,8 @@ export const StyledModalOverlay = styled.div<Props>`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: ${({ isVisible }) => (isVisible ? 'rgba(0, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0)')};
   transition: background 0.2s;
   justify-content: center;
@@ -25,6 +25,8 @@ export const StyledModal = styled.div<Props>`
   transition: transform 0.2s;
   padding: 18px;
   width: 400px;
+  max-width: 100%;
+  margin: 18px;
   border-radius: 3px;
 `;
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const StyledWalletItem = styled.div`
-  min-width: 350px;
-  max-width: 350px;
+  width: 350px;
+  max-width: 100%;
   text-align: center;
 `;
 
