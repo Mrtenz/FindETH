@@ -3,7 +3,6 @@ import { hot } from 'react-hot-loader/root';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { light } from '@mycrypto/ui';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { BaseCSS } from 'styled-bootstrap-grid';
 import Main from './components/Main';
 import Header from './components/ui/Header';
@@ -43,7 +42,6 @@ const App: FunctionComponent = () => (
   <ThemeProvider theme={light}>
     <Provider store={store}>
       <LocationProvider history={history}>
-        <ToastContainer position="bottom-center" pauseOnHover={true} />
         <GlobalModal />
         <GlobalStyle />
         <BaseCSS />
