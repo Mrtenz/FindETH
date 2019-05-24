@@ -5,10 +5,7 @@ import { Configuration } from 'webpack';
 
 const configuration: Configuration = {
   devtool: 'source-map',
-  entry: {
-    vendor: ['@babel/polyfill'],
-    main: [resolve(__dirname, '../src/index.tsx')]
-  },
+  entry: resolve(__dirname, '../src/index.tsx'),
   output: {
     path: resolve(__dirname, '../dist'),
     filename: '[name].[hash].js',
