@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import { Typography, Identicon } from '@mycrypto/ui';
 
-export const StyledAddressContainer = styled.div`
+interface Props {
+  noMargin: boolean;
+}
+
+export const StyledAddressContainer = styled.div<Props>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 18px;
+  margin-top: ${({ noMargin }) => (noMargin ? '0' : '18px')};
 `;
 
 export const StyledTypography = styled(Typography)`
