@@ -25,3 +25,4 @@ typings/
 .env
 .next
 dist/
+server.pem
