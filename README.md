@@ -43,7 +43,7 @@ To run a local development server, use:
 yarn run start
 ```
 
-Head to <https://localhost:8080> in your browser to see the application.
+Head to <https://localhost:8000> in your browser to see the application.
 
 ### Bundle the files
 
