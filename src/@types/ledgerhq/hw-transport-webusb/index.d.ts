@@ -49,14 +49,14 @@ declare module '@ledgerhq/hw-transport-webusb' {
      *
      * @return {Promise<TransportWebUSB>} A Promise with the Transport instance.
      */
-    public static request(): typeof TransportWebUSB.open;
+    public static request(): Promise<TransportWebUSB>;
 
     /**
      * Similar to `open()`, but will never ask for device permissions.
      *
      * @return {Promise<TransportWebUSB | null>} A Promise with the Transport instance or null if no device was found.
      */
-    public static openConnected(): typeof TransportWebUSB.open | Promise<null>;
+    public static openConnected(): Promise<TransportWebUSB | null>;
 
     public readonly device: USBDevice;
     public readonly deviceModel?: DeviceModel;
