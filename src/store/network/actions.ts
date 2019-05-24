@@ -13,10 +13,10 @@ import {
   SET_NETWORK,
   SetNetworkAction
 } from './types';
-import Web3 from 'web3';
+import { providers } from 'ethers';
 import { Network } from '../../constants';
 
-export const connectWeb3: ActionCreator<ConnectAction> = (payload: Web3) => ({
+export const connectProvider: ActionCreator<ConnectAction> = (payload: providers.Provider) => ({
   type: CONNECT,
   payload
 });

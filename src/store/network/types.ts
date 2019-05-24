@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import Web3 from 'web3';
+import { providers } from 'ethers';
 import { Network } from '../../constants';
 
 export interface Address {
@@ -14,7 +14,7 @@ export interface Balance {
 }
 
 export interface NetworkState {
-  web3?: Web3;
+  provider?: providers.Provider;
   current?: Network;
   addresses: Address[];
   balances: Balance[];
@@ -23,7 +23,7 @@ export interface NetworkState {
 export const CONNECT = 'CONNECT';
 export interface ConnectAction extends Action {
   type: typeof CONNECT;
-  payload: Web3;
+  payload: providers.Provider;
 }
 
 export const SET_NETWORK = 'SET_NETWORK';
