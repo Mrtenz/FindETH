@@ -14,8 +14,8 @@ const generate = promisify<selfsigned.Attribute[], selfsigned.Options, selfsigne
 );
 const writeFile = promisify(fs.writeFile);
 
-const CERTIFICATE_PATH = path.join(__dirname, 'server.pem');
-const STATIC_DIR = path.join(__dirname, 'dist');
+const CERTIFICATE_PATH = path.join(__dirname, '../server.pem');
+const STATIC_DIR = path.join(__dirname, '../dist');
 
 /**
  * Use webpack to build output files.
