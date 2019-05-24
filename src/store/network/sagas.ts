@@ -3,16 +3,16 @@ import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effect
 import { ADD_ADDRESS, AddAddressAction, CONNECT, ConnectAction } from './types';
 import { addBalance, setNetwork } from './actions';
 import { ApplicationState } from '../store';
-import Web3 from 'web3';
 import { Network, NETWORK_MAINNET, NETWORK_TESTNET, NETWORK_UNKNOWN } from '../../constants';
+import { providers, utils } from 'ethers';
 
 export function* networkSaga(): SagaIterator {
   yield all([takeLatest(CONNECT, connectSaga), takeEvery(ADD_ADDRESS, addAddressSaga)]);
 }
 
-const getNetwork = async (web3: Web3): Promise<Network> => {
-  const version = await web3.eth.net.getId();
-  switch (version) {
+const getNetwork = async (provider: providers.Provider): Promise<Network> => {
+  const id = (await provider.getNetwork()).chainId;
+  switch (id) {
     case 1:
       return NETWORK_MAINNET;
     case 3: // Ropsten
@@ -31,21 +31,26 @@ function* connectSaga({ payload }: ConnectAction): SagaIterator {
   yield put(setNetwork(network));
 }
 
-const getWeb3 = (state: ApplicationState): Web3 | undefined => state.network.web3;
+const getProvider = (state: ApplicationState): providers.Provider | undefined =>
+  state.network.provider;
 
-const getBalance = async (web3: Web3, address: string): Promise<string> => {
-  return web3.eth.getBalance(address);
+const getBalance = async (
+  provider: providers.Provider,
+  address: string
+): Promise<utils.BigNumber> => {
+  return provider.getBalance(address);
 };
 
 function* addAddressSaga({ payload }: AddAddressAction): SagaIterator {
-  const web3 = yield select(getWeb3);
-  const rawBalance = yield call(getBalance, web3, payload.address);
+  const provider: providers.Provider = yield select(getProvider);
+  const rawBalance: utils.BigNumber = yield call(getBalance, provider, payload.address);
+  const balance = utils.formatEther(rawBalance);
 
-  if (rawBalance !== '0') {
+  if (!rawBalance.isZero()) {
     yield put(
       addBalance({
         ...payload,
-        balance: web3.utils.fromWei(rawBalance)
+        balance
       })
     );
   }
