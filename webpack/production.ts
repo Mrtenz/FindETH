@@ -12,7 +12,8 @@ const configuration: Configuration = {
   optimization: {
     splitChunks: {
       chunks: 'initial'
-    }
+    },
+    sideEffects: true
   },
   plugins: [
     new FaviconsWebpackPlugin(join(__dirname, '../src/assets/images/logos/ethereum.svg')),
