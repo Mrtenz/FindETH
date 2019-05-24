@@ -58,13 +58,20 @@ const SelectAddress: FunctionComponent<Props> = ({
   const [isValid, setValid] = useState<boolean>(false);
 
   useEffect(() => {
+    handleChangeAddress('');
+  }, []);
+
+  useEffect(() => {
     setValid(!!address.match(ADDRESS_REGEX));
   }, [address]);
 
   const handleChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
-    clearResolved();
     setInputAddress(value);
     handleChangeAddress(value);
+
+    if (resolvedAddress) {
+      clearResolved();
+    }
 
     if (isEnsName(value)) {
       handleResolve(value);
@@ -72,6 +79,7 @@ const SelectAddress: FunctionComponent<Props> = ({
   };
 
   const handleNext = () => {
+    clearResolved();
     if (isValid) {
       history.navigate('/steps/2');
     }
