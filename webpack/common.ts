@@ -41,6 +41,13 @@ const configuration: Configuration = {
         }
       },
       {
+        test: /\.(woff2?|ttf|eot)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/fonts/[name].[ext]'
+        }
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       }
