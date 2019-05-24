@@ -9,6 +9,11 @@ const CnameWebpackPlugin = require('cname-webpack-plugin');
 
 const configuration: Configuration = {
   mode: 'production',
+  optimization: {
+    splitChunks: {
+      chunks: 'initial'
+    }
+  },
   plugins: [
     new FaviconsWebpackPlugin(join(__dirname, '../src/assets/images/logos/ethereum.svg')),
     new CspHtmlWebpackPlugin({
