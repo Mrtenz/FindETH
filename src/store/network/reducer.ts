@@ -22,7 +22,7 @@ export const networkReducer: Reducer<NetworkState, NetworkActions> = (
     case CONNECT:
       return {
         ...state,
-        web3: action.payload
+        provider: action.payload
       };
     case SET_NETWORK:
       return {

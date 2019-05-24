@@ -15,6 +15,7 @@ install:
 script:
   - yarn run prettier:diff
   - yarn run tslint
+  - yarn run tscheck
 
 before_deploy:
   - yarn run build

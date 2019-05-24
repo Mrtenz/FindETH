@@ -1,15 +1,11 @@
 import { join, resolve } from 'path';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ForkCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { Configuration } from 'webpack';
 
 const configuration: Configuration = {
   devtool: 'source-map',
-  entry: {
-    vendor: ['@babel/polyfill'],
-    main: [resolve(__dirname, '../src/index.tsx')]
-  },
+  entry: resolve(__dirname, '../src/index.tsx'),
   output: {
     path: resolve(__dirname, '../dist'),
     filename: '[name].[hash].js',
@@ -42,6 +38,13 @@ const configuration: Configuration = {
         }
       },
       {
+        test: /\.(woff2?|ttf|eot)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/fonts/[name].[ext]'
+        }
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       }
@@ -51,8 +54,7 @@ const configuration: Configuration = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../src/index.html')
-    }),
-    new ForkCheckerWebpackPlugin()
+    })
   ]
 };
 

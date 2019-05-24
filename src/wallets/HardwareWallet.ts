@@ -1,6 +1,6 @@
 import Wallet from './Wallet';
 import HDKey from 'hdkey';
-import { publicToAddress } from 'ethereumjs-util';
+import { utils } from 'ethers';
 
 export interface KeyInfo {
   publicKey: string;
@@ -15,7 +15,7 @@ export default abstract class HardwareWallet implements Wallet {
     const hdKey = await this.getHDKey(dPath);
     const publicKey = hdKey.derive(`m/${index}`).publicKey;
 
-    return `0x${publicToAddress(publicKey, true).toString('hex')}`;
+    return utils.computeAddress(publicKey);
   }
 
   public abstract initialize(): Promise<void>;
