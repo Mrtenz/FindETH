@@ -10,6 +10,7 @@
     "serve": "ts-node --files src/server",
     "start": "webpack-dev-server --config ./webpack/development.ts",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/production.ts",
+    "analyze": "webpack --config ./webpack/analyzer.ts",
     "tscheck": "tsc --noEmit --project tsconfig.json",
     "tslint": "tslint --project .",
     "prettier:diff": "prettier --write --config ./.prettierrc --list-different './**/*.ts' './**/*.tsx'"
@@ -39,6 +40,7 @@
     "@types/w3c-web-usb": "^1.0.3",
     "@types/web-bluetooth": "^0.0.4",
     "@types/web3": "^1.0.18",
+    "@types/webpack-bundle-analyzer": "^2.13.1",
     "@types/webpack-merge": "^4.1.5",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^2.0.2",
@@ -68,6 +70,7 @@
     "tslint-react": "^4.0.0",
     "typescript": "^3.4.5",
     "webpack": "^4.31.0",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^4.2.1"
