@@ -91,7 +91,7 @@ const SelectAddress: FunctionComponent<Props> = ({
       <Typography>What address are you looking for?</Typography>
       <Input
         type="text"
-        placeholder="0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520"
+        placeholder="e.g. 0x4bbe...1520 or mycryptoid.eth"
         value={inputAddress}
         onChange={handleChange}
         disabled={isResolving}
