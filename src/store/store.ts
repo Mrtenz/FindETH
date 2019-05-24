@@ -5,10 +5,11 @@ import { ApplicationActions, reducer } from './reducer';
 import { searchRootSaga, SearchState } from './search';
 import { walletSaga, WalletState } from './wallet';
 import { ModalState } from './modal';
-import { NetworkState } from './network';
-import { networkSaga } from './network/sagas';
+import { networkSaga, NetworkState } from './network';
+import { ensSaga, EnsState } from './ens';
 
 export interface ApplicationState {
+  ens: EnsState;
   modal: ModalState;
   network: NetworkState;
   search: SearchState;
@@ -20,6 +21,7 @@ export const createStore = (): Store<ApplicationState, ApplicationActions> => {
 
   const store = createReduxStore(reducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
+  sagaMiddleware.run(ensSaga);
   sagaMiddleware.run(networkSaga);
   sagaMiddleware.run(searchRootSaga);
   sagaMiddleware.run(walletSaga);

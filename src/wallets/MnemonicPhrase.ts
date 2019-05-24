@@ -15,11 +15,7 @@ export default class MnemonicPhrase implements Wallet {
 
   public async getAddress(dPath: string, index: number): Promise<string> {
     const hdNode = await this.getHDNode();
-    const address = hdNode.derivePath(`${dPath}/${index}`).address;
-
-    console.log(dPath, address);
-
-    return address;
+    return hdNode.derivePath(`${dPath}/${index}`).address;
   }
 
   public async initialize(): Promise<void> {
