@@ -1,7 +1,6 @@
 import { join, resolve } from 'path';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ForkCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { Configuration } from 'webpack';
 
 const configuration: Configuration = {
@@ -51,8 +50,7 @@ const configuration: Configuration = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../src/index.html')
-    }),
-    new ForkCheckerWebpackPlugin()
+    })
   ]
 };
 
