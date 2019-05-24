@@ -7,7 +7,8 @@ const configuration: Configuration = {
   mode: 'development',
   devServer: {
     https: true,
-    hot: true
+    hot: true,
+    port: 8000
   },
   plugins: [new ForkCheckerWebpackPlugin()]
 } as any;
