@@ -5,6 +5,7 @@ import { join } from 'path';
 
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
+const CnameWebpackPlugin = require('cname-webpack-plugin');
 
 const configuration: Configuration = {
   mode: 'production',
@@ -17,6 +18,9 @@ const configuration: Configuration = {
       'img-src': `'self' data:`,
       'font-src': `'self'`,
       'connect-src': `'none' https://api.mycryptoapi.com/eth`
+    }),
+    new CnameWebpackPlugin({
+      domain: 'findeth.io'
     })
   ]
 };
