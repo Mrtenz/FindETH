@@ -10,7 +10,7 @@ export const StyledSpinnerContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1em 0;
+  margin-top: 1em;
 `;
 
 const Spin = keyframes`
