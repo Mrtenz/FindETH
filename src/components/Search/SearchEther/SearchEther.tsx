@@ -4,7 +4,7 @@ import { ApplicationState } from '../../../store';
 import { Table } from '@mycrypto/ui';
 import { RouteComponentProps } from '@reach/router';
 import { Balance } from '../../../store/network';
-import { StyledIdenticon } from './StyledSearchEther';
+import Address from '../../ui/Address';
 
 interface StateProps {
   balances: Balance[];
@@ -12,18 +12,11 @@ interface StateProps {
 
 type Props = StateProps & RouteComponentProps;
 
-const truncate = (address: string) => {
-  return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
-};
-
 const SearchEther: FunctionComponent<Props> = ({ balances }) => (
   <Table
     head={['Address', 'Path', 'Balance']}
     body={balances.map(balance => [
-      <div key={balance.address}>
-        <StyledIdenticon address={balance.address} />
-        {truncate(balance.address)}
-      </div>,
+      <Address key={balance.address} address={balance.address} truncate={true} noMargin={true} />,
       balance.path,
       `${balance.balance} ETH`
     ])}
