@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
-import { Table } from '@mycrypto/ui';
+import { Table, Typography } from '@mycrypto/ui';
 import { RouteComponentProps } from '@reach/router';
 import { Address, Balance } from '../../../store/network';
 import { default as AddressItem } from '../../ui/Address';
 import Spinner from '../../ui/Spinner';
 import TextAlign from '../../ui/Align';
+import Message from '../../ui/Message';
 
 interface StateProps {
   isSearching: boolean;
@@ -35,6 +36,11 @@ const SearchEther: FunctionComponent<Props> = ({ isSearching, addresses, balance
       <TextAlign align="center">
         <Spinner>Loading balances</Spinner>
       </TextAlign>
+    )}
+    {!isSearching && balances.length === 0 && (
+      <Message type="error" style={{ marginTop: '18px' }}>
+        <Typography>No addresses with Ether found.</Typography>
+      </Message>
     )}
   </>
 );
