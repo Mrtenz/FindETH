@@ -3,7 +3,7 @@ import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effect
 import { ADD_ADDRESS, AddAddressAction, CONNECT, ConnectAction } from './types';
 import { addBalance, setNetwork } from './actions';
 import { ApplicationState } from '../store';
-import { Network, NETWORK_MAINNET, NETWORK_TESTNET, NETWORK_UNKNOWN } from '../../constants';
+import { Network, NETWORK_MAINNET, NETWORK_TESTNET, NETWORK_UNKNOWN } from '../../config';
 import { providers, utils } from 'ethers';
 
 export function* networkSaga(): SagaIterator {

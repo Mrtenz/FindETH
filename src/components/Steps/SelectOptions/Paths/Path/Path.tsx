@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
 import { Typography } from '@mycrypto/ui';
-import { DerivationPath } from '../../../../../constants';
+import { DerivationPath } from '../../../../../config';
 import { SmallTypography, StyledPath } from './StyledPath';
 import { addDerivationPath, removeDerivationPath } from '../../../../../store/search';
 import { Col, Row } from 'styled-bootstrap-grid';

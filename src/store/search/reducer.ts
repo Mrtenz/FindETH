@@ -16,7 +16,7 @@ import {
   SET_SEARCH_TYPE,
   SET_SEARCHING
 } from './types';
-import { ALL_DERIVATION_PATHS, SearchType } from '../../constants';
+import { ALL_DERIVATION_PATHS, SearchType } from '../../config';
 
 const INITIAL_STATE: SearchState = {
   type: SearchType.Address,

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
-import { SearchType } from '../../../../constants';
+import { SearchType } from '../../../../config';
 import { setSearchType } from '../../../../store/search';
 import { SearchButton } from './StyledSearchTypeItem';
 import { history } from '../../../../App';

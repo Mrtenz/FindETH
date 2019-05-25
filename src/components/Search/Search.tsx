@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Heading, Typography } from '@mycrypto/ui';
 import { connect, MapStateToProps } from 'react-redux';
-import { DerivationPath, SearchType } from '../../constants';
+import { DerivationPath, SearchType } from '../../config';
 import { ApplicationState } from '../../store';
 import { RouteComponentProps, Router } from '@reach/router';
 import { Container } from 'styled-bootstrap-grid';

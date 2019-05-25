@@ -14,7 +14,7 @@ import {
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
 import { history } from '../../App';
-import { SearchType } from '../../constants';
+import { SearchType } from '../../config';
 import { addAddress, clearBalances } from '../network';
 
 export function* searchRootSaga(): SagaIterator {

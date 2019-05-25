@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Typography } from '@mycrypto/ui';
-import { DerivationPath } from '../../../../constants';
+import { DerivationPath } from '../../../../config';
 import { StyledAddressFound } from './StyledAddressFound';
 
 interface Props {

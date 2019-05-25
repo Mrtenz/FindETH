@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SMALL_DISPLAYS } from '../../constants';
+import { SMALL_DISPLAYS } from '../../config';
 
 export const StyledMain = styled.div`
   flex: 1;

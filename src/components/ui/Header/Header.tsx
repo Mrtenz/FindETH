@@ -5,7 +5,7 @@ import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
 import { history } from '../../../App';
 import Modal from '../Modal';
-import { Network } from '../../../constants';
+import { Network } from '../../../config';
 import { Network as NetworkIndicator, Typography } from '@mycrypto/ui';
 
 interface StateProps {

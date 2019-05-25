@@ -1,4 +1,4 @@
-import { DerivationPath, SearchType } from '../../constants';
+import { DerivationPath, SearchType } from '../../config';
 
 export interface SearchState {
   type: SearchType;

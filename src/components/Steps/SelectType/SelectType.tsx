@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Heading, Typography } from '@mycrypto/ui';
 import SearchTypeItem from './SearchTypeItem';
-import { SearchType } from '../../../constants';
+import { SearchType } from '../../../config';
 import { RouteComponentProps } from '@reach/router';
 
 type Props = RouteComponentProps;

@@ -3,7 +3,7 @@ import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { Heading, Input, Typography } from '@mycrypto/ui';
 import { ApplicationState } from '../../../../store';
 import { setDepth } from '../../../../store/search';
-import { DerivationPath } from '../../../../constants';
+import { DerivationPath } from '../../../../config';
 
 interface StateProps {
   depth: number;

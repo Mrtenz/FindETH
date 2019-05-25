@@ -29,7 +29,7 @@ import {
   SetSearchingAction,
   SetSearchTypeAction
 } from './types';
-import { DerivationPath, SearchType } from '../../constants';
+import { DerivationPath, SearchType } from '../../config';
 
 export const setSearchType: ActionCreator<SetSearchTypeAction> = (payload: SearchType) => ({
   type: SET_SEARCH_TYPE,

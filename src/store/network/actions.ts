@@ -14,7 +14,7 @@ import {
   SetNetworkAction
 } from './types';
 import { providers } from 'ethers';
-import { Network } from '../../constants';
+import { Network } from '../../config/constants';
 
 export const connectProvider: ActionCreator<ConnectAction> = (payload: providers.Provider) => ({
   type: CONNECT,
