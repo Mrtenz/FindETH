@@ -1,17 +1,17 @@
 import React, { FunctionComponent } from 'react';
 import { Typography } from '@mycrypto/ui';
-import { StyledAddressNotFound } from './StyledAddressNotFound';
+import Message from '../../../ui/Message';
 
 interface Props {
   failedChecks: number;
 }
 
 const AddressNotFound: FunctionComponent<Props> = ({ failedChecks }) => (
-  <StyledAddressNotFound>
+  <Message type="error">
     <Typography>
-      Address not found :( {failedChecks > 0 && 'Failed to check {failedChecks} addresses.'}
+      Address not found. {failedChecks > 0 && `Failed to check ${failedChecks} addresses.`}
     </Typography>
-  </StyledAddressNotFound>
+  </Message>
 );
 
 export default AddressNotFound;
