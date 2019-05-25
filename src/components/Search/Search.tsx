@@ -9,8 +9,10 @@ import { BigTypography } from './StyledSearch';
 import SearchAddress from './SearchAddress';
 import SearchEther from './SearchEther';
 import { getFullPath } from '../../utils';
+import HowToAccess from './HowToAccess/HowToAccess';
 
 interface StateProps {
+  isSearching: boolean;
   currentPath?: DerivationPath;
   currentIndex: number;
   currentAddressIndex: number;
@@ -22,6 +24,7 @@ interface StateProps {
 type Props = StateProps & RouteComponentProps;
 
 const Search: FunctionComponent<Props> = ({
+  isSearching,
   currentPath,
   currentIndex,
   currentAddressIndex,
@@ -34,8 +37,14 @@ const Search: FunctionComponent<Props> = ({
 
   return (
     <Container>
-      <Heading as="h2">Searching for {type === SearchType.Ether ? 'Ether' : 'address'}...</Heading>
-      <Typography>This may take a while.</Typography>
+      {isSearching ? (
+        <Heading as="h2">
+          Searching for {type === SearchType.Ether ? 'Ether' : 'address'}...
+        </Heading>
+      ) : (
+        <Heading as="h2">Search completed</Heading>
+      )}
+      {isSearching && <Typography>This may take a while.</Typography>}
       <BigTypography>
         {processed} / {total} addresses
       </BigTypography>
@@ -47,11 +56,14 @@ const Search: FunctionComponent<Props> = ({
         <SearchAddress path="address" />
         <SearchEther path="ether" />
       </Router>
+
+      <HowToAccess />
     </Container>
   );
 };
 
 const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
+  isSearching: state.search.isSearching,
   currentPath: state.search.currentPath,
   currentIndex: state.search.currentIndex,
   currentAddressIndex: state.search.currentAddressIndex,
