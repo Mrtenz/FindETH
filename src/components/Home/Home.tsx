@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
-import { RouteComponentProps } from '@reach/router';
+import { Link, RouteComponentProps } from '@reach/router';
 import { Container } from 'styled-bootstrap-grid';
 import { Heading, Typography } from '@mycrypto/ui';
 import Steps from './Steps';
-import StartButton from './StartButton';
+import { StartButton } from './StyledHome';
 
 type Props = RouteComponentProps;
 
@@ -21,7 +21,9 @@ const Home: FunctionComponent<Props> = () => (
       <Heading as="h3">How does it work?</Heading>
       <Steps />
     </section>
-    <StartButton />
+    <Link to="/start">
+      <StartButton>Start searching</StartButton>
+    </Link>
   </Container>
 );
 

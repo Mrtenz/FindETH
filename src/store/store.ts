@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { ApplicationActions, reducer } from './reducer';
 import { searchRootSaga, SearchState } from './search';
-import { walletSaga, WalletState } from './wallet';
+import { WalletState } from './wallet';
 import { ModalState } from './modal';
 import { networkSaga, NetworkState } from './network';
 import { ensSaga, EnsState } from './ens';
@@ -24,7 +24,6 @@ export const createStore = (): Store<ApplicationState, ApplicationActions> => {
   sagaMiddleware.run(ensSaga);
   sagaMiddleware.run(networkSaga);
   sagaMiddleware.run(searchRootSaga);
-  sagaMiddleware.run(walletSaga);
 
   return store;
 };
