@@ -155,3 +155,4 @@ export const NETWORK_UNKNOWN: Network = {
 };
 
 export const SMALL_DISPLAYS = 'screen and (max-width: 550px)';
+export const EXTRA_SMALL_DISPLAYS = 'screen and (max-width: 275px)';
