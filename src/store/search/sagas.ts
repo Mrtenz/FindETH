@@ -16,6 +16,7 @@ import Wallet from '../../wallets/Wallet';
 import { history } from '../../App';
 import { SearchType } from '../../config';
 import { addAddress, clearBalances } from '../network';
+import { getFullPath } from '../../utils';
 
 export function* searchRootSaga(): SagaIterator {
   yield all([takeLatest(SEARCH, searchSaga), takeLatest(SEARCH_NEXT, searchNextSaga)]);
@@ -76,12 +77,12 @@ function* searchNextSaga(): SagaIterator {
   try {
     const foundAddress: string = yield call(
       [implementation, implementation.getAddress],
-      currentPath.prefix,
+      currentPath,
       currentAddressIndex
     );
 
     if (type === SearchType.Ether) {
-      yield call(searchNextEther, foundAddress, `${currentPath.prefix}/${currentAddressIndex}`);
+      yield call(searchNextEther, foundAddress, getFullPath(currentPath, currentAddressIndex));
     } else {
       const done = yield call(searchNextAddress, foundAddress, address!);
       if (done) {
