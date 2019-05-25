@@ -1,4 +1,4 @@
-import HardwareWallet, { KeyInfo } from './HardwareWallet';
+import HardwareWallet, { KeyInfo } from '../HardwareWallet';
 import Transport from '@ledgerhq/hw-transport';
 import EthereumApp from '@ledgerhq/hw-app-eth';
 

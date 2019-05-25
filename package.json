@@ -76,6 +76,7 @@
     "@hot-loader/react-dom": "^16.8.6",
     "@ledgerhq/hw-app-eth": "^4.56.0",
     "@ledgerhq/hw-transport": "^4.56.0",
+    "@ledgerhq/hw-transport-u2f": "^4.60.2",
     "@ledgerhq/hw-transport-web-ble": "^4.58.0",
     "@ledgerhq/hw-transport-webusb": "^4.56.0",
     "@mycrypto/ui": "^0.16.1",
