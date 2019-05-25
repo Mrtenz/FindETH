@@ -43,7 +43,8 @@ export const networkReducer: Reducer<NetworkState, NetworkActions> = (
     case ADD_BALANCE:
       return {
         ...state,
-        balances: [...state.balances, action.payload]
+        balances: [...state.balances, action.payload],
+        addresses: state.addresses.filter(address => address.address !== action.payload.address)
       };
     default:
       return state;
