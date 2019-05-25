@@ -21,7 +21,7 @@ import { ALL_DERIVATION_PATHS, SearchType } from '../../config';
 
 const INITIAL_STATE: SearchState = {
   type: SearchType.Address,
-  depth: 50,
+  depth: 5,
   derivationPaths: ALL_DERIVATION_PATHS,
   isSearching: false,
   currentIndex: 0,
