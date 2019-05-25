@@ -4,6 +4,7 @@ import { StyledList } from './StyledHowToAccess';
 import Icon from '../../ui/Icon';
 import Modal from '../../ui/Modal';
 import ClickableText from '../../ui/ClickableText';
+import ExternalLink from '../../ui/ExternalLink';
 
 const HowToAccess: FunctionComponent = () => {
   const [isVisible, setVisible] = useState<boolean>(false);
@@ -20,7 +21,8 @@ const HowToAccess: FunctionComponent = () => {
     <>
       <Modal isVisible={isVisible} onClose={handleClose}>
         <Typography>
-          To access an address, navigate to <a href="https://mycrypto.com">MyCrypto</a>, and...
+          To access an address, navigate to{' '}
+          <ExternalLink to="https://mycrypto.com">MyCrypto</ExternalLink>, and...
         </Typography>
         <StyledList inline={true} ordered={true}>
           {[
