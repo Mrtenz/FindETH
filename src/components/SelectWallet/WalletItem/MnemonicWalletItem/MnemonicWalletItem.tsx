@@ -1,13 +1,16 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 import { RouteComponentProps } from '@reach/router';
-import keyIcon from '../../../../../assets/images/key.svg';
-import MnemonicPhrase from '../../../../../wallets/MnemonicPhrase';
-import WalletItem from '../WalletItem';
-import Modal from '../../../../ui/Modal';
+import keyIcon from '../../../../assets/images/key.svg';
+import MnemonicPhrase from '../../../../wallets/MnemonicPhrase';
+import WalletItem, { handleInitialize } from '../WalletItem';
+import Modal from '../../../ui/Modal';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { ApplicationState } from '../../../../../store';
-import { setImplementation } from '../../../../../store/wallet';
+import { ApplicationState } from '../../../../store';
 import { Input, Typography } from '@mycrypto/ui';
+
+interface OwnProps {
+  onNext(): void;
+}
 
 interface StateProps {
   isLoading: boolean;
@@ -17,7 +20,7 @@ interface DispatchProps {
   setMnemonicImplementation(implementation: MnemonicPhrase): void;
 }
 
-type Props = StateProps & DispatchProps & RouteComponentProps;
+type Props = OwnProps & StateProps & DispatchProps & RouteComponentProps;
 
 const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementation }) => {
   const [isVisible, setVisible] = useState<boolean>(false);
@@ -90,9 +93,9 @@ const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state
   isLoading: state.wallet.isLoading
 });
 
-const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
+const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (dispatch, { onNext }) => ({
   setMnemonicImplementation(implementation: MnemonicPhrase): void {
-    dispatch(setImplementation(implementation));
+    handleInitialize(dispatch, implementation, onNext);
   }
 });
 

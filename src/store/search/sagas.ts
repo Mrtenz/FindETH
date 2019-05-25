@@ -26,7 +26,7 @@ const getSearchState = (state: ApplicationState) => state.search;
 const getImplementation = (state: ApplicationState) => state.wallet.implementation;
 
 function* searchSaga(): SagaIterator {
-  const { derivationPaths, type }: SearchState = yield select(getSearchState);
+  const { derivationPaths }: SearchState = yield select(getSearchState);
 
   yield put(clearBalances());
   yield put(setDerivationPath(derivationPaths[0]));
@@ -34,9 +34,6 @@ function* searchSaga(): SagaIterator {
   yield put(setAddressIndex(0));
   yield put(setAddressFound(false));
   yield put(setAddressNotFound(false));
-
-  history.navigate(`/search/${type === SearchType.Ether ? 'ether' : 'address'}`);
-
   yield put(searchNext());
 }
 

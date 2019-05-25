@@ -1,11 +1,15 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import WalletItem from '../WalletItem';
-import LedgerUSB from '../../../../../wallets/ledger/LedgerUSB';
-import LedgerU2F from '../../../../../wallets/ledger/LedgerU2F';
+import LedgerUSB from '../../../../wallets/ledger/LedgerUSB';
+import LedgerU2F from '../../../../wallets/ledger/LedgerU2F';
 import TransportWebUSB from '@ledgerhq/hw-transport-webusb';
-import ledgerIcon from '../../../../../assets/images/logos/ledger.svg';
+import ledgerIcon from '../../../../assets/images/logos/ledger.svg';
 
-const LedgerWalletItem: FunctionComponent = () => {
+interface Props {
+  onNext(): void;
+}
+
+const LedgerWalletItem: FunctionComponent<Props> = ({ onNext }) => {
   const [isWebUSBSupported, setWebUSBSupported] = useState<boolean>(false);
 
   useEffect(() => {
@@ -23,6 +27,7 @@ const LedgerWalletItem: FunctionComponent = () => {
       description="Connect using your Ledger device."
       icon={ledgerIcon}
       wallet={isWebUSBSupported ? LedgerUSB : LedgerU2F}
+      onNext={onNext}
     />
   );
 };

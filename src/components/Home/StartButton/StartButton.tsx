@@ -4,7 +4,7 @@ import { history } from '../../../App';
 
 const StartButton: FunctionComponent = () => {
   const handleClick = () => {
-    history.navigate('/steps/0');
+    history.navigate('/start');
   };
 
   return <StyledStartButton onClick={handleClick}>Start searching</StyledStartButton>;

@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
-import { SearchType } from '../../../../config';
-import { setSearchType } from '../../../../store/search';
+import { SearchType } from '../../../config';
+import { setSearchType } from '../../../store/search';
 import { SearchButton } from './StyledSearchTypeItem';
-import { history } from '../../../../App';
+import { history } from '../../../App';
 
 interface OwnProps {
   type: SearchType;
@@ -23,9 +23,9 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (dispatc
   handleClick(): void {
     dispatch(setSearchType(type));
     if (type === SearchType.Ether) {
-      history.navigate('/steps/2');
+      history.navigate('/flow/ether');
     } else {
-      history.navigate('/steps/1');
+      history.navigate('/flow/address');
     }
   }
 });

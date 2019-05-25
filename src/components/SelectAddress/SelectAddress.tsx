@@ -1,16 +1,14 @@
 import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Heading, Input, Typography } from '@mycrypto/ui';
-import { RouteComponentProps } from '@reach/router';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { ApplicationState } from '../../../store';
-import { setAddress } from '../../../store/search';
-import { history } from '../../../App';
-import { SearchType } from '../../../config';
-import { isEnsName } from '../../../utils/ens';
-import { resolveName, setResolvedAddress } from '../../../store/ens';
-import Spinner from '../../ui/Spinner';
-import Address from '../../ui/Address';
+import { ApplicationState } from '../../store';
+import { setAddress } from '../../store/search';
+import { isEnsName } from '../../utils';
+import { resolveName, setResolvedAddress } from '../../store/ens';
+import Spinner from '../ui/Spinner';
+import Address from '../ui/Address';
+import { FlowProps } from '../Flow/Flow';
 
 const ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;
 
@@ -25,7 +23,6 @@ const CustomButton = styled(Button)`
 `;
 
 interface StateProps {
-  type: SearchType;
   address: string;
   isResolving: boolean;
   resolvedAddress?: string;
@@ -39,21 +36,17 @@ interface DispatchProps {
   clearResolved(): void;
 }
 
-type Props = StateProps & DispatchProps & RouteComponentProps;
+type Props = StateProps & DispatchProps & FlowProps;
 
 const SelectAddress: FunctionComponent<Props> = ({
-  type,
   address,
   isResolving,
   resolvedAddress,
   handleChangeAddress,
   handleResolve,
-  clearResolved
+  clearResolved,
+  onNext
 }) => {
-  if (type === SearchType.Ether) {
-    history.navigate('/steps/2');
-  }
-
   const [inputAddress, setInputAddress] = useState<string>('');
   const [isValid, setValid] = useState<boolean>(false);
 
@@ -81,7 +74,7 @@ const SelectAddress: FunctionComponent<Props> = ({
   const handleNext = () => {
     clearResolved();
     if (isValid) {
-      history.navigate('/steps/2');
+      onNext();
     }
   };
 
@@ -109,8 +102,7 @@ const SelectAddress: FunctionComponent<Props> = ({
   );
 };
 
-const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
-  type: state.search.type,
+const mapStateToProps: MapStateToProps<StateProps, FlowProps, ApplicationState> = state => ({
   address: state.search.address || '',
   isResolving: state.ens.isResolving,
   resolvedAddress: state.ens.resolvedAddress

@@ -2,10 +2,13 @@ import React, { FunctionComponent } from 'react';
 import StyledWalletItem from './StyledWalletItem';
 import { Heading, Typography } from '@mycrypto/ui';
 import styled from 'styled-components';
-import Wallet from '../../../../wallets/Wallet';
+import Wallet from '../../../wallets/Wallet';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { setImplementation } from '../../../../store/wallet';
-import { ApplicationState } from '../../../../store';
+import { setImplementation, setLoading } from '../../../store/wallet';
+import { ApplicationState } from '../../../store';
+import { setDerivationPaths } from '../../../store/search';
+import { showModal } from '../../../store/modal';
+import { AnyAction, Dispatch } from 'redux';
 
 const AccountTypeImage = styled.img`
   max-width: 100px;
@@ -17,6 +20,9 @@ interface OwnProps {
   description: string;
   icon: string;
   wallet?: new () => Wallet;
+
+  onNext?(): void;
+
   onClick?(): void;
 }
 
@@ -50,14 +56,41 @@ const mapStateToProps: MapStateToProps<StateProps, OwnProps, ApplicationState> =
   isLoading: state.wallet.isLoading
 });
 
-const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (dispatch, { wallet }) => ({
+const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (
+  dispatch,
+  { wallet, onNext }
+) => ({
   handleClick(): void {
     if (wallet) {
-      const implementation = new wallet();
-      dispatch(setImplementation(implementation));
+      handleInitialize(dispatch, new wallet(), onNext);
     }
   }
 });
+
+export const handleInitialize = (
+  dispatch: Dispatch<AnyAction>,
+  implementation: Wallet,
+  onNext?: () => void
+) => {
+  dispatch(setLoading(true));
+
+  implementation
+    .initialize()
+    .then(() => {
+      dispatch(setImplementation(implementation));
+      dispatch(setDerivationPaths(implementation.getDerivationPaths()));
+      dispatch(setLoading(false));
+
+      if (onNext) {
+        onNext();
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      dispatch(showModal(error.toString()));
+      dispatch(setLoading(false));
+    });
+};
 
 export default connect(
   mapStateToProps,

@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { Heading, Typography } from '@mycrypto/ui';
-import { ALL_DERIVATION_PATHS, DerivationPath } from '../../../../config';
-import { chunk } from '../../../../utils';
+import { ALL_DERIVATION_PATHS, DerivationPath } from '../../../config';
+import { chunk } from '../../../utils';
 import { connect, MapStateToProps } from 'react-redux';
-import { ApplicationState } from '../../../../store';
+import { ApplicationState } from '../../../store';
 import { Row } from 'styled-bootstrap-grid';
 import Path from './Path';
-import Wallet from '../../../../wallets/Wallet';
+import Wallet from '../../../wallets/Wallet';
 
 interface StateProps {
   implementation: Wallet;
