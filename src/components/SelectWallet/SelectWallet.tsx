@@ -22,7 +22,6 @@ type Props = StateProps & FlowProps;
 
 const SelectWallet: FunctionComponent<Props> = ({ isLoading, onNext }) => (
   <Loader isVisible={isLoading}>
-    <Heading as="h2">Select your wallet type</Heading>
     <Typography>Select a wallet type to get started.</Typography>
     <Row>
       <ItemContainer>

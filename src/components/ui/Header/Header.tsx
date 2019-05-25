@@ -38,8 +38,8 @@ const Header: FunctionComponent<Props> = ({ isSearching, network }) => {
 
   return (
     <Container>
-      <Row alignItems="center">
-        <Col col={true}>
+      <Row alignItems="center" justifyContent="between">
+        <Col auto={true}>
           <Modal isVisible={isVisible} onConfirm={handleConfirm} onClose={handleClose}>
             <Typography>Are you sure you want to stop searching?</Typography>
           </Modal>
@@ -48,7 +48,7 @@ const Header: FunctionComponent<Props> = ({ isSearching, network }) => {
           </StyledHeading>
         </Col>
         {network && (
-          <Col col={true} style={{ textAlign: 'right' }}>
+          <Col auto={true}>
             <NetworkIndicator color={network.color}>{network.name}</NetworkIndicator>
           </Col>
         )}

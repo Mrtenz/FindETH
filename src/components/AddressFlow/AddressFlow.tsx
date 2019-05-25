@@ -15,9 +15,25 @@ interface DispatchProps {
 
 type Props = DispatchProps & RouteComponentProps;
 
-const AddressFlow: FunctionComponent<Props> = ({ handleDone }) => {
-  return <Flow components={[SelectAddress, SelectWallet, SelectOptions]} onDone={handleDone} />;
-};
+const AddressFlow: FunctionComponent<Props> = ({ handleDone }) => (
+  <Flow
+    components={[
+      {
+        title: 'Select your address',
+        Component: SelectAddress
+      },
+      {
+        title: 'Unlock your account',
+        Component: SelectWallet
+      },
+      {
+        title: 'Choose your options',
+        Component: SelectOptions
+      }
+    ]}
+    onDone={handleDone}
+  />
+);
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   handleDone(): void {

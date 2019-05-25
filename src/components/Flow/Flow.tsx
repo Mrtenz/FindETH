@@ -1,14 +1,19 @@
 import React, { ComponentType, FunctionComponent, useState } from 'react';
-import { Container } from 'styled-bootstrap-grid';
-import { Stepper } from '@mycrypto/ui';
+import { Col, Container, Row } from 'styled-bootstrap-grid';
+import { Heading, Stepper } from '@mycrypto/ui';
 import { StepperContainer } from './StyledFlow';
 
 export interface FlowProps {
   onNext(): void;
 }
 
+interface FlowComponent {
+  title: string;
+  Component: ComponentType<FlowProps>;
+}
+
 interface Props {
-  components: ComponentType<FlowProps>[];
+  components: FlowComponent[];
 
   onDone(): void;
 }
@@ -23,15 +28,24 @@ const Flow: FunctionComponent<Props> = ({ components, onDone }) => {
     setCurrent(current + 1);
   };
 
-  const CurrentComponent = components[current];
+  const currentFlow = components[current];
 
-  if (CurrentComponent) {
+  if (currentFlow) {
+    const { Component, title } = currentFlow;
+
     return (
       <Container>
-        <StepperContainer>
-          <Stepper current={current} total={components.length} />
-        </StepperContainer>
-        <CurrentComponent onNext={handleNext} />
+        <Row alignItems="center" justifyContent="between">
+          <Col auto={true}>
+            <Heading as="h2">{title}</Heading>
+          </Col>
+          <Col auto={true}>
+            <StepperContainer>
+              <Stepper current={current} total={components.length} />
+            </StepperContainer>
+          </Col>
+        </Row>
+        <Component onNext={handleNext} />
       </Container>
     );
   }

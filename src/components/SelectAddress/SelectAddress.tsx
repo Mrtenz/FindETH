@@ -80,7 +80,6 @@ const SelectAddress: FunctionComponent<Props> = ({
 
   return (
     <>
-      <Heading as="h2">Select your address</Heading>
       <Typography>What address are you looking for?</Typography>
       <Input
         type="text"

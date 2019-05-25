@@ -14,9 +14,21 @@ interface DispatchProps {
 
 type Props = DispatchProps & RouteComponentProps;
 
-const EtherFlow: FunctionComponent<Props> = ({ handleDone }) => {
-  return <Flow components={[SelectWallet, SelectOptions]} onDone={handleDone} />;
-};
+const EtherFlow: FunctionComponent<Props> = ({ handleDone }) => (
+  <Flow
+    components={[
+      {
+        title: 'Unlock your account',
+        Component: SelectWallet
+      },
+      {
+        title: 'Choose your options',
+        Component: SelectOptions
+      }
+    ]}
+    onDone={handleDone}
+  />
+);
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   handleDone(): void {

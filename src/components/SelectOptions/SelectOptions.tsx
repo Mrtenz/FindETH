@@ -9,7 +9,6 @@ type Props = FlowProps;
 const SelectOptions: FunctionComponent<Props> = ({ onNext }) => {
   return (
     <>
-      <Heading as="h2">Choose your options</Heading>
       <Depth />
       <Paths />
       <Button onClick={onNext}>Search</Button>
