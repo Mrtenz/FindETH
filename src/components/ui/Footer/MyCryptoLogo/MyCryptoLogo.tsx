@@ -1,11 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import myCryptoLogo from '../../../../assets/images/logos/mycrypto.svg';
 import { StyledMyCryptoLogo } from './StyledMyCryptoLogo';
+import ExternalLink from '../../ExternalLink';
 
 const MyCryptoLogo: FunctionComponent = () => (
-  <a href="https://mycrypto.com" target="_blank">
+  <ExternalLink to="https://mycrypto.com">
     <StyledMyCryptoLogo src={myCryptoLogo} />
-  </a>
+  </ExternalLink>
 );
 
 export default MyCryptoLogo;

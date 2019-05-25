@@ -1,11 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import githubIcon from '../../../../assets/images/logos/github.svg';
 import { StyledGitHubIcon } from './StyledGitHubIcon';
+import ExternalLink from '../../ExternalLink';
 
 const GitHubIcon: FunctionComponent = () => (
-  <a href="https://github.com/Mrtenz/FindETH" target="_blank">
+  <ExternalLink to="https://github.com/Mrtenz/FindETH">
     <StyledGitHubIcon src={githubIcon} />
-  </a>
+  </ExternalLink>
 );
 
 export default GitHubIcon;
