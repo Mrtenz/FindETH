@@ -21,23 +21,25 @@ const SearchEther: FunctionComponent<Props> = ({ isSearching, addresses, balance
   <>
     <Table
       head={['Address', 'Path', 'Balance']}
-      body={balances.map(balance => [
-        <AddressItem
-          key={balance.address}
-          address={balance.address}
-          truncate={true}
-          noMargin={true}
-        />,
-        balance.path,
-        `${balance.balance} ETH`
-      ])}
+      body={balances
+        .filter(balance => balance.balance !== '0.0')
+        .map(balance => [
+          <AddressItem
+            key={balance.address}
+            address={balance.address}
+            truncate={true}
+            noMargin={true}
+          />,
+          balance.path,
+          `${balance.balance} ETH`
+        ])}
     />
     {(isSearching || addresses.length > 0) && (
       <TextAlign align="center">
         <Spinner>Loading balances</Spinner>
       </TextAlign>
     )}
-    {!isSearching && balances.length === 0 && (
+    {!isSearching && addresses.length === 0 && (
       <Message type="error" style={{ marginTop: '18px' }}>
         <Typography>No addresses with Ether found.</Typography>
       </Message>

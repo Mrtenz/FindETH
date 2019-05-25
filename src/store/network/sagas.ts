@@ -46,12 +46,10 @@ function* addAddressSaga({ payload }: AddAddressAction): SagaIterator {
   const rawBalance: utils.BigNumber = yield call(getBalance, provider, payload.address);
   const balance = utils.formatEther(rawBalance);
 
-  if (!rawBalance.isZero()) {
-    yield put(
-      addBalance({
-        ...payload,
-        balance
-      })
-    );
-  }
+  yield put(
+    addBalance({
+      ...payload,
+      balance
+    })
+  );
 }
