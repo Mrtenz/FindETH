@@ -1,6 +1,6 @@
 import Wallet from './Wallet';
 import { utils, wordlists } from 'ethers';
-import { DerivationPath } from '../config';
+import { ALL_DERIVATION_PATHS, DerivationPath } from '../config';
 import { getFullPath } from '../utils';
 
 // TODO: Temporary workaround for a bug in Ethers.js
@@ -24,6 +24,10 @@ export default class MnemonicPhrase implements Wallet {
     if (!utils.HDNode.isValidMnemonic(this.mnemonicPhrase)) {
       throw new Error('The mnemonic phrase you provided is invalid.');
     }
+  }
+
+  public getDerivationPaths(): DerivationPath[] {
+    return ALL_DERIVATION_PATHS;
   }
 
   /**

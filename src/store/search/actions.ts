@@ -16,6 +16,7 @@ import {
   SET_ADDRESS_NOT_FOUND,
   SET_DEPTH,
   SET_DERIVATION_PATH,
+  SET_DERIVATION_PATHS,
   SET_INDEX,
   SET_SEARCH_TYPE,
   SET_SEARCHING,
@@ -25,6 +26,7 @@ import {
   SetAddressNotFoundAction,
   SetDepthAction,
   SetDerivationPathAction,
+  SetDerivationPathsAction,
   SetIndexAction,
   SetSearchingAction,
   SetSearchTypeAction
@@ -43,6 +45,13 @@ export const setAddress: ActionCreator<SetAddressAction> = (payload: string) => 
 
 export const setDepth: ActionCreator<SetDepthAction> = (payload: number) => ({
   type: SET_DEPTH,
+  payload
+});
+
+export const setDerivationPaths: ActionCreator<SetDerivationPathsAction> = (
+  payload: DerivationPath[]
+) => ({
+  type: SET_DERIVATION_PATHS,
   payload
 });
 

@@ -1,7 +1,7 @@
 import HardwareWallet, { KeyInfo } from '../HardwareWallet';
 import Transport from '@ledgerhq/hw-transport';
 import EthereumApp from '@ledgerhq/hw-app-eth';
-import { DerivationPath, LEDGER_ETH } from '../../config';
+import { DerivationPath, LEDGER_DERIVATION_PATHS, LEDGER_ETH } from '../../config';
 import { getFullPath } from '../../utils';
 
 export default abstract class Ledger extends HardwareWallet {
@@ -13,6 +13,10 @@ export default abstract class Ledger extends HardwareWallet {
 
     // Fetch a random address to ensure the connection works
     await this.getAddress(LEDGER_ETH, 0);
+  }
+
+  public getDerivationPaths(): DerivationPath[] {
+    return LEDGER_DERIVATION_PATHS;
   }
 
   protected abstract async checkConnection(): Promise<void>;

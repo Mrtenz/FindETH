@@ -25,6 +25,8 @@ export default abstract class HardwareWallet implements Wallet {
 
   public abstract initialize(): Promise<void>;
 
+  public abstract getDerivationPaths(): DerivationPath[];
+
   /**
    * Get KeyInfo (public key, chain code) from the device.
    *

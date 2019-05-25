@@ -1,6 +1,6 @@
 import HardwareWallet, { KeyInfo } from './HardwareWallet';
 import TrezorConnect from 'trezor-connect';
-import { DEFAULT_ETH, DerivationPath } from '../config';
+import { DEFAULT_ETH, DerivationPath, TREZOR_DERIVATION_PATHS } from '../config';
 import { getFullPath } from '../utils';
 
 export default class Trezor extends HardwareWallet {
@@ -12,6 +12,10 @@ export default class Trezor extends HardwareWallet {
 
     // Fetch a random address to ensure the connection works
     await this.getAddress(DEFAULT_ETH, 0);
+  }
+
+  public getDerivationPaths(): DerivationPath[] {
+    return TREZOR_DERIVATION_PATHS;
   }
 
   protected async getKeyInfo(dPath: DerivationPath): Promise<KeyInfo> {
