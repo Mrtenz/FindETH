@@ -5,14 +5,14 @@ import { connect, MapStateToProps } from 'react-redux';
 import { Heading, Typography } from '@mycrypto/ui';
 import WalletItem from './WalletItem';
 import MnemonicWalletItem from './WalletItem/MnemonicWalletItem';
+import LedgerWalletItem from './WalletItem/LedgerWalletItem';
 import ledgerIcon from '../../../assets/images/logos/ledger.svg';
-import LedgerUSB from '../../../wallets/LedgerUSB';
-import LedgerBLE from '../../../wallets/LedgerBLE';
+import LedgerBLE from '../../../wallets/ledger/LedgerBLE';
 import trezorIcon from '../../../assets/images/logos/trezor.svg';
+import Trezor from '../../../wallets/Trezor';
 import Loader from '../../ui/Loader';
 import { ApplicationState } from '../../../store';
 import { Row } from 'styled-bootstrap-grid';
-import Trezor from '../../../wallets/Trezor';
 
 interface StateProps {
   isLoading: boolean;
@@ -26,12 +26,7 @@ const SelectWallet: FunctionComponent<Props> = ({ isLoading }) => (
     <Typography>Select a wallet type to get started.</Typography>
     <Row>
       <ItemContainer>
-        <WalletItem
-          name="Ledger Device"
-          description="Connect using your Ledger device."
-          icon={ledgerIcon}
-          wallet={LedgerUSB}
-        />
+        <LedgerWalletItem />
         <WalletItem
           name="Trezor Device"
           description="Connect using your Trezor device."
