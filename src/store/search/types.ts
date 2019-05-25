@@ -15,12 +15,6 @@ export interface SearchState {
   failedChecks: number;
 }
 
-export const SET_SEARCH_TYPE = 'SET_SEARCH_TYPE';
-export interface SetSearchTypeAction extends Action {
-  type: typeof SET_SEARCH_TYPE;
-  payload: SearchType;
-}
-
 export const SET_ADDRESS = 'SET_ADDRESS';
 export interface SetAddressAction extends Action {
   type: typeof SET_ADDRESS;
@@ -54,6 +48,7 @@ export interface RemoveDerivationPathAction extends Action {
 export const SEARCH = 'SEARCH';
 export interface SearchAction extends Action {
   type: typeof SEARCH;
+  payload: SearchType;
 }
 
 export const SEARCH_NEXT = 'SEARCH_NEXT';
@@ -103,7 +98,6 @@ export interface SetSearchingAction extends Action {
 }
 
 export type SearchActions =
-  | SetSearchTypeAction
   | SetAddressAction
   | SetDepthAction
   | SetDerivationPathsAction

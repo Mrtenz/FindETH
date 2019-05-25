@@ -7,6 +7,7 @@ import SelectOptions from '../SelectOptions';
 import { connect, MapDispatchToProps } from 'react-redux';
 import { search } from '../../store/search';
 import { history } from '../../App';
+import { SearchType } from '../../config';
 
 interface DispatchProps {
   handleDone(): void;
@@ -21,7 +22,7 @@ const AddressFlow: FunctionComponent<Props> = ({ handleDone }) => {
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   handleDone(): void {
     history.navigate('/search/address');
-    dispatch(search());
+    dispatch(search(SearchType.Address));
   }
 });
 

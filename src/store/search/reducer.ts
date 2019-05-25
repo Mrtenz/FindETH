@@ -14,7 +14,6 @@ import {
   SET_DERIVATION_PATH,
   SET_DERIVATION_PATHS,
   SET_INDEX,
-  SET_SEARCH_TYPE,
   SET_SEARCHING
 } from './types';
 import { ALL_DERIVATION_PATHS, SearchType } from '../../config';
@@ -36,11 +35,6 @@ export const searchReducer: Reducer<SearchState, SearchActions> = (
   action
 ): SearchState => {
   switch (action.type) {
-    case SET_SEARCH_TYPE:
-      return {
-        ...state,
-        type: action.payload
-      };
     case SET_ADDRESS:
       return {
         ...state,
@@ -69,6 +63,7 @@ export const searchReducer: Reducer<SearchState, SearchActions> = (
     case SEARCH:
       return {
         ...state,
+        type: action.payload,
         isSearching: true
       };
     case SET_DERIVATION_PATH:

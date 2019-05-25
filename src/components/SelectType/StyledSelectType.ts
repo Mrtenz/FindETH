@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '@mycrypto/ui';
 
-export const StyledStartButton = styled(Button)`
-  margin: auto;
-  display: flex;
+export const SearchButton = styled(Button)`
+  margin: 0 18px 18px 0;
 `;
