@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Typography } from '@mycrypto/ui';
-import { EXTRA_SMALL_DISPLAYS, SMALL_DISPLAYS } from '../../../../constants';
+import { EXTRA_SMALL_DISPLAYS, SMALL_DISPLAYS } from '../../../../config';
 
 export const StyledStep = styled.div`
   position: relative;

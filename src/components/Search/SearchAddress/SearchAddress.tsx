@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import AddressFound from './AddressFound';
 import AddressNotFound from './AddressNotFound';
-import { DerivationPath } from '../../../constants';
+import { DerivationPath } from '../../../config';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
 import { RouteComponentProps } from '@reach/router';

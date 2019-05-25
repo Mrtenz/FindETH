@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 import { providers } from 'ethers';
-import { Network } from '../../constants';
+import { Network } from '../../config';
 
 export interface Address {
   address: string;

@@ -6,7 +6,7 @@ import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
 import { setAddress } from '../../../store/search';
 import { history } from '../../../App';
-import { SearchType } from '../../../constants';
+import { SearchType } from '../../../config';
 import { isEnsName } from '../../../utils/ens';
 import { resolveName, setResolvedAddress } from '../../../store/ens';
 import Spinner from '../../ui/Spinner';

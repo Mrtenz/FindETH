@@ -1,14 +1,28 @@
 declare module 'trezor-connect' {
   export function manifest(manifest: { email: string; appUrl: string }): void;
 
-  interface Data {
+  interface Data<Payload> {
     id: number;
-    payload: {
-      chainCode: string;
-      publicKey: string;
-    };
+    payload: Payload;
     success: boolean;
   }
 
-  export function getPublicKey(params: { path: string | number[] }): Promise<Data>;
+  interface GetPublicKeyPayload {
+    chainCode: string;
+    publicKey: string;
+  }
+
+  export function getPublicKey(params: {
+    path: string | number[];
+  }): Promise<Data<GetPublicKeyPayload>>;
+
+  interface EthereumGetAddressPayload {
+    address: string;
+    path: number[];
+    serializedPath: string;
+  }
+
+  export function ethereumGetAddress(params: {
+    path: string | number[];
+  }): Promise<Data<EthereumGetAddressPayload>>;
 }
