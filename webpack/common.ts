@@ -4,11 +4,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { Configuration } from 'webpack';
 
 const configuration: Configuration = {
-  devtool: 'source-map',
   entry: resolve(__dirname, '../src/index.tsx'),
   output: {
     path: resolve(__dirname, '../dist'),
-    filename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
     globalObject: 'this',
     publicPath: '/'
   },

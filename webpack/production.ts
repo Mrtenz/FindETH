@@ -9,6 +9,7 @@ const CnameWebpackPlugin = require('cname-webpack-plugin');
 
 const configuration: Configuration = {
   mode: 'production',
+  devtool: 'source-map',
   optimization: {
     splitChunks: {
       chunks: 'initial'
