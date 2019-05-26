@@ -4,7 +4,6 @@ import AddressNotFound from './AddressNotFound';
 import { DerivationPath } from '../../../config';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
-import { RouteComponentProps } from '@reach/router';
 
 interface StateProps {
   currentPath?: DerivationPath;
@@ -14,7 +13,7 @@ interface StateProps {
   failedChecks: number;
 }
 
-type Props = StateProps & RouteComponentProps;
+type Props = StateProps;
 
 const SearchAddress: FunctionComponent<Props> = ({
   currentPath,

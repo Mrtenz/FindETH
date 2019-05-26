@@ -1,23 +1,22 @@
 import React, { FunctionComponent } from 'react';
-import { Router } from '@reach/router';
-import Search from '../Search';
+import { Route, Switch } from 'react-router';
 import Home from '../Home';
 import SelectType from '../SelectType';
 import EtherFlow from '../EtherFlow';
 import AddressFlow from '../AddressFlow';
 import TokenFlow from '../TokenFlow';
+import Search from '../Search';
 
 const Routes: FunctionComponent = () => {
   return (
-    <Router>
-      <Home path="/" default={true} />
-      <Search path="search/:type" />
-
-      <SelectType path="start" />
-      <AddressFlow path="flow/address" />
-      <EtherFlow path="flow/ether" />
-      <TokenFlow path="flow/token" />
-    </Router>
+    <Switch>
+      <Route exact={true} path="/" component={Home} />
+      <Route exact={true} path="/start" component={SelectType} />
+      <Route exact={true} path="/flow/address" component={AddressFlow} />
+      <Route exact={true} path="/flow/ether" component={EtherFlow} />
+      <Route exact={true} path="/flow/token" component={TokenFlow} />
+      <Route exact={true} path="/search/:type" component={Search} />
+    </Switch>
   );
 };
 

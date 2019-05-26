@@ -1,5 +1,4 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
-import { RouteComponentProps } from '@reach/router';
 import keyIcon from '../../../../assets/images/key.svg';
 import MnemonicPhrase from '../../../../wallets/MnemonicPhrase';
 import WalletItem, { handleInitialize } from '../WalletItem';
@@ -20,7 +19,7 @@ interface DispatchProps {
   setMnemonicImplementation(implementation: MnemonicPhrase): void;
 }
 
-type Props = OwnProps & StateProps & DispatchProps & RouteComponentProps;
+type Props = OwnProps & StateProps & DispatchProps;
 
 const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementation }) => {
   const [isVisible, setVisible] = useState<boolean>(false);

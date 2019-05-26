@@ -1,13 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import { RouteComponentProps } from '@reach/router';
 import Flow from '../Flow';
 import SelectWallet from '../SelectWallet/SelectWallet';
 import SelectOptions from '../SelectOptions';
 import { connect, MapDispatchToProps } from 'react-redux';
-import { history } from '../../App';
 import { search } from '../../store/search';
 import { SearchType } from '../../config';
 import SelectToken from '../SelectToken';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 interface DispatchProps {
   handleDone(): void;
@@ -35,14 +34,19 @@ const TokenFlow: FunctionComponent<Props> = ({ handleDone }) => (
   />
 );
 
-const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
+const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps> = (
+  dispatch,
+  { history }
+) => ({
   handleDone(): void {
-    history.navigate('/search/token');
+    history.push('/search/token');
     dispatch(search(SearchType.Token));
   }
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(TokenFlow);
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(TokenFlow)
+);
