@@ -8,7 +8,7 @@ const configuration: Configuration = {
   entry: resolve(__dirname, '../src/index.tsx'),
   output: {
     path: resolve(__dirname, '../dist'),
-    filename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
     globalObject: 'this',
     publicPath: '/'
   },
