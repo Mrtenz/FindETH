@@ -4,7 +4,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { Configuration } from 'webpack';
 
 const configuration: Configuration = {
-  devtool: 'source-map',
   entry: resolve(__dirname, '../src/index.tsx'),
   output: {
     path: resolve(__dirname, '../dist'),

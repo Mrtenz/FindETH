@@ -5,6 +5,7 @@ import ForkCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 const configuration: Configuration = {
   mode: 'development',
+  devtool: 'eval-source-map',
   devServer: {
     https: true,
     hot: true,
