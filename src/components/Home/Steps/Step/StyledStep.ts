@@ -1,20 +1,21 @@
 import styled from 'styled-components';
 import { Typography } from '@mycrypto/ui';
-import { SMALL_DISPLAYS } from '../../../../constants';
+import { EXTRA_SMALL_DISPLAYS, SMALL_DISPLAYS } from '../../../../config';
 
 export const StyledStep = styled.div`
   position: relative;
   margin-bottom: 25px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
 
   @media ${SMALL_DISPLAYS} {
-    flex-flow: column nowrap;
+    align-content: center;
   }
 `;
 
 export const StyledStepIcon = styled.div`
   width: 50px;
+  min-width: 50px;
   height: 50px;
   border-radius: 100px;
   background: ${({ theme }) => theme.primary};
@@ -28,7 +29,7 @@ export const StyledLine = styled.div`
   left: 25px;
   background: ${({ theme }) => theme.headline};
 
-  @media ${SMALL_DISPLAYS} {
+  @media ${EXTRA_SMALL_DISPLAYS} {
     display: none;
   }
 `;
@@ -37,7 +38,9 @@ export const StyledStepContents = styled.div`
   margin-left: 18px;
 
   @media ${SMALL_DISPLAYS} {
-    margin-left: 0;
+    margin-left: 9px;
+    display: flex;
+    align-items: center;
   }
 `;
 

@@ -13,9 +13,9 @@ import {
 } from './actions';
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
-import { history } from '../../App';
-import { SearchType } from '../../constants';
+import { SearchType } from '../../config';
 import { addAddress, clearBalances } from '../network';
+import { getFullPath } from '../../utils';
 
 export function* searchRootSaga(): SagaIterator {
   yield all([takeLatest(SEARCH, searchSaga), takeLatest(SEARCH_NEXT, searchNextSaga)]);
@@ -25,7 +25,7 @@ const getSearchState = (state: ApplicationState) => state.search;
 const getImplementation = (state: ApplicationState) => state.wallet.implementation;
 
 function* searchSaga(): SagaIterator {
-  const { derivationPaths, type }: SearchState = yield select(getSearchState);
+  const { derivationPaths }: SearchState = yield select(getSearchState);
 
   yield put(clearBalances());
   yield put(setDerivationPath(derivationPaths[0]));
@@ -33,11 +33,14 @@ function* searchSaga(): SagaIterator {
   yield put(setAddressIndex(0));
   yield put(setAddressFound(false));
   yield put(setAddressNotFound(false));
-
-  history.navigate(`/search/${type === SearchType.Ether ? 'ether' : 'address'}`);
-
   yield put(searchNext());
 }
+
+const handlers: { [key: number]: (currentAddress: string) => SagaIterator } = {
+  [SearchType.Address]: searchNextAddress,
+  [SearchType.Ether]: searchNextEther,
+  [SearchType.Token]: searchNextEther // Ether and tokens use the same logic here
+};
 
 function* searchNextSaga(): SagaIterator {
   const {
@@ -46,7 +49,6 @@ function* searchNextSaga(): SagaIterator {
     currentIndex,
     currentAddressIndex,
     depth,
-    address,
     isSearching,
     type
   }: SearchState = yield select(getSearchState);
@@ -76,17 +78,14 @@ function* searchNextSaga(): SagaIterator {
   try {
     const foundAddress: string = yield call(
       [implementation, implementation.getAddress],
-      currentPath.prefix,
+      currentPath,
       currentAddressIndex
     );
 
-    if (type === SearchType.Ether) {
-      yield call(searchNextEther, foundAddress, `${currentPath.prefix}/${currentAddressIndex}`);
-    } else {
-      const done = yield call(searchNextAddress, foundAddress, address!);
-      if (done) {
-        return;
-      }
+    const handler = handlers[type];
+    const done = yield call(handler, foundAddress);
+    if (done) {
+      return;
     }
   } catch (error) {
     yield put(checkFailed());
@@ -98,20 +97,27 @@ function* searchNextSaga(): SagaIterator {
   yield put(searchNext());
 }
 
-function* searchNextEther(address: string, path: string): SagaIterator {
+function* searchNextEther(currentAddress: string): SagaIterator {
+  const { currentPath, currentAddressIndex }: SearchState = yield select(getSearchState);
+
   yield put(
     addAddress({
-      address,
-      path
+      address: currentAddress,
+      path: getFullPath(currentPath!, currentAddressIndex)
     })
   );
+
+  return false;
 }
 
-function* searchNextAddress(foundAddress: string, address: string): SagaIterator {
-  if (foundAddress.toLowerCase() === address.toLowerCase()) {
+function* searchNextAddress(currentAddress: string): SagaIterator {
+  const { address }: SearchState = yield select(getSearchState);
+
+  if (currentAddress.toLowerCase() === address!.toLowerCase()) {
     yield put(setAddressFound(true));
     yield put(setSearching(false));
     return true;
   }
+
   return false;
 }

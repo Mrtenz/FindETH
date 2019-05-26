@@ -1,15 +1,19 @@
 import React, { FunctionComponent } from 'react';
 import { Heading, Typography } from '@mycrypto/ui';
 import { connect, MapStateToProps } from 'react-redux';
-import { DerivationPath, SearchType } from '../../constants';
+import { DerivationPath, SearchType } from '../../config';
 import { ApplicationState } from '../../store';
-import { RouteComponentProps, Router } from '@reach/router';
 import { Container } from 'styled-bootstrap-grid';
 import { BigTypography } from './StyledSearch';
 import SearchAddress from './SearchAddress';
 import SearchEther from './SearchEther';
+import SearchToken from './SearchToken';
+import { getFullPath } from '../../utils';
+import HowToAccess from './HowToAccess/HowToAccess';
+import { Route, Switch } from 'react-router';
 
 interface StateProps {
+  isSearching: boolean;
   currentPath?: DerivationPath;
   currentIndex: number;
   currentAddressIndex: number;
@@ -18,9 +22,21 @@ interface StateProps {
   type: SearchType;
 }
 
-type Props = StateProps & RouteComponentProps;
+type Props = StateProps;
+
+const getName = (type: SearchType): string => {
+  switch (type) {
+    case SearchType.Address:
+      return 'address';
+    case SearchType.Ether:
+      return 'Ether';
+    case SearchType.Token:
+      return 'token';
+  }
+};
 
 const Search: FunctionComponent<Props> = ({
+  isSearching,
   currentPath,
   currentIndex,
   currentAddressIndex,
@@ -33,26 +49,32 @@ const Search: FunctionComponent<Props> = ({
 
   return (
     <Container>
-      <Heading as="h2">Searching for {type === SearchType.Ether ? 'Ether' : 'address'}...</Heading>
-      <Typography>This may take a while.</Typography>
+      {isSearching ? (
+        <Heading as="h2">Searching for {getName(type)}...</Heading>
+      ) : (
+        <Heading as="h2">Search completed</Heading>
+      )}
+      {isSearching && <Typography>This may take a while.</Typography>}
       <BigTypography>
         {processed} / {total} addresses
       </BigTypography>
       {currentPath && (
-        <Typography muted={true}>
-          {currentPath.prefix}/{currentAddressIndex}
-        </Typography>
+        <Typography muted={true}>{getFullPath(currentPath, currentAddressIndex)}</Typography>
       )}
 
-      <Router basepath="/search">
-        <SearchAddress path="address" />
-        <SearchEther path="ether" />
-      </Router>
+      <Switch>
+        <Route exact={true} path="/search/address" component={SearchAddress} />
+        <Route exact={true} path="/search/ether" component={SearchEther} />
+        <Route exact={true} path="/search/token" component={SearchToken} />
+      </Switch>
+
+      <HowToAccess />
     </Container>
   );
 };
 
 const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
+  isSearching: state.search.isSearching,
   currentPath: state.search.currentPath,
   currentIndex: state.search.currentIndex,
   currentAddressIndex: state.search.currentAddressIndex,

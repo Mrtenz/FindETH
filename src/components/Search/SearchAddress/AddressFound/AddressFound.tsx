@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Typography } from '@mycrypto/ui';
-import { DerivationPath } from '../../../../constants';
-import { StyledAddressFound } from './StyledAddressFound';
+import { DerivationPath } from '../../../../config';
+import { getFullPath } from '../../../../utils';
+import Message from '../../../ui/Message';
 
 interface Props {
   path: DerivationPath;
@@ -9,11 +10,9 @@ interface Props {
 }
 
 const AddressFound: FunctionComponent<Props> = ({ path, index }) => (
-  <StyledAddressFound>
-    <Typography>
-      Address found at {path.prefix}/{index}!
-    </Typography>
-  </StyledAddressFound>
+  <Message type="info">
+    <Typography>Address found at {getFullPath(path, index)}!</Typography>
+  </Message>
 );
 
 export default AddressFound;

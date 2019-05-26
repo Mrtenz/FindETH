@@ -1,16 +1,18 @@
 import { combineReducers, Reducer } from 'redux';
 import { ApplicationState } from './store';
-import { ModalActions, modalReducer } from './modal';
-import { SearchActions, searchReducer } from './search';
-import { WalletActions, walletReducer } from './wallet';
-import { NetworkActions, networkReducer } from './network';
 import { EnsActions, ensReducer } from './ens';
+import { ModalActions, modalReducer } from './modal';
+import { NetworkActions, networkReducer } from './network';
+import { SearchActions, searchReducer } from './search';
+import { TokensActions, tokensReducer } from './tokens';
+import { WalletActions, walletReducer } from './wallet';
 
 export type ApplicationActions =
   | EnsActions
   | ModalActions
   | NetworkActions
   | SearchActions
+  | TokensActions
   | WalletActions;
 
 export const reducer: Reducer<ApplicationState, ApplicationActions> = combineReducers({
@@ -18,5 +20,6 @@ export const reducer: Reducer<ApplicationState, ApplicationActions> = combineRed
   network: networkReducer,
   modal: modalReducer,
   search: searchReducer,
+  tokens: tokensReducer,
   wallet: walletReducer
 });

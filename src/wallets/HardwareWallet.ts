@@ -1,6 +1,7 @@
 import Wallet from './Wallet';
 import HDKey from 'hdkey';
 import { utils } from 'ethers';
+import { DerivationPath } from '../config';
 
 export interface KeyInfo {
   publicKey: string;
@@ -8,10 +9,14 @@ export interface KeyInfo {
 }
 
 export default abstract class HardwareWallet implements Wallet {
-  private cachedDPath?: string;
+  private cachedDPath?: DerivationPath;
   private cachedKeyInfo?: KeyInfo;
 
-  public async getAddress(dPath: string, index: number): Promise<string> {
+  public async getAddress(dPath: DerivationPath, index: number): Promise<string> {
+    if (dPath.isHardened) {
+      return this.getHardenedAddress(dPath, index);
+    }
+
     const hdKey = await this.getHDKey(dPath);
     const publicKey = hdKey.derive(`m/${index}`).publicKey;
 
@@ -20,13 +25,24 @@ export default abstract class HardwareWallet implements Wallet {
 
   public abstract initialize(): Promise<void>;
 
+  public abstract getDerivationPaths(): DerivationPath[];
+
   /**
    * Get KeyInfo (public key, chain code) from the device.
    *
    * @param {string} dPath The derivation path to get the KeyInfo for.
    * @return {Promise<KeyInfo>} A Promise with the KeyInfo.
    */
-  protected abstract getKeyInfo(dPath: string): Promise<KeyInfo>;
+  protected abstract getKeyInfo(dPath: DerivationPath): Promise<KeyInfo>;
+
+  /**
+   * Get an address for a hardened derivation path from the device.
+   *
+   * @param {string} dPath The derivation path.
+   * @param {number} index The account index.
+   * @return {Promise<string>} A Promise with the address.
+   */
+  protected abstract getHardenedAddress(dPath: DerivationPath, index: number): Promise<string>;
 
   /**
    * Get an instance of the HDKey class.
@@ -34,7 +50,7 @@ export default abstract class HardwareWallet implements Wallet {
    * @param {string} dPath The derivation path without the address index.
    * @return {Promise<HDKey>} A Promise with an instance of the HDKey class.
    */
-  private async getHDKey(dPath: string): Promise<HDKey> {
+  private async getHDKey(dPath: DerivationPath): Promise<HDKey> {
     if (dPath !== this.cachedDPath || !this.cachedKeyInfo) {
       this.cachedKeyInfo = await this.getKeyInfo(dPath);
     }

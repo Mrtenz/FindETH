@@ -1,13 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import { RouteComponentProps } from '@reach/router';
 import { Container } from 'styled-bootstrap-grid';
 import { Heading, Typography } from '@mycrypto/ui';
 import Steps from './Steps';
-import StartButton from './StartButton';
+import { StartButton } from './StyledHome';
+import { Link } from 'react-router-dom';
 
-type Props = RouteComponentProps;
-
-const Home: FunctionComponent<Props> = () => (
+const Home: FunctionComponent = () => (
   <Container>
     <section>
       <Heading as="h2">Find your lost Ether or address</Heading>
@@ -21,7 +19,9 @@ const Home: FunctionComponent<Props> = () => (
       <Heading as="h3">How does it work?</Heading>
       <Steps />
     </section>
-    <StartButton />
+    <Link to="/start">
+      <StartButton>Start searching</StartButton>
+    </Link>
   </Container>
 );
 
