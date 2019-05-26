@@ -1,6 +1,7 @@
 export enum SearchType {
   Ether,
-  Address
+  Address,
+  Token
 }
 
 export interface Network {
@@ -25,3 +26,5 @@ export const NETWORK_UNKNOWN: Network = {
 
 export const SMALL_DISPLAYS = 'screen and (max-width: 550px)';
 export const EXTRA_SMALL_DISPLAYS = 'screen and (max-width: 275px)';
+
+export const ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;

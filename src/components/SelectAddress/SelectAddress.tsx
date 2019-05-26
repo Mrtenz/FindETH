@@ -1,6 +1,5 @@
 import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { Button, Heading, Input, Typography } from '@mycrypto/ui';
+import { Input, Typography } from '@mycrypto/ui';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../store';
 import { setAddress } from '../../store/search';
@@ -9,18 +8,8 @@ import { resolveName, setResolvedAddress } from '../../store/ens';
 import Spinner from '../ui/Spinner';
 import Address from '../ui/Address';
 import { FlowProps } from '../Flow/Flow';
-
-const ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;
-
-const CustomButton = styled(Button)`
-  margin-top: 18px;
-  background: ${({ disabled, theme }) => disabled && theme.switchBackgroundGreyable};
-
-  &:hover {
-    background: ${({ disabled, theme }) => disabled && theme.switchBackgroundGreyable};
-    cursor: ${({ disabled }) => (disabled && 'default') || 'pointer'};
-  }
-`;
+import Button from '../ui/Button';
+import { ADDRESS_REGEX } from '../../config';
 
 interface StateProps {
   address: string;
@@ -94,9 +83,9 @@ const SelectAddress: FunctionComponent<Props> = ({
         </Spinner>
       )}
       {resolvedAddress && <Address address={resolvedAddress} />}
-      <CustomButton disabled={!isValid} onClick={handleNext}>
+      <Button disabled={!isValid} onClick={handleNext}>
         Next
-      </CustomButton>
+      </Button>
     </>
   );
 };

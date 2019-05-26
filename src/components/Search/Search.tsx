@@ -8,6 +8,7 @@ import { Container } from 'styled-bootstrap-grid';
 import { BigTypography } from './StyledSearch';
 import SearchAddress from './SearchAddress';
 import SearchEther from './SearchEther';
+import SearchToken from './SearchToken';
 import { getFullPath } from '../../utils';
 import HowToAccess from './HowToAccess/HowToAccess';
 
@@ -22,6 +23,17 @@ interface StateProps {
 }
 
 type Props = StateProps & RouteComponentProps;
+
+const getName = (type: SearchType): string => {
+  switch (type) {
+    case SearchType.Address:
+      return 'address';
+    case SearchType.Ether:
+      return 'Ether';
+    case SearchType.Token:
+      return 'token';
+  }
+};
 
 const Search: FunctionComponent<Props> = ({
   isSearching,
@@ -38,9 +50,7 @@ const Search: FunctionComponent<Props> = ({
   return (
     <Container>
       {isSearching ? (
-        <Heading as="h2">
-          Searching for {type === SearchType.Ether ? 'Ether' : 'address'}...
-        </Heading>
+        <Heading as="h2">Searching for {getName(type)}...</Heading>
       ) : (
         <Heading as="h2">Search completed</Heading>
       )}
@@ -55,6 +65,7 @@ const Search: FunctionComponent<Props> = ({
       <Router basepath="/search">
         <SearchAddress path="address" />
         <SearchEther path="ether" />
+        <SearchToken path="token" />
       </Router>
 
       <HowToAccess />

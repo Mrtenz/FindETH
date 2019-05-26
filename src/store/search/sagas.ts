@@ -38,7 +38,8 @@ function* searchSaga(): SagaIterator {
 
 const handlers: { [key: number]: (currentAddress: string) => SagaIterator } = {
   [SearchType.Address]: searchNextAddress,
-  [SearchType.Ether]: searchNextEther
+  [SearchType.Ether]: searchNextEther,
+  [SearchType.Token]: searchNextEther // Ether and tokens use the same logic here
 };
 
 function* searchNextSaga(): SagaIterator {
@@ -48,7 +49,6 @@ function* searchNextSaga(): SagaIterator {
     currentIndex,
     currentAddressIndex,
     depth,
-    address,
     isSearching,
     type
   }: SearchState = yield select(getSearchState);
@@ -100,7 +100,12 @@ function* searchNextSaga(): SagaIterator {
 function* searchNextEther(currentAddress: string): SagaIterator {
   const { currentPath, currentAddressIndex }: SearchState = yield select(getSearchState);
 
-  yield put(addAddress(currentAddress, getFullPath(currentPath!, currentAddressIndex)));
+  yield put(
+    addAddress({
+      address: currentAddress,
+      path: getFullPath(currentPath!, currentAddressIndex)
+    })
+  );
 
   return false;
 }
