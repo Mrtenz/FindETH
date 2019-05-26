@@ -17,7 +17,13 @@ const Main: FunctionComponent<Props> = ({ handleConnect, children }) => {
         ? new providers.Web3Provider((window as any).web3.currentProvider)
         : new providers.JsonRpcProvider('https://api.mycryptoapi.com/eth');
 
-    handleConnect(provider);
+    const fallback = new providers.FallbackProvider([
+      provider,
+      new providers.InfuraProvider(),
+      new providers.EtherscanProvider()
+    ]);
+
+    handleConnect(fallback);
   });
 
   return <StyledMain>{children}</StyledMain>;
