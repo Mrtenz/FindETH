@@ -19,9 +19,9 @@ const configuration: Configuration = {
     new FaviconsWebpackPlugin(join(__dirname, '../src/assets/images/logos/ethereum.svg')),
     new CspHtmlWebpackPlugin({
       'default-src': `'none'`,
-      'script-src': `'self' https://www.googletagmanager.com https://www.google-analytics.com`,
+      'script-src': `'self' https://analytics.mycryptoapi.com`,
       'style-src': `'unsafe-inline'`,
-      'img-src': `'self' data: https://www.google-analytics.com`,
+      'img-src': `'self' data: https://analytics.mycryptoapi.com`,
       'font-src': `'self'`,
       'connect-src': `https://api.mycryptoapi.com/eth`
     }),
