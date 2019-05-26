@@ -41,7 +41,7 @@ const SearchToken: FunctionComponent<Props> = ({ isSearching, addresses, balance
         <Spinner>Loading balances</Spinner>
       </TextAlign>
     )}
-    {!isSearching && addresses.length === 0 && (
+    {!isSearching && addresses.length === 0 && balances.length === 0 && (
       <Message type="error" style={{ marginTop: '18px' }}>
         <Typography>No addresses with {token.name} found.</Typography>
       </Message>
