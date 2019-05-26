@@ -3,19 +3,19 @@ import { Col, Container, Row } from 'styled-bootstrap-grid';
 import { StyledHeading } from './StyledHeader';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
-import { history } from '../../../App';
 import Modal from '../Modal';
 import { Network } from '../../../config';
 import { Network as NetworkIndicator, Typography } from '@mycrypto/ui';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 interface StateProps {
   isSearching: boolean;
   network?: Network;
 }
 
-type Props = StateProps;
+type Props = StateProps & RouteComponentProps;
 
-const Header: FunctionComponent<Props> = ({ isSearching, network }) => {
+const Header: FunctionComponent<Props> = ({ isSearching, network, history }) => {
   const [isVisible, setVisible] = useState<boolean>(false);
 
   const handleClick = () => {
@@ -28,7 +28,7 @@ const Header: FunctionComponent<Props> = ({ isSearching, network }) => {
   };
 
   const handleConfirm = () => {
-    history.navigate('/');
+    history.push('/');
     setVisible(false);
   };
 
@@ -62,4 +62,4 @@ const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state
   network: state.network.current
 });
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

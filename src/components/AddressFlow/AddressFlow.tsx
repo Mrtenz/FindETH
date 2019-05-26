@@ -1,13 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import { RouteComponentProps } from '@reach/router';
 import Flow from '../Flow';
 import SelectAddress from '../SelectAddress';
 import SelectWallet from '../SelectWallet';
 import SelectOptions from '../SelectOptions';
 import { connect, MapDispatchToProps } from 'react-redux';
 import { search } from '../../store/search';
-import { history } from '../../App';
 import { SearchType } from '../../config';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 interface DispatchProps {
   handleDone(): void;
@@ -35,14 +34,19 @@ const AddressFlow: FunctionComponent<Props> = ({ handleDone }) => (
   />
 );
 
-const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
+const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps> = (
+  dispatch,
+  { history }
+) => ({
   handleDone(): void {
-    history.navigate('/search/address');
+    history.push('/search/address');
     dispatch(search(SearchType.Address));
   }
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(AddressFlow);
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(AddressFlow)
+);

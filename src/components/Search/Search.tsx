@@ -3,7 +3,6 @@ import { Heading, Typography } from '@mycrypto/ui';
 import { connect, MapStateToProps } from 'react-redux';
 import { DerivationPath, SearchType } from '../../config';
 import { ApplicationState } from '../../store';
-import { RouteComponentProps, Router } from '@reach/router';
 import { Container } from 'styled-bootstrap-grid';
 import { BigTypography } from './StyledSearch';
 import SearchAddress from './SearchAddress';
@@ -11,6 +10,7 @@ import SearchEther from './SearchEther';
 import SearchToken from './SearchToken';
 import { getFullPath } from '../../utils';
 import HowToAccess from './HowToAccess/HowToAccess';
+import { Route, Switch } from 'react-router';
 
 interface StateProps {
   isSearching: boolean;
@@ -22,7 +22,7 @@ interface StateProps {
   type: SearchType;
 }
 
-type Props = StateProps & RouteComponentProps;
+type Props = StateProps;
 
 const getName = (type: SearchType): string => {
   switch (type) {
@@ -62,11 +62,11 @@ const Search: FunctionComponent<Props> = ({
         <Typography muted={true}>{getFullPath(currentPath, currentAddressIndex)}</Typography>
       )}
 
-      <Router basepath="/search">
-        <SearchAddress path="address" />
-        <SearchEther path="ether" />
-        <SearchToken path="token" />
-      </Router>
+      <Switch>
+        <Route exact={true} path="/search/address" component={SearchAddress} />
+        <Route exact={true} path="/search/ether" component={SearchEther} />
+        <Route exact={true} path="/search/token" component={SearchToken} />
+      </Switch>
 
       <HowToAccess />
     </Container>

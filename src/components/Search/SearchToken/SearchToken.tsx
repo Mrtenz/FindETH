@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
 import { Table, Typography } from '@mycrypto/ui';
-import { RouteComponentProps } from '@reach/router';
 import { Address, Balance } from '../../../store/network';
 import { default as AddressItem } from '../../ui/Address';
 import Spinner from '../../ui/Spinner';
@@ -17,7 +16,7 @@ interface StateProps {
   token: Token;
 }
 
-type Props = StateProps & RouteComponentProps;
+type Props = StateProps;
 
 const SearchToken: FunctionComponent<Props> = ({ isSearching, addresses, balances, token }) => (
   <>
