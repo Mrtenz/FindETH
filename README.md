@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Mrtenz/FindETH.svg?branch=master)](https://travis-ci.com/Mrtenz/FindETH)
 
-A tool to help you find your Ether or Ethereum address, by scanning a bunch of derivation paths. It currently supports Ledger and Trezor devices and mnemonic phrases. It has experimental support for Ledger devices over Bluetooth.
+A tool to help you find your Ethereum address, Ether or tokens, by scanning a bunch of derivation paths. It currently supports Ledger and Trezor devices and mnemonic phrases. It has experimental support for Ledger devices over Bluetooth.
 
 <https://findeth.io>
 
