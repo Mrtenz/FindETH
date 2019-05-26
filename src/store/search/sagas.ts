@@ -13,7 +13,6 @@ import {
 } from './actions';
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
-import { history } from '../../App';
 import { SearchType } from '../../config';
 import { addAddress, clearBalances } from '../network';
 import { getFullPath } from '../../utils';
@@ -36,6 +35,11 @@ function* searchSaga(): SagaIterator {
   yield put(setAddressNotFound(false));
   yield put(searchNext());
 }
+
+const handlers: { [key: number]: (currentAddress: string) => SagaIterator } = {
+  [SearchType.Address]: searchNextAddress,
+  [SearchType.Ether]: searchNextEther
+};
 
 function* searchNextSaga(): SagaIterator {
   const {
@@ -78,13 +82,10 @@ function* searchNextSaga(): SagaIterator {
       currentAddressIndex
     );
 
-    if (type === SearchType.Ether) {
-      yield call(searchNextEther, foundAddress, getFullPath(currentPath, currentAddressIndex));
-    } else {
-      const done = yield call(searchNextAddress, foundAddress, address!);
-      if (done) {
-        return;
-      }
+    const handler = handlers[type];
+    const done = yield call(handler, foundAddress);
+    if (done) {
+      return;
     }
   } catch (error) {
     yield put(checkFailed());
@@ -96,20 +97,22 @@ function* searchNextSaga(): SagaIterator {
   yield put(searchNext());
 }
 
-function* searchNextEther(address: string, path: string): SagaIterator {
-  yield put(
-    addAddress({
-      address,
-      path
-    })
-  );
+function* searchNextEther(currentAddress: string): SagaIterator {
+  const { currentPath, currentAddressIndex }: SearchState = yield select(getSearchState);
+
+  yield put(addAddress(currentAddress, getFullPath(currentPath!, currentAddressIndex)));
+
+  return false;
 }
 
-function* searchNextAddress(foundAddress: string, address: string): SagaIterator {
-  if (foundAddress.toLowerCase() === address.toLowerCase()) {
+function* searchNextAddress(currentAddress: string): SagaIterator {
+  const { address }: SearchState = yield select(getSearchState);
+
+  if (currentAddress.toLowerCase() === address!.toLowerCase()) {
     yield put(setAddressFound(true));
     yield put(setSearching(false));
     return true;
   }
+
   return false;
 }
