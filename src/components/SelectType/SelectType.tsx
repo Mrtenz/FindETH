@@ -16,6 +16,9 @@ const SelectType: FunctionComponent<Props> = () => (
     <Link to="/flow/ether">
       <SearchButton>Ether</SearchButton>
     </Link>
+    <Link to="/flow/token">
+      <SearchButton>A token</SearchButton>
+    </Link>
   </Container>
 );
 

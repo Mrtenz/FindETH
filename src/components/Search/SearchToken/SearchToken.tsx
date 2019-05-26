@@ -8,16 +8,18 @@ import { default as AddressItem } from '../../ui/Address';
 import Spinner from '../../ui/Spinner';
 import TextAlign from '../../ui/Align';
 import Message from '../../ui/Message';
+import { Token } from '../../../store/tokens';
 
 interface StateProps {
   isSearching: boolean;
   addresses: Address[];
   balances: Balance[];
+  token: Token;
 }
 
 type Props = StateProps & RouteComponentProps;
 
-const SearchEther: FunctionComponent<Props> = ({ isSearching, addresses, balances }) => (
+const SearchToken: FunctionComponent<Props> = ({ isSearching, addresses, balances, token }) => (
   <>
     <Table
       head={['Address', 'Path', 'Balance']}
@@ -31,7 +33,7 @@ const SearchEther: FunctionComponent<Props> = ({ isSearching, addresses, balance
             noMargin={true}
           />,
           balance.path,
-          `${balance.balance} ETH`
+          `${balance.balance} ${token.symbol}`
         ])}
     />
     {(isSearching || addresses.length > 0) && (
@@ -41,7 +43,7 @@ const SearchEther: FunctionComponent<Props> = ({ isSearching, addresses, balance
     )}
     {!isSearching && addresses.length === 0 && balances.length === 0 && (
       <Message type="error" style={{ marginTop: '18px' }}>
-        <Typography>No addresses with Ether found.</Typography>
+        <Typography>No addresses with {token.name} found.</Typography>
       </Message>
     )}
   </>
@@ -50,7 +52,8 @@ const SearchEther: FunctionComponent<Props> = ({ isSearching, addresses, balance
 const mapStateToProps: MapStateToProps<StateProps, {}, ApplicationState> = state => ({
   isSearching: state.search.isSearching,
   addresses: state.network.addresses,
-  balances: state.network.balances
+  balances: state.network.balances,
+  token: state.tokens.token!
 });
 
-export default connect(mapStateToProps)(SearchEther);
+export default connect(mapStateToProps)(SearchToken);
