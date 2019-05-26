@@ -23,7 +23,7 @@ const configuration: Configuration = {
       'style-src': `'unsafe-inline'`,
       'img-src': `'self' data: https://analytics.mycryptoapi.com`,
       'font-src': `'self'`,
-      'connect-src': `https://api.mycryptoapi.com/eth`
+      'connect-src': `https://api.mycryptoapi.com/eth https://mainnet.infura.io https://api.etherscan.io`
     }),
     new CnameWebpackPlugin({
       domain: 'findeth.io'
