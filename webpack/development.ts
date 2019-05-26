@@ -7,6 +7,9 @@ import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
 const configuration: Configuration = {
   mode: 'development',
   devtool: 'eval-source-map',
+  output: {
+    filename: '[name].[hash].js'
+  },
   devServer: {
     https: true,
     hot: true,
