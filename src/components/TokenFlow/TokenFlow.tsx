@@ -7,6 +7,7 @@ import { search } from '../../store/search';
 import { SearchType } from '../../config';
 import SelectToken from '../SelectToken';
 import { RouteComponentProps, withRouter } from 'react-router';
+import EnsureConnection from '../EnsureConnection/EnsureConnection';
 
 interface DispatchProps {
   handleDone(): void;
@@ -15,23 +16,25 @@ interface DispatchProps {
 type Props = DispatchProps & RouteComponentProps;
 
 const TokenFlow: FunctionComponent<Props> = ({ handleDone }) => (
-  <Flow
-    components={[
-      {
-        title: 'Select your token',
-        Component: SelectToken
-      },
-      {
-        title: 'Unlock your account',
-        Component: SelectWallet
-      },
-      {
-        title: 'Choose your options',
-        Component: SelectOptions
-      }
-    ]}
-    onDone={handleDone}
-  />
+  <EnsureConnection>
+    <Flow
+      components={[
+        {
+          title: 'Select your token',
+          Component: SelectToken
+        },
+        {
+          title: 'Unlock your account',
+          Component: SelectWallet
+        },
+        {
+          title: 'Choose your options',
+          Component: SelectOptions
+        }
+      ]}
+      onDone={handleDone}
+    />
+  </EnsureConnection>
 );
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps> = (

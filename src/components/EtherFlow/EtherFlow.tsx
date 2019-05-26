@@ -6,6 +6,7 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import { search } from '../../store/search';
 import { SearchType } from '../../config';
 import { RouteComponentProps, withRouter } from 'react-router';
+import EnsureConnection from '../EnsureConnection/EnsureConnection';
 
 interface DispatchProps {
   handleDone(): void;
@@ -14,19 +15,21 @@ interface DispatchProps {
 type Props = DispatchProps & RouteComponentProps;
 
 const EtherFlow: FunctionComponent<Props> = ({ handleDone }) => (
-  <Flow
-    components={[
-      {
-        title: 'Unlock your account',
-        Component: SelectWallet
-      },
-      {
-        title: 'Choose your options',
-        Component: SelectOptions
-      }
-    ]}
-    onDone={handleDone}
-  />
+  <EnsureConnection>
+    <Flow
+      components={[
+        {
+          title: 'Unlock your account',
+          Component: SelectWallet
+        },
+        {
+          title: 'Choose your options',
+          Component: SelectOptions
+        }
+      ]}
+      onDone={handleDone}
+    />
+  </EnsureConnection>
 );
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps> = (
