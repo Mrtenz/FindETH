@@ -23,8 +23,7 @@ const LedgerWalletItem: FunctionComponent<Props> = ({ onNext }) => {
 
   return (
     <WalletItem
-      name="Ledger Device"
-      description="Connect using your Ledger device."
+      name="Ledger"
       icon={ledgerIcon}
       wallet={isWebUSBSupported ? LedgerUSB : LedgerU2F}
       onNext={onNext}
