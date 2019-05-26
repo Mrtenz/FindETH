@@ -78,12 +78,7 @@ const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementatio
           />
         </Typography>
       </Modal>
-      <WalletItem
-        name="Mnemonic phrase"
-        description="Connect using a mnemonic phrase."
-        icon={keyIcon}
-        onClick={handleClick}
-      />
+      <WalletItem name="Mnemonic" icon={keyIcon} onClick={handleClick} />
     </>
   );
 };
