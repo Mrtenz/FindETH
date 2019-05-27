@@ -4,7 +4,10 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 const INFURA_PROJECT_ID = 'bfea47cc97c440a687c8762553739a94';
 
 // The mnemonic phrase is read from a file called '.secret'.
-const MNEMONIC_PHRASE = fs.readFileSync('./.secret', 'utf8').split(/\n/)[0];
+let MNEMONIC_PHRASE;
+try {
+  MNEMONIC_PHRASE = fs.readFileSync('./.secret', 'utf8').split(/\n/)[0];
+} catch {}
 
 module.exports = {
   networks: {
