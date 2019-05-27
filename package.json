@@ -13,7 +13,11 @@
     "analyze": "webpack --config ./webpack/analyzer.ts",
     "tscheck": "tsc --noEmit --project tsconfig.json",
     "tslint": "tslint --project .",
-    "prettier:diff": "prettier --write --config ./.prettierrc --list-different './**/*.ts' './**/*.tsx'"
+    "prettier:diff": "prettier --write --config ./.prettierrc --list-different './**/*.ts' './**/*.tsx'",
+    "test": "yarn run test:truffle",
+    "test:truffle": "truffle test",
+    "truffle:migrate:ropsten": "truffle migrate --network ropsten",
+    "truffle:migrate:live": "truffle migrate --network live"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
