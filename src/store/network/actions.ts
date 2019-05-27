@@ -1,7 +1,7 @@
 import { ActionCreator } from 'redux';
 import {
   ADD_ADDRESS,
-  ADD_BALANCE,
+  ADD_BALANCES,
   AddAddressAction,
   AddBalanceAction,
   Address,
@@ -10,6 +10,8 @@ import {
   ClearBalancesAction,
   CONNECT,
   ConnectAction,
+  FETCH_BALANCES,
+  FetchBalancesAction,
   SET_NETWORK,
   SetNetworkAction
 } from './types';
@@ -35,7 +37,11 @@ export const addAddress: ActionCreator<AddAddressAction> = (payload: Address) =>
   payload
 });
 
-export const addBalance: ActionCreator<AddBalanceAction> = (payload: Balance) => ({
-  type: ADD_BALANCE,
+export const fetchBalances: ActionCreator<FetchBalancesAction> = () => ({
+  type: FETCH_BALANCES
+});
+
+export const addBalances: ActionCreator<AddBalanceAction> = (payload: Balance[]) => ({
+  type: ADD_BALANCES,
   payload
 });

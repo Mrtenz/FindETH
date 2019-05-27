@@ -1,7 +1,7 @@
 import { Reducer } from 'redux';
 import {
   ADD_ADDRESS,
-  ADD_BALANCE,
+  ADD_BALANCES,
   NetworkActions,
   NetworkState,
   CLEAR_BALANCES,
@@ -40,11 +40,11 @@ export const networkReducer: Reducer<NetworkState, NetworkActions> = (
         ...state,
         addresses: [...state.addresses, action.payload]
       };
-    case ADD_BALANCE:
+    case ADD_BALANCES:
       return {
         ...state,
-        balances: [...state.balances, action.payload],
-        addresses: state.addresses.filter(address => address.address !== action.payload.address)
+        balances: [...state.balances, ...action.payload],
+        addresses: []
       };
     default:
       return state;

@@ -14,7 +14,7 @@ import {
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
 import { SearchType } from '../../config';
-import { addAddress, clearBalances } from '../network';
+import { addAddress, clearBalances, fetchBalances } from '../network';
 import { getFullPath } from '../../utils';
 
 export function* searchRootSaga(): SagaIterator {
@@ -61,6 +61,8 @@ function* searchNextSaga(): SagaIterator {
   if (!currentPath) {
     if (type === SearchType.Address) {
       yield put(setAddressNotFound(true));
+    } else {
+      yield put(fetchBalances());
     }
 
     yield put(setSearching(false));
