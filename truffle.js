@@ -18,7 +18,8 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(MNEMONIC_PHRASE, `https://ropsten.infura.io/v3/${INFURA_PROJECT_ID}`),
       network_id: '3',
-      gas: 5500000
+      gas: 5500000,
+      gasPrice: 5000000000
     },
 
     live: {
@@ -26,7 +27,8 @@ module.exports = {
         new HDWalletProvider(MNEMONIC_PHRASE, `https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`),
       network_id: '1',
       gas: 5500000,
-      timeoutBlocks: 200
+      timeoutBlocks: 200,
+      gasPrice: 5000000000
     }
   },
 
