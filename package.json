@@ -68,7 +68,6 @@
     "tslint-microsoft-contrib": "^6.1.1",
     "tslint-react": "^4.0.0",
     "typescript": "^3.4.5",
-    "web3": "^1.0.0-beta.55",
     "webpack": "^4.31.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
