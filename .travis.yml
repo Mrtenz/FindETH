@@ -8,11 +8,15 @@ cache:
 
 before_install:
   - npm install -g yarn
+  - npm install -g ganache-cli
 
 install:
   - yarn --silent
 
 script:
+  - ganache-cli &
+  - yarn run truffle:migrate
+  - yarn run test
   - yarn run prettier:diff
   - yarn run tslint
   - yarn run tscheck
