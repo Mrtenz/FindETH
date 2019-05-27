@@ -2,109 +2,23 @@ import { Token } from '../store/tokens';
 import { Contract, providers, utils } from 'ethers';
 
 /**
- * Partial ERC-20 token ABI, with the functions we're interested in:
- *  - name()
- *  - decimals()
- *  - symbol()
- *  - balanceOf()
+ * Partial ERC-20 token ABI, with the functions we're interested in.
  */
 const TOKEN_ABI = [
-  {
-    constant: true,
-    inputs: [],
-    name: 'name',
-    outputs: [
-      {
-        name: '',
-        type: 'string'
-      }
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: 'decimals',
-    outputs: [
-      {
-        name: '',
-        type: 'uint8'
-      }
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: 'symbol',
-    outputs: [
-      {
-        name: '',
-        type: 'string'
-      }
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
-  },
-  {
-    constant: true,
-    inputs: [
-      {
-        name: '_owner',
-        type: 'address'
-      }
-    ],
-    name: 'balanceOf',
-    outputs: [
-      {
-        name: 'balance',
-        type: 'uint256'
-      }
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
-  }
+  'name() view returns (string name)',
+  'decimals() view returns (uint8 decimals)',
+  'symbol() view returns (string symbol)'
 ];
 
 /**
- * The ABI above breaks with some contracts due to a bug in Ethers.js. To work around this issue,
- * we have to query the contract again, with `bytes32` instead of `string` as output.
+ * The ABI above breaks with some contracts that are technically not ERC-20 compliant. To work
+ * around this issue, we have to query the contract again, with `bytes32` instead of `string` as
+ * output.
  */
-const ALTERNATIVE_METADATA_ABI = [
-  {
-    constant: true,
-    inputs: [],
-    name: 'name',
-    outputs: [
-      {
-        name: '',
-        type: 'bytes32'
-      }
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: 'symbol',
-    outputs: [
-      {
-        name: '',
-        type: 'bytes32'
-      }
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
-  }
+const ALTERNATIVE_TOKEN_ABI = [
+  'name() view returns (bytes32 name)',
+  'decimals() view returns (uint8 decimals)',
+  'symbol() view returns (bytes32 symbol)'
 ];
 
 const getMetaData = async (contract: Contract): Promise<{ name: string; symbol: string }> => {
@@ -114,21 +28,15 @@ const getMetaData = async (contract: Contract): Promise<{ name: string; symbol: 
       symbol: await contract.symbol()
     };
   } catch {
-    // Workaround for issue in Ethers.js
     const alternativeContract = new Contract(
       contract.address,
-      ALTERNATIVE_METADATA_ABI,
+      ALTERNATIVE_TOKEN_ABI,
       contract.provider
     );
 
-    const name = Buffer.from((await alternativeContract.name()).substring(2), 'hex');
-    const symbol = Buffer.from((await alternativeContract.symbol()).substring(2), 'hex');
-
-    const decoder = new TextDecoder();
-
     return {
-      name: decoder.decode(name),
-      symbol: decoder.decode(symbol)
+      name: utils.parseBytes32String(await alternativeContract.name()),
+      symbol: utils.parseBytes32String(await alternativeContract.symbol())
     };
   }
 };
