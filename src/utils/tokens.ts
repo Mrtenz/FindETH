@@ -156,21 +156,3 @@ export const getTokenInfo = async (
     address
   };
 };
-
-/**
- * Get the token balance for an address. This returns the raw balance and ignores the token
- * decimals. If the specified address is not an ERC-20 (compatible) token, an error is thrown.
- *
- * @param {Provider} provider The provider to use.
- * @param {Token} token The token to get the balance for.
- * @param {string} address The address to get the balance for.
- * @return {Promise<BigNumber>} A Promise with the token balance as BigNumber.
- */
-export const getTokenBalance = async (
-  provider: providers.Provider,
-  token: Token,
-  address: string
-): Promise<utils.BigNumber> => {
-  const contract = new Contract(token.address, TOKEN_ABI, provider);
-  return contract.balanceOf(address);
-};
