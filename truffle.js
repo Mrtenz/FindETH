@@ -1,25 +1,10 @@
-require('regenerator-runtime/runtime');
-const LedgerProvider = require('truffle-ledger-provider');
+const fs = require('fs');
+const HDWalletProvider = require('truffle-hdwallet-provider');
 
 const INFURA_PROJECT_ID = 'bfea47cc97c440a687c8762553739a94';
 
-const LEDGER_OPTIONS = {
-  askConfirm: true,
-  accountsLength: 1,
-  accountsOffset: 0
-};
-
-const LEDGER_ROPSTEN_OPTIONS = {
-  ...LEDGER_OPTIONS,
-  networkId: 3,
-  path: `44'/1'/0'/0`
-};
-
-const LEDGER_MAINNET_OPTIONS = {
-  ...LEDGER_OPTIONS,
-  networkId: 1,
-  path: `44'/60'/0'/0`
-};
+// The mnemonic phrase is read from a file called '.secret'.
+const MNEMONIC_PHRASE = fs.readFileSync('./.secret', 'utf8').split(/\n/)[0];
 
 module.exports = {
   networks: {
@@ -31,17 +16,15 @@ module.exports = {
 
     ropsten: {
       provider: () =>
-        new LedgerProvider(LEDGER_ROPSTEN_OPTIONS, `ropsten.infura.io/v3/${INFURA_PROJECT_ID}`),
-      network_id: 3,
-      gas: 5500000,
-      timeoutBlocks: 200,
-      skipDryRun: true
+        new HDWalletProvider(MNEMONIC_PHRASE, `https://ropsten.infura.io/v3/${INFURA_PROJECT_ID}`),
+      network_id: '3',
+      gas: 5500000
     },
 
     live: {
       provider: () =>
-        new LedgerProvider(LEDGER_MAINNET_OPTIONS, `mainnet.infura.io/v3/${INFURA_PROJECT_ID}`),
-      network_id: 3,
+        new HDWalletProvider(MNEMONIC_PHRASE, `https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`),
+      network_id: '1',
       gas: 5500000,
       timeoutBlocks: 200
     }

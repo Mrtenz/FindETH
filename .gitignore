@@ -27,3 +27,4 @@ typings/
 dist/
 server.pem
 build/
+.secret
