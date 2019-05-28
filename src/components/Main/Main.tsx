@@ -2,10 +2,17 @@ import React, { FunctionComponent, useEffect } from 'react';
 import { StyledMain } from './StyledMain';
 import { connect, MapDispatchToProps } from 'react-redux';
 import { connectProvider } from '../../store/network';
-import { providers } from 'ethers';
+import {
+  EtherscanProvider,
+  FallbackProvider,
+  InfuraProvider,
+  JsonRpcProvider,
+  Provider,
+  Web3Provider
+} from '@ethersproject/providers';
 
 interface DispatchProps {
-  handleConnect(provider: providers.Provider): void;
+  handleConnect(provider: Provider): void;
 }
 
 type Props = DispatchProps;
@@ -14,13 +21,13 @@ const Main: FunctionComponent<Props> = ({ handleConnect, children }) => {
   useEffect(() => {
     const provider =
       (window as any).web3 && (window as any).web3.currentProvider
-        ? new providers.Web3Provider((window as any).web3.currentProvider)
-        : new providers.JsonRpcProvider('https://api.mycryptoapi.com/eth');
+        ? new Web3Provider((window as any).web3.currentProvider)
+        : new JsonRpcProvider('https://api.mycryptoapi.com/eth');
 
-    const fallback = new providers.FallbackProvider([
+    const fallback = new FallbackProvider([
       provider,
-      new providers.InfuraProvider(),
-      new providers.EtherscanProvider()
+      new InfuraProvider(),
+      new EtherscanProvider()
     ]);
 
     handleConnect(fallback);
@@ -30,7 +37,7 @@ const Main: FunctionComponent<Props> = ({ handleConnect, children }) => {
 };
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
-  handleConnect(provider: providers.Provider): void {
+  handleConnect(provider: Provider): void {
     dispatch(connectProvider(provider));
   }
 });

@@ -1,10 +1,7 @@
 import Wallet from './Wallet';
-import { utils, wordlists } from 'ethers';
+import { HDNode, isValidMnemonic, mnemonicToSeed } from '@ethersproject/hdnode';
 import { ALL_DERIVATION_PATHS, DerivationPath } from '../config';
 import { getFullPath } from '../utils';
-
-// TODO: Temporary workaround for a bug in Ethers.js
-const HDNode = require('ethers').utils.HDNode;
 
 export default class MnemonicPhrase implements Wallet {
   private readonly mnemonicPhrase: string;
@@ -21,7 +18,7 @@ export default class MnemonicPhrase implements Wallet {
   }
 
   public async initialize(): Promise<void> {
-    if (!utils.HDNode.isValidMnemonic(this.mnemonicPhrase)) {
+    if (!isValidMnemonic(this.mnemonicPhrase)) {
       throw new Error('The mnemonic phrase you provided is invalid.');
     }
   }
@@ -35,7 +32,7 @@ export default class MnemonicPhrase implements Wallet {
    *
    * @return {Promise<HDNode>} A Promise with an instance of the HDKey class.
    */
-  private async getHDNode(): Promise<typeof HDNode> {
-    return utils.HDNode.fromMnemonic(this.mnemonicPhrase, wordlists.en, this.passPhrase);
+  private async getHDNode(): Promise<HDNode> {
+    return HDNode.fromSeed(mnemonicToSeed(this.mnemonicPhrase));
   }
 }

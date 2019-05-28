@@ -80,6 +80,13 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@ethersproject/bignumber": "^5.0.0-beta.126",
+    "@ethersproject/contracts": "^5.0.0-beta.129",
+    "@ethersproject/hdnode": "^5.0.0-beta.125",
+    "@ethersproject/keccak256": "^5.0.0-beta.124",
+    "@ethersproject/providers": "^5.0.0-beta.131",
+    "@ethersproject/transactions": "^5.0.0-beta.125",
+    "@ethersproject/units": "^5.0.0-beta.124",
     "@hot-loader/react-dom": "^16.8.6",
     "@ledgerhq/hw-app-eth": "^4.56.0",
     "@ledgerhq/hw-transport": "^4.56.0",
@@ -87,7 +94,6 @@
     "@ledgerhq/hw-transport-web-ble": "^4.58.0",
     "@ledgerhq/hw-transport-webusb": "^4.56.0",
     "@mycrypto/ui": "^0.16.2",
-    "ethers": "^4.0.28",
     "hdkey": "^1.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

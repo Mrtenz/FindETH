@@ -15,10 +15,10 @@ import {
   SET_NETWORK,
   SetNetworkAction
 } from './types';
-import { providers } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import { Network } from '../../config';
 
-export const connectProvider: ActionCreator<ConnectAction> = (payload: providers.Provider) => ({
+export const connectProvider: ActionCreator<ConnectAction> = (payload: Provider) => ({
   type: CONNECT,
   payload
 });

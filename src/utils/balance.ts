@@ -1,14 +1,13 @@
 import { Address, Balance } from '../store/network';
-import { Contract, providers, utils } from 'ethers';
 import { Token } from '../store/tokens';
 import { chunk } from './chunk';
+import { Provider } from '@ethersproject/providers';
+import { Contract } from '@ethersproject/contracts';
+import { BigNumber } from '@ethersproject/bignumber';
+import { formatUnits } from '@ethersproject/units';
+import { BALANCE_SCANNER_ABI } from '../config';
 
 const SCANNER_ADDRESS = '0x82Ea2E7834Bb0D6224dd6fd7125d44b83d6D6809';
-
-const SCANNER_ABI = [
-  'etherBalances(address[] addresses) view returns (uint[] balances)',
-  'tokenBalances(address[] addresses, address token) view returns (uint[] balances)'
-];
 
 /**
  * Batch a function call per `batchSize` items.
@@ -49,16 +48,16 @@ const batch = async <
  *   balance.
  */
 export const getEtherBalances = async (
-  provider: providers.Provider,
+  provider: Provider,
   addresses: Address[]
 ): Promise<Balance[]> => {
-  const contract = new Contract(SCANNER_ADDRESS, SCANNER_ABI, provider);
+  const contract = new Contract(SCANNER_ADDRESS, BALANCE_SCANNER_ABI, provider);
 
   const balances = await batch<
     string,
-    utils.BigNumber,
+    BigNumber,
     undefined,
-    (addresses: string[]) => Promise<utils.BigNumber[]>
+    (addresses: string[]) => Promise<BigNumber[]>
   >(addresses.map(address => address.address), 1000, contract.etherBalances);
 
   return balances.reduce<Balance[]>((current, next, index) => {
@@ -66,7 +65,7 @@ export const getEtherBalances = async (
       ...current,
       {
         ...addresses[index],
-        balance: utils.formatUnits(next, 18)
+        balance: formatUnits(next, 18)
       }
     ];
   }, []);
@@ -84,17 +83,17 @@ export const getEtherBalances = async (
  *   balance.
  */
 export const getTokenBalances = async (
-  provider: providers.Provider,
+  provider: Provider,
   addresses: Address[],
   token: Token
 ): Promise<Balance[]> => {
-  const contract = new Contract(SCANNER_ADDRESS, SCANNER_ABI, provider);
+  const contract = new Contract(SCANNER_ADDRESS, BALANCE_SCANNER_ABI, provider);
 
   const balances = await batch<
     string,
-    utils.BigNumber,
+    BigNumber,
     string,
-    (addresses: string[]) => Promise<utils.BigNumber[]>
+    (addresses: string[]) => Promise<BigNumber[]>
   >(addresses.map(address => address.address), 1000, contract.tokenBalances, token.address);
 
   return balances.reduce<Balance[]>((current, next, index) => {
@@ -102,7 +101,7 @@ export const getTokenBalances = async (
       ...current,
       {
         ...addresses[index],
-        balance: utils.formatUnits(next, token.decimals)
+        balance: formatUnits(next, token.decimals)
       }
     ];
   }, []);

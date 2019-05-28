@@ -745,6 +745,285 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.6.6.tgz#004b98298d04c7ca3b4f50ca2035d4f60d2eed1b"
   integrity sha512-h4t4jFjtm1YV7UirAFuSuFGyLa+NNxjdkq6DpFLANNQY5rHueFZHVY+8Cu1HYVP6DrheB0kv4m5xPjo7eKT7yQ==
 
+"@ethersproject/abi@>5.0.0-beta.0":
+  version "5.0.0-beta.130"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abi/-/abi-5.0.0-beta.130.tgz#faef6e82f747c8efd06a0328a42803b94d3f9bb4"
+  integrity sha512-UWJONrlZj9zI86T0u66smiJfn3hPzwsRE/FYe+/QnwsWN3Saz1joO3TXgV7D3GCNR+yWdqP9370t3XB8N0ffEw==
+  dependencies:
+    "@ethersproject/address" ">5.0.0-beta.0"
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/constants" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/hash" ">5.0.0-beta.0"
+    "@ethersproject/keccak256" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/strings" ">5.0.0-beta.0"
+
+"@ethersproject/abstract-provider@>5.0.0-beta.0":
+  version "5.0.0-beta.126"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abstract-provider/-/abstract-provider-5.0.0-beta.126.tgz#640acc8c0ff1092d15da82d048d3d37cb295a916"
+  integrity sha512-3iwmPKTXgflz17YmPPb91FGtDm/Ehev/XatzXj9wMcM7zVZh8dS402aNfucuAQqne5UKVaU0z1Obfu09qyuIxA==
+  dependencies:
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/networks" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/transactions" ">5.0.0-beta.0"
+    "@ethersproject/web" ">5.0.0-beta.0"
+
+"@ethersproject/abstract-signer@>5.0.0-beta.0":
+  version "5.0.0-beta.126"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abstract-signer/-/abstract-signer-5.0.0-beta.126.tgz#6fb7195eaa722e4c106d2d49343912ac865127cb"
+  integrity sha512-PQsvpc6gJ2iNBzkw/60eS6BsdqhCQoipMoon1QzkJxIVpMlPPTNaVGNw802dVbvFZdj2/3buABUOd7lOBvtrOA==
+  dependencies:
+    "@ethersproject/abstract-provider" ">5.0.0-beta.0"
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+
+"@ethersproject/address@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/address/-/address-5.0.0-beta.125.tgz#0e75562d0fd493d73f23d31844521ef6556e1bc1"
+  integrity sha512-X742o0xmcpnv9X5pXKdzTmPfFdmMjQ21iu7LT3Hua2vPa/o6Ve0GQI295PhxUh/YoWdyH95FO4dK9KkAtl2r3Q==
+  dependencies:
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/keccak256" ">5.0.0-beta.0"
+    "@ethersproject/rlp" ">5.0.0-beta.0"
+    bn.js "^4.4.0"
+
+"@ethersproject/base64@>5.0.0-beta.0":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/base64/-/base64-5.0.0-beta.124.tgz#d2618a17aef60c774233e3bb839f718f9dbcb57a"
+  integrity sha512-O0RzYi1aw9hBZOLV8hQVP4LJO53VYdK1eXAkoKQOR6KXvyVGoqfp42X6ER9PYy3zSNnAG+EZ7eTPJbFdLUSkJg==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+
+"@ethersproject/basex@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/basex/-/basex-5.0.0-beta.125.tgz#a80ed0adf5945f7930303d9937d2d2e864006da9"
+  integrity sha512-6TpSnnjQUKRBZFFPiA6TVxRCuPliIMcI28DhGIr0yDZ1rJFotKx+10ykVl/6Flnspn2GL3DDRvTZhvgOcegAOA==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+
+"@ethersproject/bignumber@>5.0.0-beta.0", "@ethersproject/bignumber@^5.0.0-beta.126":
+  version "5.0.0-beta.126"
+  resolved "https://registry.yarnpkg.com/@ethersproject/bignumber/-/bignumber-5.0.0-beta.126.tgz#6fbdd72adcb9e691a21cf4ff6b15de09bb416aa1"
+  integrity sha512-my8+9Y09R4DJblaLrOc/ssbZjT7dRkbAoJUGCmT43GB4eRB0ViSVAeI+VoCoUZYvMlteZhH943VkS2CW5WcYbA==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    bn.js "^4.4.0"
+
+"@ethersproject/bytes@>5.0.0-beta.0":
+  version "5.0.0-beta.126"
+  resolved "https://registry.yarnpkg.com/@ethersproject/bytes/-/bytes-5.0.0-beta.126.tgz#17992dfbf4e1b8e972ad1caf04780d7d8ddc4ca6"
+  integrity sha512-MWBM1F2uypiDb3ROUJjBRtR0DGYvjAHqlOoaGBsTqq2DgF3swASF6Pfbqj+dS0zpY6XoO3w41e4+RCdjiAr0Jw==
+  dependencies:
+    "@ethersproject/errors" ">5.0.0-beta.0"
+
+"@ethersproject/constants@>5.0.0-beta.0":
+  version "5.0.0-beta.126"
+  resolved "https://registry.yarnpkg.com/@ethersproject/constants/-/constants-5.0.0-beta.126.tgz#cc3bab8269f085d0032730493433595ea0989bfd"
+  integrity sha512-wU1KhoSxxhCESX6JRVks/NAaB/WdIeMmEKDVu4tSsTG/IBogjxQY/jmVRhqKOw7eLvqOf6eTxcQ+11w/kU6HHg==
+  dependencies:
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+
+"@ethersproject/contracts@^5.0.0-beta.129":
+  version "5.0.0-beta.129"
+  resolved "https://registry.yarnpkg.com/@ethersproject/contracts/-/contracts-5.0.0-beta.129.tgz#a57e9c8bd6745bb34424d4259e2af621ca9020e8"
+  integrity sha512-8+0dul5MjN0UySlfazrrzlVCl6NvW0z+KgggerfguSizfkxWa6zr8YAnP74uZe5kHDjqQONF8/Prlm/AjEMM+A==
+  dependencies:
+    "@ethersproject/abi" ">5.0.0-beta.0"
+    "@ethersproject/abstract-provider" ">5.0.0-beta.0"
+    "@ethersproject/abstract-signer" ">5.0.0-beta.0"
+    "@ethersproject/address" ">5.0.0-beta.0"
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/constants" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/transactions" ">5.0.0-beta.0"
+
+"@ethersproject/errors@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/errors/-/errors-5.0.0-beta.125.tgz#136dbb96a60bbee111117c551c295c1458bb8d6e"
+  integrity sha512-cj+hfWNE/N6+kSmwxGJHtLGhvfW/jyPm0uCqzOK2jRFaUpcLoAbxiSampNOs0W1LtrdpYQ9Cel66G9W4h9a92A==
+
+"@ethersproject/hash@>5.0.0-beta.0":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/hash/-/hash-5.0.0-beta.124.tgz#2b7957a39f47e533419563596c5df86efeaf859e"
+  integrity sha512-gHyi1JeCicMlrDs51n2rlpcJn6YVgUEs7yYg2AbTZFfiiJGbzGqx7rv3wCKQWZXv9TMUrSRY4j9LHbnkpliAww==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/keccak256" ">5.0.0-beta.0"
+    "@ethersproject/strings" ">5.0.0-beta.0"
+
+"@ethersproject/hdnode@^5.0.0-beta.125":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/hdnode/-/hdnode-5.0.0-beta.125.tgz#4bb651994ef27e6b5185d75c96ecade0f1bc3093"
+  integrity sha512-2Z3/WfrQwH4aqN5iNtBjJXNQqJLtH85ZVCeSqPHOrSI9dEsfzWv5FlAByupKBr5HFOnrZOtZAF9TzNhRHkOYBA==
+  dependencies:
+    "@ethersproject/abstract-signer" ">5.0.0-beta.0"
+    "@ethersproject/basex" ">5.0.0-beta.0"
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/pbkdf2" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/sha2" ">5.0.0-beta.0"
+    "@ethersproject/signing-key" ">5.0.0-beta.0"
+    "@ethersproject/strings" ">5.0.0-beta.0"
+    "@ethersproject/transactions" ">5.0.0-beta.0"
+    "@ethersproject/wordlists" ">5.0.0-beta.0"
+
+"@ethersproject/keccak256@>5.0.0-beta.0", "@ethersproject/keccak256@^5.0.0-beta.124":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/keccak256/-/keccak256-5.0.0-beta.124.tgz#3428a4f979fb04ad661ee810313b3bd27a23a1e4"
+  integrity sha512-rCEsQwjr27aZAsZiBlWAbYnmctPD3JKXVUfvXV02NNtyU6Q9hycUZG2Ca0PCUHQs9vDH4U8y+0A9njMKnQop6Q==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    js-sha3 "0.5.7"
+
+"@ethersproject/networks@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/networks/-/networks-5.0.0-beta.125.tgz#9e359353e33f78a6f454ffa4cdf7f7e9acdac5b7"
+  integrity sha512-2uBtfSWsU5g8kCV4UdLBnt6V4pKrDLjcSAnHZc5bD1nnQzTms68y4FlZhTd/b9QaEtKNIUvNx/JDkpxV0cFgGg==
+  dependencies:
+    "@ethersproject/errors" ">5.0.0-beta.0"
+
+"@ethersproject/pbkdf2@>5.0.0-beta.0":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/pbkdf2/-/pbkdf2-5.0.0-beta.124.tgz#2f1818e122641290930ac3eb45a071f774f7cb59"
+  integrity sha512-++7VqAD6emeiWU6eWTY94qAHjxxFUbSJc06lTzS+pEQ3D6zwzrD9Sw+wH6O0DRJDcfnPmbceZ1Hg/JuBu4oC2g==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/sha2" ">5.0.0-beta.0"
+
+"@ethersproject/properties@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/properties/-/properties-5.0.0-beta.125.tgz#47415316db269a95a48ab1644d583845f5554d8f"
+  integrity sha512-ZzM82h0KDwwb4/MMPvxH5QGYg5D1P7MdsxIieexzZHZ72JEc/N5HfxTijcEAyBB481KNz42DkiJJuhbIK56vnQ==
+  dependencies:
+    "@ethersproject/errors" ">5.0.0-beta.0"
+
+"@ethersproject/providers@^5.0.0-beta.131":
+  version "5.0.0-beta.131"
+  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.0.0-beta.131.tgz#42e36c9d4762cfcafe1b46b8c43a7f7153ba2504"
+  integrity sha512-CjgktwKRYyUs1JJuB0hmldyhrv1TX59HOXMb4huJRXilut0Nok/ILwPUqrr26Hi6fV/CbGWt6kkeQHcmDbPVog==
+  dependencies:
+    "@ethersproject/abstract-provider" ">5.0.0-beta.0"
+    "@ethersproject/abstract-signer" ">5.0.0-beta.0"
+    "@ethersproject/address" ">5.0.0-beta.0"
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/constants" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/hash" ">5.0.0-beta.0"
+    "@ethersproject/networks" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/random" ">5.0.0-beta.0"
+    "@ethersproject/rlp" ">5.0.0-beta.0"
+    "@ethersproject/strings" ">5.0.0-beta.0"
+    "@ethersproject/transactions" ">5.0.0-beta.0"
+    "@ethersproject/web" ">5.0.0-beta.0"
+
+"@ethersproject/random@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/random/-/random-5.0.0-beta.125.tgz#2c69c22fdb6f7946fca247ec1c86b4626fa6bdc4"
+  integrity sha512-FpUdXLmFgNLm1Ne6zMaKAJ/ULDZaDN8ybSPmUPVyvOK9AjysuwwcS5CVZsZ9nbzN09vRktNBufDuj0Aq3Ii6TQ==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+
+"@ethersproject/rlp@>5.0.0-beta.0":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/rlp/-/rlp-5.0.0-beta.124.tgz#ca333bf52b03fac56ce94b90a701604bda526465"
+  integrity sha512-XRjIyOflY6VzSy62iBplESUWgRVJh9ImUwxILpMXLRxtTa7IGtu2Poe1L+O8LEm6gXvTOFd1uzrk/mXnkBoyHQ==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+
+"@ethersproject/sha2@>5.0.0-beta.0":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/sha2/-/sha2-5.0.0-beta.124.tgz#128b688faf901f1e71ededdeff3fec659bffc203"
+  integrity sha512-8tGvuWaBBLfjO01Tv1Imz6TpkGq/nMh8GdbcfTyyWLMTt/y3hBq8dW6M03i3H5b+lTZ6eh1I3TmiytTPqvJQuw==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    hash.js "1.1.3"
+
+"@ethersproject/signing-key@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/signing-key/-/signing-key-5.0.0-beta.125.tgz#eeb6c085b452d69c3e84fdb1b254181bc27e84eb"
+  integrity sha512-R/YhYIntII045mUrK5GNnule1ziuDaVF9/AA6DEQlErSB0fvyZUmFfSHxvvLtXljLJBuY/09gTzTZJoAI01+Gg==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    elliptic "6.3.3"
+
+"@ethersproject/strings@>5.0.0-beta.0":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/strings/-/strings-5.0.0-beta.125.tgz#031066eeb8ffd166d25b0600e0a9c75682c1bbd0"
+  integrity sha512-UQ4w+38bFAbbikk/Wtq1YayhIPGFP80ICJDxy0wtNW7U4k4rs6+tIFVOx6PnmqOJG4cDuxItlFsn4+1rIJcJ6Q==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/constants" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+
+"@ethersproject/transactions@>5.0.0-beta.0", "@ethersproject/transactions@^5.0.0-beta.125":
+  version "5.0.0-beta.125"
+  resolved "https://registry.yarnpkg.com/@ethersproject/transactions/-/transactions-5.0.0-beta.125.tgz#6d0b58a19e389d04c562b4331a4cbbd11504ae11"
+  integrity sha512-wENNySBWzixWJT3ahBSeuq0GWggcRcBn3PqgrgA/dXpyAwbvngAA4F1RCFcLgOgLdYgGL4i5zEjfma5QmrnYYw==
+  dependencies:
+    "@ethersproject/address" ">5.0.0-beta.0"
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/constants" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/keccak256" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/rlp" ">5.0.0-beta.0"
+    "@ethersproject/signing-key" ">5.0.0-beta.0"
+
+"@ethersproject/units@^5.0.0-beta.124":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/units/-/units-5.0.0-beta.124.tgz#9a46a34d75b668ae8a171079994ae72822bea8ca"
+  integrity sha512-xEOwiq7OjEC6q/gqPCAMuFZiXY24IO6yxRumndEw4zeoWtzsLq7E0xApkSLju1y9l92aPEft1bjl3J+aI08WNA==
+  dependencies:
+    "@ethersproject/bignumber" ">5.0.0-beta.0"
+    "@ethersproject/constants" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+
+"@ethersproject/web@>5.0.0-beta.0":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/web/-/web-5.0.0-beta.124.tgz#ffee06a03d3dd02da77eb0b5a7a071568312aa4d"
+  integrity sha512-Sk1oevXlkpW+0E1JxL0acC+MaTNQBn28aKO23GHzjsLdD+9RsVkQBCBasulq2C6IAK5HOyAC8DQTunZiQ4A/2A==
+  dependencies:
+    "@ethersproject/base64" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/strings" ">5.0.0-beta.0"
+    xmlhttprequest "1.8.0"
+
+"@ethersproject/wordlists@>5.0.0-beta.0":
+  version "5.0.0-beta.124"
+  resolved "https://registry.yarnpkg.com/@ethersproject/wordlists/-/wordlists-5.0.0-beta.124.tgz#950d164ca5ef73b10e1e3133501d203d069c3473"
+  integrity sha512-tSUs1UYyG2rLwVjvXGIpR1vjZYglLq3lKgt+8qScevV5GOGl4yWMJR4BM8yUefinQVw3q3N1yIshn7vC6nAYew==
+  dependencies:
+    "@ethersproject/bytes" ">5.0.0-beta.0"
+    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/hash" ">5.0.0-beta.0"
+    "@ethersproject/properties" ">5.0.0-beta.0"
+    "@ethersproject/strings" ">5.0.0-beta.0"
+
 "@hot-loader/react-dom@^16.8.6":
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/@hot-loader/react-dom/-/react-dom-16.8.6.tgz#7923ba27db1563a7cc48d4e0b2879a140df461ea"
@@ -3290,22 +3569,6 @@ ethers@4.0.0-beta.1:
     hash.js "1.1.3"
     js-sha3 "0.5.7"
     scrypt-js "2.0.3"
-    setimmediate "1.0.4"
-    uuid "2.0.1"
-    xmlhttprequest "1.8.0"
-
-ethers@^4.0.28:
-  version "4.0.28"
-  resolved "https://registry.yarnpkg.com/ethers/-/ethers-4.0.28.tgz#74d9acb57f4ede3337c8d60476b38d0fe646af01"
-  integrity sha512-5JTHrPoFLqf+xCAI3pKwXSOgWBSJJoAUdPtPLr1ZlKbSKiIFMkPlRNovmZS3jhIw5sHW1YoVWOaJ6ZR2gKRbwg==
-  dependencies:
-    "@types/node" "^10.3.2"
-    aes-js "3.0.0"
-    bn.js "^4.4.0"
-    elliptic "6.3.3"
-    hash.js "1.1.3"
-    js-sha3 "0.5.7"
-    scrypt-js "2.0.4"
     setimmediate "1.0.4"
     uuid "2.0.1"
     xmlhttprequest "1.8.0"
@@ -7232,11 +7495,6 @@ scrypt-js@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/scrypt-js/-/scrypt-js-2.0.3.tgz#bb0040be03043da9a012a2cea9fc9f852cfc87d4"
   integrity sha1-uwBAvgMEPamgEqLOqfyfhSz8h9Q=
-
-scrypt-js@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/scrypt-js/-/scrypt-js-2.0.4.tgz#32f8c5149f0797672e551c07e230f834b6af5f16"
-  integrity sha512-4KsaGcPnuhtCZQCxFxN3GVYIhKFPTdLd8PLC552XwbMndtD0cjRFAhDuuydXQ0h08ZfPgzqe6EKHozpuH74iDw==
 
 scrypt.js@0.2.0:
   version "0.2.0"

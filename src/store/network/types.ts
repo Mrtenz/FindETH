@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { providers } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import { Network } from '../../config';
 
 export interface Address {
@@ -14,7 +14,7 @@ export interface Balance {
 }
 
 export interface NetworkState {
-  provider?: providers.Provider;
+  provider?: Provider;
   current?: Network;
   addresses: Address[];
   balances: Balance[];
@@ -23,7 +23,7 @@ export interface NetworkState {
 export const CONNECT = 'CONNECT';
 export interface ConnectAction extends Action {
   type: typeof CONNECT;
-  payload: providers.Provider;
+  payload: Provider;
 }
 
 export const SET_NETWORK = 'SET_NETWORK';
