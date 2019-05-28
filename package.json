@@ -85,6 +85,7 @@
     "@ethersproject/hdnode": "^5.0.0-beta.125",
     "@ethersproject/keccak256": "^5.0.0-beta.124",
     "@ethersproject/providers": "^5.0.0-beta.131",
+    "@ethersproject/strings": "^5.0.0-beta.125",
     "@ethersproject/transactions": "^5.0.0-beta.125",
     "@ethersproject/units": "^5.0.0-beta.124",
     "@hot-loader/react-dom": "^16.8.6",

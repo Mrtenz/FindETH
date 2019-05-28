@@ -969,7 +969,7 @@
     "@ethersproject/properties" ">5.0.0-beta.0"
     elliptic "6.3.3"
 
-"@ethersproject/strings@>5.0.0-beta.0":
+"@ethersproject/strings@>5.0.0-beta.0", "@ethersproject/strings@^5.0.0-beta.125":
   version "5.0.0-beta.125"
   resolved "https://registry.yarnpkg.com/@ethersproject/strings/-/strings-5.0.0-beta.125.tgz#031066eeb8ffd166d25b0600e0a9c75682c1bbd0"
   integrity sha512-UQ4w+38bFAbbikk/Wtq1YayhIPGFP80ICJDxy0wtNW7U4k4rs6+tIFVOx6PnmqOJG4cDuxItlFsn4+1rIJcJ6Q==

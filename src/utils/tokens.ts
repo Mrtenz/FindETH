@@ -2,6 +2,7 @@ import { Token } from '../store/tokens';
 import { Provider } from '@ethersproject/providers';
 import { Contract } from '@ethersproject/contracts';
 import { ALT_TOKEN_METADATA_ABI, TOKEN_METADATA_ABI } from '../config';
+import { parseBytes32String } from '@ethersproject/strings';
 
 const getMetaData = async (contract: Contract): Promise<{ name: string; symbol: string }> => {
   try {
@@ -17,8 +18,8 @@ const getMetaData = async (contract: Contract): Promise<{ name: string; symbol: 
     );
 
     return {
-      name: utils.parseBytes32String(await alternativeContract.name()),
-      symbol: utils.parseBytes32String(await alternativeContract.symbol())
+      name: parseBytes32String(await alternativeContract.name()),
+      symbol: parseBytes32String(await alternativeContract.symbol())
     };
   }
 };
