@@ -10,21 +10,15 @@ const getMetaData = async (contract: Contract): Promise<{ name: string; symbol: 
       symbol: await contract.symbol()
     };
   } catch {
-    // Workaround for issue in Ethers.js
     const alternativeContract = new Contract(
       contract.address,
       ALT_TOKEN_METADATA_ABI,
       contract.provider
     );
 
-    const name = Buffer.from((await alternativeContract.name()).substring(2), 'hex');
-    const symbol = Buffer.from((await alternativeContract.symbol()).substring(2), 'hex');
-
-    const decoder = new TextDecoder();
-
     return {
-      name: decoder.decode(name),
-      symbol: decoder.decode(symbol)
+      name: utils.parseBytes32String(await alternativeContract.name()),
+      symbol: utils.parseBytes32String(await alternativeContract.symbol())
     };
   }
 };
