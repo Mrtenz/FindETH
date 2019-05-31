@@ -27,7 +27,9 @@ import {
   SetDerivationPathAction,
   SetDerivationPathsAction,
   SetIndexAction,
-  SetSearchingAction
+  SetSearchingAction,
+  TOGGLE_DERIVATION_PATHS,
+  ToggleDerivationPathsAction
 } from './types';
 import { DerivationPath, SearchType } from '../../config';
 
@@ -59,6 +61,13 @@ export const removeDerivationPath: ActionCreator<RemoveDerivationPathAction> = (
   payload: DerivationPath
 ) => ({
   type: REMOVE_DERIVATION_PATH,
+  payload
+});
+
+export const toggleDerivationPaths: ActionCreator<ToggleDerivationPathsAction> = (
+  payload: boolean
+) => ({
+  type: TOGGLE_DERIVATION_PATHS,
   payload
 });
 

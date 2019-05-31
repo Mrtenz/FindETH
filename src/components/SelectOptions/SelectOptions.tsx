@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button, Heading } from '@mycrypto/ui';
+import { Button } from '@mycrypto/ui';
 import Paths from './Paths';
 import Depth from './Depth';
 import { FlowProps } from '../Flow/Flow';
