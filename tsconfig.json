@@ -10,7 +10,8 @@
     "noEmitOnError": true,
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noUnusedLocals": true
   },
   "include": [
     "./src/**/*",
