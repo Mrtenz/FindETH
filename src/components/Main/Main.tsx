@@ -4,6 +4,12 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import { connectProvider } from '../../store/network';
 import { providers } from 'ethers';
 
+interface Web3 {
+  currentProvider: any;
+}
+
+declare const window: { web3?: Web3 };
+
 interface DispatchProps {
   handleConnect(provider: providers.Provider): void;
 }
@@ -13,17 +19,15 @@ type Props = DispatchProps;
 const Main: FunctionComponent<Props> = ({ handleConnect, children }) => {
   useEffect(() => {
     const provider =
-      (window as any).web3 && (window as any).web3.currentProvider
-        ? new providers.Web3Provider((window as any).web3.currentProvider)
-        : new providers.JsonRpcProvider('https://api.mycryptoapi.com/eth');
+      window.web3 && window.web3.currentProvider
+        ? new providers.Web3Provider(window.web3.currentProvider)
+        : new providers.FallbackProvider([
+            new providers.JsonRpcProvider('https://api.mycryptoapi.com/eth'),
+            new providers.InfuraProvider(),
+            new providers.EtherscanProvider()
+          ]);
 
-    const fallback = new providers.FallbackProvider([
-      provider,
-      new providers.InfuraProvider(),
-      new providers.EtherscanProvider()
-    ]);
-
-    handleConnect(fallback);
+    handleConnect(provider);
   });
 
   return <StyledMain>{children}</StyledMain>;
