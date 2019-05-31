@@ -5,7 +5,7 @@ export enum SearchType {
 }
 
 export interface Network {
-  name: 'Mainnet' | 'Testnet' | 'Unknown';
+  name: 'Mainnet' | 'Testnet' | 'Unknown' | 'Offline';
   color: string;
 }
 
@@ -22,6 +22,11 @@ export const NETWORK_TESTNET: Network = {
 export const NETWORK_UNKNOWN: Network = {
   name: 'Unknown',
   color: '#b37aff'
+};
+
+export const NETWORK_OFFLINE: Network = {
+  name: 'Offline',
+  color: '#dcdcdc'
 };
 
 export const SMALL_DISPLAYS = 'screen and (max-width: 550px)';

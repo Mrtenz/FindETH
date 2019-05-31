@@ -18,6 +18,15 @@ const EnsureConnection: FunctionComponent<Props> = ({ network, children }) => {
     return <>{children}</>;
   }
 
+  if (network && network.name === 'Offline') {
+    return (
+      <Container>
+        <Heading as="h2">No network connection</Heading>
+        <Typography>This feature requires an internet connection.</Typography>
+      </Container>
+    );
+  }
+
   if (network && network.name !== 'Mainnet') {
     return (
       <Container>
