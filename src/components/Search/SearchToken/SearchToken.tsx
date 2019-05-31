@@ -23,7 +23,7 @@ const SearchToken: FunctionComponent<Props> = ({ isSearching, addresses, balance
     <Table
       head={['Address', 'Path', 'Balance']}
       body={balances
-        .filter(balance => balance.balance !== '0.0')
+        .filter(balance => balance.balance !== '0')
         .map(balance => [
           <AddressItem
             key={balance.address}
