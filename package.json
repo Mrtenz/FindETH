@@ -61,7 +61,7 @@
     "serve-static": "^1.14.1",
     "style-loader": "^0.23.1",
     "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-microsoft-contrib": "^6.1.1",
     "tslint-react": "^4.0.0",
