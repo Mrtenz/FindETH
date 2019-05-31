@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import { createStore } from './store';
 import GlobalModal from './components/GlobalModal';
 import { HashRouter } from 'react-router-dom';
+import Analytics from './components/Analytics';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -38,15 +39,17 @@ const App: FunctionComponent = () => (
   <ThemeProvider theme={light}>
     <Provider store={store}>
       <HashRouter>
-        <GlobalModal />
-        <GlobalStyle />
-        <BaseCSS />
+        <Analytics>
+          <GlobalModal />
+          <GlobalStyle />
+          <BaseCSS />
 
-        <Main>
-          <Header />
-          <Routes />
-        </Main>
-        <Footer />
+          <Main>
+            <Header />
+            <Routes />
+          </Main>
+          <Footer />
+        </Analytics>
       </HashRouter>
     </Provider>
   </ThemeProvider>
