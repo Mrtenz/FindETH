@@ -26,6 +26,11 @@ const getImplementation = (state: ApplicationState) => state.wallet.implementati
 
 function* searchSaga(): SagaIterator {
   const { derivationPaths }: SearchState = yield select(getSearchState);
+  const implementation: Wallet = yield select(getImplementation);
+
+  if (implementation.prefetch) {
+    yield call([implementation, implementation.prefetch], derivationPaths);
+  }
 
   yield put(clearBalances());
   yield put(setDerivationPath(derivationPaths[0]));
