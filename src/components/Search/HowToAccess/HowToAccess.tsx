@@ -5,6 +5,7 @@ import Icon from '../../ui/Icon';
 import Modal from '../../ui/Modal';
 import ClickableText from '../../ui/ClickableText';
 import ExternalLink from '../../ui/ExternalLink';
+import Code from '../../ui/Code';
 
 const HowToAccess: FunctionComponent = () => {
   const [isVisible, setVisible] = useState<boolean>(false);
@@ -30,6 +31,11 @@ const HowToAccess: FunctionComponent = () => {
             "Manually specify the derivation path you're looking for."
           ]}
         </StyledList>
+        <Typography>
+          Note that you should not include the last part of the derivation path you're looking for.
+          For example, if you're looking for <Code>m/44'/60'/0'/0/5</Code>, you have to use{' '}
+          <Code>m/44'/60'/0'/0</Code> and look for the 5th address in the list.
+        </Typography>
       </Modal>
       <ClickableText onClick={handleClick}>
         <Icon icon="shape" />

@@ -841,10 +841,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-4.60.2.tgz#f59207c43a60b789be07dd31bbd01cdda5b62ffe"
   integrity sha512-+gMbjDIjQghwoFH/IF3j86knsHuUFO3kdYxdh9iIJAFyz3OPyHcQIjQDGL0AmnG6LU7CIMYdHcJ5NEiQyunUfg==
 
-"@mycrypto/ui@^0.16.1":
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.16.1.tgz#d44949e7c470ceaf4acba2b5a984e9a9ac5ee638"
-  integrity sha512-D/76AHq9j+6OzKNCahEYcWGf5UR17crEbgkD3rvrcsGCATrP9XBWeFHR+d5LeQrWPfjiM77uErQywoFx/yL2Lw==
+"@mycrypto/ui@^0.16.2":
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.16.2.tgz#d73d0d55f57f789b09e9f088294b0b4896bb233a"
+  integrity sha512-e1NpAM2bsWdXoJyqleXrcBysKUI90/rUaBYznq7BYjeR3Di+la31fkMWrpq6JCzLROM7IxYyQh+iCT2mlwUXLA==
   dependencies:
     "@types/dom-clipboard-api" "^1.0.1"
     "@types/lodash.throttle" "^4.1.4"
@@ -3054,6 +3054,13 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
+eth-scan@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/eth-scan/-/eth-scan-0.1.1.tgz#75b67e31c8fbd2083728c9371d9ce47b7621c7a0"
+  integrity sha512-Li4MLgRyuCcyvO4vvlirfZPb7yDKwhTESJMVuzNYlXMxsrCxDgVBdfGEVpXxZWAda47fIQXn6bsQftllmRopiw==
+  dependencies:
+    isomorphic-fetch "^2.2.1"
+
 ethereum-blockies-base64@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/ethereum-blockies-base64/-/ethereum-blockies-base64-1.0.2.tgz#4aebca52142bf4d16a3144e6e2b59303e39ed2b3"
@@ -4466,7 +4473,7 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-isomorphic-fetch@^2.1.1:
+isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   integrity sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=

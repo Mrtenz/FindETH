@@ -26,3 +26,5 @@ typings/
 .next
 dist/
 server.pem
+build/
+.secret

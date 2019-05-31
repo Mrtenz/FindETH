@@ -8,13 +8,17 @@ declare module 'trezor-connect' {
   }
 
   interface GetPublicKeyPayload {
+    serializedPath: string;
     chainCode: string;
     publicKey: string;
   }
 
-  export function getPublicKey(params: {
+  interface Path {
     path: string | number[];
-  }): Promise<Data<GetPublicKeyPayload>>;
+  }
+
+  export function getPublicKey(params: Path): Promise<Data<GetPublicKeyPayload>>;
+  export function getPublicKey(params: { bundle: Path[] }): Promise<Data<GetPublicKeyPayload[]>>;
 
   interface EthereumGetAddressPayload {
     address: string;

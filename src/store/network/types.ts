@@ -43,10 +43,15 @@ export interface AddAddressAction extends Action {
   payload: Address;
 }
 
-export const ADD_BALANCE = 'ADD_BALANCE';
+export const FETCH_BALANCES = 'FETCH_BALANCES';
+export interface FetchBalancesAction extends Action {
+  type: typeof FETCH_BALANCES;
+}
+
+export const ADD_BALANCES = 'ADD_BALANCES';
 export interface AddBalanceAction extends Action {
-  type: typeof ADD_BALANCE;
-  payload: Balance;
+  type: typeof ADD_BALANCES;
+  payload: Balance[];
 }
 
 export type NetworkActions =
@@ -54,4 +59,5 @@ export type NetworkActions =
   | SetNetworkAction
   | ClearBalancesAction
   | AddAddressAction
+  | FetchBalancesAction
   | AddBalanceAction;

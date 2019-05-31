@@ -7,6 +7,13 @@ export default interface Wallet {
   initialize(): Promise<void>;
 
   /**
+   * Optional function that can be used to prefetch necessary info from a device.
+   *
+   * @param {DerivationPath[]} paths The derivation paths to prefetch.
+   */
+  prefetch?(paths: DerivationPath[]): Promise<void>;
+
+  /**
    * Get an address for a derivation path at a specific index.
    *
    * @param {DerivationPath} dPath The derivation path.
