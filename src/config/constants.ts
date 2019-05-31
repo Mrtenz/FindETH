@@ -5,7 +5,7 @@ export enum SearchType {
 }
 
 export interface Network {
-  name: string;
+  name: 'Mainnet' | 'Testnet' | 'Unknown';
   color: string;
 }
 
