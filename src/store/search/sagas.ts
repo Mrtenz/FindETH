@@ -1,6 +1,12 @@
 import { SagaIterator } from 'redux-saga';
 import { all, call, delay, put, select, takeLatest } from 'redux-saga/effects';
-import { SEARCH, SEARCH_NEXT, SearchState } from './types';
+import {
+  SEARCH,
+  SEARCH_NEXT,
+  SearchState,
+  TOGGLE_DERIVATION_PATHS,
+  ToggleDerivationPathsAction
+} from './types';
 import {
   checkFailed,
   searchNext,
@@ -8,6 +14,7 @@ import {
   setAddressIndex,
   setAddressNotFound,
   setDerivationPath,
+  setDerivationPaths,
   setIndex,
   setSearching
 } from './actions';
@@ -18,11 +25,25 @@ import { addAddress, clearBalances, fetchBalances } from '../network';
 import { getFullPath } from '../../utils';
 
 export function* searchRootSaga(): SagaIterator {
-  yield all([takeLatest(SEARCH, searchSaga), takeLatest(SEARCH_NEXT, searchNextSaga)]);
+  yield all([
+    takeLatest(TOGGLE_DERIVATION_PATHS, toggleDerivationPathsSaga),
+    takeLatest(SEARCH, searchSaga),
+    takeLatest(SEARCH_NEXT, searchNextSaga)
+  ]);
 }
 
 const getSearchState = (state: ApplicationState) => state.search;
 const getImplementation = (state: ApplicationState) => state.wallet.implementation;
+
+function* toggleDerivationPathsSaga({ payload }: ToggleDerivationPathsAction): SagaIterator {
+  console.log(payload);
+  if (payload) {
+    const implementation: Wallet = yield select(getImplementation);
+    yield put(setDerivationPaths(implementation.getDerivationPaths()));
+  } else {
+    yield put(setDerivationPaths([]));
+  }
+}
 
 function* searchSaga(): SagaIterator {
   const { derivationPaths }: SearchState = yield select(getSearchState);

@@ -7,6 +7,7 @@ import { ApplicationState } from '../../../store';
 import { Row } from 'styled-bootstrap-grid';
 import Path from './Path';
 import Wallet from '../../../wallets/Wallet';
+import ToggleButton from './ToggleButton/ToggleButton';
 
 interface StateProps {
   implementation: Wallet;
@@ -19,6 +20,8 @@ const Paths: FunctionComponent<Props> = ({ implementation, derivationPaths }) =>
   <>
     <Heading as="h3">Derivation paths</Heading>
     <Typography>Choose the derivation paths to search in.</Typography>
+    <ToggleButton state={true}>Select all</ToggleButton>
+    <ToggleButton state={false}>Deselect all</ToggleButton>
     {chunk(implementation.getDerivationPaths(), 3).map((paths, index) => (
       <Row key={index}>
         {paths.map(path => (

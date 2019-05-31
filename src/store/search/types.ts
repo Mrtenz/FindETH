@@ -45,6 +45,12 @@ export interface RemoveDerivationPathAction extends Action {
   payload: DerivationPath;
 }
 
+export const TOGGLE_DERIVATION_PATHS = 'TOGGLE_DERIVATION_PATHS';
+export interface ToggleDerivationPathsAction extends Action {
+  type: typeof TOGGLE_DERIVATION_PATHS;
+  payload: boolean;
+}
+
 export const SEARCH = 'SEARCH';
 export interface SearchAction extends Action {
   type: typeof SEARCH;
@@ -103,6 +109,7 @@ export type SearchActions =
   | SetDerivationPathsAction
   | AddDerivationPathAction
   | RemoveDerivationPathAction
+  | ToggleDerivationPathsAction
   | SearchAction
   | SearchNextAction
   | SetDerivationPathAction
