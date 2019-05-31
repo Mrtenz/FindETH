@@ -6,6 +6,9 @@ import Modal from '../../../ui/Modal';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../../store';
 import { Input, Typography } from '@mycrypto/ui';
+import Tooltip from '../../../ui/Tooltip';
+import LocalCheck from '../../../LocalCheck';
+import { IS_LOCAL } from '../../../../config';
 
 interface OwnProps {
   onNext(): void;
@@ -58,27 +61,35 @@ const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementatio
 
   return (
     <>
-      <Modal isVisible={isVisible} onClose={handleClose} onConfirm={handleConfirm}>
-        <Typography as="label">
-          Mnemonic phrase
-          <Input
-            type="password"
-            placeholder="Mnemonic phrase"
-            value={mnemonicPhrase}
-            onChange={handleChangeMnemonicPhrase}
-          />
-        </Typography>
-        <Typography as="label">
-          (Optional) passphrase
-          <Input
-            type="password"
-            placeholder="Passphrase"
-            value={passPhrase}
-            onChange={handleChangePassPhrase}
-          />
-        </Typography>
+      <Modal
+        isVisible={isVisible}
+        onClose={handleClose}
+        onConfirm={(IS_LOCAL && handleConfirm) || undefined}
+      >
+        <LocalCheck>
+          <Typography as="label">
+            Mnemonic phrase
+            <Input
+              type="password"
+              placeholder="Mnemonic phrase"
+              value={mnemonicPhrase}
+              onChange={handleChangeMnemonicPhrase}
+            />
+          </Typography>
+          <Typography as="label">
+            (Optional) passphrase
+            <Input
+              type="password"
+              placeholder="Passphrase"
+              value={passPhrase}
+              onChange={handleChangePassPhrase}
+            />
+          </Typography>
+        </LocalCheck>
       </Modal>
-      <WalletItem name="Mnemonic" icon={keyIcon} onClick={handleClick} />
+      <Tooltip content="This method is only available locally.">
+        <WalletItem name="Mnemonic" icon={keyIcon} onClick={handleClick} />
+      </Tooltip>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { join, resolve } from 'path';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { Configuration } from 'webpack';
+import { Configuration, EnvironmentPlugin } from 'webpack';
 
 const configuration: Configuration = {
   entry: resolve(__dirname, '../src/index.tsx'),
@@ -53,6 +53,10 @@ const configuration: Configuration = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../src/index.html')
+    }),
+    new EnvironmentPlugin({
+      NODE_ENV: 'development',
+      IS_LOCAL: false
     })
   ]
 };
