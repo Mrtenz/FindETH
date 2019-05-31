@@ -23,8 +23,8 @@ export const StyledModal = styled.div<Props>`
   background: white;
   transform: ${({ isVisible }) => (isVisible ? 'scale(1)' : 'scale(0.8)')};
   transition: transform 0.2s;
-  padding: 18px;
-  width: 400px;
+  padding: 36px;
+  width: 600px;
   max-width: 100%;
   margin: 18px;
   border-radius: 3px;
