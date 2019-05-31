@@ -8,7 +8,7 @@ A tool to help you find your Ethereum address, Ether or tokens, by scanning a bu
 
 ## Running locally
 
-If you want to use this tool with your mnemonic phrase, it's recommended to run it locally. The requirements for this are:
+If you want to use this tool with your mnemonic phrase, it's required to run it locally. The requirements for this are:
 
 * [Node.js 10 or newer](https://nodejs.org/)
 * [Yarn](https://yarnpkg.com/)
