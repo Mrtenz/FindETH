@@ -80,7 +80,7 @@
     "@ledgerhq/hw-transport-web-ble": "^4.58.0",
     "@ledgerhq/hw-transport-webusb": "^4.56.0",
     "@mycrypto/ui": "^0.16.2",
-    "eth-scan": "^0.1.1",
+    "eth-scan": "^0.1.2",
     "ethers": "^4.0.28",
     "hdkey": "^1.1.1",
     "react": "^16.8.6",

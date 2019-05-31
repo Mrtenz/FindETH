@@ -3054,10 +3054,10 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
-eth-scan@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/eth-scan/-/eth-scan-0.1.1.tgz#75b67e31c8fbd2083728c9371d9ce47b7621c7a0"
-  integrity sha512-Li4MLgRyuCcyvO4vvlirfZPb7yDKwhTESJMVuzNYlXMxsrCxDgVBdfGEVpXxZWAda47fIQXn6bsQftllmRopiw==
+eth-scan@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/eth-scan/-/eth-scan-0.1.2.tgz#eed5982db9c2a70b0e2bf614575f89c5b35c28b4"
+  integrity sha512-WVBhacd8BrZeaOLdlK13zIfXJhIIZkfM03h1jK3gNynRqYfYHZAk/Kd++6DPL2bpzndVBB/z+MtaGRhuAcXEDA==
   dependencies:
     isomorphic-fetch "^2.2.1"
 
