@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button, Heading, Typography } from '@mycrypto/ui';
+import { Heading, Typography } from '@mycrypto/ui';
 import { DerivationPath } from '../../../config';
 import { chunk } from '../../../utils';
 import { connect, MapStateToProps } from 'react-redux';
