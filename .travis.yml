@@ -1,5 +1,11 @@
 language: node_js
 
+addons:
+  apt:
+    packages:
+      - libusb-1.0-0-dev
+      - libudev-dev
+
 cache:
   yarn: true
   directories:
