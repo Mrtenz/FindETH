@@ -2,8 +2,6 @@ import React, { FunctionComponent, useEffect } from 'react';
 import { StyledMain } from './StyledMain';
 import { connect, MapDispatchToProps } from 'react-redux';
 import { connectProvider, setNetwork } from '../../store/network';
-import { providers } from 'ethers';
-import { NETWORK_OFFLINE } from '../../config';
 import {
   EtherscanProvider,
   FallbackProvider,
@@ -12,8 +10,6 @@ import {
   Provider,
   Web3Provider
 } from '@ethersproject/providers';
-import { connectProvider, setNetwork } from '../../store/network';
-import { providers } from 'ethers';
 import { NETWORK_OFFLINE } from '../../config';
 
 interface Web3 {

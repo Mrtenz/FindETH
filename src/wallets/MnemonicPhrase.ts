@@ -1,5 +1,5 @@
 import Wallet from './Wallet';
-import { HDNode, isValidMnemonic, mnemonicToSeed } from '@ethersproject/hdnode';
+import { HDNode, isValidMnemonic } from '@ethersproject/hdnode';
 import { ALL_DERIVATION_PATHS, DerivationPath } from '../config';
 import { getFullPath } from '../utils';
 
@@ -33,6 +33,6 @@ export default class MnemonicPhrase implements Wallet {
    * @return {Promise<HDNode>} A Promise with an instance of the HDKey class.
    */
   private async getHDNode(): Promise<HDNode> {
-    return HDNode.fromSeed(mnemonicToSeed(this.mnemonicPhrase));
+    return HDNode.fromMnemonic(this.mnemonicPhrase, this.passPhrase);
   }
 }

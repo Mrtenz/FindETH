@@ -1,15 +1,7 @@
 import { Address, Balance } from '../store/network';
 import { Token } from '../store/tokens';
-import { chunk } from './chunk';
 import { Provider } from '@ethersproject/providers';
-import { Contract } from '@ethersproject/contracts';
-import { BigNumber } from '@ethersproject/bignumber';
-import { formatUnits } from '@ethersproject/units';
-import { BALANCE_SCANNER_ABI } from '../config';
-import { Token } from '../store/tokens';
 import EthScan, { EthersProvider } from 'eth-scan';
-
-const SCANNER_ADDRESS = '0x82Ea2E7834Bb0D6224dd6fd7125d44b83d6D6809';
 
 /**
  * Get the Ether balance for multiple addresses in a single call. Note that this is limited by the
