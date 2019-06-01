@@ -14,7 +14,8 @@
     "tscheck": "tsc --noEmit --project tsconfig.json",
     "tslint": "tslint --project .",
     "prettier:diff": "prettier --write --config ./.prettierrc --list-different './**/*.ts' './**/*.tsx'",
-    "test": "jest"
+    "test": "jest",
+    "snapshot": "jest -u"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -23,6 +24,8 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@ledgerhq/hw-transport-mocker": "^4.60.3",
+    "@ledgerhq/hw-transport-node-hid-noevents": "^4.60.3",
     "@types/finalhandler": "^1.1.0",
     "@types/hard-source-webpack-plugin": "^1.0.1",
     "@types/hdkey": "^0.7.0",
