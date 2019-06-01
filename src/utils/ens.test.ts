@@ -1,4 +1,4 @@
-import { isEnsName } from '../../src/utils';
+import { isEnsName } from './ens';
 
 it('checks for valid ens names', () => {
   expect(isEnsName('foobarbaz.eth')).toEqual(true);

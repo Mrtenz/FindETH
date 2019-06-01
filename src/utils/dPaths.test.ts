@@ -1,5 +1,5 @@
-import { getFullPath } from '../../src/utils';
-import { DEFAULT_ETH, LEDGER_LIVE_ETH } from '../../src/config';
+import { getFullPath } from './dPaths';
+import { DEFAULT_ETH, LEDGER_LIVE_ETH } from '../config';
 
 it('returns a derivation path with an address index (non-hardened)', () => {
   expect(getFullPath(DEFAULT_ETH, 5)).toBe(`m/44'/60'/0'/0/5`);

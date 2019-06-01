@@ -1,7 +1,7 @@
 import { providers } from 'ethers';
-import { Address } from '../../src/store/network';
-import { getEtherBalances, getTokenBalances } from '../../src/utils';
-import { Token } from '../../src/store/tokens';
+import { Address } from '../store/network';
+import { getEtherBalances, getTokenBalances } from './balance';
+import { Token } from '../store/tokens';
 
 const provider = new providers.InfuraProvider(1, 'bfea47cc97c440a687c8762553739a94');
 

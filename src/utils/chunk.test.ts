@@ -1,4 +1,4 @@
-import { chunk } from '../../src/utils';
+import { chunk } from './chunk';
 
 it('creates chunks from an array with a fixed length', () => {
   const array = ['foo', 'bar', 'baz', 'qux'];

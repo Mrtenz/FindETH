@@ -1,5 +1,5 @@
 import { providers } from 'ethers';
-import { getTokenInfo } from '../../src/utils';
+import { getTokenInfo } from './tokens';
 
 jest.setTimeout(100000);
 

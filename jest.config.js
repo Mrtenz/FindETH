@@ -1,5 +1,7 @@
 module.exports = {
-  roots: ['tests/', 'src/'],
-  setupFilesAfterEnv: ['./jest.setup.js'],
-  transformIgnorePatterns: ['/node_modules/(?!@mycrypto/ui/)']
+  roots: ['src/'],
+  setupFilesAfterEnv: ['./jest/setupTests.js'],
+  transformIgnorePatterns: ['/node_modules/(?!@mycrypto/ui/)'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  snapshotResolver: './jest/snapshotResolver.js'
 };

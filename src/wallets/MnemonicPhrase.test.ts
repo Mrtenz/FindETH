@@ -1,5 +1,5 @@
-import MnemonicPhrase from '../../src/wallets/MnemonicPhrase';
-import { DEFAULT_ETH, LEDGER_LIVE_ETH } from '../../src/config';
+import MnemonicPhrase from './MnemonicPhrase';
+import { DEFAULT_ETH, LEDGER_LIVE_ETH } from '../config';
 
 const VALID_MNEMONIC = 'measure awake inject because stay profit soup dawn rare wave news cook';
 const INVALID_MNEMONIC = 'setup safe obscure bus poem very fatal sock color design bridge garden';
