@@ -1,6 +1,6 @@
 import { Address, Balance } from '../store/network';
-import { providers } from 'ethers';
 import { Token } from '../store/tokens';
+import { Provider } from '@ethersproject/providers';
 import EthScan, { EthersProvider } from 'eth-scan';
 
 /**
@@ -14,7 +14,7 @@ import EthScan, { EthersProvider } from 'eth-scan';
  *   balance.
  */
 export const getEtherBalances = async (
-  provider: providers.Provider,
+  provider: Provider,
   addresses: Address[]
 ): Promise<Balance[]> => {
   const scanner = new EthScan(new EthersProvider(provider));
@@ -40,7 +40,7 @@ export const getEtherBalances = async (
  *   balance.
  */
 export const getTokenBalances = async (
-  provider: providers.Provider,
+  provider: Provider,
   addresses: Address[],
   token: Token
 ): Promise<Balance[]> => {

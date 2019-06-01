@@ -1,6 +1,6 @@
 import Wallet from './Wallet';
 import HDKey from 'hdkey';
-import { utils } from 'ethers';
+import { computeAddress } from '@ethersproject/transactions';
 import { DerivationPath } from '../config';
 
 export interface KeyInfo {
@@ -20,7 +20,7 @@ export default abstract class HardwareWallet implements Wallet {
     const hdKey = await this.getHDKey(dPath);
     const publicKey = hdKey.derive(`m/${index}`).publicKey;
 
-    return utils.computeAddress(publicKey);
+    return computeAddress(publicKey);
   }
 
   public abstract initialize(): Promise<void>;
