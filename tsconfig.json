@@ -13,10 +13,6 @@
     "skipLibCheck": true,
     "noUnusedLocals": true
   },
-  "include": [
-    "./src/**/*",
-    "./webpack/**/*"
-  ],
   "exclude": [
     "node_modules"
   ]
