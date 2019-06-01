@@ -1,8 +1,5 @@
 module.exports = {
-  roots: ['tests/'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  transform: {
-    '^.+\\.(tsx?|jsx?)$': 'babel-jest'
-  },
-  setupFiles: ['./jest.setup.js']
+  roots: ['tests/', 'src/'],
+  setupFilesAfterEnv: ['./jest.setup.js'],
+  transformIgnorePatterns: ['/node_modules/(?!@mycrypto/ui/)']
 };
