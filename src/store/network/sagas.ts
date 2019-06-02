@@ -10,7 +10,7 @@ import {
   NETWORK_UNKNOWN,
   SearchType
 } from '../../config';
-import { providers } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import { Token } from '../tokens';
 import { getEtherBalances, getTokenBalances } from '../../utils';
 
@@ -18,7 +18,7 @@ export function* networkSaga(): SagaIterator {
   yield all([takeLatest(CONNECT, connectSaga), takeEvery(FETCH_BALANCES, fetchBalancesSaga)]);
 }
 
-const getNetwork = async (provider: providers.Provider): Promise<Network> => {
+const getNetwork = async (provider: Provider): Promise<Network> => {
   const id = (await provider.getNetwork()).chainId;
   switch (id) {
     case 1:
@@ -39,8 +39,7 @@ function* connectSaga({ payload }: ConnectAction): SagaIterator {
   yield put(setNetwork(network));
 }
 
-const getProvider = (state: ApplicationState): providers.Provider | undefined =>
-  state.network.provider;
+const getProvider = (state: ApplicationState): Provider | undefined => state.network.provider;
 
 const getAddresses = (state: ApplicationState): Address[] => state.network.addresses;
 
@@ -67,7 +66,7 @@ function* fetchEtherBalances(addresses: Address[]): SagaIterator {
   const balance: utils.BigNumber = yield call([provider, provider.getBalance], address.address);
   return utils.formatUnits(balance, 18);*/
 
-  const provider: providers.Provider = yield select(getProvider);
+  const provider: Provider = yield select(getProvider);
 
   return yield call(getEtherBalances, provider, addresses);
 }
@@ -81,7 +80,7 @@ function* fetchTokenBalances(addresses: Address[]): SagaIterator {
   const balance: utils.BigNumber = yield call(getTokenBalance, provider, token, address.address);
   return utils.formatUnits(balance, token.decimals);*/
 
-  const provider: providers.Provider = yield select(getProvider);
+  const provider: Provider = yield select(getProvider);
   const token: Token = yield select(getToken);
 
   return yield call(getTokenBalances, provider, addresses, token);

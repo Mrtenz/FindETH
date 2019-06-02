@@ -1,9 +1,11 @@
-import { providers } from 'ethers';
+import { JsonRpcProvider } from '@ethersproject/providers';
 import { getTokenInfo } from './tokens';
 
 jest.setTimeout(100000);
 
-const provider = new providers.InfuraProvider(1, 'bfea47cc97c440a687c8762553739a94');
+const provider = new JsonRpcProvider(
+  'https://mainnet.infura.io/v3/bfea47cc97c440a687c8762553739a94'
+);
 
 it('fetches token metadata for ERC-20 tokens', async () => {
   await expect(

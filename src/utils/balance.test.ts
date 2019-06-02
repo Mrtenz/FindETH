@@ -1,11 +1,13 @@
-import { providers } from 'ethers';
+import { JsonRpcProvider } from '@ethersproject/providers';
 import { Address } from '../store/network';
 import { getEtherBalances, getTokenBalances } from './balance';
 import { Token } from '../store/tokens';
 
 jest.setTimeout(100000);
 
-const provider = new providers.InfuraProvider(1, 'bfea47cc97c440a687c8762553739a94');
+const provider = new JsonRpcProvider(
+  'https://mainnet.infura.io/v3/bfea47cc97c440a687c8762553739a94'
+);
 
 it('fetches Ether balances for multiple addresses', async () => {
   const addresses: Address[] = [
