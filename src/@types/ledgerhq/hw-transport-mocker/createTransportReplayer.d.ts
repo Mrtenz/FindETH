@@ -18,14 +18,10 @@ declare module '@ledgerhq/hw-transport-mocker/createTransportReplayer' {
     (new (...args: any[]) => TransportReplayer<T>);
 
   /**
-   * Create a decorated transport, which replays any APDU exchanges.
+   * Create a transport, which replays any APDU exchanges.
    *
-   * @param {TransportConstructor<T>} DecoratedTransport The transport class to decorate.
    * @param {RecordStore} recordStore The RecordStore to replay from.
    * @return {TransportReplayer<T>} The decorated transport.
    */
-  export default function<T>(
-    DecoratedTransport: TransportConstructor<T>,
-    recordStore: RecordStore
-  ): TransportReplayerConstructor<T>;
+  export default function<T>(recordStore: RecordStore): TransportReplayerConstructor<T>;
 }

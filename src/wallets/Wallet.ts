@@ -10,8 +10,9 @@ export default interface Wallet {
    * Optional function that can be used to prefetch necessary info from a device.
    *
    * @param {DerivationPath[]} paths The derivation paths to prefetch.
+   * @return {Promise<any>} Can return the pre-fetched info for unit tests.
    */
-  prefetch?(paths: DerivationPath[]): Promise<void>;
+  prefetch?(paths: DerivationPath[]): Promise<any>;
 
   /**
    * Get an address for a derivation path at a specific index.

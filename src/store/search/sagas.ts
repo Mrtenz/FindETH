@@ -36,7 +36,6 @@ const getSearchState = (state: ApplicationState) => state.search;
 const getImplementation = (state: ApplicationState) => state.wallet.implementation;
 
 function* toggleDerivationPathsSaga({ payload }: ToggleDerivationPathsAction): SagaIterator {
-  console.log(payload);
   if (payload) {
     const implementation: Wallet = yield select(getImplementation);
     yield put(setDerivationPaths(implementation.getDerivationPaths()));
