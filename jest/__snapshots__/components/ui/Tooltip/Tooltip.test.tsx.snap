@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <Styled(styled.p)>
+      Foo
+    </Styled(styled.p)>
+  </styled.div>
+  Bar
+</styled.div>
+`;

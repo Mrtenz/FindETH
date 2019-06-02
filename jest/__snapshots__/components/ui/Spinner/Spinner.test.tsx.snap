@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<styled.div>
+  <styled.span
+    height={25}
+    width={25}
+  />
+  <Styled(styled.p)
+    muted={true}
+  >
+    Foo
+  </Styled(styled.p)>
+</styled.div>
+`;

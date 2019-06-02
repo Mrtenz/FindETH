@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<styled.div>
+  <Panel
+    onClick={[Function]}
+  >
+    <Styled(Styled(styled.p))
+      as="h3"
+    >
+      Foo
+    </Styled(Styled(styled.p))>
+    <styled.img
+      alt="Foo"
+      src="bar"
+    />
+  </Panel>
+</styled.div>
+`;

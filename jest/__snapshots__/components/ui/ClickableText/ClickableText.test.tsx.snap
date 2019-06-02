@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-tilXH",
+        "isStatic": false,
+        "rules": Array [
+          "
+  color: ",
+          [Function],
+          ";
+  ",
+          "font-size: 16px; @media (min-width: 400px) {
+  font-size: calc(14.67px + 0.33vw);
+} @media (min-width: 1000px) {
+  font-size: 18px;
+}",
+          ";
+  font-family: Lato, sans-serif;
+  line-height: 1.5;
+  ",
+          [Function],
+          ";
+  ",
+          [Function],
+          ";
+  a {
+    color: ",
+          [Function],
+          ";
+    text-decoration: none;
+    font-weight: bold;
+
+    /* stylelint-disable-next-line max-nesting-depth */
+    :hover {
+      color: ",
+          [Function],
+          ";
+    }
+  }
+",
+          "
+  cursor: pointer;
+",
+        ],
+      },
+      "displayName": "Styled(styled.p)",
+      "render": [Function],
+      "styledComponentId": "sc-tilXH",
+      "target": "p",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;
