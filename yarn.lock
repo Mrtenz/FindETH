@@ -1267,10 +1267,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-4.61.0.tgz#bbcba49d7a7a4e20d6584bbfc10ed93b212c804c"
   integrity sha512-AObEnA+tgzKEwY306i6FOT/hlc+zjF817Bty/IxG3f2wPJFRK9cJuD3Ijl4pfJP2pt7KubN4YbRGXREXhEsknQ==
 
-"@mycrypto/ui@^0.16.2":
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.16.2.tgz#d73d0d55f57f789b09e9f088294b0b4896bb233a"
-  integrity sha512-e1NpAM2bsWdXoJyqleXrcBysKUI90/rUaBYznq7BYjeR3Di+la31fkMWrpq6JCzLROM7IxYyQh+iCT2mlwUXLA==
+"@mycrypto/ui@^0.16.3":
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.16.3.tgz#473d153edaed961d7eff27b1a76e619550e3667e"
+  integrity sha512-79Hw+j6aOl3QR8UJDD5I7sDM265CIN5WqtlyLUuiaObGdVetdVPfiSkZg7U3RzRDFiHtqo4XuThj+kEMr/Lggw==
   dependencies:
     "@types/dom-clipboard-api" "^1.0.1"
     "@types/lodash.throttle" "^4.1.4"
