@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<ExternalLink
+  to="https://mycrypto.com"
+>
+  <styled.img
+    src="test-file-stub"
+  />
+</ExternalLink>
+`;

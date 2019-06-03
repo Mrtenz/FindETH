@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<styled.div
+  isOn={true}
+  onClick={[MockFunction]}
+>
+  <styled.div
+    isOn={true}
+  />
+</styled.div>
+`;

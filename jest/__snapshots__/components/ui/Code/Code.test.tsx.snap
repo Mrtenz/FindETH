@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": true,
+        "rules": Array [
+          "
+  font-family: ",
+          "'Roboto Mono', Menlo, Monaco, Consolas, 'Courier New', monospace",
+          ";
+",
+        ],
+      },
+      "displayName": "styled.span",
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "span",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;

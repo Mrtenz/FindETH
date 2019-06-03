@@ -15,7 +15,7 @@ interface StateProps {
 
 type Props = StateProps & RouteComponentProps;
 
-const Header: FunctionComponent<Props> = ({ isSearching, network, history }) => {
+export const Header: FunctionComponent<Props> = ({ isSearching, network, history }) => {
   const [isVisible, setVisible] = useState<boolean>(false);
 
   const handleClick = () => {
