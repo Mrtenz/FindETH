@@ -5,7 +5,7 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "module": "commonjs",
-    "target": "es2017",
+    "target": "esnext",
     "jsx": "react",
     "noEmitOnError": true,
     "strict": true,
@@ -13,10 +13,6 @@
     "skipLibCheck": true,
     "noUnusedLocals": true
   },
-  "include": [
-    "./src/**/*",
-    "./webpack/**/*"
-  ],
   "exclude": [
     "node_modules"
   ]

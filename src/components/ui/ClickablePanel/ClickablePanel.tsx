@@ -12,7 +12,7 @@ interface OwnProps {
 
 type Props = OwnProps & RouteComponentProps;
 
-const ClickablePanel: FunctionComponent<Props> = ({ title, to, icon, history, onClick }) => {
+export const ClickablePanel: FunctionComponent<Props> = ({ title, to, icon, history, onClick }) => {
   const handleClick = () => {
     if (to) {
       history.push(to);

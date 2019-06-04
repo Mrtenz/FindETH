@@ -17,7 +17,15 @@ const configuration: Configuration = {
     sideEffects: true
   },
   plugins: [
-    new FaviconsWebpackPlugin(join(__dirname, '../src/assets/images/logos/ethereum.svg')),
+    new FaviconsWebpackPlugin({
+      logo: join(__dirname, '../src/assets/images/findeth-white.png'),
+      prefix: 'assets/icons-[hash]/',
+      persistentCache: true,
+      title: 'FindETH',
+      icons: {
+        favicons: false
+      }
+    }),
     new CspHtmlWebpackPlugin({
       'default-src': `'none'`,
       'script-src': `'self' https://analytics.mycryptoapi.com`,

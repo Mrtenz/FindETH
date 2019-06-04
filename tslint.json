@@ -23,7 +23,8 @@
     "comment-format": false,
     "ordered-imports": false,
     "member-access": [true, "check-accessor", "check-constructor", "check-parameter-property"],
-    "jsdoc-format": [true, "check-multiline-start"]
+    "jsdoc-format": [true, "check-multiline-start"],
+    "no-namespace": [true, "allow-declarations"]
   },
   "rulesDirectory": ["node_modules/tslint-microsoft-contrib"]
 }

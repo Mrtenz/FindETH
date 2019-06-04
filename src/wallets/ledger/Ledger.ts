@@ -12,7 +12,7 @@ export default abstract class Ledger extends HardwareWallet {
     await this.checkConnection();
 
     // Fetch a random address to ensure the connection works
-    await this.getAddress(LEDGER_ETH, 0);
+    await this.getAddress(LEDGER_ETH, 50);
   }
 
   public getDerivationPaths(): DerivationPath[] {

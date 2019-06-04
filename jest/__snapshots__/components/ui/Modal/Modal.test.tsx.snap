@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<styled.div
+  isVisible={true}
+>
+  <styled.div
+    isVisible={true}
+  >
+    Foo
+    <styled.div>
+      <Styled(Button)
+        large={false}
+        secondary={false}
+      >
+        Close
+      </Styled(Button)>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

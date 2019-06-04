@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<a
+  href="https://example.com"
+  rel="noreferrer nofollower"
+  target="_blank"
+>
+  Foo
+</a>
+`;

@@ -1,5 +1,11 @@
 language: node_js
 
+addons:
+  apt:
+    packages:
+      - libusb-1.0-0-dev
+      - libudev-dev
+
 cache:
   yarn: true
   directories:
@@ -16,6 +22,7 @@ script:
   - yarn run prettier:diff
   - yarn run tslint
   - yarn run tscheck
+  - yarn run test
 
 before_deploy:
   - yarn run build

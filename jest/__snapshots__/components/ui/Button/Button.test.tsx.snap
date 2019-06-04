@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-tilXH",
+        "isStatic": false,
+        "rules": Array [
+          "
+  margin-top: 18px;
+  background: ",
+          [Function],
+          ";
+
+  &:hover {
+    background: ",
+          [Function],
+          ";
+    cursor: ",
+          [Function],
+          ";
+  }
+",
+        ],
+      },
+      "displayName": "Styled(Button)",
+      "render": [Function],
+      "styledComponentId": "sc-tilXH",
+      "target": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;

@@ -5,6 +5,7 @@ import { Network } from '../../config';
 import { Container } from 'styled-bootstrap-grid';
 import Align from '../ui/Align';
 import Spinner from '../ui/Spinner';
+import { Heading, Typography } from '@mycrypto/ui';
 
 interface StateProps {
   network?: Network;
@@ -13,8 +14,26 @@ interface StateProps {
 type Props = StateProps;
 
 const EnsureConnection: FunctionComponent<Props> = ({ network, children }) => {
-  if (network) {
+  if (network && network.name === 'Mainnet') {
     return <>{children}</>;
+  }
+
+  if (network && network.name === 'Offline') {
+    return (
+      <Container>
+        <Heading as="h2">No network connection</Heading>
+        <Typography>This feature requires an internet connection.</Typography>
+      </Container>
+    );
+  }
+
+  if (network && network.name !== 'Mainnet') {
+    return (
+      <Container>
+        <Heading as="h2">Invalid network</Heading>
+        <Typography>Please connect to the main Ethereum network.</Typography>
+      </Container>
+    );
   }
 
   return (

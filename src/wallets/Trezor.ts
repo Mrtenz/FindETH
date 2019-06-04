@@ -15,10 +15,10 @@ export default class Trezor extends HardwareWallet {
     this.cache = {};
 
     // Fetch a random address to ensure the connection works
-    await this.getAddress(DEFAULT_ETH, 0);
+    await this.getAddress(DEFAULT_ETH, 50);
   }
 
-  public async prefetch(paths: DerivationPath[]) {
+  public async prefetch(paths: DerivationPath[]): Promise<{ [key: string]: KeyInfo }> {
     const bundle = paths.filter(path => !path.isHardened).map(path => ({ path: path.prefix }));
 
     const response = await TrezorConnect.getPublicKey({ bundle });
@@ -26,6 +26,8 @@ export default class Trezor extends HardwareWallet {
     for (const { serializedPath, chainCode, publicKey } of response.payload) {
       this.cache[serializedPath] = { chainCode, publicKey };
     }
+
+    return this.cache;
   }
 
   public getDerivationPaths(): DerivationPath[] {

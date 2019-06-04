@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<styled.div>
+  <styled.div
+    alignItems="center"
+    justifyContent="between"
+  >
+    <styled.div
+      auto={true}
+    >
+      <Modal
+        isVisible={false}
+        onClose={[Function]}
+        onConfirm={[Function]}
+      >
+        <styled.p>
+          Are you sure you want to stop searching?
+        </styled.p>
+      </Modal>
+      <Styled(Styled(styled.p))
+        as="h1"
+        onClick={[Function]}
+      >
+        FindETH
+      </Styled(Styled(styled.p))>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

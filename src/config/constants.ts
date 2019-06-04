@@ -5,7 +5,7 @@ export enum SearchType {
 }
 
 export interface Network {
-  name: string;
+  name: 'Mainnet' | 'Testnet' | 'Unknown' | 'Offline';
   color: string;
 }
 
@@ -24,7 +24,14 @@ export const NETWORK_UNKNOWN: Network = {
   color: '#b37aff'
 };
 
+export const NETWORK_OFFLINE: Network = {
+  name: 'Offline',
+  color: '#dcdcdc'
+};
+
 export const SMALL_DISPLAYS = 'screen and (max-width: 550px)';
 export const EXTRA_SMALL_DISPLAYS = 'screen and (max-width: 275px)';
 
 export const ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;
+
+export const IS_LOCAL = process.env.IS_LOCAL === 'true' || process.env.NODE_ENV === 'development';
