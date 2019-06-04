@@ -7,7 +7,7 @@
   "author": "Maarten Zuidhoorn <maarten@zuidhoorn.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "cross-env IS_LOCAL=true ts-node --files src/server",
+    "serve": "cross-env NODE_ENV=production IS_LOCAL=true ts-node --files src/server",
     "start": "webpack-dev-server --config ./webpack/development.ts",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/production.ts",
     "analyze": "webpack --config ./webpack/analyzer.ts",
