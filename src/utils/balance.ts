@@ -2,6 +2,7 @@ import { Address, Balance } from '../store/network';
 import { Token } from '../store/tokens';
 import { Provider } from '@ethersproject/providers';
 import EthScan, { EthersProvider } from 'eth-scan';
+import { formatUnits } from '@ethersproject/units';
 
 /**
  * Get the Ether balance for multiple addresses in a single call. Note that this is limited by the
@@ -23,7 +24,7 @@ export const getEtherBalances = async (
   return addresses.map(address => {
     return {
       ...address,
-      balance: balances[address.address].toString(10)
+      balance: formatDecimals(balances[address.address])
     };
   });
 };
@@ -53,7 +54,22 @@ export const getTokenBalances = async (
   return addresses.map(address => {
     return {
       ...address,
-      balance: balances[address.address].toString(10)
+      balance: formatDecimals(balances[address.address], token.decimals)
     };
   });
+};
+
+/**
+ * Format a bigint as a string with decimals.
+ *
+ * @param {string} balance The big integer to format.
+ * @param {number} decimals The number of decimals for the balance. Defaults to 18.
+ * @return {string} A formatted string with decimals.
+ */
+export const formatDecimals = (balance: bigint, decimals: number = 18): string => {
+  const newBalance = formatUnits(balance.toString(10), decimals);
+  if (newBalance === '0.0') {
+    return '0';
+  }
+  return newBalance;
 };

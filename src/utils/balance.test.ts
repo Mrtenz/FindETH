@@ -1,6 +1,6 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { Address } from '../store/network';
-import { getEtherBalances, getTokenBalances } from './balance';
+import { formatDecimals, getEtherBalances, getTokenBalances } from './balance';
 import { Token } from '../store/tokens';
 
 jest.setTimeout(100000);
@@ -60,4 +60,13 @@ it('fetches token balances for multiple addresses', async () => {
   expect(balances.length).toBe(3);
   expect(balances[0].address).toBe(addresses[0].address);
   expect(balances[0].balance).not.toBe('0');
+});
+
+it('formats a bigint to a string with decimals', () => {
+  const balance = BigInt(123456789);
+
+  expect(formatDecimals(balance, 8)).toBe('1.23456789');
+  expect(formatDecimals(balance, 9)).toBe('0.123456789');
+  expect(formatDecimals(balance, 10)).toBe('0.0123456789');
+  expect(formatDecimals(BigInt(0), 10)).toBe('0');
 });
