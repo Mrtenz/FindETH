@@ -915,10 +915,10 @@
   dependencies:
     "@ethersproject/errors" ">5.0.0-beta.0"
 
-"@ethersproject/providers@^5.0.0-beta.131":
-  version "5.0.0-beta.132"
-  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.0.0-beta.132.tgz#51406dc928ff6cf3369afe54b08e97ae216367de"
-  integrity sha512-MZQeSYaAkTZQIjQoL69BSMiW0XSSz7616lXHcTtndHz0UojZKG0Cwju3k1xGNT33T2Nrr3+jO5OBqgWbSMcO+Q==
+"@ethersproject/providers@^5.0.0-beta.133":
+  version "5.0.0-beta.133"
+  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.0.0-beta.133.tgz#8c41e4537aee49ad20f29d1021f8c7ddd7298e10"
+  integrity sha512-/sB5VhPU9AMf7Gd8WykziXmnn6UHIwLIXH0h1E5K2HAA91nY+nOKMU9KZTEYlfz3cdCbCvYLFWH25CdI/pTWKQ==
   dependencies:
     "@ethersproject/abstract-provider" ">5.0.0-beta.0"
     "@ethersproject/abstract-signer" ">5.0.0-beta.0"
