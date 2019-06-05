@@ -40,7 +40,7 @@
     "@types/react-router-dom": "^4.3.3",
     "@types/rebass__grid": "^6.0.5",
     "@types/serve-static": "^1.13.2",
-    "@types/styled-components": "4.0.2",
+    "@types/styled-components": "4.1.16",
     "@types/trezor-connect": "^6.0.3",
     "@types/w3c-web-usb": "^1.0.3",
     "@types/web-bluetooth": "^0.0.4",
