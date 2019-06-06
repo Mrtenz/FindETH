@@ -113,7 +113,7 @@
     "regenerator-runtime": "^0.13.2",
     "rxjs": "^6.5.2",
     "styled-bootstrap-grid": "^3.0.3",
-    "styled-components": "4.0.2",
+    "styled-components": "4.3.0",
     "trezor-connect": "^7.0.3",
     "typeface-lato": "^0.0.54",
     "typeface-roboto-mono": "^0.0.54"
