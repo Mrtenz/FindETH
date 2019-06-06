@@ -2,10 +2,10 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "Button-uilaai-0",
         "isStatic": false,
@@ -20,9 +20,12 @@ exports[`renders a snapshot 1`] = `
         ],
       },
       "displayName": "Button",
+      "foldedComponentIds": Array [],
       "render": [Function],
+      "self": [Circular],
       "styledComponentId": "Button-uilaai-0",
       "target": [Function],
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

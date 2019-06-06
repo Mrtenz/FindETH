@@ -2,10 +2,10 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "SmallPanel-iu1roc-0",
         "isStatic": true,
@@ -14,9 +14,12 @@ exports[`renders a snapshot 1`] = `
         ],
       },
       "displayName": "SmallPanel",
+      "foldedComponentIds": Array [],
       "render": [Function],
+      "self": [Circular],
       "styledComponentId": "SmallPanel-iu1roc-0",
       "target": [Function],
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

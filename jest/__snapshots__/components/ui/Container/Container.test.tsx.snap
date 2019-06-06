@@ -2,10 +2,10 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "Container-sc-1to8ndn-0",
         "isStatic": true,
@@ -53,9 +53,12 @@ exports[`renders a snapshot 1`] = `
         ],
       },
       "displayName": "Container",
+      "foldedComponentIds": Array [],
       "render": [Function],
+      "self": [Circular],
       "styledComponentId": "Container-sc-1to8ndn-0",
       "target": "div",
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }
