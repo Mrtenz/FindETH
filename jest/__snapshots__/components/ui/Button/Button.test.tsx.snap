@@ -7,29 +7,21 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": undefined,
       "componentStyle": ComponentStyle {
-        "componentId": "sc-tilXH",
+        "componentId": "Button-uilaai-0",
         "isStatic": false,
         "rules": Array [
-          "
-  margin-top: 18px;
-  background: ",
+          "margin-top:18px;background:",
           [Function],
-          ";
-
-  &:hover {
-    background: ",
+          ";font-size:1rem;&:hover{background:",
           [Function],
-          ";
-    cursor: ",
+          ";cursor:",
           [Function],
-          ";
-  }
-",
+          ";}",
         ],
       },
-      "displayName": "Styled(Button)",
+      "displayName": "Button",
       "render": [Function],
-      "styledComponentId": "sc-tilXH",
+      "styledComponentId": "Button-uilaai-0",
       "target": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],

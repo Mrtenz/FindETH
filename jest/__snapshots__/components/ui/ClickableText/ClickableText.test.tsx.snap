@@ -7,7 +7,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": undefined,
       "componentStyle": ComponentStyle {
-        "componentId": "sc-tilXH",
+        "componentId": "StyledClickableText-gk89ve-0",
         "isStatic": false,
         "rules": Array [
           "
@@ -44,14 +44,12 @@ exports[`renders a snapshot 1`] = `
     }
   }
 ",
-          "
-  cursor: pointer;
-",
+          "cursor:pointer;",
         ],
       },
-      "displayName": "Styled(styled.p)",
+      "displayName": "StyledClickableText",
       "render": [Function],
-      "styledComponentId": "sc-tilXH",
+      "styledComponentId": "StyledClickableText-gk89ve-0",
       "target": "p",
       "warnTooManyClasses": [Function],
       "withComponent": [Function],

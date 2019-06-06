@@ -1,14 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<styled.div>
-  <styled.div>
+<Section
+  as="div"
+  dark={true}
+  paddingBottom="1.175rem"
+  paddingTop="1.175rem"
+>
+  <StyledFooter__FooterContainer
+    as="footer"
+  >
     <styled.p>
       Powered by 
       <MyCryptoLogo />
        | Made by Maarten Zuidhoorn 
       <GitHubIcon />
     </styled.p>
-  </styled.div>
-</styled.div>
+  </StyledFooter__FooterContainer>
+</Section>
 `;

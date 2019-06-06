@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<styled.div>
-  <styled.div>
+<Loader__RelativeContainer>
+  <StyledLoader>
     <Spinner />
-  </styled.div>
+  </StyledLoader>
   Foo
-</styled.div>
+</Loader__RelativeContainer>
 `;

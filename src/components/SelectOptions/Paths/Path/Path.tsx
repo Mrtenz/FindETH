@@ -2,11 +2,16 @@ import React, { FunctionComponent } from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
 import { Typography } from '@mycrypto/ui';
 import { DerivationPath } from '../../../../config';
-import { SmallTypography, StyledPath, StyledPathInfo, StyledSwitch } from './StyledPath';
+import {
+  PathContainer,
+  SmallTypography,
+  StyledPath,
+  StyledPathInfo,
+  StyledSwitch
+} from './StyledPath';
 import { addDerivationPath, removeDerivationPath } from '../../../../store/search';
-import { Col } from 'styled-bootstrap-grid';
 import Switch from '../../../ui/Switch';
-import { SmallPanel } from '../../../ui/SmallPanel/StyledSmallPanel';
+import SmallPanel from '../../../ui/SmallPanel';
 
 interface OwnProps {
   path: DerivationPath;
@@ -20,7 +25,7 @@ interface DispatchProps {
 type Props = OwnProps & DispatchProps;
 
 const Path: FunctionComponent<Props> = ({ path, handleToggle, isSelected }) => (
-  <Col sm={4}>
+  <PathContainer>
     <SmallPanel>
       <StyledPath>
         <StyledPathInfo>
@@ -32,7 +37,7 @@ const Path: FunctionComponent<Props> = ({ path, handleToggle, isSelected }) => (
         </StyledSwitch>
       </StyledPath>
     </SmallPanel>
-  </Col>
+  </PathContainer>
 );
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (

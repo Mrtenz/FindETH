@@ -1,7 +1,9 @@
 import React, { ComponentType, FunctionComponent, useState } from 'react';
-import { Col, Container, Row } from 'styled-bootstrap-grid';
-import { Heading, Stepper } from '@mycrypto/ui';
-import { StepperContainer } from './StyledFlow';
+import { Stepper } from '@mycrypto/ui';
+import { FlowHeader, StepperContainer } from './StyledFlow';
+import Page from '../ui/Page';
+import Section from '../ui/Section';
+import Heading from '../ui/Heading';
 
 export interface FlowProps {
   onNext(): void;
@@ -34,19 +36,17 @@ const Flow: FunctionComponent<Props> = ({ components, onDone }) => {
     const { Component, title } = currentFlow;
 
     return (
-      <Container>
-        <Row alignItems="center" justifyContent="between">
-          <Col auto={true}>
+      <Page>
+        <Section paddingTop={false}>
+          <FlowHeader>
             <Heading as="h2">{title}</Heading>
-          </Col>
-          <Col auto={true}>
             <StepperContainer>
               <Stepper current={current} total={components.length} />
             </StepperContainer>
-          </Col>
-        </Row>
-        <Component onNext={handleNext} />
-      </Container>
+          </FlowHeader>
+          <Component onNext={handleNext} />
+        </Section>
+      </Page>
     );
   }
 

@@ -4,7 +4,7 @@ exports[`renders a snapshot 1`] = `
 <ExternalLink
   to="https://mycrypto.com"
 >
-  <styled.img
+  <StyledMyCryptoLogo
     src="test-file-stub"
   />
 </ExternalLink>

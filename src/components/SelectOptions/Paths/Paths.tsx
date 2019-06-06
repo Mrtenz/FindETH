@@ -4,10 +4,10 @@ import { DerivationPath } from '../../../config';
 import { chunk } from '../../../utils';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
-import { Row } from 'styled-bootstrap-grid';
 import Path from './Path';
 import Wallet from '../../../wallets/Wallet';
 import ToggleButton from './ToggleButton/ToggleButton';
+import { PathsContainer } from './StyledPaths';
 
 interface StateProps {
   implementation: Wallet;
@@ -23,11 +23,11 @@ const Paths: FunctionComponent<Props> = ({ implementation, derivationPaths }) =>
     <ToggleButton state={true}>Select all</ToggleButton>
     <ToggleButton state={false}>Deselect all</ToggleButton>
     {chunk(implementation.getDerivationPaths(), 3).map((paths, index) => (
-      <Row key={index}>
+      <PathsContainer key={index}>
         {paths.map(path => (
           <Path key={path.prefix} path={path} isSelected={derivationPaths.includes(path)} />
         ))}
-      </Row>
+      </PathsContainer>
     ))}
   </>
 );

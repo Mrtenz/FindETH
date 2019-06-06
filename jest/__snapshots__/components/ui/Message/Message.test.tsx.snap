@@ -7,20 +7,17 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": undefined,
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
+        "componentId": "StyledMessage-sc-10exyp-0",
         "isStatic": false,
         "rules": Array [
-          "
-  padding: 25px;
-  background: ",
+          "padding:25px;background:",
           [Function],
-          ";
-",
+          ";",
         ],
       },
-      "displayName": "styled.div",
+      "displayName": "StyledMessage",
       "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
+      "styledComponentId": "StyledMessage-sc-10exyp-0",
       "target": "div",
       "warnTooManyClasses": [Function],
       "withComponent": [Function],

@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Col, Container, Row } from 'styled-bootstrap-grid';
 import { StyledHeading } from './StyledHeader';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
@@ -7,6 +6,8 @@ import Modal from '../Modal';
 import { Network } from '../../../config';
 import { Network as NetworkIndicator, Typography } from '@mycrypto/ui';
 import { RouteComponentProps, withRouter } from 'react-router';
+import Logo from './Logo';
+import Container from '../Container';
 
 interface StateProps {
   isSearching: boolean;
@@ -37,22 +38,14 @@ export const Header: FunctionComponent<Props> = ({ isSearching, network, history
   };
 
   return (
-    <Container>
-      <Row alignItems="center" justifyContent="between">
-        <Col auto={true}>
-          <Modal isVisible={isVisible} onConfirm={handleConfirm} onClose={handleClose}>
-            <Typography>Are you sure you want to stop searching?</Typography>
-          </Modal>
-          <StyledHeading as="h1" onClick={handleClick}>
-            FindETH
-          </StyledHeading>
-        </Col>
-        {network && (
-          <Col auto={true}>
-            <NetworkIndicator color={network.color}>{network.name}</NetworkIndicator>
-          </Col>
-        )}
-      </Row>
+    <Container as="header">
+      <Modal isVisible={isVisible} onConfirm={handleConfirm} onClose={handleClose}>
+        <Typography>Are you sure you want to stop searching?</Typography>
+      </Modal>
+      <StyledHeading as="h1">
+        <Logo onClick={handleClick} />
+      </StyledHeading>
+      {network && <NetworkIndicator color={network.color}>{network.name}</NetworkIndicator>}
     </Container>
   );
 };

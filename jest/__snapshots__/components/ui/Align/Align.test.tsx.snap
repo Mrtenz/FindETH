@@ -8,23 +8,19 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": undefined,
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
+        "componentId": "StyledAlign-cz9a97-0",
         "isStatic": false,
         "rules": Array [
-          "
-  display: flex;
-  justify-content: ",
+          "display:flex;justify-content:",
           [Function],
-          ";
-  flex-wrap: ",
+          ";flex-wrap:",
           [Function],
-          ";
-",
+          ";",
         ],
       },
-      "displayName": "styled.div",
+      "displayName": "StyledAlign",
       "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
+      "styledComponentId": "StyledAlign-cz9a97-0",
       "target": "div",
       "warnTooManyClasses": [Function],
       "withComponent": [Function],

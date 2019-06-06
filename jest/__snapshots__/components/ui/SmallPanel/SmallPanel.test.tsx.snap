@@ -7,17 +7,15 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": undefined,
       "componentStyle": ComponentStyle {
-        "componentId": "sc-tilXH",
+        "componentId": "SmallPanel-iu1roc-0",
         "isStatic": true,
         "rules": Array [
-          "
-  padding: 0.75em 1.125em 0.75em 1.125em;
-",
+          "padding:0.75em 1.125em 0.75em 1.125em;",
         ],
       },
-      "displayName": "Styled(Panel)",
+      "displayName": "SmallPanel",
       "render": [Function],
-      "styledComponentId": "sc-tilXH",
+      "styledComponentId": "SmallPanel-iu1roc-0",
       "target": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],

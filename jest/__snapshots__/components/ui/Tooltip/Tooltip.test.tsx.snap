@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<styled.div>
-  <styled.div>
-    <Styled(styled.p)>
+<StyledTooltip__TooltipContainer>
+  <StyledTooltip>
+    <StyledTooltip__TooltipTypography>
       Foo
-    </Styled(styled.p)>
-  </styled.div>
+    </StyledTooltip__TooltipTypography>
+  </StyledTooltip>
   Bar
-</styled.div>
+</StyledTooltip__TooltipContainer>
 `;

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
-import { Panel } from '@mycrypto/ui';
 import { PanelContainer, PanelHeader, PanelImage } from './StyledClickablePanel';
+import Panel from '../Panel';
 
 interface OwnProps {
   title: string;

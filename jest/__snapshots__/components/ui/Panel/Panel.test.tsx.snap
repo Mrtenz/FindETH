@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "Panel-sc-1srljkc-0",
+        "isStatic": true,
+        "rules": Array [
+          "padding:1.5rem 2.25rem;width:11.3906rem;height:11.3906rem;",
+        ],
+      },
+      "displayName": "Panel",
+      "render": [Function],
+      "styledComponentId": "Panel-sc-1srljkc-0",
+      "target": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;
