@@ -4,7 +4,7 @@ import { ApplicationState } from '../../store';
 import { Network } from '../../config';
 import Align from '../ui/Align';
 import Spinner from '../ui/Spinner';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
 import Page from '../ui/Page';
 import Section from '../ui/Section';
 import Heading from '../ui/Heading';

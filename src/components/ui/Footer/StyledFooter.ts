@@ -1,5 +1,5 @@
 import styled, { media } from '../../../styles';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../Typography';
 import { transparentize } from 'polished';
 
 export const FooterItem = styled.div`

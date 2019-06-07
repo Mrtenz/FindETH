@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../../../ui/Typography';
 import { DerivationPath } from '../../../../config';
 import { getFullPath } from '../../../../utils';
 import Message from '../../../ui/Message';

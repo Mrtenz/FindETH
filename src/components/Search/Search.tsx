@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
 import { connect, MapStateToProps } from 'react-redux';
 import { DerivationPath, SearchType } from '../../config';
 import { ApplicationState } from '../../store';
-import { BigTypography } from './StyledSearch';
 import SearchAddress from './SearchAddress';
 import SearchEther from './SearchEther';
 import SearchToken from './SearchToken';
@@ -58,9 +57,9 @@ const Search: FunctionComponent<Props> = ({
           <Heading as="h2">Search completed</Heading>
         )}
         {isSearching && <Typography>This may take a while.</Typography>}
-        <BigTypography>
+        <Typography large={true}>
           {processed} / {total} addresses
-        </BigTypography>
+        </Typography>
         {currentPath && (
           <Typography muted={true}>{getFullPath(currentPath, currentAddressIndex)}</Typography>
         )}

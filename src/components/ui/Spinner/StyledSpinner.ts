@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../Typography';
 
 interface Props {
   width?: number;

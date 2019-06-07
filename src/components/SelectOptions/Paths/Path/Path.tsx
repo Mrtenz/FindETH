@@ -1,14 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../../../ui/Typography';
 import { DerivationPath } from '../../../../config';
-import {
-  PathContainer,
-  SmallTypography,
-  StyledPath,
-  StyledPathInfo,
-  StyledSwitch
-} from './StyledPath';
+import { PathContainer, StyledPath, StyledPathInfo, StyledSwitch } from './StyledPath';
 import { addDerivationPath, removeDerivationPath } from '../../../../store/search';
 import Switch from '../../../ui/Switch';
 import SmallPanel from '../../../ui/SmallPanel';
@@ -30,7 +24,9 @@ const Path: FunctionComponent<Props> = ({ path, handleToggle, isSelected }) => (
       <StyledPath>
         <StyledPathInfo>
           <Typography>{path.name}</Typography>
-          <SmallTypography muted={true}>{path.prefix}</SmallTypography>
+          <Typography small={true} muted={true}>
+            {path.prefix}
+          </Typography>
         </StyledPathInfo>
         <StyledSwitch>
           <Switch checked={isSelected} onToggle={handleToggle} />

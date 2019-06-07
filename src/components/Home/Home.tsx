@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Page from '../ui/Page';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
 import Section from '../ui/Section';
 import Heading from '../ui/Heading';
 import ButtonLink from '../ui/ButtonLink/ButtonLink';

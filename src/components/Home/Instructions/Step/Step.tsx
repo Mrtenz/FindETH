@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../../../ui/Typography';
 import Heading from '../../../ui/Heading';
 import { StepContainer } from './StyledStep';
 

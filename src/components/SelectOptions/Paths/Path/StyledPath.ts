@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Typography } from '@mycrypto/ui';
 import { media } from '../../../../styles';
 
 export const PathContainer = styled.div`
@@ -34,8 +33,4 @@ export const StyledPathInfo = styled.div``;
 
 export const StyledSwitch = styled.div`
   align-self: center;
-`;
-
-export const SmallTypography = styled(Typography)`
-  font-size: 15px !important;
 `;

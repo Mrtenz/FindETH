@@ -7,7 +7,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "StyledClickableText-gk89ve-0",
+        "componentId": "ClickableText-sc-18v8zdz-0",
         "isStatic": false,
         "rules": Array [
           "
@@ -46,16 +46,24 @@ exports[`renders a snapshot 1`] = `
     }
   }
 ",
+          "margin:",
+          [Function],
+          " 0;",
+          [Function],
+          ";",
+          [Function],
+          ";",
           "cursor:pointer;",
         ],
       },
-      "displayName": "StyledClickableText",
+      "displayName": "ClickableText",
       "foldedComponentIds": Array [
         "sc-bdVaJa",
+        "Typography-sc-98k3z5-0",
       ],
       "render": [Function],
       "self": [Circular],
-      "styledComponentId": "StyledClickableText-gk89ve-0",
+      "styledComponentId": "ClickableText-sc-18v8zdz-0",
       "target": "p",
       "toString": [Function],
       "warnTooManyClasses": [Function],

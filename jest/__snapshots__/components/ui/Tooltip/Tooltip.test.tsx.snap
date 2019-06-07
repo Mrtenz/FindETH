@@ -3,7 +3,9 @@
 exports[`renders a snapshot 1`] = `
 <StyledTooltip__TooltipContainer>
   <StyledTooltip>
-    <StyledTooltip__TooltipTypography>
+    <StyledTooltip__TooltipTypography
+      noMargin={true}
+    >
       Foo
     </StyledTooltip__TooltipTypography>
   </StyledTooltip>
