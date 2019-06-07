@@ -8,7 +8,7 @@ interface Props {
 const Tooltip: FunctionComponent<Props> = ({ content, children }) => (
   <TooltipContainer>
     <StyledTooltip>
-      <TooltipTypography>{content}</TooltipTypography>
+      <TooltipTypography noMargin={true}>{content}</TooltipTypography>
     </StyledTooltip>
     {children}
   </TooltipContainer>

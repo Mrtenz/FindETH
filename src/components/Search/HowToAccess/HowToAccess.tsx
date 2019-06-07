@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../../ui/Typography';
 import { StyledList } from './StyledHowToAccess';
 import Icon from '../../ui/Icon';
 import Modal from '../../ui/Modal';

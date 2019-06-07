@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../Typography';
 
 export const StyledTooltip = styled.div`
   position: absolute;
@@ -44,6 +44,5 @@ export const TooltipContainer = styled.div`
 `;
 
 export const TooltipTypography = styled(Typography)`
-  margin: 0;
   color: white;
 `;

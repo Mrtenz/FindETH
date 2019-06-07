@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
 import WalletItem from './WalletItem';
 import MnemonicWalletItem from './WalletItem/MnemonicWalletItem';
 import LedgerWalletItem from './WalletItem/LedgerWalletItem';

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '@mycrypto/ui';
+import Button from '../Button';
 
 interface Props {
   isVisible: boolean;

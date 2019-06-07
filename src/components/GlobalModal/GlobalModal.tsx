@@ -3,7 +3,7 @@ import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../store';
 import { setVisible } from '../../store/modal';
 import Modal from '../ui/Modal';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
 
 interface StateProps {
   isVisible: boolean;

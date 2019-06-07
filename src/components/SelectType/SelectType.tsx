@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
 import Align from '../ui/Align';
 import ClickablePanel from '../ui/ClickablePanel';
 import walletIcon from '!!react-svg-loader!../../assets/images/icons/wallet.svg';

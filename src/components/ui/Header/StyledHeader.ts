@@ -1,5 +1,5 @@
 import styled, { media } from '../../../styles';
-import { Heading } from '@mycrypto/ui';
+import Heading from '../Heading';
 
 export const StyledHeading = styled(Heading)`
   text-align: center;

@@ -9,9 +9,9 @@ exports[`renders a snapshot 1`] = `
     onClose={[Function]}
     onConfirm={[Function]}
   >
-    <styled.p>
+    <Typography>
       Are you sure you want to stop searching?
-    </styled.p>
+    </Typography>
   </Modal>
   <StyledHeader__StyledHeading
     as="h1"

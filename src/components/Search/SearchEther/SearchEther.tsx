@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
-import { Table, Typography } from '@mycrypto/ui';
+import { Table } from '@mycrypto/ui';
+import Typography from '../../ui/Typography';
 import { Address, Balance } from '../../../store/network';
 import { default as AddressItem } from '../../ui/Address';
 import Spinner from '../../ui/Spinner';
