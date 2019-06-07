@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../../../styles';
 import { Heading } from '@mycrypto/ui';
 
 export const PanelContainer = styled.div`
@@ -9,6 +9,13 @@ export const PanelHeader = styled(Heading)`
   margin-top: 0;
 `;
 
-export const PanelImage = styled.img`
-  max-height: 75px;
+export const PanelImage = styled.div`
+  svg {
+    max-width: 75px;
+    max-height: 75px;
+
+    & > path {
+      fill: ${({ theme }) => theme.headline};
+    }
+  }
 `;

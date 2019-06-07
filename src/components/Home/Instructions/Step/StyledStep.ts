@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { Panel } from '@mycrypto/ui';
+import Panel from '../../../ui/Panel';
 import { media } from '../../../../styles';
 
 export const StepContainer = styled(Panel)`
   flex-grow: 1;
   flex-basis: 0;
-
   margin: 1.2rem;
+  height: auto;
 
   &:first-of-type {
     margin-left: 0;
@@ -17,6 +17,8 @@ export const StepContainer = styled(Panel)`
   }
 
   ${media.max.medium`
+    box-sizing: border-box;
+    width: 100%;
     margin: 0.6rem 0;
   `}
 `;

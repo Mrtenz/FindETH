@@ -8,6 +8,7 @@ import { networkSaga, NetworkState } from './network';
 import { searchRootSaga, SearchState } from './search';
 import { tokensSaga, TokensState } from './tokens';
 import { WalletState } from './wallet';
+import { UIState } from './ui';
 
 export interface ApplicationState {
   ens: EnsState;
@@ -15,6 +16,7 @@ export interface ApplicationState {
   network: NetworkState;
   search: SearchState;
   tokens: TokensState;
+  ui: UIState;
   wallet: WalletState;
 }
 

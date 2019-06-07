@@ -20,7 +20,7 @@ export const StyledModalOverlay = styled.div<Props>`
 `;
 
 export const StyledModal = styled.div<Props>`
-  background: white;
+  background: ${({ theme }) => theme.background};
   transform: ${({ isVisible }) => (isVisible ? 'scale(1)' : 'scale(0.8)')};
   transition: transform 0.2s;
   padding: 36px;

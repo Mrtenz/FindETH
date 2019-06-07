@@ -1,7 +1,9 @@
 import { fluidRange } from 'polished';
-import styled, { breakpoints } from '../../../../styles';
+import styled, { breakpoints, StyledProps } from '../../../../styles';
 
-export const LogoImage = styled.img`
+export const LogoImage = styled.img.attrs((props: StyledProps<any>) => ({
+  src: props.theme.logo
+}))`
   vertical-align: middle;
   cursor: pointer;
 

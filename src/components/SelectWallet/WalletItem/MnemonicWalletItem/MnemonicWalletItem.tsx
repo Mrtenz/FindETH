@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
-import keyIcon from '../../../../assets/images/icons/key.svg';
+import keyIcon from '!!react-svg-loader!../../../../assets/images/icons/key.svg';
 import MnemonicPhrase from '../../../../wallets/MnemonicPhrase';
 import WalletItem, { handleInitialize } from '../WalletItem';
 import Modal from '../../../ui/Modal';
