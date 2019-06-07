@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<styled.div
+<StyledAddress__StyledAddressContainer
   noMargin={false}
 >
-  <Styled(Identicon)
+  <StyledAddress__StyledIdenticon
     address="0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520"
   />
-  <Styled(styled.p)
+  <StyledAddress__StyledTypography
     muted={true}
   >
     0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520
-  </Styled(styled.p)>
-</styled.div>
+  </StyledAddress__StyledTypography>
+</StyledAddress__StyledAddressContainer>
 `;

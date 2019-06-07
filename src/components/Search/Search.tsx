@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { Heading, Typography } from '@mycrypto/ui';
+import { Typography } from '@mycrypto/ui';
 import { connect, MapStateToProps } from 'react-redux';
 import { DerivationPath, SearchType } from '../../config';
 import { ApplicationState } from '../../store';
-import { Container } from 'styled-bootstrap-grid';
 import { BigTypography } from './StyledSearch';
 import SearchAddress from './SearchAddress';
 import SearchEther from './SearchEther';
@@ -11,6 +10,9 @@ import SearchToken from './SearchToken';
 import { getFullPath } from '../../utils';
 import HowToAccess from './HowToAccess/HowToAccess';
 import { Route, Switch } from 'react-router';
+import Page from '../ui/Page';
+import Section from '../ui/Section';
+import Heading from '../ui/Heading';
 
 interface StateProps {
   isSearching: boolean;
@@ -48,28 +50,30 @@ const Search: FunctionComponent<Props> = ({
   const processed = currentIndex * depth + currentAddressIndex;
 
   return (
-    <Container>
-      {isSearching ? (
-        <Heading as="h2">Searching for {getName(type)}...</Heading>
-      ) : (
-        <Heading as="h2">Search completed</Heading>
-      )}
-      {isSearching && <Typography>This may take a while.</Typography>}
-      <BigTypography>
-        {processed} / {total} addresses
-      </BigTypography>
-      {currentPath && (
-        <Typography muted={true}>{getFullPath(currentPath, currentAddressIndex)}</Typography>
-      )}
+    <Page>
+      <Section paddingTop={false}>
+        {isSearching ? (
+          <Heading as="h2">Searching for {getName(type)}...</Heading>
+        ) : (
+          <Heading as="h2">Search completed</Heading>
+        )}
+        {isSearching && <Typography>This may take a while.</Typography>}
+        <BigTypography>
+          {processed} / {total} addresses
+        </BigTypography>
+        {currentPath && (
+          <Typography muted={true}>{getFullPath(currentPath, currentAddressIndex)}</Typography>
+        )}
 
-      <Switch>
-        <Route exact={true} path="/search/address" component={SearchAddress} />
-        <Route exact={true} path="/search/ether" component={SearchEther} />
-        <Route exact={true} path="/search/token" component={SearchToken} />
-      </Switch>
+        <Switch>
+          <Route exact={true} path="/search/address" component={SearchAddress} />
+          <Route exact={true} path="/search/ether" component={SearchEther} />
+          <Route exact={true} path="/search/token" component={SearchToken} />
+        </Switch>
 
-      <HowToAccess />
-    </Container>
+        <HowToAccess />
+      </Section>
+    </Page>
   );
 };
 

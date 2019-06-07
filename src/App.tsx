@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { hot } from 'react-hot-loader/root';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { light } from '@mycrypto/ui';
-import { BaseCSS } from 'styled-bootstrap-grid';
+import { createGlobalStyle, ThemeProvider, lightTheme } from './styles';
 import Main from './components/Main';
 import Header from './components/ui/Header';
 import Routes from './components/Routes';
@@ -25,6 +23,8 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     background: ${({ theme }) => (theme as any).background};
+    font-size: 62.5%;
+    overflow-x: hidden;
   }
   
   #root {
@@ -36,13 +36,12 @@ const GlobalStyle = createGlobalStyle`
 const store = createStore();
 
 const App: FunctionComponent = () => (
-  <ThemeProvider theme={light}>
+  <ThemeProvider theme={lightTheme}>
     <Provider store={store}>
       <HashRouter>
         <Analytics>
           <GlobalModal />
           <GlobalStyle />
-          <BaseCSS />
 
           <Main>
             <Header />

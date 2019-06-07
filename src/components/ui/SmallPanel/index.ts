@@ -1,1 +1,1 @@
-export { SmallPanel as default } from './StyledSmallPanel';
+export { default } from './SmallPanel';

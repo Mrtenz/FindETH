@@ -1,1 +1,1 @@
-export { StyledButton as default } from './StyledButton';
+export { default } from './Button';

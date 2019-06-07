@@ -2,12 +2,12 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-tilXH",
+        "componentId": "StyledClickableText-gk89ve-0",
         "isStatic": false,
         "rules": Array [
           "
@@ -15,11 +15,13 @@ exports[`renders a snapshot 1`] = `
           [Function],
           ";
   ",
-          "font-size: 16px; @media (min-width: 400px) {
-  font-size: calc(14.67px + 0.33vw);
-} @media (min-width: 1000px) {
-  font-size: 18px;
-}",
+          "font-size: 16px;",
+          "@media (min-width: 400px) {",
+          "font-size: calc(14.67px + 0.33vw);",
+          "}",
+          "@media (min-width: 1000px) {",
+          "font-size: 18px;",
+          "}",
           ";
   font-family: Lato, sans-serif;
   line-height: 1.5;
@@ -44,15 +46,18 @@ exports[`renders a snapshot 1`] = `
     }
   }
 ",
-          "
-  cursor: pointer;
-",
+          "cursor:pointer;",
         ],
       },
-      "displayName": "Styled(styled.p)",
+      "displayName": "StyledClickableText",
+      "foldedComponentIds": Array [
+        "sc-bdVaJa",
+      ],
       "render": [Function],
-      "styledComponentId": "sc-tilXH",
+      "self": [Circular],
+      "styledComponentId": "StyledClickableText-gk89ve-0",
       "target": "p",
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

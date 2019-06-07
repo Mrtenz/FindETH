@@ -4,8 +4,8 @@ import { Header } from './Header';
 import { createMemoryHistory } from 'history';
 import { NETWORK_MAINNET } from '../../../config';
 import { Network } from '@mycrypto/ui';
-import { StyledHeading } from './StyledHeader';
 import Modal from '../Modal';
+import Logo from './Logo';
 
 it('renders a snapshot', () => {
   const history = createMemoryHistory();
@@ -53,7 +53,7 @@ it('navigates to the home page on click', () => {
     />
   );
 
-  component.find(StyledHeading).simulate('click');
+  component.find(Logo).simulate('click');
 
   expect(listener).toHaveBeenCalledTimes(1);
   expect(listener.mock.calls[0][0].pathname).toBe('/');
@@ -71,7 +71,7 @@ it('shows a modal before navigating if searching', () => {
     />
   );
 
-  component.find(StyledHeading).simulate('click');
+  component.find(Logo).simulate('click');
 
   expect(component.find(Modal).prop('isVisible')).toBe(true);
 });

@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ClickablePanel } from './ClickablePanel';
-import { Panel } from '@mycrypto/ui';
 import { createMemoryHistory } from 'history';
+import Panel from '../Panel';
 
 it('renders a snapshot', () => {
   const history = createMemoryHistory();

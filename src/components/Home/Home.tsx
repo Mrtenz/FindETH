@@ -1,28 +1,27 @@
 import React, { FunctionComponent } from 'react';
-import { Container } from 'styled-bootstrap-grid';
-import { Heading, Typography } from '@mycrypto/ui';
-import Steps from './Steps';
-import { StartButton } from './StyledHome';
-import { Link } from 'react-router-dom';
+import Page from '../ui/Page';
+import { Typography } from '@mycrypto/ui';
+import Section from '../ui/Section';
+import Heading from '../ui/Heading';
+import ButtonLink from '../ui/ButtonLink/ButtonLink';
+import Instructions from './Instructions';
 
 const Home: FunctionComponent = () => (
-  <Container>
-    <section>
+  <Page>
+    <Section paddingTop={false}>
       <Heading as="h2">Find your lost Ether or address</Heading>
       <Typography>
         This tool can help you if you lost your Ether or Ethereum address that you got from a
         mnemonic phrase, or a Ledger or Trezor device. In a few simple steps, you can quickly search
         for the Ether or the address on your wallet.
       </Typography>
-    </section>
-    <section>
-      <Heading as="h3">How does it work?</Heading>
-      <Steps />
-    </section>
-    <Link to="/start">
-      <StartButton>Start searching</StartButton>
-    </Link>
-  </Container>
+      <ButtonLink to="/start">Start searching!</ButtonLink>
+    </Section>
+    <Section secondary={true} grow={true}>
+      <Heading as="h2">How it works</Heading>
+      <Instructions />
+    </Section>
+  </Page>
 );
 
 export default Home;

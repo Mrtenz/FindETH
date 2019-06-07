@@ -3,29 +3,28 @@
 exports[`renders a snapshot 1`] = `
 <StyledComponent
   align="left"
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
+        "componentId": "StyledAlign-cz9a97-0",
         "isStatic": false,
         "rules": Array [
-          "
-  display: flex;
-  justify-content: ",
+          "display:flex;justify-content:",
           [Function],
-          ";
-  flex-wrap: ",
+          ";flex-wrap:",
           [Function],
-          ";
-",
+          ";",
         ],
       },
-      "displayName": "styled.div",
+      "displayName": "StyledAlign",
+      "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
+      "self": [Circular],
+      "styledComponentId": "StyledAlign-cz9a97-0",
       "target": "div",
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

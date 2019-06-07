@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledFooter = styled.div`
+export const FooterContainer = styled.footer`
   text-align: center;
 
   p {
-    font-size: 15px !important;
+    color: white;
+    font-size: 1rem !important;
   }
 `;
