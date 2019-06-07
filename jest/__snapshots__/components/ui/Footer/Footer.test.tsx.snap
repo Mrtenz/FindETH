@@ -3,6 +3,7 @@
 exports[`renders a snapshot 1`] = `
 <Section
   as="div"
+  border={true}
   dark={true}
   paddingBottom="1.175rem"
   paddingTop="1.175rem"
@@ -18,10 +19,13 @@ exports[`renders a snapshot 1`] = `
       <Connect(ThemeProvider) />
     </StyledFooter__FooterItem>
     <StyledFooter__FooterItem>
-      <StyledFooter__FooterTypography>
-        Made by Maarten Zuidhoorn 
-        <GitHubIcon />
-      </StyledFooter__FooterTypography>
+      <StyledFooter__FooterItemContainer>
+        <StyledFooter__FooterTypography>
+          Made by Maarten Zuidhoorn 
+          <GitHubIcon />
+        </StyledFooter__FooterTypography>
+        <Donate />
+      </StyledFooter__FooterItemContainer>
     </StyledFooter__FooterItem>
   </StyledFooter__FooterContainer>
 </Section>

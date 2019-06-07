@@ -1,11 +1,20 @@
-import styled from 'styled-components';
+import styled, { media } from '../../../styles';
 import { Typography } from '@mycrypto/ui';
-import { media } from '../../../styles';
+import { transparentize } from 'polished';
 
 export const FooterItem = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+`;
+
+export const FooterItemContainer = styled.div`
+  text-align: center;
+
+  ${media.medium`
+    text-align: right;
+  `};
 `;
 
 export const FooterContainer = styled.footer`
@@ -16,14 +25,10 @@ export const FooterContainer = styled.footer`
     flex-direction: column;
   `};
 
-  p {
-    color: white;
-    font-size: 1rem !important;
-  }
-
   & ${FooterItem}:not(:first-child):not(:last-child) {
     ${media.max.medium`
       margin: 0.75rem 0;
+      order: -1;
     `};
   }
 
@@ -42,4 +47,5 @@ export const FooterContainer = styled.footer`
 
 export const FooterTypography = styled(Typography)`
   margin: 0;
+  color: ${({ muted }) => (muted ? transparentize(0.25, 'white') : 'white')};
 `;

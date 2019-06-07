@@ -7,6 +7,7 @@ export interface SectionContainerProps {
   secondary?: boolean;
   dark?: boolean;
   grow?: boolean;
+  border?: boolean;
 }
 
 const DEFAULT_PADDING = '4.6875rem';
@@ -31,6 +32,7 @@ export const SectionContainer = styled.section<SectionContainerProps>`
       : secondary
       ? theme.secondarySectionBackground
       : theme.primarySectionBackground};
+  border-top: ${({ theme, border = false }) => (border ? `1px solid ${theme.line}` : 'none')};
 
   & ${Heading} {
     margin-top: 0;
