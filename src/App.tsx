@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { hot } from 'react-hot-loader/root';
-import { createGlobalStyle, ThemeProvider, lightTheme } from './styles';
+import { createGlobalStyle } from './styles';
 import Main from './components/Main';
 import Header from './components/ui/Header';
 import Routes from './components/Routes';
@@ -10,6 +10,7 @@ import { createStore } from './store';
 import GlobalModal from './components/GlobalModal';
 import { HashRouter } from 'react-router-dom';
 import Analytics from './components/Analytics';
+import ThemeProvider from './components/ThemeProvider';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -36,8 +37,8 @@ const GlobalStyle = createGlobalStyle`
 const store = createStore();
 
 const App: FunctionComponent = () => (
-  <ThemeProvider theme={lightTheme}>
-    <Provider store={store}>
+  <Provider store={store}>
+    <ThemeProvider>
       <HashRouter>
         <Analytics>
           <GlobalModal />
@@ -50,8 +51,8 @@ const App: FunctionComponent = () => (
           <Footer />
         </Analytics>
       </HashRouter>
-    </Provider>
-  </ThemeProvider>
+    </ThemeProvider>
+  </Provider>
 );
 
 export default hot(App);

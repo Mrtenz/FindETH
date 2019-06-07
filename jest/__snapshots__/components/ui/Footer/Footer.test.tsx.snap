@@ -7,15 +7,22 @@ exports[`renders a snapshot 1`] = `
   paddingBottom="1.175rem"
   paddingTop="1.175rem"
 >
-  <StyledFooter__FooterContainer
-    as="footer"
-  >
-    <styled.p>
-      Powered by 
-      <MyCryptoLogo />
-       | Made by Maarten Zuidhoorn 
-      <GitHubIcon />
-    </styled.p>
+  <StyledFooter__FooterContainer>
+    <StyledFooter__FooterItem>
+      <StyledFooter__FooterTypography>
+        Powered by 
+        <MyCryptoLogo />
+      </StyledFooter__FooterTypography>
+    </StyledFooter__FooterItem>
+    <StyledFooter__FooterItem>
+      <Connect(ThemeProvider) />
+    </StyledFooter__FooterItem>
+    <StyledFooter__FooterItem>
+      <StyledFooter__FooterTypography>
+        Made by Maarten Zuidhoorn 
+        <GitHubIcon />
+      </StyledFooter__FooterTypography>
+    </StyledFooter__FooterItem>
   </StyledFooter__FooterContainer>
 </Section>
 `;

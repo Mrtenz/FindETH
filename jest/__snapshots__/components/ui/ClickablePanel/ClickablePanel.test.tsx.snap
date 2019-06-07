@@ -10,10 +10,9 @@ exports[`renders a snapshot 1`] = `
     >
       Foo
     </StyledClickablePanel__PanelHeader>
-    <StyledClickablePanel__PanelImage
-      alt="Foo"
-      src="bar"
-    />
+    <StyledClickablePanel__PanelImage>
+      <Icon />
+    </StyledClickablePanel__PanelImage>
   </Panel>
 </StyledClickablePanel__PanelContainer>
 `;

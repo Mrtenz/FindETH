@@ -5,6 +5,7 @@ import { ModalActions, modalReducer } from './modal';
 import { NetworkActions, networkReducer } from './network';
 import { SearchActions, searchReducer } from './search';
 import { TokensActions, tokensReducer } from './tokens';
+import { UIActions, uiReducer } from './ui';
 import { WalletActions, walletReducer } from './wallet';
 
 export type ApplicationActions =
@@ -13,6 +14,7 @@ export type ApplicationActions =
   | NetworkActions
   | SearchActions
   | TokensActions
+  | UIActions
   | WalletActions;
 
 export const reducer: Reducer<ApplicationState, ApplicationActions> = combineReducers({
@@ -21,5 +23,6 @@ export const reducer: Reducer<ApplicationState, ApplicationActions> = combineRed
   modal: modalReducer,
   search: searchReducer,
   tokens: tokensReducer,
+  ui: uiReducer,
   wallet: walletReducer
 });

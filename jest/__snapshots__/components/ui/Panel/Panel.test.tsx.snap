@@ -8,9 +8,11 @@ exports[`renders a snapshot 1`] = `
       "attrs": Array [],
       "componentStyle": ComponentStyle {
         "componentId": "Panel-sc-1srljkc-0",
-        "isStatic": true,
+        "isStatic": false,
         "rules": Array [
-          "padding:1.5rem 2.25rem;width:11.3906rem;height:11.3906rem;",
+          "padding:1.5rem 2.25rem;width:11.3906rem;height:11.3906rem;box-shadow:",
+          [Function],
+          ";",
         ],
       },
       "displayName": "Panel",

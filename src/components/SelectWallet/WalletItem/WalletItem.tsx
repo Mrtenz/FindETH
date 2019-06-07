@@ -7,10 +7,11 @@ import { setDerivationPaths } from '../../../store/search';
 import { showModal } from '../../../store/modal';
 import { AnyAction, Dispatch } from 'redux';
 import ClickablePanel from '../../ui/ClickablePanel';
+import { ImageComponent } from 'react-svg-loader';
 
 interface OwnProps {
   name: string;
-  icon: string;
+  icon: ImageComponent;
   wallet?: new () => Wallet;
 
   onNext?(): void;
