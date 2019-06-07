@@ -68,7 +68,7 @@
     "jest-styled-components": "^6.3.1",
     "lint-staged": "^8.2.0",
     "ora": "^3.4.0",
-    "prettier": "^1.18.0",
+    "prettier": "^1.18.1",
     "prop-types": "^15.0.0",
     "react-hot-loader": "^4.8.8",
     "selfsigned": "^1.10.4",
