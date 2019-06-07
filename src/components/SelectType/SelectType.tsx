@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Typography } from '@mycrypto/ui';
 import Align from '../ui/Align';
 import ClickablePanel from '../ui/ClickablePanel';
-import walletIcon from '../../assets/images/wallet.svg';
+import walletIcon from '../../assets/images/icons/wallet.svg';
 import ethereumIcon from '../../assets/images/logos/ethereum-minimal.svg';
 import daiIcon from '../../assets/images/logos/dai.svg';
 import Section from '../ui/Section';
