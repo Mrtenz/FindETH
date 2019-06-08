@@ -1,7 +1,7 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
-import { Address } from '../store/network';
 import { formatDecimals, getEtherBalances, getTokenBalances } from './balance';
 import { Token } from '../store/tokens';
+import { WalletResult, WalletType } from '../store/wallet';
 
 jest.setTimeout(100000);
 
@@ -10,16 +10,22 @@ const provider = new JsonRpcProvider(
 );
 
 it('fetches Ether balances for multiple addresses', async () => {
-  const addresses: Address[] = [
+  const addresses: WalletResult[] = [
     {
+      type: WalletType.MnemonicPhrase,
+      withPassword: false,
       address: '0x0000000000000000000000000000000000000000',
       path: `m/44'/60'/0'/0/0`
     },
     {
+      type: WalletType.MnemonicPhrase,
+      withPassword: false,
       address: '0x0000000000000000000000000000000000000001',
       path: `m/44'/60'/0'/0/1`
     },
     {
+      type: WalletType.MnemonicPhrase,
+      withPassword: false,
       address: '0x0000000000000000000000000000000000000002',
       path: `m/44'/60'/0'/0/2`
     }
@@ -28,21 +34,27 @@ it('fetches Ether balances for multiple addresses', async () => {
   const balances = await getEtherBalances(provider, addresses);
 
   expect(balances.length).toBe(3);
-  expect(balances[0].address).toBe(addresses[0].address);
+  expect(balances[0].result.address).toBe(addresses[0].address);
   expect(balances[0].balance).not.toBe('0');
 });
 
-it('fetches token balances for multiple addresses', async () => {
-  const addresses: Address[] = [
+it('fetches token balances for multiple results', async () => {
+  const addresses: WalletResult[] = [
     {
+      type: WalletType.MnemonicPhrase,
+      withPassword: false,
       address: '0x0000000000000000000000000000000000000000',
       path: `m/44'/60'/0'/0/0`
     },
     {
+      type: WalletType.MnemonicPhrase,
+      withPassword: false,
       address: '0x0000000000000000000000000000000000000001',
       path: `m/44'/60'/0'/0/1`
     },
     {
+      type: WalletType.MnemonicPhrase,
+      withPassword: false,
       address: '0x0000000000000000000000000000000000000002',
       path: `m/44'/60'/0'/0/2`
     }
@@ -58,7 +70,7 @@ it('fetches token balances for multiple addresses', async () => {
   const balances = await getTokenBalances(provider, addresses, token);
 
   expect(balances.length).toBe(3);
-  expect(balances[0].address).toBe(addresses[0].address);
+  expect(balances[0].result.address).toBe(addresses[0].address);
   expect(balances[0].balance).not.toBe('0');
 });
 

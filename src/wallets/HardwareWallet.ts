@@ -2,6 +2,8 @@ import Wallet from './Wallet';
 import HDKey from 'hdkey';
 import { computeAddress } from '@ethersproject/transactions';
 import { DerivationPath } from '../config';
+import { WalletResult, WalletType } from '../store/wallet';
+import { getFullPath } from '../utils';
 
 export interface KeyInfo {
   publicKey: string;
@@ -12,20 +14,34 @@ export default abstract class HardwareWallet implements Wallet {
   private cachedDPath?: DerivationPath;
   private cachedKeyInfo?: KeyInfo;
 
-  public async getAddress(dPath: DerivationPath, index: number): Promise<string> {
+  public async getAddress(dPath: DerivationPath, index: number): Promise<WalletResult> {
+    let address: string;
     if (dPath.isHardened) {
-      return this.getHardenedAddress(dPath, index);
+      address = await this.getHardenedAddress(dPath, index);
+    } else {
+      const hdKey = await this.getHDKey(dPath);
+      const publicKey = hdKey.derive(`m/${index}`).publicKey;
+
+      address = computeAddress(publicKey);
     }
 
-    const hdKey = await this.getHDKey(dPath);
-    const publicKey = hdKey.derive(`m/${index}`).publicKey;
-
-    return computeAddress(publicKey);
+    return {
+      type: this.getWalletType(),
+      address,
+      path: getFullPath(dPath, index)
+    };
   }
 
   public abstract initialize(): Promise<void>;
 
   public abstract getDerivationPaths(): DerivationPath[];
+
+  /**
+   * Get the wallet type for the implementation.
+   *
+   * @return {WalletType} The type of wallet.
+   */
+  protected abstract getWalletType(): WalletType.Ledger | WalletType.Trezor;
 
   /**
    * Get KeyInfo (public key, chain code) from the device.

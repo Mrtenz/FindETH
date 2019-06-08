@@ -1,18 +1,27 @@
 import React, { FunctionComponent } from 'react';
+import { WalletResult, WalletType } from '../../../../store/wallet';
 import Typography from '../../../ui/Typography';
-import { DerivationPath } from '../../../../config';
-import { getFullPath } from '../../../../utils';
 import Message from '../../../ui/Message';
 
 interface Props {
-  path: DerivationPath;
-  index: number;
+  result: WalletResult;
 }
 
-const AddressFound: FunctionComponent<Props> = ({ path, index }) => (
-  <Message type="info">
-    <Typography>Address found at {getFullPath(path, index)}!</Typography>
-  </Message>
-);
+const AddressFound: FunctionComponent<Props> = ({ result }) => {
+  const indicator =
+    result.type === WalletType.MnemonicPhrase
+      ? result.withPassword
+        ? "Make sure you're using the password you entered previously, in order to access the address."
+        : "Make sure you're not using a password, in order to access the address."
+      : null;
+
+  return (
+    <Message type="info">
+      <Typography>
+        Address found at {result.path}! {indicator}
+      </Typography>
+    </Message>
+  );
+};
 
 export default AddressFound;

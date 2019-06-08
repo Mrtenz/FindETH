@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import {
-  ADD_ADDRESS,
+  ADD_RESULT,
   ADD_BALANCES,
   NetworkActions,
   NetworkState,
@@ -10,7 +10,7 @@ import {
 } from './types';
 
 const INITIAL_STATE: NetworkState = {
-  addresses: [],
+  results: [],
   balances: []
 };
 
@@ -32,19 +32,19 @@ export const networkReducer: Reducer<NetworkState, NetworkActions> = (
     case CLEAR_BALANCES:
       return {
         ...state,
-        addresses: [],
+        results: [],
         balances: []
       };
-    case ADD_ADDRESS:
+    case ADD_RESULT:
       return {
         ...state,
-        addresses: [...state.addresses, action.payload]
+        results: [...state.results, action.payload]
       };
     case ADD_BALANCES:
       return {
         ...state,
         balances: [...state.balances, ...action.payload],
-        addresses: []
+        results: []
       };
     default:
       return state;

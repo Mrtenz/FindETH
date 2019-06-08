@@ -2,6 +2,7 @@ import HardwareWallet, { KeyInfo } from './HardwareWallet';
 import TrezorConnect from 'trezor-connect';
 import { DEFAULT_ETH, DerivationPath, TREZOR_DERIVATION_PATHS } from '../config';
 import { getFullPath } from '../utils';
+import { WalletType } from '../store/wallet';
 
 export default class Trezor extends HardwareWallet {
   private cache: { [key: string]: KeyInfo } = {};
@@ -32,6 +33,10 @@ export default class Trezor extends HardwareWallet {
 
   public getDerivationPaths(): DerivationPath[] {
     return TREZOR_DERIVATION_PATHS;
+  }
+
+  protected getWalletType(): WalletType.Trezor {
+    return WalletType.Trezor;
   }
 
   protected async getKeyInfo(path: DerivationPath): Promise<KeyInfo> {
