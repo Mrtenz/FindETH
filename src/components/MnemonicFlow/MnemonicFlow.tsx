@@ -58,21 +58,4 @@ const MnemonicFlow: FunctionComponent<Props> = ({ isVisible, onDone, onClose }) 
   );
 };
 
-/*const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps> = (
-  dispatch,
-  { history }
-) => ({
-  handleDone(): void {
-    history.push('/search/address');
-    dispatch(search(SearchType.Address));
-  }
-});
-
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(MnemonicFlow)
-);*/
-
 export default MnemonicFlow;
