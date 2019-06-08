@@ -15,21 +15,30 @@ const EnterMnemonicPhrase: FunctionComponent<Props> = ({ onNext, onClose }) => {
   const [mnemonicPhrase, setMnemonicPhrase] = useState<string>('');
   const [messageMnemonicPhrase, setMessageMnemonicPhrase] = useState<string>('');
   const [isValid, setValid] = useState<boolean>(false);
+  const [isPossibleSwapped, setPossibleSwapped] = useState<boolean>(false);
   const [isSwapped, setSwapped] = useState<boolean>(false);
 
   useEffect(() => {
     setSwapped(false);
+    setPossibleSwapped(false);
+
+    const swappedPhrase = swapMnemonicPhrase(mnemonicPhrase);
+    const isSwappedValid = isValidMnemonic(swappedPhrase);
 
     if (!isValidMnemonic(mnemonicPhrase)) {
       setValid(false);
 
-      const swappedPhrase = swapMnemonicPhrase(mnemonicPhrase);
-      if (isValidMnemonic(swappedPhrase)) {
+      if (isSwappedValid) {
         setSwapped(true);
         setMessageMnemonicPhrase(mnemonicPhrase);
       }
     } else {
       setValid(true);
+
+      if (isSwappedValid) {
+        setPossibleSwapped(true);
+        setMessageMnemonicPhrase(mnemonicPhrase);
+      }
     }
   }, [mnemonicPhrase]);
 
@@ -58,6 +67,18 @@ const EnterMnemonicPhrase: FunctionComponent<Props> = ({ onNext, onClose }) => {
           ?
         </Typography>
       </Message>
+
+      <Message type="info" isVisible={isPossibleSwapped}>
+        <Typography>
+          The provided mnemonic phrase is valid, but you <em>may</em> have entered it in the wrong
+          order. Did you mean{' '}
+          <ClickableText onClick={handleSwap}>
+            {swapMnemonicPhrase(messageMnemonicPhrase)}
+          </ClickableText>
+          ?
+        </Typography>
+      </Message>
+
       <Input
         placeholder="tonight false web cake etc."
         value={mnemonicPhrase}
