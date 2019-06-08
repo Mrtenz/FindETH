@@ -15,6 +15,9 @@ interface CustomTheme {
   darkBackground: string;
   line: string;
   panelShadow: string;
+  infoMessageBackground: string;
+  warningMessageBackground: string;
+  errorMessageBackground: string;
 }
 
 export type FindETHTheme = CustomTheme & UITheme;
@@ -31,7 +34,10 @@ export const lightTheme: FindETHTheme = {
   darkBackground: '#242429',
   line: '#e8eaed',
   panelShadow:
-    '0 0 0 0.0625em rgba(0, 0, 0, 0.03), 0 0.0625em 0 0 rgba(0, 0, 0, 0.05), 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1)'
+    '0 0 0 0.0625em rgba(0, 0, 0, 0.03), 0 0.0625em 0 0 rgba(0, 0, 0, 0.05), 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1)',
+  infoMessageBackground: '#f8f9fa',
+  warningMessageBackground: '#ffc107',
+  errorMessageBackground: '#dc3545'
 };
 
 export const darkTheme: FindETHTheme = {
@@ -48,7 +54,10 @@ export const darkTheme: FindETHTheme = {
   darkBackground: '#242429',
   line: '#545454',
   panelShadow:
-    '0 0 0 0.0625rem rgba(80, 80, 80, 0.03), 0 0.0625rem 0 0 rgba(80, 80, 80, 0.05), 0 0.0625rem 0.1875rem 0 rgba(80, 80, 80, 0.1)'
+    '0 0 0 0.0625rem rgba(80, 80, 80, 0.03), 0 0.0625rem 0 0 rgba(80, 80, 80, 0.05), 0 0.0625rem 0.1875rem 0 rgba(80, 80, 80, 0.1)',
+  infoMessageBackground: '#343a40',
+  warningMessageBackground: '#b18604',
+  errorMessageBackground: '#dc3545'
 };
 
 export const themes = {
