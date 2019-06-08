@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Modal from './Modal';
-import { StyledModalButton, StyledModalOverlay } from './StyledModal';
+import { StyledModalOverlay } from './StyledModal';
+import Button from '../Button';
 
 it('renders a snapshot', () => {
   const component = shallow(<Modal isVisible={true}>Foo</Modal>);
@@ -29,18 +30,18 @@ it('renders buttons based on the props', () => {
     </Modal>
   );
 
-  expect(component.find(StyledModalButton).length).toBe(1);
+  expect(component.find(Button).length).toBe(1);
 
-  component.find(StyledModalButton).simulate('click');
+  component.find(Button).simulate('click');
   expect(handleClose).toHaveBeenCalledTimes(1);
 
   const handleConfirm = jest.fn();
   component.setProps({ onConfirm: handleConfirm });
 
-  expect(component.find(StyledModalButton).length).toBe(2);
+  expect(component.find(Button).length).toBe(2);
 
   component
-    .find(StyledModalButton)
+    .find(Button)
     .at(0)
     .simulate('click');
   expect(handleConfirm).toHaveBeenCalledTimes(1);

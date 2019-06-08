@@ -58,6 +58,8 @@ exports[`renders a snapshot 1`] = `
           [Function],
           ";
 ",
+          [Function],
+          ";",
         ],
       },
       "displayName": "Heading",

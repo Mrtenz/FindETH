@@ -10,42 +10,6 @@ exports[`renders a snapshot 1`] = `
         "componentId": "ClickableText-sc-18v8zdz-0",
         "isStatic": false,
         "rules": Array [
-          "
-  color: ",
-          [Function],
-          ";
-  ",
-          "font-size: 16px;",
-          "@media (min-width: 400px) {",
-          "font-size: calc(14.67px + 0.33vw);",
-          "}",
-          "@media (min-width: 1000px) {",
-          "font-size: 18px;",
-          "}",
-          ";
-  font-family: Lato, sans-serif;
-  line-height: 1.5;
-  ",
-          [Function],
-          ";
-  ",
-          [Function],
-          ";
-  a {
-    color: ",
-          [Function],
-          ";
-    text-decoration: none;
-    font-weight: bold;
-
-    /* stylelint-disable-next-line max-nesting-depth */
-    :hover {
-      color: ",
-          [Function],
-          ";
-    }
-  }
-",
           "margin:",
           [Function],
           " 0;",
@@ -53,18 +17,19 @@ exports[`renders a snapshot 1`] = `
           ";",
           [Function],
           ";",
-          "cursor:pointer;",
+          "cursor:pointer;color:",
+          [Function],
+          ";text-decoration:none;font-weight:bold;",
         ],
       },
       "displayName": "ClickableText",
       "foldedComponentIds": Array [
-        "sc-bdVaJa",
-        "Typography-sc-98k3z5-0",
+        "Typography-sc-98k3z5-0-span",
       ],
       "render": [Function],
       "self": [Circular],
       "styledComponentId": "ClickableText-sc-18v8zdz-0",
-      "target": "p",
+      "target": "span",
       "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],

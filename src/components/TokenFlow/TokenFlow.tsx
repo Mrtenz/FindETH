@@ -7,7 +7,7 @@ import { search } from '../../store/search';
 import { SearchType } from '../../config';
 import SelectToken from '../SelectToken';
 import { RouteComponentProps, withRouter } from 'react-router';
-import EnsureConnection from '../EnsureConnection/EnsureConnection';
+import EnsureConnection from '../EnsureConnection';
 import BrowserCheck from '../BrowserCheck';
 
 interface DispatchProps {

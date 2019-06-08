@@ -6,7 +6,7 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import { search } from '../../store/search';
 import { SearchType } from '../../config';
 import { RouteComponentProps, withRouter } from 'react-router';
-import EnsureConnection from '../EnsureConnection/EnsureConnection';
+import EnsureConnection from '../EnsureConnection';
 import BrowserCheck from '../BrowserCheck';
 
 interface DispatchProps {

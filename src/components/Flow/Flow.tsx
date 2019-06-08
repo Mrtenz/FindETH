@@ -1,9 +1,9 @@
 import React, { ComponentType, FunctionComponent, useState } from 'react';
-import { Stepper } from '@mycrypto/ui';
 import { FlowHeader, StepperContainer } from './StyledFlow';
 import Page from '../ui/Page';
 import Section from '../ui/Section';
 import Heading from '../ui/Heading';
+import Stepper from '../ui/Stepper';
 
 export interface FlowProps {
   onNext(): void;
@@ -16,11 +16,18 @@ interface FlowComponent {
 
 interface Props {
   components: FlowComponent[];
+  page?: boolean;
+  smallHeading?: boolean;
 
   onDone(): void;
 }
 
-const Flow: FunctionComponent<Props> = ({ components, onDone }) => {
+const Flow: FunctionComponent<Props> = ({
+  components,
+  onDone,
+  page = true,
+  smallHeading = false
+}) => {
   const [current, setCurrent] = useState<number>(0);
 
   const handleNext = (): void => {
@@ -35,19 +42,29 @@ const Flow: FunctionComponent<Props> = ({ components, onDone }) => {
   if (currentFlow) {
     const { Component, title } = currentFlow;
 
-    return (
-      <Page>
-        <Section paddingTop={false}>
-          <FlowHeader>
-            <Heading as="h2">{title}</Heading>
-            <StepperContainer>
-              <Stepper current={current} total={components.length} />
-            </StepperContainer>
-          </FlowHeader>
-          <Component onNext={handleNext} />
-        </Section>
-      </Page>
+    const flow = (
+      <>
+        <FlowHeader smallHeading={smallHeading}>
+          <Heading as={smallHeading ? 'h3' : 'h2'} noMargin={true}>
+            {title}
+          </Heading>
+          <StepperContainer>
+            <Stepper current={current} total={components.length} />
+          </StepperContainer>
+        </FlowHeader>
+        <Component onNext={handleNext} />
+      </>
     );
+
+    if (page) {
+      return (
+        <Page>
+          <Section paddingTop={false}>{flow}</Section>
+        </Page>
+      );
+    }
+
+    return flow;
   }
 
   return null;
