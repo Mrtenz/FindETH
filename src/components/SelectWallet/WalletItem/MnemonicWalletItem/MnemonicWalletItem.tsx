@@ -1,14 +1,12 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import keyIcon from '!!react-svg-loader!../../../../assets/images/icons/key.svg';
 import MnemonicPhrase from '../../../../wallets/MnemonicPhrase';
 import WalletItem, { handleInitialize } from '../WalletItem';
-import Modal from '../../../ui/Modal';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../../store';
-import { Input, Typography } from '@mycrypto/ui';
 import Tooltip from '../../../ui/Tooltip';
-import LocalCheck from '../../../LocalCheck';
-import { IS_LOCAL } from '../../../../config';
+import MnemonicFlow from '../../../MnemonicFlow';
+import { MnemonicFlowResult } from '../../../MnemonicFlow/MnemonicFlow';
 
 interface OwnProps {
   onNext(): void;
@@ -26,13 +24,6 @@ type Props = OwnProps & StateProps & DispatchProps;
 
 const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementation }) => {
   const [isVisible, setVisible] = useState<boolean>(false);
-  const [mnemonicPhrase, setMnemonicPhrase] = useState<string>('');
-  const [passPhrase, setPassPhrase] = useState<string>('');
-
-  const clearState = () => {
-    setMnemonicPhrase('');
-    setPassPhrase('');
-  };
 
   const handleClick = () => {
     setVisible(true);
@@ -40,53 +31,18 @@ const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementatio
 
   const handleClose = () => {
     setVisible(false);
-    clearState();
   };
 
-  const handleConfirm = () => {
+  const handleDone = ({ mnemonicPhrase, password }: MnemonicFlowResult) => {
     setVisible(false);
 
-    const implementation = new MnemonicPhrase(mnemonicPhrase, passPhrase);
+    const implementation = new MnemonicPhrase(mnemonicPhrase, password);
     setMnemonicImplementation(implementation);
-    clearState();
-  };
-
-  const handleChangeMnemonicPhrase = (event: ChangeEvent<HTMLInputElement>) => {
-    setMnemonicPhrase(event.target.value);
-  };
-
-  const handleChangePassPhrase = (event: ChangeEvent<HTMLInputElement>) => {
-    setPassPhrase(event.target.value);
   };
 
   return (
     <>
-      <Modal
-        isVisible={isVisible}
-        onClose={handleClose}
-        onConfirm={(IS_LOCAL && handleConfirm) || undefined}
-      >
-        <LocalCheck>
-          <Typography as="label">
-            Mnemonic phrase
-            <Input
-              type="password"
-              placeholder="Mnemonic phrase"
-              value={mnemonicPhrase}
-              onChange={handleChangeMnemonicPhrase}
-            />
-          </Typography>
-          <Typography as="label">
-            (Optional) passphrase
-            <Input
-              type="password"
-              placeholder="Passphrase"
-              value={passPhrase}
-              onChange={handleChangePassPhrase}
-            />
-          </Typography>
-        </LocalCheck>
-      </Modal>
+      <MnemonicFlow isVisible={isVisible} onDone={handleDone} onClose={handleClose} />
       <Tooltip content="This method is only available locally.">
         <WalletItem name="Mnemonic" icon={keyIcon} onClick={handleClick} />
       </Tooltip>

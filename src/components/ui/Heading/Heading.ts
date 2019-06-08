@@ -1,6 +1,16 @@
-import styled from '../../../styles';
+import styled, { css } from '../../../styles';
 import { Heading as UIHeading } from '@mycrypto/ui';
 
-const Heading = styled(UIHeading)``;
+interface Props {
+  noMargin?: boolean;
+}
+
+const Heading = styled(UIHeading)<Props>`
+  ${({ noMargin }) =>
+    noMargin &&
+    css`
+      margin: 0;
+    `};
+`;
 
 export default Heading;

@@ -30,14 +30,12 @@ export const StyledModal = styled.div<Props>`
   border-radius: 3px;
 `;
 
-export const StyledModalButtons = styled.div`
+export const ModalButtons = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 18px;
-`;
 
-export const StyledModalButton = styled(Button)`
-  padding: 10px 15px;
-  font-size: 17px !important;
-  margin-left: 18px;
+  & ${Button} {
+    margin-left: 18px;
+  }
 `;

@@ -1,6 +1,6 @@
 import { SagaIterator } from 'redux-saga';
 import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
-import { Address, Balance, CONNECT, ConnectAction, FETCH_BALANCES } from './types';
+import { Balance, CONNECT, ConnectAction, FETCH_BALANCES } from './types';
 import { addBalances, setNetwork } from './actions';
 import { ApplicationState } from '../store';
 import {
@@ -13,6 +13,7 @@ import {
 import { Provider } from '@ethersproject/providers';
 import { Token } from '../tokens';
 import { getEtherBalances, getTokenBalances } from '../../utils';
+import { WalletResult } from '../wallet';
 
 export function* networkSaga(): SagaIterator {
   yield all([takeLatest(CONNECT, connectSaga), takeEvery(FETCH_BALANCES, fetchBalancesSaga)]);
@@ -41,17 +42,17 @@ function* connectSaga({ payload }: ConnectAction): SagaIterator {
 
 const getProvider = (state: ApplicationState): Provider | undefined => state.network.provider;
 
-const getAddresses = (state: ApplicationState): Address[] => state.network.addresses;
+const getResults = (state: ApplicationState): WalletResult[] => state.network.results;
 
 const getSearchType = (state: ApplicationState): SearchType => state.search.type;
 
-const handlers: { [key: number]: (addresses: Address[]) => SagaIterator } = {
+const handlers: { [key: number]: (results: WalletResult[]) => SagaIterator } = {
   [SearchType.Ether]: fetchEtherBalances,
   [SearchType.Token]: fetchTokenBalances
 };
 
 function* fetchBalancesSaga(): SagaIterator {
-  const addresses: Address[] = yield select(getAddresses);
+  const addresses: WalletResult[] = yield select(getResults);
   const type: SearchType = yield select(getSearchType);
   const handler = handlers[type];
 
@@ -60,28 +61,17 @@ function* fetchBalancesSaga(): SagaIterator {
   yield put(addBalances(balances));
 }
 
-function* fetchEtherBalances(addresses: Address[]): SagaIterator {
-  /*const provider: providers.Provider = yield select(getProvider);
-
-  const balance: utils.BigNumber = yield call([provider, provider.getBalance], address.address);
-  return utils.formatUnits(balance, 18);*/
-
+function* fetchEtherBalances(results: WalletResult[]): SagaIterator {
   const provider: Provider = yield select(getProvider);
 
-  return yield call(getEtherBalances, provider, addresses);
+  return yield call(getEtherBalances, provider, results);
 }
 
 const getToken = (state: ApplicationState): Token | undefined => state.tokens.token;
 
-function* fetchTokenBalances(addresses: Address[]): SagaIterator {
-  /*const provider: providers.Provider = yield select(getProvider);
-  const token: Token = yield select(getToken);
-
-  const balance: utils.BigNumber = yield call(getTokenBalance, provider, token, address.address);
-  return utils.formatUnits(balance, token.decimals);*/
-
+function* fetchTokenBalances(results: WalletResult[]): SagaIterator {
   const provider: Provider = yield select(getProvider);
   const token: Token = yield select(getToken);
 
-  return yield call(getTokenBalances, provider, addresses, token);
+  return yield call(getTokenBalances, provider, results, token);
 }

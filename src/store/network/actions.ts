@@ -1,10 +1,9 @@
 import { ActionCreator } from 'redux';
 import {
-  ADD_ADDRESS,
+  ADD_RESULT,
   ADD_BALANCES,
-  AddAddressAction,
+  AddResultAction,
   AddBalanceAction,
-  Address,
   Balance,
   CLEAR_BALANCES,
   ClearBalancesAction,
@@ -17,6 +16,7 @@ import {
 } from './types';
 import { Provider } from '@ethersproject/providers';
 import { Network } from '../../config';
+import { WalletResult } from '../wallet';
 
 export const connectProvider: ActionCreator<ConnectAction> = (payload: Provider) => ({
   type: CONNECT,
@@ -32,8 +32,8 @@ export const clearBalances: ActionCreator<ClearBalancesAction> = () => ({
   type: CLEAR_BALANCES
 });
 
-export const addAddress: ActionCreator<AddAddressAction> = (payload: Address) => ({
-  type: ADD_ADDRESS,
+export const addResult: ActionCreator<AddResultAction> = (payload: WalletResult) => ({
+  type: ADD_RESULT,
   payload
 });
 

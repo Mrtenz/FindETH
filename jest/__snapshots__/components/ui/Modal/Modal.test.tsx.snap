@@ -8,14 +8,14 @@ exports[`renders a snapshot 1`] = `
     isVisible={true}
   >
     Foo
-    <StyledModal__StyledModalButtons>
-      <StyledModal__StyledModalButton
+    <StyledModal__ModalButtons>
+      <Button
         large={false}
         secondary={false}
       >
         Close
-      </StyledModal__StyledModalButton>
-    </StyledModal__StyledModalButtons>
+      </Button>
+    </StyledModal__ModalButtons>
   </StyledModal>
 </StyledModal__StyledModalOverlay>
 `;

@@ -16,13 +16,14 @@ import {
   setDerivationPath,
   setDerivationPaths,
   setIndex,
+  setResult,
   setSearching
 } from './actions';
 import { ApplicationState } from '../store';
 import Wallet from '../../wallets/Wallet';
 import { SearchType } from '../../config';
-import { addAddress, clearBalances, fetchBalances } from '../network';
-import { getFullPath } from '../../utils';
+import { addResult, clearBalances, fetchBalances } from '../network';
+import { WalletResult } from '../wallet';
 
 export function* searchRootSaga(): SagaIterator {
   yield all([
@@ -61,7 +62,7 @@ function* searchSaga(): SagaIterator {
   yield put(searchNext());
 }
 
-const handlers: { [key: number]: (currentAddress: string) => SagaIterator } = {
+const handlers: { [key: number]: (result: WalletResult) => SagaIterator } = {
   [SearchType.Address]: searchNextAddress,
   [SearchType.Ether]: searchNextEther,
   [SearchType.Token]: searchNextEther // Ether and tokens use the same logic here
@@ -103,16 +104,27 @@ function* searchNextSaga(): SagaIterator {
   }
 
   try {
-    const foundAddress: string = yield call(
+    const result: WalletResult | WalletResult[] = yield call(
       [implementation, implementation.getAddress],
       currentPath,
       currentAddressIndex
     );
 
+    let results: WalletResult[];
+
+    if (Array.isArray(result)) {
+      results = [...result];
+    } else {
+      results = [result];
+    }
+
     const handler = handlers[type];
-    const done = yield call(handler, foundAddress);
-    if (done) {
-      return;
+
+    for (const item of results) {
+      const done = yield call(handler, item);
+      if (done) {
+        return;
+      }
     }
   } catch (error) {
     yield put(checkFailed());
@@ -124,23 +136,17 @@ function* searchNextSaga(): SagaIterator {
   yield put(searchNext());
 }
 
-function* searchNextEther(currentAddress: string): SagaIterator {
-  const { currentPath, currentAddressIndex }: SearchState = yield select(getSearchState);
-
-  yield put(
-    addAddress({
-      address: currentAddress,
-      path: getFullPath(currentPath!, currentAddressIndex)
-    })
-  );
+function* searchNextEther(result: WalletResult): SagaIterator {
+  yield put(addResult(result));
 
   return false;
 }
 
-function* searchNextAddress(currentAddress: string): SagaIterator {
+function* searchNextAddress(result: WalletResult): SagaIterator {
   const { address }: SearchState = yield select(getSearchState);
 
-  if (currentAddress.toLowerCase() === address!.toLowerCase()) {
+  if (result.address.toLowerCase() === address!.toLowerCase()) {
+    yield put(setResult(result));
     yield put(setAddressFound(true));
     yield put(setSearching(false));
     return true;

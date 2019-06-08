@@ -1,1 +1,1 @@
-export { StyledMessage as default } from './StyledMessage';
+export { default } from './Message';
