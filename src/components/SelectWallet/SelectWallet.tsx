@@ -10,7 +10,7 @@ import trezorIcon from '!!react-svg-loader!../../assets/images/logos/trezor.svg'
 import Trezor from '../../wallets/Trezor';
 import Loader from '../ui/Loader';
 import { ApplicationState } from '../../store';
-import { FlowProps } from '../Flow/Flow';
+import { FlowProps } from '../Flow';
 import Align from '../ui/Align';
 
 interface StateProps {

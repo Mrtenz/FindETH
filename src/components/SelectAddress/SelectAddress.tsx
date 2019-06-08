@@ -8,8 +8,8 @@ import { isEnsName } from '../../utils';
 import { resolveName, setResolvedAddress } from '../../store/ens';
 import Spinner from '../ui/Spinner';
 import Address from '../ui/Address';
-import { FlowProps } from '../Flow/Flow';
 import Button from '../ui/Button';
+import { FlowProps } from '../Flow';
 import { ADDRESS_REGEX } from '../../config';
 
 interface StateProps {

@@ -3,8 +3,7 @@ import EnterMnemonicPhrase from './EnterMnemonicPhrase';
 import EnterPassword from './EnterPassword';
 import LocalCheck from '../LocalCheck';
 import Modal from '../ui/Modal';
-import useFlow from '../ResultFlow';
-import { FlowProps } from '../ResultFlow/ResultFlow';
+import useFlow, { FlowProps } from '../Flow';
 
 interface Props {
   isVisible: boolean;

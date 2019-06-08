@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Flow from '../Flow';
+import useFlow from '../Flow';
 import SelectWallet from '../SelectWallet';
 import SelectOptions from '../SelectOptions';
 import { connect, MapDispatchToProps } from 'react-redux';
@@ -15,25 +15,31 @@ interface DispatchProps {
 
 type Props = DispatchProps & RouteComponentProps;
 
-const EtherFlow: FunctionComponent<Props> = ({ handleDone }) => (
-  <BrowserCheck>
-    <EnsureConnection>
-      <Flow
-        components={[
-          {
-            title: 'Unlock your account',
-            Component: SelectWallet
-          },
-          {
-            title: 'Choose your options',
-            Component: SelectOptions
-          }
-        ]}
-        onDone={handleDone}
-      />
-    </EnsureConnection>
-  </BrowserCheck>
-);
+const EtherFlow: FunctionComponent<Props> = ({ handleDone }) => {
+  // TODO: Refactor complete flow to use local state
+  const [, Flow] = useFlow();
+
+  return (
+    <BrowserCheck>
+      <EnsureConnection>
+        <Flow
+          injectedProps={{}}
+          components={[
+            {
+              title: 'Unlock your account',
+              Component: SelectWallet
+            },
+            {
+              title: 'Choose your options',
+              Component: SelectOptions
+            }
+          ]}
+          onDone={handleDone}
+        />
+      </EnsureConnection>
+    </BrowserCheck>
+  );
+};
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps> = (
   dispatch,
