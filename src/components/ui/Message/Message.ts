@@ -56,12 +56,14 @@ const getTransition = (isVisible: boolean): InterpolationValue[] => {
 
 const Message = styled.div<Props>`
   background: ${({ theme, type }) => getColor(theme, type)};
+  border-radius: ${({ theme }) => theme.borderRadius};
 
   ${({ isVisible }) => getTransition(typeof isVisible === 'undefined' ? true : isVisible)};
   ${({ isVisible }) => getProperties(typeof isVisible === 'undefined' ? true : isVisible)};
 
   & ${Typography} {
     margin: 0;
+    color: white;
   }
 `;
 
