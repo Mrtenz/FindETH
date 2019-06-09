@@ -12,7 +12,9 @@ exports[`renders a snapshot 1`] = `
         "rules": Array [
           "margin-top:18px;background:",
           [Function],
-          ";font-size:1rem;&:hover{background:",
+          ";font-size:1rem;color:",
+          [Function],
+          ";&:hover{background:",
           [Function],
           ";cursor:",
           [Function],

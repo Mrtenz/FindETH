@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
-import { Input } from '@mycrypto/ui';
+import Input from '../ui/Input';
 import Typography from '../ui/Typography';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../store';

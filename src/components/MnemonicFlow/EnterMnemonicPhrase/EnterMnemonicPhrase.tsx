@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
-import { Input } from '@mycrypto/ui';
+import Input from '../../ui/Input';
 import { ModalButtons } from '../../ui/Modal/StyledModal';
 import Button from '../../ui/Button';
 import { isValidMnemonic } from '@ethersproject/hdnode';

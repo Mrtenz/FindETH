@@ -12,6 +12,8 @@ exports[`renders a snapshot 1`] = `
         "rules": Array [
           "padding:1.5rem 2.25rem;width:11.3906rem;height:11.3906rem;box-shadow:",
           [Function],
+          ";border:",
+          [Function],
           ";",
           "padding:0.75em 1.125em 0.75em 1.125em;width:auto;height:auto;",
         ],

@@ -1,4 +1,4 @@
-import styled, { css } from '../../../styles';
+import styled, { css, FindETHTheme } from '../../../styles';
 import { InterpolationValue } from 'styled-components';
 import Typography from '../Typography';
 
@@ -9,14 +9,14 @@ interface Props {
   isVisible?: boolean;
 }
 
-const getColor = (type: MessageType): string => {
+const getColor = (theme: FindETHTheme, type: MessageType): string => {
   switch (type) {
     case 'info':
-      return '#f3f3f3';
+      return theme.infoMessageBackground;
     case 'error':
-      return '#ffbcb3';
+      return theme.errorMessageBackground;
     case 'warning':
-      return '#fffaad';
+      return theme.warningMessageBackground;
   }
 };
 
@@ -55,7 +55,7 @@ const getTransition = (isVisible: boolean): InterpolationValue[] => {
 };
 
 const Message = styled.div<Props>`
-  background: ${({ type }) => getColor(type)};
+  background: ${({ theme, type }) => getColor(theme, type)};
 
   ${({ isVisible }) => getTransition(typeof isVisible === 'undefined' ? true : isVisible)};
   ${({ isVisible }) => getProperties(typeof isVisible === 'undefined' ? true : isVisible)};

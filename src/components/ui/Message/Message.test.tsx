@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Message from './Message';
+import { lightTheme, ThemeProvider } from '../../../styles';
 
 it('renders a snapshot', () => {
   const component = shallow(<Message type="info">Foo</Message>);
@@ -15,11 +16,24 @@ it('renders the children', () => {
 });
 
 it('changes the color based on the type', () => {
-  const component = mount(<Message type="info">Foo</Message>);
+  const infoComponent = mount(
+    <ThemeProvider theme={lightTheme}>
+      <Message type="info">Foo</Message>
+    </ThemeProvider>
+  );
+  expect(infoComponent).toHaveStyleRule('background', lightTheme.infoMessageBackground);
 
-  expect(component).toHaveStyleRule('background', '#f3f3f3');
+  const warningComponent = mount(
+    <ThemeProvider theme={lightTheme}>
+      <Message type="warning">Foo</Message>
+    </ThemeProvider>
+  );
+  expect(warningComponent).toHaveStyleRule('background', lightTheme.warningMessageBackground);
 
-  component.setProps({ type: 'error' });
-
-  expect(component).toHaveStyleRule('background', '#ffbcb3');
+  const errorComponent = mount(
+    <ThemeProvider theme={lightTheme}>
+      <Message type="error">Foo</Message>
+    </ThemeProvider>
+  );
+  expect(errorComponent).toHaveStyleRule('background', lightTheme.errorMessageBackground);
 });
