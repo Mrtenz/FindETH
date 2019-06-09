@@ -20,6 +20,7 @@ interface CustomTheme {
   warningMessageBackground: string;
   errorMessageBackground: string;
   buttonDisabledBackground: string;
+  tooltipBackground: string;
 }
 
 export type FindETHTheme = CustomTheme & UITheme;
@@ -41,7 +42,8 @@ export const lightTheme: FindETHTheme = {
   infoMessageBackground: '#f8f9fa',
   warningMessageBackground: '#ffc107',
   errorMessageBackground: '#dc3545',
-  buttonDisabledBackground: '#cdcdcd'
+  buttonDisabledBackground: '#cdcdcd',
+  tooltipBackground: '#3c3c3c'
 };
 
 export const darkTheme: FindETHTheme = {
@@ -63,7 +65,8 @@ export const darkTheme: FindETHTheme = {
   infoMessageBackground: '#343a40',
   warningMessageBackground: '#b18604',
   errorMessageBackground: '#dc3545',
-  buttonDisabledBackground: '#3c3c3c'
+  buttonDisabledBackground: '#3c3c3c',
+  tooltipBackground: '#3c3c3c'
 };
 
 export const themes = {
