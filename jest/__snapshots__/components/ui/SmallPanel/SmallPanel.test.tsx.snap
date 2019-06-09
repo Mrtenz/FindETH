@@ -15,6 +15,8 @@ exports[`renders a snapshot 1`] = `
           ";border:",
           [Function],
           ";",
+          [Function],
+          ";",
           "padding:0.75em 1.125em 0.75em 1.125em;width:auto;height:auto;",
         ],
       },

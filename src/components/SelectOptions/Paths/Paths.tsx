@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { Fragment, FunctionComponent } from 'react';
 import { Heading } from '@mycrypto/ui';
 import Typography from '../../ui/Typography';
 import { DerivationPath } from '../../../config';
@@ -8,7 +8,7 @@ import { ApplicationState } from '../../../store';
 import Path from './Path';
 import Wallet from '../../../wallets/Wallet';
 import ToggleButton from './ToggleButton/ToggleButton';
-import { PathsContainer } from './StyledPaths';
+import Grid from '../../ui/Grid';
 
 interface StateProps {
   implementation: Wallet;
@@ -23,13 +23,16 @@ const Paths: FunctionComponent<Props> = ({ implementation, derivationPaths }) =>
     <Typography>Choose the derivation paths to search in.</Typography>
     <ToggleButton state={true}>Select all</ToggleButton>
     <ToggleButton state={false}>Deselect all</ToggleButton>
-    {chunk(implementation.getDerivationPaths(), 3).map((paths, index) => (
-      <PathsContainer key={index}>
-        {paths.map(path => (
-          <Path key={path.prefix} path={path} isSelected={derivationPaths.includes(path)} />
-        ))}
-      </PathsContainer>
-    ))}
+
+    <Grid columnWidth="20rem" gap="1.2rem">
+      {chunk(implementation.getDerivationPaths(), 3).map((paths, index) => (
+        <Fragment key={index}>
+          {paths.map(path => (
+            <Path key={path.prefix} path={path} isSelected={derivationPaths.includes(path)} />
+          ))}
+        </Fragment>
+      ))}
+    </Grid>
   </>
 );
 
