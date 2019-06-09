@@ -6,6 +6,7 @@ const Panel = styled(UIPanel)`
   width: 11.3906rem;
   height: 11.3906rem;
   box-shadow: ${({ theme }) => theme.panelShadow};
+  border: ${({ theme }) => theme.panelBorder};
 `;
 
 export default Panel;
