@@ -1,4 +1,4 @@
-import { lighten } from 'polished';
+import { lighten, modularScale } from 'polished';
 import { dark, light, Theme as UITheme } from '@mycrypto/ui';
 import lightLogo from '../assets/images/logos/findeth/findeth.svg';
 import darkLogo from '../assets/images/logos/findeth/findeth-inverted.svg';
@@ -21,6 +21,9 @@ interface CustomTheme {
   errorMessageBackground: string;
   buttonDisabledBackground: string;
   tooltipBackground: string;
+  borderRadius: string;
+  borderRadiusLarge: string;
+  transitionDuration: string;
 }
 
 export type FindETHTheme = CustomTheme & UITheme;
@@ -43,7 +46,10 @@ export const lightTheme: FindETHTheme = {
   warningMessageBackground: '#ffc107',
   errorMessageBackground: '#dc3545',
   buttonDisabledBackground: '#cdcdcd',
-  tooltipBackground: '#3c3c3c'
+  tooltipBackground: '#3c3c3c',
+  borderRadius: '0.125em',
+  borderRadiusLarge: '0.375em',
+  transitionDuration: '0.12s'
 };
 
 export const darkTheme: FindETHTheme = {
@@ -53,6 +59,8 @@ export const darkTheme: FindETHTheme = {
   headline: 'white',
   panelBackground: '#242429',
   panelBackgroundDark: lighten(0.06, '#242429'),
+  controlBackground: '#3c3c3c',
+  controlBorder: '#545454',
 
   logo: darkLogo,
   primarySectionBackground: '#242429',
@@ -66,10 +74,15 @@ export const darkTheme: FindETHTheme = {
   warningMessageBackground: '#b18604',
   errorMessageBackground: '#dc3545',
   buttonDisabledBackground: '#3c3c3c',
-  tooltipBackground: '#3c3c3c'
+  tooltipBackground: '#3c3c3c',
+  borderRadius: '0.125em',
+  borderRadiusLarge: '0.375em',
+  transitionDuration: '0.12s'
 };
 
 export const themes = {
   [Theme.Light]: lightTheme,
   [Theme.Dark]: darkTheme
 };
+
+export const scale = (steps: number): string => modularScale(steps, undefined, 1.5);
