@@ -18,7 +18,7 @@ const configuration: Configuration = {
   },
   plugins: [
     new FaviconsWebpackPlugin({
-      logo: join(__dirname, '../src/assets/images/findeth-white.png'),
+      logo: join(__dirname, '../src/assets/images/logos/findeth/findeth-white.png'),
       prefix: 'assets/icons-[hash]/',
       persistentCache: true,
       title: 'FindETH',
