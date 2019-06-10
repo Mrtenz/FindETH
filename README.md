@@ -1,6 +1,6 @@
 # FindETH
 
-[![Build Status](https://travis-ci.com/Mrtenz/FindETH.svg?branch=master)](https://travis-ci.com/Mrtenz/FindETH) [![GitHub license](https://img.shields.io/github/license/Mrtenz/FindETH.svg)](https://github.com/Mrtenz/FindETH/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/Mrtenz/FindETH.svg)](https://github.com/Mrtenz/FindETH/issues) ![David](https://img.shields.io/david/Mrtenz/FindETH.svg)
+[![Build Status](https://travis-ci.com/Mrtenz/FindETH.svg?branch=master)](https://travis-ci.com/Mrtenz/FindETH) [![GitHub license](https://img.shields.io/github/license/Mrtenz/FindETH.svg)](https://github.com/Mrtenz/FindETH/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/Mrtenz/FindETH.svg)](https://github.com/Mrtenz/FindETH/issues) ![David](https://img.shields.io/david/Mrtenz/FindETH.svg) [![Codecov](https://codecov.io/gh/Mrtenz/FindETH/branch/next/graph/badge.svg)](https://codecov.io/gh/Mrtenz/FindETH)
 
 A tool to help you find your lost Ethereum address, Ether or tokens, by searching through a bunch of derivation paths. It currently supports Ledger and Trezor devices and mnemonic phrases. It has experimental support for Ledger devices over Bluetooth.
 
