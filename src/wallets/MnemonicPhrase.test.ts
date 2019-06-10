@@ -1,5 +1,5 @@
 import MnemonicPhrase from './MnemonicPhrase';
-import { DEFAULT_ETH, LEDGER_LIVE_ETH } from '../config';
+import { ALL_DERIVATION_PATHS, DEFAULT_ETH, LEDGER_LIVE_ETH } from '../config';
 
 const VALID_MNEMONIC = 'measure awake inject because stay profit soup dawn rare wave news cook';
 const INVALID_MNEMONIC = 'setup safe obscure bus poem very fatal sock color design bridge garden';
@@ -26,5 +26,10 @@ describe('MnemonicPhrase', () => {
   it('throws an error on invalid mnemonic phrases', async () => {
     const wallet = new MnemonicPhrase(INVALID_MNEMONIC, '');
     await expect(wallet.initialize()).rejects.toThrow();
+  });
+
+  it('supports all mnemonic phrases', () => {
+    const wallet = new MnemonicPhrase(VALID_MNEMONIC, '');
+    expect(wallet.getDerivationPaths()).toStrictEqual(ALL_DERIVATION_PATHS);
   });
 });

@@ -1,5 +1,10 @@
 import LedgerUSB from './LedgerUSB';
-import { DEFAULT_ETH, LEDGER_LIVE_ETH } from '../../config';
+import {
+  ALL_DERIVATION_PATHS,
+  DEFAULT_ETH,
+  LEDGER_DERIVATION_PATHS,
+  LEDGER_LIVE_ETH
+} from '../../config';
 import { RecordStore } from '@ledgerhq/hw-transport-mocker';
 
 jest.mock('./LedgerUSB');
@@ -38,5 +43,11 @@ describe('Ledger', () => {
 
     await expect(wallet.getAddress(LEDGER_LIVE_ETH, 10)).resolves.toMatchSnapshot();
     await expect(wallet.getAddress(LEDGER_LIVE_ETH, 15)).resolves.toMatchSnapshot();
+  });
+
+  it(`doesn't support all derivation paths'`, () => {
+    const wallet = new LedgerUSBMock(new RecordStore());
+    expect(wallet.getDerivationPaths()).not.toStrictEqual(ALL_DERIVATION_PATHS);
+    expect(wallet.getDerivationPaths()).toStrictEqual(LEDGER_DERIVATION_PATHS);
   });
 });
