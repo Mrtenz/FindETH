@@ -5,6 +5,10 @@ import { join } from 'path';
 
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
+const SitemapWebpackPlugin = require('sitemap-webpack-plugin').default;
+const RobotsPlugin = require('robotstxt-webpack-plugin');
+
+const SITEMAP_PATHS = ['/', '/start', '/flow/address', '/flow/ether', '/flow/token'];
 
 const configuration: Configuration = {
   mode: 'production',
@@ -33,6 +37,17 @@ const configuration: Configuration = {
       'font-src': `'self'`,
       'connect-src': `https://api.mycryptoapi.com/eth https://mainnet.infura.io https://api.etherscan.io`,
       'frame-src': `'self' https://connect.trezor.io/`
+    }),
+    new SitemapWebpackPlugin('https://findeth.io', SITEMAP_PATHS),
+    new RobotsPlugin({
+      policy: [
+        {
+          userAgent: '*',
+          allow: '/',
+          disallow: '/search'
+        }
+      ],
+      sitemap: 'https://findeth.io/sitemap.xml'
     })
   ]
 };
