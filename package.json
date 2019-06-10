@@ -1,6 +1,6 @@
 {
   "name": "findeth",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A tool to help you find your lost Ethereum address, Ether or tokens, by searching through a bunch of derivation paths",
   "main": "src/index.tsx",
   "repository": "https://github.com/Mrtenz/findeth",
