@@ -13,7 +13,8 @@ const configuration: Configuration = {
   devServer: {
     https: true,
     hot: true,
-    port: 8000
+    port: 8000,
+    historyApiFallback: true
   },
   plugins: [new ForkCheckerWebpackPlugin(), new HardSourceWebpackPlugin()]
 } as any;
