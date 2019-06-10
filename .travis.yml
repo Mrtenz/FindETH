@@ -24,6 +24,7 @@ script:
   - yarn run tscheck
   - yarn run test
   - yarn run build
+  - yarn run codecov -f coverage/*.json
 
 before_deploy:
   - pip install --user awscli

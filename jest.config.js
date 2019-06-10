@@ -6,5 +6,7 @@ module.exports = {
   snapshotResolver: './jest/snapshotResolver.js',
   moduleNameMapper: {
     '\\.svg$': '<rootDir>/jest/__mocks__/fileMock.ts'
-  }
+  },
+  collectCoverage: true,
+  collectCoverageFrom: ['**/*.ts?(x)']
 };
