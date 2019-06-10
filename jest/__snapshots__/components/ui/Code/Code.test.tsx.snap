@@ -18,7 +18,6 @@ exports[`renders a snapshot 1`] = `
       "displayName": "StyledCode__Code",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "StyledCode__Code-sc-17x7cu6-0",
       "target": "span",
       "toString": [Function],

@@ -25,7 +25,6 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Grid",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "Grid-sc-9fwwrc-0",
       "target": "div",
       "toString": [Function],

@@ -25,7 +25,6 @@ exports[`renders a snapshot 1`] = `
         "Panel-sc-1srljkc-0",
       ],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "SmallPanel-iu1roc-0",
       "target": [Function],
       "toString": [Function],

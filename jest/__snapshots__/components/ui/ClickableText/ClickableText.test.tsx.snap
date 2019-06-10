@@ -35,7 +35,6 @@ exports[`renders a snapshot 1`] = `
         "Typography-sc-98k3z5-0-span",
       ],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "ClickableText-sc-18v8zdz-0",
       "target": "span",
       "toString": [Function],
