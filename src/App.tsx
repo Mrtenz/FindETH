@@ -8,7 +8,7 @@ import Footer from './components/ui/Footer';
 import { Provider } from 'react-redux';
 import { createStore } from './store';
 import GlobalModal from './components/GlobalModal';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Analytics from './components/Analytics';
 import ThemeProvider from './components/ThemeProvider';
 
@@ -39,7 +39,7 @@ const store = createStore();
 const App: FunctionComponent = () => (
   <Provider store={store}>
     <ThemeProvider>
-      <HashRouter>
+      <BrowserRouter>
         <Analytics>
           <GlobalModal />
           <GlobalStyle />
@@ -50,7 +50,7 @@ const App: FunctionComponent = () => (
           </Main>
           <Footer />
         </Analytics>
-      </HashRouter>
+      </BrowserRouter>
     </ThemeProvider>
   </Provider>
 );

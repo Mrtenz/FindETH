@@ -26,12 +26,12 @@ script:
   - yarn run build
 
 before_deploy:
+  - pip install --user awscli
   - yarn run build
 
 deploy:
-  provider: pages
+  provider: script
+  script: ~/.local/bin/aws s3 sync dist s3://findeth.io --region=eu-west-1 --delete
   skip-cleanup: true
-  github-token: "$GITHUB_TOKEN"
-  local-dir: dist
   on:
     branch: master
