@@ -28,12 +28,16 @@ export const StyledModal = styled.div<Props>`
   max-width: 100%;
   margin: 18px;
   border-radius: 3px;
+  max-height: calc(100% - 36px);
+  overflow-y: auto;
+  box-sizing: border-box;
 `;
 
 export const ModalButtons = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 18px;
+  flex-wrap: wrap;
 
   & ${Button} {
     margin-left: 18px;
