@@ -1,7 +1,7 @@
 import styled from '../../../styles';
 
 interface Props {
-  columnWidth?: string;
+  columnWidth: string;
   gap?: string;
 }
 
