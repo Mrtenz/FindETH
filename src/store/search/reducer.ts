@@ -14,6 +14,7 @@ import {
   SET_DERIVATION_PATH,
   SET_DERIVATION_PATHS,
   SET_INDEX,
+  SET_RESULT,
   SET_SEARCHING
 } from './types';
 import { ALL_DERIVATION_PATHS, SearchType } from '../../config';
@@ -90,6 +91,11 @@ export const searchReducer: Reducer<SearchState, SearchActions> = (
       return {
         ...state,
         addressNotFound: action.payload
+      };
+    case SET_RESULT:
+      return {
+        ...state,
+        result: action.payload
       };
     case CHECK_FAILED:
       return {

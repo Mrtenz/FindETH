@@ -10,5 +10,9 @@ module.exports = {
       }
     ]
   ],
-  plugins: ['react-hot-loader/babel', '@babel/plugin-proposal-class-properties']
+  plugins: [
+    'babel-plugin-styled-components',
+    'react-hot-loader/babel',
+    '@babel/plugin-proposal-class-properties'
+  ]
 };

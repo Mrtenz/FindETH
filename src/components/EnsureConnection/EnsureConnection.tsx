@@ -1,11 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../store';
 import { Network } from '../../config';
-import { Container } from 'styled-bootstrap-grid';
 import Align from '../ui/Align';
 import Spinner from '../ui/Spinner';
-import { Heading, Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
+import Page from '../ui/Page';
+import Section from '../ui/Section';
+import Heading from '../ui/Heading';
 
 interface StateProps {
   network?: Network;
@@ -18,30 +20,36 @@ const EnsureConnection: FunctionComponent<Props> = ({ network, children }) => {
     return <>{children}</>;
   }
 
+  let message: ReactElement;
+
   if (network && network.name === 'Offline') {
-    return (
-      <Container>
+    message = (
+      <>
         <Heading as="h2">No network connection</Heading>
         <Typography>This feature requires an internet connection.</Typography>
-      </Container>
+      </>
     );
-  }
-
-  if (network && network.name !== 'Mainnet') {
-    return (
-      <Container>
+  } else if (network && network.name !== 'Mainnet') {
+    message = (
+      <>
         <Heading as="h2">Invalid network</Heading>
         <Typography>Please connect to the main Ethereum network.</Typography>
-      </Container>
+      </>
+    );
+  } else {
+    message = (
+      <>
+        <Align align="center">
+          <Spinner>Connecting to network...</Spinner>
+        </Align>
+      </>
     );
   }
 
   return (
-    <Container>
-      <Align align="center">
-        <Spinner>Connecting to network...</Spinner>
-      </Align>
-    </Container>
+    <Page>
+      <Section paddingTop={false}>{message}</Section>
+    </Page>
   );
 };
 

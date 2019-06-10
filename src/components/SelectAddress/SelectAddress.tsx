@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
-import { Input, Typography } from '@mycrypto/ui';
+import Input from '../ui/Input';
+import Typography from '../ui/Typography';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../store';
 import { setAddress } from '../../store/search';
@@ -7,8 +8,8 @@ import { isEnsName } from '../../utils';
 import { resolveName, setResolvedAddress } from '../../store/ens';
 import Spinner from '../ui/Spinner';
 import Address from '../ui/Address';
-import { FlowProps } from '../Flow/Flow';
 import Button from '../ui/Button';
+import { FlowProps } from '../Flow';
 import { ADDRESS_REGEX } from '../../config';
 
 interface StateProps {

@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  as="h1"
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "_foldedDefaultProps": Object {
+        "as": "h1",
+      },
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "Heading-sc-1xlt8nl-0",
+        "isStatic": false,
+        "rules": Array [
+          "
+  color: ",
+          [Function],
+          ";
+  ",
+          "font-size: 16px;",
+          "@media (min-width: 400px) {",
+          "font-size: calc(14.67px + 0.33vw);",
+          "}",
+          "@media (min-width: 1000px) {",
+          "font-size: 18px;",
+          "}",
+          ";
+  font-family: Lato, sans-serif;
+  line-height: 1.5;
+  ",
+          [Function],
+          ";
+  ",
+          [Function],
+          ";
+  a {
+    color: ",
+          [Function],
+          ";
+    text-decoration: none;
+    font-weight: bold;
+
+    /* stylelint-disable-next-line max-nesting-depth */
+    :hover {
+      color: ",
+          [Function],
+          ";
+    }
+  }
+",
+          "
+  color: ",
+          [Function],
+          ";
+  font-size: ",
+          [Function],
+          ";
+",
+          [Function],
+          ";",
+        ],
+      },
+      "displayName": "Heading",
+      "foldedComponentIds": Array [
+        "sc-bdVaJa",
+        "sc-ifAKCX",
+      ],
+      "render": [Function],
+      "styledComponentId": "Heading-sc-1xlt8nl-0",
+      "target": "p",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;

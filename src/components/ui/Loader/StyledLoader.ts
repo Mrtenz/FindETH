@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 
 const StyledLoader = styled.div`
   position: absolute;
@@ -8,7 +9,7 @@ const StyledLoader = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.5);
+  background: ${({ theme }) => transparentize(0.5, theme.background)};
   display: flex;
   justify-content: center;
   align-items: center;

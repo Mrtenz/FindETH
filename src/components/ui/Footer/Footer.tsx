@@ -1,18 +1,32 @@
 import React, { FunctionComponent } from 'react';
-import { StyledFooter } from './StyledFooter';
-import { Container } from 'styled-bootstrap-grid';
-import { Typography } from '@mycrypto/ui';
+import { FooterContainer, FooterItem, FooterItemContainer, FooterTypography } from './StyledFooter';
 import GitHubIcon from './GitHubIcon';
 import MyCryptoLogo from './MyCryptoLogo';
+import Section from '../Section';
+import ThemeToggle from '../../ThemeToggle';
+import Donate from './Donate/Donate';
 
 const Footer: FunctionComponent = () => (
-  <Container>
-    <StyledFooter>
-      <Typography>
-        Powered by <MyCryptoLogo /> | Made by Maarten Zuidhoorn <GitHubIcon />
-      </Typography>
-    </StyledFooter>
-  </Container>
+  <Section as="div" paddingTop="1.175rem" paddingBottom="1.175rem" dark={true} border={true}>
+    <FooterContainer>
+      <FooterItem>
+        <FooterTypography>
+          Powered by <MyCryptoLogo />
+        </FooterTypography>
+      </FooterItem>
+      <FooterItem>
+        <ThemeToggle />
+      </FooterItem>
+      <FooterItem>
+        <FooterItemContainer>
+          <FooterTypography>
+            Made by Maarten Zuidhoorn <GitHubIcon />
+          </FooterTypography>
+          <Donate />
+        </FooterItemContainer>
+      </FooterItem>
+    </FooterContainer>
+  </Section>
 );
 
 export default Footer;

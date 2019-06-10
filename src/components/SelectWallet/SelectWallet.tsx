@@ -1,16 +1,16 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../ui/Typography';
 import WalletItem from './WalletItem';
 import MnemonicWalletItem from './WalletItem/MnemonicWalletItem';
 import LedgerWalletItem from './WalletItem/LedgerWalletItem';
-import ledgerIcon from '../../assets/images/logos/ledger.svg';
+import ledgerIcon from '!!react-svg-loader!../../assets/images/logos/ledger.svg';
 import LedgerBLE from '../../wallets/ledger/LedgerBLE';
-import trezorIcon from '../../assets/images/logos/trezor.svg';
+import trezorIcon from '!!react-svg-loader!../../assets/images/logos/trezor.svg';
 import Trezor from '../../wallets/Trezor';
 import Loader from '../ui/Loader';
 import { ApplicationState } from '../../store';
-import { FlowProps } from '../Flow/Flow';
+import { FlowProps } from '../Flow';
 import Align from '../ui/Align';
 
 interface StateProps {

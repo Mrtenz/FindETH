@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '@mycrypto/ui';
+import Button from '../Button';
 
 interface Props {
   isVisible: boolean;
@@ -20,7 +20,7 @@ export const StyledModalOverlay = styled.div<Props>`
 `;
 
 export const StyledModal = styled.div<Props>`
-  background: white;
+  background: ${({ theme }) => theme.background};
   transform: ${({ isVisible }) => (isVisible ? 'scale(1)' : 'scale(0.8)')};
   transition: transform 0.2s;
   padding: 36px;
@@ -28,16 +28,18 @@ export const StyledModal = styled.div<Props>`
   max-width: 100%;
   margin: 18px;
   border-radius: 3px;
+  max-height: calc(100% - 36px);
+  overflow-y: auto;
+  box-sizing: border-box;
 `;
 
-export const StyledModalButtons = styled.div`
+export const ModalButtons = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 18px;
-`;
+  flex-wrap: wrap;
 
-export const StyledModalButton = styled(Button)`
-  padding: 10px 15px;
-  font-size: 17px !important;
-  margin-left: 18px;
+  & ${Button} {
+    margin-left: 18px;
+  }
 `;

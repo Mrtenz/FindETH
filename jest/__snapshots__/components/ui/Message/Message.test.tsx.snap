@@ -2,26 +2,33 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
+        "componentId": "Message-sc-1uyv531-0",
         "isStatic": false,
         "rules": Array [
-          "
-  padding: 25px;
-  background: ",
+          "background:",
           [Function],
-          ";
-",
+          ";border-radius:",
+          [Function],
+          ";",
+          [Function],
+          ";",
+          [Function],
+          ";& ",
+          ".Typography-sc-98k3z5-0",
+          "{margin:0;color:white;}",
         ],
       },
-      "displayName": "styled.div",
+      "displayName": "Message",
+      "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
+      "styledComponentId": "Message-sc-1uyv531-0",
       "target": "div",
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

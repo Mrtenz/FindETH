@@ -2,25 +2,25 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
+        "componentId": "StyledCode__Code-sc-17x7cu6-0",
         "isStatic": true,
         "rules": Array [
-          "
-  font-family: ",
+          "font-family:",
           "'Roboto Mono', Menlo, Monaco, Consolas, 'Courier New', monospace",
-          ";
-",
+          ";",
         ],
       },
-      "displayName": "styled.span",
+      "displayName": "StyledCode__Code",
+      "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
+      "styledComponentId": "StyledCode__Code-sc-17x7cu6-0",
       "target": "span",
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

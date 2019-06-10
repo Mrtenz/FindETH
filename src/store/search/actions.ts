@@ -18,6 +18,7 @@ import {
   SET_DERIVATION_PATH,
   SET_DERIVATION_PATHS,
   SET_INDEX,
+  SET_RESULT,
   SET_SEARCHING,
   SetAddressAction,
   SetAddressFoundAction,
@@ -27,11 +28,13 @@ import {
   SetDerivationPathAction,
   SetDerivationPathsAction,
   SetIndexAction,
+  SetResultAction,
   SetSearchingAction,
   TOGGLE_DERIVATION_PATHS,
   ToggleDerivationPathsAction
 } from './types';
 import { DerivationPath, SearchType } from '../../config';
+import { WalletResult } from '../wallet';
 
 export const setAddress: ActionCreator<SetAddressAction> = (payload: string) => ({
   type: SET_ADDRESS,
@@ -104,6 +107,11 @@ export const setAddressFound: ActionCreator<SetAddressFoundAction> = (payload: b
 
 export const setAddressNotFound: ActionCreator<SetAddressNotFoundAction> = (payload: boolean) => ({
   type: SET_ADDRESS_NOT_FOUND,
+  payload
+});
+
+export const setResult: ActionCreator<SetResultAction> = (payload: WalletResult) => ({
+  type: SET_RESULT,
   payload
 });
 

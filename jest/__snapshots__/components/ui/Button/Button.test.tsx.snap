@@ -2,35 +2,31 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-tilXH",
+        "componentId": "Button-uilaai-0",
         "isStatic": false,
         "rules": Array [
-          "
-  margin-top: 18px;
-  background: ",
+          "margin-top:18px;background:",
           [Function],
-          ";
-
-  &:hover {
-    background: ",
+          ";font-size:1rem;color:",
           [Function],
-          ";
-    cursor: ",
+          ";&:hover{background:",
           [Function],
-          ";
-  }
-",
+          ";cursor:",
+          [Function],
+          ";}",
         ],
       },
-      "displayName": "Styled(Button)",
+      "displayName": "Button",
+      "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-tilXH",
+      "styledComponentId": "Button-uilaai-0",
       "target": [Function],
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

@@ -1,4 +1,5 @@
 import { DerivationPath } from '../config';
+import { WalletResult } from '../store/wallet';
 
 export default interface Wallet {
   /**
@@ -15,13 +16,13 @@ export default interface Wallet {
   prefetch?(paths: DerivationPath[]): Promise<any>;
 
   /**
-   * Get an address for a derivation path at a specific index.
+   * Get an address or multiple addresses for a derivation path at a specific index.
    *
    * @param {DerivationPath} dPath The derivation path.
    * @param {number} index The address or account index.
-   * @return {Promise<string>} A Promise with the address.
+   * @return {Promise<WalletResult>} A Promise with the fetched result.
    */
-  getAddress(dPath: DerivationPath, index: number): Promise<string>;
+  getAddress(dPath: DerivationPath, index: number): Promise<WalletResult | WalletResult[]>;
 
   /**
    * Get the derivation paths that are supported by the wallet.

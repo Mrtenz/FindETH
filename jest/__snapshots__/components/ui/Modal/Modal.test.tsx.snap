@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<styled.div
+<StyledModal__StyledModalOverlay
   isVisible={true}
 >
-  <styled.div
+  <StyledModal
     isVisible={true}
   >
     Foo
-    <styled.div>
-      <Styled(Button)
+    <StyledModal__ModalButtons>
+      <Button
         large={false}
         secondary={false}
       >
         Close
-      </Styled(Button)>
-    </styled.div>
-  </styled.div>
-</styled.div>
+      </Button>
+    </StyledModal__ModalButtons>
+  </StyledModal>
+</StyledModal__StyledModalOverlay>
 `;

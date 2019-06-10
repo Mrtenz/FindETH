@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { shallow } from 'enzyme';
 import { ClickablePanel } from './ClickablePanel';
-import { Panel } from '@mycrypto/ui';
 import { createMemoryHistory } from 'history';
+import Panel from '../Panel';
+
+const Icon: FunctionComponent = () => null;
 
 it('renders a snapshot', () => {
   const history = createMemoryHistory();
   const component = shallow(
     <ClickablePanel
       title="Foo"
-      icon="bar"
+      icon={Icon}
       to="/baz"
       history={history}
       location={history.location}
@@ -27,7 +29,7 @@ it('renders the children', () => {
   const component = shallow(
     <ClickablePanel
       title="Foo"
-      icon="bar"
+      icon={Icon}
       to="/baz"
       history={history}
       location={history.location}
@@ -46,7 +48,7 @@ it(`doesn't navigate on click with a onClick handler provided`, () => {
   const component = shallow(
     <ClickablePanel
       title="Foo"
-      icon="bar"
+      icon={Icon}
       to="/baz"
       history={history}
       location={history.location}
@@ -69,7 +71,7 @@ it('navigates on click without a onClick handler provided', () => {
   const component = shallow(
     <ClickablePanel
       title="Foo"
-      icon="bar"
+      icon={Icon}
       to="/baz"
       history={history}
       location={history.location}

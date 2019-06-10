@@ -2,23 +2,32 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-tilXH",
-        "isStatic": true,
+        "componentId": "SmallPanel-iu1roc-0",
+        "isStatic": false,
         "rules": Array [
-          "
-  padding: 0.75em 1.125em 0.75em 1.125em;
-",
+          "padding:1.5rem 2.25rem;width:11.3906rem;height:11.3906rem;box-shadow:",
+          [Function],
+          ";border:",
+          [Function],
+          ";",
+          [Function],
+          ";",
+          "padding:0.75em 1.125em 0.75em 1.125em;width:auto;height:auto;",
         ],
       },
-      "displayName": "Styled(Panel)",
+      "displayName": "SmallPanel",
+      "foldedComponentIds": Array [
+        "Panel-sc-1srljkc-0",
+      ],
       "render": [Function],
-      "styledComponentId": "sc-tilXH",
+      "styledComponentId": "SmallPanel-iu1roc-0",
       "target": [Function],
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

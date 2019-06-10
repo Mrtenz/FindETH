@@ -1,1 +1,1 @@
-export { StyledClickableText as default } from './StyledClickableText';
+export { default } from './ClickableText';

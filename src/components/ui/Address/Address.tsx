@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { StyledAddressContainer, StyledIdenticon, StyledTypography } from './StyledAddress';
+import { StyledAddressContainer, StyledIdenticon } from './StyledAddress';
+import Typography from '../Typography';
 
 interface Props {
   address: string;
@@ -14,9 +15,9 @@ const truncateAddress = (address: string) => {
 const Address: FunctionComponent<Props> = ({ address, truncate = false, noMargin = false }) => (
   <StyledAddressContainer noMargin={noMargin}>
     <StyledIdenticon address={address} />
-    <StyledTypography muted={true}>
+    <Typography noMargin={true} muted={true}>
       {truncate ? truncateAddress(address) : address}
-    </StyledTypography>
+    </Typography>
   </StyledAddressContainer>
 );
 

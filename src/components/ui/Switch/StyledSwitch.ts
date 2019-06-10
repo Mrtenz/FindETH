@@ -5,10 +5,11 @@ interface Props {
 }
 
 export const StyledSwitchContainer = styled.div<Props>`
+  cursor: pointer;
   display: inline-block;
   position: relative;
-  width: 50px;
-  height: 25px;
+  width: 45px;
+  height: 20px;
   padding: 3px;
   border-radius: 15px;
   background: ${({ isOn, theme }) => (isOn ? '#b2d7e0' : theme.switchBackgroundGreyable)};
@@ -16,8 +17,8 @@ export const StyledSwitchContainer = styled.div<Props>`
 `;
 
 export const StyledSwitch = styled.div<Props>`
-  height: 19px;
-  width: 19px;
+  height: 20px;
+  width: 20px;
   border-radius: 100%;
   background: ${({ isOn, theme }) => (isOn ? theme.primary : 'grey')};
   transform: translateX(${({ isOn }) => (isOn ? '25px' : '0px')});

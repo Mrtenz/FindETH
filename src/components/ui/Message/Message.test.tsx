@@ -1,25 +1,39 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { StyledMessage } from './StyledMessage';
+import Message from './Message';
+import { lightTheme, ThemeProvider } from '../../../styles';
 
 it('renders a snapshot', () => {
-  const component = shallow(<StyledMessage type="info">Foo</StyledMessage>);
+  const component = shallow(<Message type="info">Foo</Message>);
 
   expect(component).toMatchSnapshot();
 });
 
 it('renders the children', () => {
-  const component = shallow(<StyledMessage type="info">Foo</StyledMessage>);
+  const component = shallow(<Message type="info">Foo</Message>);
 
   expect(component.contains('Foo')).toBe(true);
 });
 
 it('changes the color based on the type', () => {
-  const component = mount(<StyledMessage type="info">Foo</StyledMessage>);
+  const infoComponent = mount(
+    <ThemeProvider theme={lightTheme}>
+      <Message type="info">Foo</Message>
+    </ThemeProvider>
+  );
+  expect(infoComponent).toHaveStyleRule('background', lightTheme.infoMessageBackground);
 
-  expect(component).toHaveStyleRule('background', '#f3f3f3');
+  const warningComponent = mount(
+    <ThemeProvider theme={lightTheme}>
+      <Message type="warning">Foo</Message>
+    </ThemeProvider>
+  );
+  expect(warningComponent).toHaveStyleRule('background', lightTheme.warningMessageBackground);
 
-  component.setProps({ type: 'error' });
-
-  expect(component).toHaveStyleRule('background', '#ffbcb3');
+  const errorComponent = mount(
+    <ThemeProvider theme={lightTheme}>
+      <Message type="error">Foo</Message>
+    </ThemeProvider>
+  );
+  expect(errorComponent).toHaveStyleRule('background', lightTheme.errorMessageBackground);
 });

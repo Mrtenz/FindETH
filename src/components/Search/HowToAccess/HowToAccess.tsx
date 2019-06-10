@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../../ui/Typography';
 import { StyledList } from './StyledHowToAccess';
 import Icon from '../../ui/Icon';
 import Modal from '../../ui/Modal';
@@ -37,10 +37,12 @@ const HowToAccess: FunctionComponent = () => {
           <Code>m/44'/60'/0'/0</Code> and look for the 5th address in the list.
         </Typography>
       </Modal>
-      <ClickableText onClick={handleClick}>
-        <Icon icon="shape" />
-        Need help accessing an address?
-      </ClickableText>
+      <Typography>
+        <ClickableText onClick={handleClick}>
+          <Icon icon="shape" />
+          Need help accessing an address?
+        </ClickableText>
+      </Typography>
     </>
   );
 };

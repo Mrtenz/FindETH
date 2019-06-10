@@ -2,57 +2,42 @@
 
 exports[`renders a snapshot 1`] = `
 <StyledComponent
-  forwardedClass={
+  forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
+      "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-tilXH",
+        "componentId": "ClickableText-sc-18v8zdz-0",
         "isStatic": false,
         "rules": Array [
-          "
-  color: ",
+          "margin:",
           [Function],
-          ";
-  ",
-          "font-size: 16px; @media (min-width: 400px) {
-  font-size: calc(14.67px + 0.33vw);
-} @media (min-width: 1000px) {
-  font-size: 18px;
-}",
-          ";
-  font-family: Lato, sans-serif;
-  line-height: 1.5;
-  ",
+          " 0;",
+          "font-size: 1rem;",
+          "@media (min-width: 0px) {",
+          "font-size: calc(1.00rem + 0.01vw);",
+          "}",
+          "@media (min-width: 1000px) {",
+          "font-size: 1.125rem;",
+          "}",
+          ";",
           [Function],
-          ";
-  ",
+          ";",
           [Function],
-          ";
-  a {
-    color: ",
+          ";",
+          "cursor:pointer;color:",
           [Function],
-          ";
-    text-decoration: none;
-    font-weight: bold;
-
-    /* stylelint-disable-next-line max-nesting-depth */
-    :hover {
-      color: ",
-          [Function],
-          ";
-    }
-  }
-",
-          "
-  cursor: pointer;
-",
+          ";text-decoration:none;font-weight:bold;",
         ],
       },
-      "displayName": "Styled(styled.p)",
+      "displayName": "ClickableText",
+      "foldedComponentIds": Array [
+        "Typography-sc-98k3z5-0-span",
+      ],
       "render": [Function],
-      "styledComponentId": "sc-tilXH",
-      "target": "p",
+      "styledComponentId": "ClickableText-sc-18v8zdz-0",
+      "target": "span",
+      "toString": [Function],
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     }

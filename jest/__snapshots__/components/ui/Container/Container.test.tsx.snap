@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "Container-sc-1to8ndn-0",
+        "isStatic": true,
+        "rules": Array [
+          "width:100%;margin:0 auto;padding:0 15px;box-sizing:border-box;",
+          "@media screen and (max-width:",
+          "35.9375",
+          "rem){",
+          "
+    max-width: 100%;
+  ",
+          "}",
+          " ",
+          "@media screen and (min-width:",
+          "36",
+          "rem){",
+          "
+    max-width: 540px;
+  ",
+          "}",
+          " ",
+          "@media screen and (min-width:",
+          "48",
+          "rem){",
+          "
+    max-width: 720px;
+  ",
+          "}",
+          " ",
+          "@media screen and (min-width:",
+          "62",
+          "rem){",
+          "
+    max-width: 960px;
+  ",
+          "}",
+          " ",
+          "@media screen and (min-width:",
+          "75",
+          "rem){",
+          "
+    max-width: 1140px;
+  ",
+          "}",
+        ],
+      },
+      "displayName": "Container",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "Container-sc-1to8ndn-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;

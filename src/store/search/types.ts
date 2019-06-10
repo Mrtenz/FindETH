@@ -1,5 +1,6 @@
 import { Action } from 'redux';
 import { DerivationPath, SearchType } from '../../config';
+import { WalletResult } from '../wallet';
 
 export interface SearchState {
   type: SearchType;
@@ -12,6 +13,7 @@ export interface SearchState {
   currentAddressIndex: number;
   addressFound: boolean;
   addressNotFound: boolean;
+  result?: WalletResult;
   failedChecks: number;
 }
 
@@ -92,6 +94,12 @@ export interface SetAddressNotFoundAction extends Action {
   payload: boolean;
 }
 
+export const SET_RESULT = 'SET_RESULT';
+export interface SetResultAction extends Action {
+  type: typeof SET_RESULT;
+  payload: WalletResult;
+}
+
 export const CHECK_FAILED = 'CHECK_FAILED';
 export interface CheckFailedAction extends Action {
   type: typeof CHECK_FAILED;
@@ -117,5 +125,6 @@ export type SearchActions =
   | SetAddressIndexAction
   | SetAddressFoundAction
   | SetAddressNotFoundAction
+  | SetResultAction
   | CheckFailedAction
   | SetSearchingAction;

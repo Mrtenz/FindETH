@@ -3,7 +3,7 @@ import WalletItem from '../WalletItem';
 import LedgerUSB from '../../../../wallets/ledger/LedgerUSB';
 import LedgerU2F from '../../../../wallets/ledger/LedgerU2F';
 import TransportWebUSB from '@ledgerhq/hw-transport-webusb';
-import ledgerIcon from '../../../../assets/images/logos/ledger.svg';
+import ledgerIcon from '!!react-svg-loader!../../../../assets/images/logos/ledger.svg';
 
 interface Props {
   onNext(): void;

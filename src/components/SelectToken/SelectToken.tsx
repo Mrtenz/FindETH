@@ -1,9 +1,10 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
-import { Input, Typography } from '@mycrypto/ui';
+import Input from '../ui/Input';
+import Typography from '../ui/Typography';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../store';
 import Spinner from '../ui/Spinner';
-import { FlowProps } from '../Flow/Flow';
+import { FlowProps } from '../Flow';
 import Button from '../ui/Button';
 import { fetchToken, Token } from '../../store/tokens';
 import { ADDRESS_REGEX } from '../../config';

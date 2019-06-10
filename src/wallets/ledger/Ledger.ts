@@ -3,6 +3,7 @@ import Transport from '@ledgerhq/hw-transport';
 import EthereumApp from '@ledgerhq/hw-app-eth';
 import { DerivationPath, LEDGER_DERIVATION_PATHS, LEDGER_ETH } from '../../config';
 import { getFullPath } from '../../utils';
+import { WalletType } from '../../store/wallet';
 
 export default abstract class Ledger extends HardwareWallet {
   protected abstract transport: Transport<any> | null = null;
@@ -17,6 +18,10 @@ export default abstract class Ledger extends HardwareWallet {
 
   public getDerivationPaths(): DerivationPath[] {
     return LEDGER_DERIVATION_PATHS;
+  }
+
+  protected getWalletType(): WalletType.Ledger {
+    return WalletType.Ledger;
   }
 
   protected abstract async checkConnection(): Promise<void>;

@@ -1,1 +1,1 @@
-export { default } from './Flow';
+export { default, FlowProps } from './Flow';

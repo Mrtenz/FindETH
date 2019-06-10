@@ -1,14 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<styled.div>
-  <styled.div>
-    <styled.p>
-      Powered by 
-      <MyCryptoLogo />
-       | Made by Maarten Zuidhoorn 
-      <GitHubIcon />
-    </styled.p>
-  </styled.div>
-</styled.div>
+<Section
+  as="div"
+  border={true}
+  dark={true}
+  paddingBottom="1.175rem"
+  paddingTop="1.175rem"
+>
+  <StyledFooter__FooterContainer>
+    <StyledFooter__FooterItem>
+      <StyledFooter__FooterTypography>
+        Powered by 
+        <MyCryptoLogo />
+      </StyledFooter__FooterTypography>
+    </StyledFooter__FooterItem>
+    <StyledFooter__FooterItem>
+      <Connect(ThemeProvider) />
+    </StyledFooter__FooterItem>
+    <StyledFooter__FooterItem>
+      <StyledFooter__FooterItemContainer>
+        <StyledFooter__FooterTypography>
+          Made by Maarten Zuidhoorn 
+          <GitHubIcon />
+        </StyledFooter__FooterTypography>
+        <Donate />
+      </StyledFooter__FooterItemContainer>
+    </StyledFooter__FooterItem>
+  </StyledFooter__FooterContainer>
+</Section>
 `;

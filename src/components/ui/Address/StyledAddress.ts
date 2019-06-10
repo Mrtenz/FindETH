@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Typography, Identicon } from '@mycrypto/ui';
+import { Identicon } from '@mycrypto/ui';
+import { media } from '../../../styles';
 
 interface Props {
   noMargin: boolean;
@@ -12,15 +13,20 @@ export const StyledAddressContainer = styled.div<Props>`
   margin-top: ${({ noMargin }) => (noMargin ? '0' : '18px')};
 `;
 
-export const StyledTypography = styled(Typography)`
-  margin: 0;
-`;
-
 export const StyledIdenticon = styled(Identicon)`
   margin-right: 18px;
 
   & img {
     width: 35px;
     height: 35px;
+
+    ${media.max.small`
+      width: 25px
+      height: 25px;
+    `};
   }
+
+  ${media.max.small`
+    margin-right: 9px;
+  `};
 `;

@@ -1,22 +1,17 @@
 import { Action } from 'redux';
 import { Provider } from '@ethersproject/providers';
 import { Network } from '../../config';
-
-export interface Address {
-  address: string;
-  path: string;
-}
+import { WalletResult } from '../wallet';
 
 export interface Balance {
-  address: string;
-  path: string;
+  result: WalletResult;
   balance: string;
 }
 
 export interface NetworkState {
   provider?: Provider;
   current?: Network;
-  addresses: Address[];
+  results: WalletResult[];
   balances: Balance[];
 }
 
@@ -37,10 +32,10 @@ export interface ClearBalancesAction extends Action {
   type: typeof CLEAR_BALANCES;
 }
 
-export const ADD_ADDRESS = 'ADD_ADDRESS';
-export interface AddAddressAction extends Action {
-  type: typeof ADD_ADDRESS;
-  payload: Address;
+export const ADD_RESULT = 'ADD_RESULT';
+export interface AddResultAction extends Action {
+  type: typeof ADD_RESULT;
+  payload: WalletResult;
 }
 
 export const FETCH_BALANCES = 'FETCH_BALANCES';
@@ -58,6 +53,6 @@ export type NetworkActions =
   | ConnectAction
   | SetNetworkAction
   | ClearBalancesAction
-  | AddAddressAction
+  | AddResultAction
   | FetchBalancesAction
   | AddBalanceAction;

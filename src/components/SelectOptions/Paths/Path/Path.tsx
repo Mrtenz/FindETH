@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../../../ui/Typography';
 import { DerivationPath } from '../../../../config';
-import { SmallTypography, StyledPath, StyledPathInfo, StyledSwitch } from './StyledPath';
+import { StyledPath, StyledPathInfo, StyledSwitch } from './StyledPath';
 import { addDerivationPath, removeDerivationPath } from '../../../../store/search';
-import { Col } from 'styled-bootstrap-grid';
 import Switch from '../../../ui/Switch';
-import { SmallPanel } from '../../../ui/SmallPanel/StyledSmallPanel';
+import SmallPanel from '../../../ui/SmallPanel';
 
 interface OwnProps {
   path: DerivationPath;
@@ -20,19 +19,19 @@ interface DispatchProps {
 type Props = OwnProps & DispatchProps;
 
 const Path: FunctionComponent<Props> = ({ path, handleToggle, isSelected }) => (
-  <Col sm={4}>
-    <SmallPanel>
-      <StyledPath>
-        <StyledPathInfo>
-          <Typography>{path.name}</Typography>
-          <SmallTypography muted={true}>{path.prefix}</SmallTypography>
-        </StyledPathInfo>
-        <StyledSwitch>
-          <Switch checked={isSelected} onToggle={handleToggle} />
-        </StyledSwitch>
-      </StyledPath>
-    </SmallPanel>
-  </Col>
+  <SmallPanel noMargin={true}>
+    <StyledPath>
+      <StyledPathInfo>
+        <Typography>{path.name}</Typography>
+        <Typography small={true} muted={true}>
+          {path.prefix}
+        </Typography>
+      </StyledPathInfo>
+      <StyledSwitch>
+        <Switch checked={isSelected} onToggle={handleToggle} />
+      </StyledSwitch>
+    </StyledPath>
+  </SmallPanel>
 );
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (

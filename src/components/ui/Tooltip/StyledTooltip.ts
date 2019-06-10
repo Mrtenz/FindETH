@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Typography } from '@mycrypto/ui';
+import Typography from '../Typography';
 
 export const StyledTooltip = styled.div`
   position: absolute;
@@ -8,9 +8,9 @@ export const StyledTooltip = styled.div`
   padding: 8px 16px;
   text-align: center;
   text-transform: none;
-  font-size: 14px;
+  font-size: 1.4rem;
   border-radius: 3px;
-  background: #424242;
+  background: ${({ theme }) => theme.tooltipBackground};
   opacity: 0;
   z-index: 1;
   transition: opacity 0.2s, transform 0.2s;
@@ -28,7 +28,7 @@ export const StyledTooltip = styled.div`
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid #424242;
+    border-top: 6px solid ${({ theme }) => theme.tooltipBackground};
   }
 `;
 
@@ -44,6 +44,5 @@ export const TooltipContainer = styled.div`
 `;
 
 export const TooltipTypography = styled(Typography)`
-  margin: 0;
   color: white;
 `;
