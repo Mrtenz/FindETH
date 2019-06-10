@@ -21,7 +21,6 @@ exports[`renders a snapshot 1`] = `
       "displayName": "StyledAlign",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "StyledAlign-cz9a97-0",
       "target": "div",
       "toString": [Function],

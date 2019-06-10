@@ -22,7 +22,6 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Panel",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "Panel-sc-1srljkc-0",
       "target": [Function],
       "toString": [Function],

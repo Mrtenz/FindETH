@@ -26,7 +26,6 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Message",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "Message-sc-1uyv531-0",
       "target": "div",
       "toString": [Function],

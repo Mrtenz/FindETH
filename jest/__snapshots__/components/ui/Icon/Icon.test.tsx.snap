@@ -16,7 +16,6 @@ exports[`renders a snapshot 1`] = `
       "displayName": "StyledIcon",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "StyledIcon-sc-1sfwmv9-0",
       "target": [Function],
       "toString": [Function],

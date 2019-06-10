@@ -68,7 +68,6 @@ exports[`renders a snapshot 1`] = `
         "sc-ifAKCX",
       ],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "Heading-sc-1xlt8nl-0",
       "target": "p",
       "toString": [Function],

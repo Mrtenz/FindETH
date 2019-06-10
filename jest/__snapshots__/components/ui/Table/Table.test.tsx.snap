@@ -100,7 +100,6 @@ exports[`renders a snapshot 1`] = `
         "sc-gisBJw",
       ],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "Table-stidn8-0",
       "target": [Function],
       "toString": [Function],

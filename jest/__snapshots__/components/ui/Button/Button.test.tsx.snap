@@ -24,7 +24,6 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Button",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "self": [Circular],
       "styledComponentId": "Button-uilaai-0",
       "target": [Function],
       "toString": [Function],
