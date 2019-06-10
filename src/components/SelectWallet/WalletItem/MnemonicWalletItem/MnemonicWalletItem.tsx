@@ -7,6 +7,9 @@ import { ApplicationState } from '../../../../store';
 import Tooltip from '../../../ui/Tooltip';
 import MnemonicFlow from '../../../MnemonicFlow';
 import { MnemonicFlowResult } from '../../../MnemonicFlow/MnemonicFlow';
+import Modal from '../../../ui/Modal';
+import { IS_LOCAL } from '../../../../config';
+import NotLocal from '../../../LocalCheck/NotLocal';
 
 interface OwnProps {
   onNext(): void;
@@ -24,13 +27,19 @@ type Props = OwnProps & StateProps & DispatchProps;
 
 const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementation }) => {
   const [isVisible, setVisible] = useState<boolean>(false);
+  const [isLocalModalVisible, setLocalModalVisible] = useState<boolean>(false);
 
   const handleClick = () => {
+    if (!IS_LOCAL) {
+      return setLocalModalVisible(true);
+    }
+
     setVisible(true);
   };
 
   const handleClose = () => {
     setVisible(false);
+    setLocalModalVisible(false);
   };
 
   const handleDone = ({ mnemonicPhrase, password }: MnemonicFlowResult) => {
@@ -43,6 +52,9 @@ const MnemonicWalletItem: FunctionComponent<Props> = ({ setMnemonicImplementatio
   return (
     <>
       <MnemonicFlow isVisible={isVisible} onDone={handleDone} onClose={handleClose} />
+      <Modal isVisible={isLocalModalVisible} onClose={handleClose}>
+        <NotLocal />
+      </Modal>
       <Tooltip content="This method is only available locally.">
         <WalletItem name="Mnemonic" icon={keyIcon} onClick={handleClick} />
       </Tooltip>
