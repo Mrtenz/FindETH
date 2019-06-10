@@ -5,6 +5,7 @@ import Section from '../ui/Section';
 import Heading from '../ui/Heading';
 import ButtonLink from '../ui/ButtonLink/ButtonLink';
 import Instructions from './Instructions';
+import FAQ from './FAQ';
 
 const Home: FunctionComponent = () => (
   <Page>
@@ -17,9 +18,13 @@ const Home: FunctionComponent = () => (
       </Typography>
       <ButtonLink to="/start">Start searching!</ButtonLink>
     </Section>
-    <Section secondary={true} grow={true}>
+    <Section secondary={true}>
       <Heading as="h2">How it works</Heading>
       <Instructions />
+    </Section>
+    <Section grow={true}>
+      <Heading as="h2">Frequently Asked Questions</Heading>
+      <FAQ />
     </Section>
   </Page>
 );
