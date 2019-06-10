@@ -2854,11 +2854,6 @@ clone@^1.0.0, clone@^1.0.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
-cname-webpack-plugin@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/cname-webpack-plugin/-/cname-webpack-plugin-1.0.5.tgz#91b65e9a78f805adb19f0f79a1cc100a63624e51"
-  integrity sha512-ulckmdPC/cXFiZgDW1thbMYdFrhJCfYXIyiij5L2T0S9rpndF+m+Sq1wh+WZ92n4f5vn2DM1nYs/r1hw3iyoBw==
-
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
