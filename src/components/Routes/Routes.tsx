@@ -6,6 +6,7 @@ import EtherFlow from '../EtherFlow';
 import AddressFlow from '../AddressFlow';
 import TokenFlow from '../TokenFlow';
 import Search from '../Search';
+import NotFound from '../NotFound';
 
 const Routes: FunctionComponent = () => {
   return (
@@ -16,6 +17,7 @@ const Routes: FunctionComponent = () => {
       <Route exact={true} path="/flow/ether" component={EtherFlow} />
       <Route exact={true} path="/flow/token" component={TokenFlow} />
       <Route exact={true} path="/search/:type" component={Search} />
+      <Route component={NotFound} />
     </Switch>
   );
 };
