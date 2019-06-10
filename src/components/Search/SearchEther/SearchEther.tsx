@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
 import { ApplicationState } from '../../../store';
-import { Table } from '@mycrypto/ui';
+import Table from '../../ui/Table';
 import Typography from '../../ui/Typography';
 import { WalletResult, WalletType } from '../../../store/wallet';
 import { Balance } from '../../../store/network';
