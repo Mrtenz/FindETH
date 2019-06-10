@@ -11,9 +11,9 @@ const Home: FunctionComponent = () => (
     <Section paddingTop={false}>
       <Heading as="h2">Find your lost Ether or address</Heading>
       <Typography>
-        This tool can help you if you lost your Ether or Ethereum address that you got from a
-        mnemonic phrase, or a Ledger or Trezor device. In a few simple steps, you can quickly search
-        for the Ether or the address on your wallet.
+        This tool can help you if you lost your Ethereum address, Ether or tokens that you got from
+        a mnemonic phrase, or a Ledger or Trezor device. In a few simple steps, you can quickly
+        search for the address, Ether or tokens on your wallet.
       </Typography>
       <ButtonLink to="/start">Start searching!</ButtonLink>
     </Section>
