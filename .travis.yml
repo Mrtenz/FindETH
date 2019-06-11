@@ -40,3 +40,8 @@ deploy:
     skip_cleanup: true
     on:
       branch: next
+
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - test $TRAVIS_BRANCH = "master" && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+  - test $TRAVIS_BRANCH = "next" && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_NEXT_DISTRIBUTION_ID --paths "/*"
