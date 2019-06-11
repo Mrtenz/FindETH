@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Section from './Section';
+import Typography from './Typography';
 
 it('renders a snapshot', () => {
-  const component = shallow(<Section>Foo</Section>);
+  const component = shallow(<Typography>Foo</Typography>);
 
   expect(component).toMatchSnapshot();
 });
 
-it('renders with text', () => {
-  const component = shallow(<Section>Foo</Section>);
+it('renders the children', () => {
+  const component = shallow(<Typography>Foo</Typography>);
 
   expect(component.contains('Foo')).toBe(true);
 });

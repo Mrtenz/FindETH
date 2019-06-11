@@ -10,9 +10,9 @@ export interface SectionContainerProps {
   border?: boolean;
 }
 
-const DEFAULT_PADDING = '4.6875rem';
+export const DEFAULT_PADDING = '4.6875rem';
 
-const getPadding = (paddingTop: boolean | string, paddingBottom: boolean | string) => {
+export const getPadding = (paddingTop: boolean | string, paddingBottom: boolean | string) => {
   const paddingTopValue: string =
     typeof paddingTop === 'string' ? paddingTop : paddingTop ? DEFAULT_PADDING : '0';
 

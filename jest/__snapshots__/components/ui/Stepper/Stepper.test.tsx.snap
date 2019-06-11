@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper renders a snapshot 1`] = `
+<StyledStepper__StepperContainer>
+  <StyledStepper__Step
+    key="0"
+  />
+  <StyledStepper
+    key="1"
+  >
+    <StyledStepper__ActiveStep />
+  </StyledStepper>
+  <StyledStepper__Step
+    key="2"
+  />
+</StyledStepper__StepperContainer>
+`;
