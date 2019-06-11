@@ -21,14 +21,6 @@ interface MaxMedia {
 
 type Media = MinMedia & MaxMedia;
 
-const INITIAL_VALUE: Partial<Media> = {
-  extraSmall: (...args: [TemplateStringsArray, ...any[]]) => css`
-    @media screen and (max-width: ${breakpoints.extraSmall / 16}rem) {
-      ${css(...args)}
-    }
-  `
-};
-
 export const media = Object.keys(breakpoints).reduce<Media>(
   (target, key) => {
     const breakpoint = breakpoints[key as keyof typeof breakpoints];
@@ -50,5 +42,5 @@ export const media = Object.keys(breakpoints).reduce<Media>(
       `
     };
   },
-  INITIAL_VALUE as any
+  {} as any
 );

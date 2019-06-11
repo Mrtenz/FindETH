@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledSection__SectionContainer>
+  <Container>
+    Foo
+  </Container>
+</StyledSection__SectionContainer>
+`;
