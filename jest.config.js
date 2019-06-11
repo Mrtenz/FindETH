@@ -8,5 +8,5 @@ module.exports = {
     '\\.svg$': '<rootDir>/jest/__mocks__/fileMock.ts'
   },
   collectCoverage: true,
-  collectCoverageFrom: ['**/*.ts?(x)']
+  collectCoverageFrom: ['**/*.ts?(x)', '!**/*.d.ts']
 };
