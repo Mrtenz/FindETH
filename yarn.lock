@@ -817,10 +817,10 @@
     "@ethersproject/bytes" ">5.0.0-beta.0"
     "@ethersproject/properties" ">5.0.0-beta.0"
 
-"@ethersproject/bignumber@>5.0.0-beta.0", "@ethersproject/bignumber@^5.0.0-beta.126":
-  version "5.0.0-beta.126"
-  resolved "https://registry.yarnpkg.com/@ethersproject/bignumber/-/bignumber-5.0.0-beta.126.tgz#6fbdd72adcb9e691a21cf4ff6b15de09bb416aa1"
-  integrity sha512-my8+9Y09R4DJblaLrOc/ssbZjT7dRkbAoJUGCmT43GB4eRB0ViSVAeI+VoCoUZYvMlteZhH943VkS2CW5WcYbA==
+"@ethersproject/bignumber@>5.0.0-beta.0", "@ethersproject/bignumber@^5.0.0-beta.127":
+  version "5.0.0-beta.127"
+  resolved "https://registry.yarnpkg.com/@ethersproject/bignumber/-/bignumber-5.0.0-beta.127.tgz#9fb1df7979b81c77a22ce4a2ca7e049d1c7f52e9"
+  integrity sha512-nt8lKya8dECXJH6DTQHL0H6HbfKbGCatPLzptAFt53ODgbb1on3Cr//5l4XvCZO6ZWn+DSa38PigY+ntooe8QA==
   dependencies:
     "@ethersproject/bytes" ">5.0.0-beta.0"
     "@ethersproject/errors" ">5.0.0-beta.0"
