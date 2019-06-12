@@ -173,7 +173,7 @@ exports[`Flow renders a snapshot 1`] = `
     ]
   }
   injectedProps={Object {}}
-  onDone={[Function]}
+  onDone={[MockFunction]}
 >
   <Page>
     <StyledComponent
@@ -710,7 +710,7 @@ exports[`Flow renders a snapshot 2`] = `
     ]
   }
   injectedProps={Object {}}
-  onDone={[Function]}
+  onDone={[MockFunction]}
   page={false}
 >
   <StyledFlow__FlowHeader

@@ -9,7 +9,7 @@ interface StateProps {
 
 type Props = StateProps;
 
-const ThemeProvider: FunctionComponent<Props> = ({ theme, children }) => (
+export const ThemeProvider: FunctionComponent<Props> = ({ theme, children }) => (
   <StyledThemeProvider theme={themes[theme]}>{children}</StyledThemeProvider>
 );
 

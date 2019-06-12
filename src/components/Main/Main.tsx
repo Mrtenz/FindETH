@@ -26,7 +26,7 @@ interface DispatchProps {
 
 type Props = DispatchProps;
 
-const Main: FunctionComponent<Props> = ({ handleConnect, handleOffline, children }) => {
+export const Main: FunctionComponent<Props> = ({ handleConnect, handleOffline, children }) => {
   const initialize = () => {
     const provider =
       window.web3 && window.web3.currentProvider

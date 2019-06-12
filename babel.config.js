@@ -13,6 +13,12 @@ module.exports = {
   plugins: [
     'babel-plugin-styled-components',
     'react-hot-loader/babel',
-    '@babel/plugin-proposal-class-properties'
-  ]
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-syntax-dynamic-import'
+  ],
+  env: {
+    test: {
+      plugins: ['babel-plugin-dynamic-import-node']
+    }
+  }
 };

@@ -17,7 +17,7 @@ interface DispatchProps {
 
 type Props = StateProps & DispatchProps;
 
-const ThemeProvider: FunctionComponent<Props> = ({ theme, handleSetTheme }) => {
+export const ThemeToggle: FunctionComponent<Props> = ({ theme, handleSetTheme }) => {
   const handleSetDarkTheme = () => handleSetTheme(Theme.Dark);
 
   const handleSetLightTheme = () => handleSetTheme(Theme.Light);
@@ -48,4 +48,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ThemeProvider);
+)(ThemeToggle);
