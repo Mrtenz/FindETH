@@ -1,11 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React, { AnchorHTMLAttributes, DetailedHTMLProps, FunctionComponent } from 'react';
 
-interface Props {
+interface OwnProps {
   to: string;
 }
 
-const ExternalLink: FunctionComponent<Props> = ({ to, children }) => (
-  <a href={to} target="_blank" rel="noreferrer nofollower">
+type Props = OwnProps &
+  Omit<
+    DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
+    'href' | 'target' | 'rel'
+  >;
+
+const ExternalLink: FunctionComponent<Props> = ({ to, children, ...props }) => (
+  <a href={to} target="_blank" rel="noreferrer nofollower" {...props}>
     {children}
   </a>
 );
