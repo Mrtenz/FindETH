@@ -920,10 +920,10 @@
   dependencies:
     "@ethersproject/errors" ">5.0.0-beta.0"
 
-"@ethersproject/providers@^5.0.0-beta.133":
-  version "5.0.0-beta.133"
-  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.0.0-beta.133.tgz#8c41e4537aee49ad20f29d1021f8c7ddd7298e10"
-  integrity sha512-/sB5VhPU9AMf7Gd8WykziXmnn6UHIwLIXH0h1E5K2HAA91nY+nOKMU9KZTEYlfz3cdCbCvYLFWH25CdI/pTWKQ==
+"@ethersproject/providers@^5.0.0-beta.134":
+  version "5.0.0-beta.134"
+  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.0.0-beta.134.tgz#953b9fb5f50c42c7fdef640ad853210c19ae16d5"
+  integrity sha512-pYRS8t/bC7R9HaEv8YztRVHPxlTTv+g9uRB6rZmt1ic/0kJueWPx2/x6+irNIFz+SdgfPJXr7UJ9GMyLcYv6Fw==
   dependencies:
     "@ethersproject/abstract-provider" ">5.0.0-beta.0"
     "@ethersproject/abstract-signer" ">5.0.0-beta.0"
