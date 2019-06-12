@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeToggle renders a snapshot 1`] = `
+<StyledThemeToggle__Toggle
+  onClick={[Function]}
+>
+  <test-file-stub />
+</StyledThemeToggle__Toggle>
+`;

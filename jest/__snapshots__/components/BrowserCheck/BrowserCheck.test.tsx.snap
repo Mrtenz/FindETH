@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes renders a snapshot 1`] = `
+<BrowserCheck>
+  Foo
+</BrowserCheck>
+`;

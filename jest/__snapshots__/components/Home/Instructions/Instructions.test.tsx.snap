@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions renders a snapshot 1`] = `
+<StyledInstructions__InstructionsContainer>
+  <Step
+    step={1}
+  >
+    Choose what you're searching for
+  </Step>
+  <Step
+    step={2}
+  >
+    Unlock your wallet
+  </Step>
+  <Step
+    step={3}
+  >
+    Select your options
+  </Step>
+  <Step
+    step={4}
+  >
+    Search!
+  </Step>
+</StyledInstructions__InstructionsContainer>
+`;

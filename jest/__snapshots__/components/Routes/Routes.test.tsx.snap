@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes renders a snapshot 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/start"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/flow/address"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/flow/ether"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/flow/token"
+  />
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(Search)",
+        "type": [Function],
+      }
+    }
+    exact={true}
+    path="/search/:type"
+  />
+  <Route
+    component={[Function]}
+  />
+</Switch>
+`;

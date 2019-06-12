@@ -16,7 +16,7 @@ exports[`renders a snapshot 1`] = `
       </StyledFooter__FooterTypography>
     </StyledFooter__FooterItem>
     <StyledFooter__FooterItem>
-      <Connect(ThemeProvider) />
+      <Connect(ThemeToggle) />
     </StyledFooter__FooterItem>
     <StyledFooter__FooterItem>
       <StyledFooter__FooterItemContainer>

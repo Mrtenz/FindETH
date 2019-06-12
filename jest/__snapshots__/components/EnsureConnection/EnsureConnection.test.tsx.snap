@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes renders a snapshot 1`] = `
+<Page>
+  <Section
+    paddingTop={false}
+  >
+    <Heading
+      as="h2"
+    >
+      No network connection
+    </Heading>
+    <Typography>
+      This feature requires an internet connection.
+    </Typography>
+  </Section>
+</Page>
+`;
