@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question renders a snapshot 1`] = `
+<StyledQuestion__QuestionContainer>
+  <Heading
+    as="h3"
+  >
+    Foo
+  </Heading>
+  <Typography>
+    Bar
+  </Typography>
+</StyledQuestion__QuestionContainer>
+`;

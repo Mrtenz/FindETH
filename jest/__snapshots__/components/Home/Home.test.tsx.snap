@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders a snapshot 1`] = `
+<Page>
+  <Section
+    paddingTop={false}
+  >
+    <Heading
+      as="h2"
+    >
+      Find your lost Ether or address
+    </Heading>
+    <Typography>
+      This tool can help you if you lost your Ethereum address, Ether or tokens that you got from a mnemonic phrase, or a Ledger or Trezor device. In a few simple steps, you can quickly search for the address, Ether or tokens on your wallet.
+    </Typography>
+    <ButtonLink
+      to="/start"
+    >
+      Start searching!
+    </ButtonLink>
+  </Section>
+  <Section
+    secondary={true}
+  >
+    <Heading
+      as="h2"
+    >
+      How it works
+    </Heading>
+    <Instructions />
+  </Section>
+  <Section
+    grow={true}
+  >
+    <Heading
+      as="h2"
+    >
+      Frequently Asked Questions
+    </Heading>
+    <FAQ />
+  </Section>
+</Page>
+`;

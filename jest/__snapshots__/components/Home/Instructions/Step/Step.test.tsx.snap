@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions renders a snapshot 1`] = `
+<StyledStep__StepContainer>
+  <Heading
+    as="h3"
+  >
+    1
+    .
+  </Heading>
+  <Typography>
+    Foo
+  </Typography>
+</StyledStep__StepContainer>
+`;

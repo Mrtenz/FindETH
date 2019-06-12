@@ -15,7 +15,7 @@ interface StateProps {
 
 type Props = StateProps;
 
-const EnsureConnection: FunctionComponent<Props> = ({ network, children }) => {
+export const EnsureConnection: FunctionComponent<Props> = ({ network, children }) => {
   if (network && network.name === 'Mainnet') {
     return <>{children}</>;
   }
