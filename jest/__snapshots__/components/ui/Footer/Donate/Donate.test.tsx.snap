@@ -4,10 +4,15 @@ exports[`renders a snapshot 1`] = `
 <StyledDonate__DonateContainer>
   Donate (ETH):
    
-  <ExternalLink
+  <StyledDonate__Address
     to="https://etherscan.io/address/0xDFDD854DaAD30E6E077AEf1c653169968c102E34"
   >
     0xDFDD854DaAD30E6E077AEf1c653169968c102E34
-  </ExternalLink>
+  </StyledDonate__Address>
+  <StyledDonate__SmallAddress
+    to="https://etherscan.io/address/0xDFDD854DaAD30E6E077AEf1c653169968c102E34"
+  >
+    0xDFDD...2E34
+  </StyledDonate__SmallAddress>
 </StyledDonate__DonateContainer>
 `;

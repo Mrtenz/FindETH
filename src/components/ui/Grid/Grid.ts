@@ -14,6 +14,10 @@ const Grid = styled.div<Props>`
   grid-row-gap: ${({ gap }) => gap || '0'};
 
   margin-bottom: ${({ gap }) => gap || '0'};
+
+  @media screen and (max-width: ${({ columnWidth }) => columnWidth}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export default Grid;
