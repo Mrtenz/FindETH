@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "ClickableText-cqtqth-0",
+        "isStatic": false,
+        "rules": Array [
+          "margin:",
+          [Function],
+          " 0;",
+          "font-size: 1rem;",
+          "@media (min-width: 0px) {",
+          "font-size: calc(1.00rem + 0.01vw);",
+          "}",
+          "@media (min-width: 1000px) {",
+          "font-size: 1.125rem;",
+          "}",
+          ";",
+          [Function],
+          ";",
+          [Function],
+          ";",
+          "cursor:pointer;color:",
+          [Function],
+          ";text-decoration:none;font-weight:bold;",
+        ],
+      },
+      "displayName": "ClickableText",
+      "foldedComponentIds": Array [
+        "Typography-g2loye-0-span",
+      ],
+      "render": [Function],
+      "styledComponentId": "ClickableText-cqtqth-0",
+      "target": "span",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;

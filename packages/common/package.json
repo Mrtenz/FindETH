@@ -1,0 +1,12 @@
+{
+  "name": "@findeth/common",
+  "version": "1.1.2",
+  "license": "MIT",
+  "author": "Maarten Zuidhoorn <maarten@zuidhoorn.com>",
+  "scripts": {
+    "lint": "yarn run lint:ts && yarn run lint:tslint",
+    "lint:ts": "tsc --project . --noEmit",
+    "lint:tslint": "tslint --project .",
+    "prettier": "prettier --write --config ../../.prettierrc --list-different './**/*.ts?(x)'"
+  }
+}

@@ -17,6 +17,7 @@ Clone this repository with Git or download the ZIP file and extract it. In the p
 
 ```
 yarn
+yarn bootstrap
 ```
 
 Now you can run
@@ -33,6 +34,7 @@ This tool is built on top of React and Redux, and uses tools like `yarn` and `we
 
 ```
 yarn
+yarn bootstrap
 ```
 
 ### Run a local development server
@@ -40,7 +42,7 @@ yarn
 To run a local development server, use:
 
 ```
-yarn run start
+yarn run start:web
 ```
 
 Head to <https://localhost:8000> in your browser to see the application.
@@ -52,3 +54,5 @@ Use the following command to bundle everything
 ```
 yarn run build
 ```
+
+The output files will be available in the `dist` folder.

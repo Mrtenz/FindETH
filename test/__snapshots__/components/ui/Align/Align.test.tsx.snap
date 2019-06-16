@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<StyledComponent
+  align="left"
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "StyledAlign-sc-9j49in-0",
+        "isStatic": false,
+        "rules": Array [
+          "display:flex;justify-content:",
+          [Function],
+          ";flex-wrap:",
+          [Function],
+          ";",
+        ],
+      },
+      "displayName": "StyledAlign",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "StyledAlign-sc-9j49in-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Foo
+</StyledComponent>
+`;
