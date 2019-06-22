@@ -39,7 +39,7 @@ export const buildOutputFiles = (): Promise<void> => {
  *
  * @return {Promise<string>} A Promise with the self-signed certificate.
  */
-export const generateCertificate = async (): Promise<string> => {
+export const generateCertificate = async (outputPath: string): Promise<string> => {
   const certificates = await generate(
     [
       {
@@ -54,7 +54,7 @@ export const generateCertificate = async (): Promise<string> => {
     }
   );
 
-  await writeFile(CERTIFICATE_PATH, certificates.private + certificates.cert, 'utf8');
+  await writeFile(outputPath, certificates.private + certificates.cert, 'utf8');
 
   return certificates.private + certificates.cert;
 };
@@ -64,18 +64,18 @@ export const generateCertificate = async (): Promise<string> => {
  *
  * @return {Promise<string>} A Promise with the self-signed certificate.
  */
-export const getCertificate = async (): Promise<string> => {
+export const getCertificate = async (certificatePath: string): Promise<string> => {
   let certificate: string | undefined;
 
   try {
-    const stat = fs.statSync(CERTIFICATE_PATH);
+    const stat = fs.statSync(certificatePath);
     if (stat.isFile()) {
       const now = new Date().getTime();
       const modifiedTime = stat.mtime.getTime();
 
       if (now - modifiedTime < 2592000000) {
         // 30 days
-        certificate = fs.readFileSync(CERTIFICATE_PATH, 'utf8');
+        certificate = fs.readFileSync(certificatePath, 'utf8');
       }
     }
   } catch {
@@ -83,7 +83,7 @@ export const getCertificate = async (): Promise<string> => {
   }
 
   if (!certificate) {
-    certificate = await generateCertificate();
+    certificate = await server.generateCertificate(certificatePath);
   }
 
   return certificate;
@@ -151,7 +151,21 @@ export const start = async (): Promise<void> => {
   spinner.start();
 
   await run(spinner, 'Building output files', buildOutputFiles);
-  const certificate = await run(spinner, 'Getting SSL certificate', getCertificate);
+  const certificate = await run(
+    spinner,
+    'Getting SSL certificate',
+    getCertificate,
+    CERTIFICATE_PATH
+  );
   await run(spinner, 'Starting HTTPS server', startServer, certificate);
   spinner.info('Running on https://localhost:8000');
 };
+
+/**
+ * Required for unit tests...
+ */
+const server = {
+  generateCertificate
+};
+
+export default server;
