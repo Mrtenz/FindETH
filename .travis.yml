@@ -6,11 +6,16 @@ addons:
       - libusb-1.0-0-dev
       - libudev-dev
 
+env:
+  global:
+    - ELECTRON_CACHE=$HOME/.cache/electron
+    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
 cache:
   yarn: true
   directories:
     - node_modules
-    - "$HOME/.cache"
+    - '$HOME/.cache'
 
 before_install:
   - npm install -g yarn
@@ -19,24 +24,23 @@ install:
   - yarn --silent
 
 script:
-  - yarn run prettier:diff
-  - yarn run tslint
-  - yarn run tscheck
+  - yarn run prettier
+  - yarn run lint
   - yarn run test
-  - yarn run build
   - yarn run codecov -f coverage/*.json
+  - yarn run build
 
 before_deploy:
   - pip install --user awscli
 
 deploy:
   - provider: script
-    script: ~/.local/bin/aws s3 sync dist s3://findeth.io --region=eu-west-1 --delete
+    script: ~/.local/bin/aws s3 sync dist/web s3://findeth.io --region=eu-west-1 --delete
     skip-cleanup: true
     on:
       branch: master
   - provider: script
-    script: ~/.local/bin/aws s3 sync dist s3://beta.findeth.io --region=eu-west-1 --delete
+    script: ~/.local/bin/aws s3 sync dist/web s3://beta.findeth.io --region=eu-west-1 --delete
     skip_cleanup: true
     on:
       branch: next

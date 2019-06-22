@@ -1,6 +1,6 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
   "jsRules": {
     "quotemark": false,
     "max-line-length": false,
@@ -26,5 +26,5 @@
     "jsdoc-format": [true, "check-multiline-start"],
     "no-namespace": [true, "allow-declarations"]
   },
-  "rulesDirectory": ["node_modules/tslint-microsoft-contrib"]
+  "rulesDirectory": ["./node_modules/tslint-microsoft-contrib"]
 }
