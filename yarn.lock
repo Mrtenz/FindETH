@@ -2040,10 +2040,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@mycrypto/ui@^0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.16.3.tgz#473d153edaed961d7eff27b1a76e619550e3667e"
-  integrity sha512-79Hw+j6aOl3QR8UJDD5I7sDM265CIN5WqtlyLUuiaObGdVetdVPfiSkZg7U3RzRDFiHtqo4XuThj+kEMr/Lggw==
+"@mycrypto/ui@^0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.17.0.tgz#ab35eebda7eca75983efefcc320ca7d98500124c"
+  integrity sha512-4gpKDQfqFb3fM8iuegzN2s4x72JwG3FSjc8uZfhXFXQISH8ryuuw6HX+rJ4Vag4jFaAhI2pQDCe9MbH5c2KdKQ==
   dependencies:
     "@types/dom-clipboard-api" "^1.0.1"
     "@types/lodash.throttle" "^4.1.4"
