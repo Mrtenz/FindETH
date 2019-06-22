@@ -83,7 +83,7 @@ export const getCertificate = async (certificatePath: string): Promise<string> =
   }
 
   if (!certificate) {
-    certificate = await server.generateCertificate(certificatePath);
+    certificate = await main.generateCertificate(certificatePath);
   }
 
   return certificate;
@@ -164,8 +164,8 @@ export const start = async (): Promise<void> => {
 /**
  * Required for unit tests...
  */
-const server = {
+const main = {
   generateCertificate
 };
 
-export default server;
+export default main;
