@@ -854,9 +854,9 @@
     "@ethersproject/bignumber" ">5.0.0-beta.0"
 
 "@ethersproject/contracts@^5.0.0-beta.129":
-  version "5.0.0-beta.129"
-  resolved "https://registry.yarnpkg.com/@ethersproject/contracts/-/contracts-5.0.0-beta.129.tgz#a57e9c8bd6745bb34424d4259e2af621ca9020e8"
-  integrity sha512-8+0dul5MjN0UySlfazrrzlVCl6NvW0z+KgggerfguSizfkxWa6zr8YAnP74uZe5kHDjqQONF8/Prlm/AjEMM+A==
+  version "5.0.0-beta.131"
+  resolved "https://registry.yarnpkg.com/@ethersproject/contracts/-/contracts-5.0.0-beta.131.tgz#41b635101ff2e15ba5406d574c3ce846c4561776"
+  integrity sha512-+BKClBmyQmU5jP3hJusCpKSsOcVrp0F3KlaXhfb+R5kTSfWfgPC+l7O+SVMx0WuLTGghj2fg9y4p2ugvv62IBw==
   dependencies:
     "@ethersproject/abi" ">5.0.0-beta.0"
     "@ethersproject/abstract-provider" ">5.0.0-beta.0"
