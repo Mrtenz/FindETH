@@ -7,7 +7,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "StyledIcon-sglwj7-0",
+        "componentId": "StyledIcon-oenbgi-0",
         "isStatic": true,
         "rules": Array [
           "vertical-align:middle;margin-right:9px;",
@@ -16,7 +16,7 @@ exports[`renders a snapshot 1`] = `
       "displayName": "StyledIcon",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "StyledIcon-sglwj7-0",
+      "styledComponentId": "StyledIcon-oenbgi-0",
       "target": [Function],
       "toString": [Function],
       "warnTooManyClasses": [Function],

@@ -10,9 +10,9 @@ exports[`LocalCheck renders a snapshot 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "Typography-g2loye-0",
+              "componentId": "Typography-sc-5buyen-0",
               "isStatic": false,
-              "lastClassName": "fMdIFU",
+              "lastClassName": "kVQDlh",
               "rules": Array [
                 "
   color: ",
@@ -72,7 +72,7 @@ exports[`LocalCheck renders a snapshot 1`] = `
               "sc-bdVaJa",
             ],
             "render": [Function],
-            "styledComponentId": "Typography-g2loye-0",
+            "styledComponentId": "Typography-sc-5buyen-0",
             "target": "p",
             "toString": [Function],
             "withComponent": [Function],
@@ -81,7 +81,7 @@ exports[`LocalCheck renders a snapshot 1`] = `
         forwardedRef={null}
       >
         <p
-          className="fMdIFU"
+          className="kVQDlh"
         >
           For security reasons, this feature is only available locally. See
            

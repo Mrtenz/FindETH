@@ -47,7 +47,7 @@ exports[`NotLocal renders a snapshot 1`] = `
           "$$typeof": Symbol(react.forward_ref),
           "attrs": Array [],
           "componentStyle": ComponentStyle {
-            "componentId": "Typography-g2loye-0",
+            "componentId": "Typography-sc-5buyen-0",
             "isStatic": false,
             "lastClassName": "c0",
             "rules": Array [
@@ -109,7 +109,7 @@ exports[`NotLocal renders a snapshot 1`] = `
             "sc-bdVaJa",
           ],
           "render": [Function],
-          "styledComponentId": "Typography-g2loye-0",
+          "styledComponentId": "Typography-sc-5buyen-0",
           "target": "p",
           "toString": [Function],
           "warnTooManyClasses": [Function],

@@ -8,7 +8,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "Grid-sc-1ld76rm-0",
+        "componentId": "Grid-sc-1narg3x-0",
         "isStatic": false,
         "rules": Array [
           "display:grid;grid-template-columns:",
@@ -27,7 +27,7 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Grid",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "Grid-sc-1ld76rm-0",
+      "styledComponentId": "Grid-sc-1narg3x-0",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],

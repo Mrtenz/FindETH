@@ -7,7 +7,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "Button-sc-1iczgzo-0",
+        "componentId": "Button-sc-12cp5fn-0",
         "isStatic": false,
         "rules": Array [
           "margin-top:18px;background:",
@@ -24,7 +24,7 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Button",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "Button-sc-1iczgzo-0",
+      "styledComponentId": "Button-sc-12cp5fn-0",
       "target": [Function],
       "toString": [Function],
       "warnTooManyClasses": [Function],

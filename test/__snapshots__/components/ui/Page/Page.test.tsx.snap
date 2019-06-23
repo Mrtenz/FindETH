@@ -7,7 +7,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "Page-sc-1a8e2tt-0",
+        "componentId": "Page-sc-7f7mpz-0",
         "isStatic": true,
         "rules": Array [
           "display:flex;flex-direction:column;flex-grow:1;",
@@ -16,7 +16,7 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Page",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "Page-sc-1a8e2tt-0",
+      "styledComponentId": "Page-sc-7f7mpz-0",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],

@@ -7,7 +7,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "Container-sc-1waynlo-0",
+        "componentId": "Container-b2nvxj-0",
         "isStatic": true,
         "rules": Array [
           "width:100%;margin:0 auto;padding:0 15px;box-sizing:border-box;",
@@ -55,7 +55,7 @@ exports[`renders a snapshot 1`] = `
       "displayName": "Container",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "Container-sc-1waynlo-0",
+      "styledComponentId": "Container-b2nvxj-0",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],

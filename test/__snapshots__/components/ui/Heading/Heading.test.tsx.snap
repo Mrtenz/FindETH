@@ -11,7 +11,7 @@ exports[`renders a snapshot 1`] = `
       },
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "Heading-sc-1c3aww7-0",
+        "componentId": "Heading-sc-1k1q8a7-0",
         "isStatic": false,
         "rules": Array [
           "
@@ -68,7 +68,7 @@ exports[`renders a snapshot 1`] = `
         "sc-ifAKCX",
       ],
       "render": [Function],
-      "styledComponentId": "Heading-sc-1c3aww7-0",
+      "styledComponentId": "Heading-sc-1k1q8a7-0",
       "target": "p",
       "toString": [Function],
       "warnTooManyClasses": [Function],

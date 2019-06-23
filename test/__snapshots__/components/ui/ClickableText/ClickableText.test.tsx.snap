@@ -7,7 +7,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "ClickableText-cqtqth-0",
+        "componentId": "ClickableText-sc-1f0s3ef-0",
         "isStatic": false,
         "rules": Array [
           "margin:",
@@ -32,10 +32,10 @@ exports[`renders a snapshot 1`] = `
       },
       "displayName": "ClickableText",
       "foldedComponentIds": Array [
-        "Typography-g2loye-0-span",
+        "Typography-sc-5buyen-0-span",
       ],
       "render": [Function],
-      "styledComponentId": "ClickableText-cqtqth-0",
+      "styledComponentId": "ClickableText-sc-1f0s3ef-0",
       "target": "span",
       "toString": [Function],
       "warnTooManyClasses": [Function],

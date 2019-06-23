@@ -19,7 +19,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "Table-ddnq0m-0",
+        "componentId": "Table-wiwe9r-0",
         "isStatic": false,
         "rules": Array [
           "
@@ -100,7 +100,7 @@ exports[`renders a snapshot 1`] = `
         "sc-gisBJw",
       ],
       "render": [Function],
-      "styledComponentId": "Table-ddnq0m-0",
+      "styledComponentId": "Table-wiwe9r-0",
       "target": [Function],
       "toString": [Function],
       "warnTooManyClasses": [Function],

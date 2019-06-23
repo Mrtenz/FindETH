@@ -8,7 +8,7 @@ exports[`renders a snapshot 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "StyledAlign-sc-9j49in-0",
+        "componentId": "StyledAlign-n7snwa-0",
         "isStatic": false,
         "rules": Array [
           "display:flex;justify-content:",
@@ -21,7 +21,7 @@ exports[`renders a snapshot 1`] = `
       "displayName": "StyledAlign",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "StyledAlign-sc-9j49in-0",
+      "styledComponentId": "StyledAlign-n7snwa-0",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],
