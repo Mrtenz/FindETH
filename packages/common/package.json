@@ -9,8 +9,8 @@
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/production.ts",
     "analyze": "webpack --config ./webpack/analyzer.ts",
     "lint": "yarn run lint:ts && yarn run lint:tslint",
-    "lint:ts": "tsc --project ../web --noEmit",
-    "lint:tslint": "tslint --project ../web",
+    "lint:ts": "tsc --project . --noEmit",
+    "lint:tslint": "tslint --project .",
     "prettier": "prettier --write --config ../../.prettierrc --list-different './**/*.ts?(x)'"
   },
   "dependencies": {
