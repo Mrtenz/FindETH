@@ -1,8 +1,8 @@
 import TransportWebUSB from '@ledgerhq/hw-transport-webusb';
 import EthereumApp from '@ledgerhq/hw-app-eth';
-import Ledger from './Ledger';
+import { Ledger } from './Ledger';
 
-export default class LedgerUSB extends Ledger {
+export class LedgerUSB extends Ledger {
   protected transport: TransportWebUSB | null = null;
   protected app: EthereumApp | null = null;
 

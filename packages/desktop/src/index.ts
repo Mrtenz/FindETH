@@ -1,17 +1,23 @@
 import 'regenerator-runtime/runtime';
 import { app, BrowserWindow } from 'electron';
+import { join } from 'path';
 
 const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production';
 
 const createWindow = async (): Promise<BrowserWindow> => {
-  const window = new BrowserWindow();
-
-  window.webContents.openDevTools();
+  const window = new BrowserWindow({
+    webPreferences: {
+      devTools: true,
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: join(__dirname, 'preload.js')
+    }
+  });
 
   if (IS_DEVELOPMENT) {
     await window.loadURL('https://localhost:8000');
   } else {
-    await window.loadFile(__dirname + '/index.html');
+    await window.loadFile(join(__dirname, '/index.html'));
   }
 
   window.on('close', app.quit);

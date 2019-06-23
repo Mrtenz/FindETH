@@ -1,6 +1,6 @@
 import merge from 'webpack-merge';
-import common from '@findeth/web/webpack/common';
-import production from '@findeth/web/webpack/production';
+import common from '@findeth/common/webpack/common';
+import production from '@findeth/common/webpack/production';
 import { EnvironmentPlugin } from 'webpack';
 import { resolve } from 'path';
 

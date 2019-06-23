@@ -7,7 +7,7 @@ import ora from 'ora';
 import { createServer } from 'https';
 import finalhandler from 'finalhandler';
 import serveStatic from 'serve-static';
-import webpackConfig from '@findeth/web/webpack/production';
+import webpackConfig from '@findeth/common/webpack/production';
 
 const generate = promisify<selfsigned.Attribute[], selfsigned.Options, selfsigned.Certificates>(
   selfsigned.generate

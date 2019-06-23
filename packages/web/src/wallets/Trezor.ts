@@ -1,10 +1,14 @@
 import HardwareWallet, { KeyInfo } from './HardwareWallet';
 import TrezorConnect from 'trezor-connect';
-import { DEFAULT_ETH, DerivationPath, TREZOR_DERIVATION_PATHS } from '../config';
-import { getFullPath } from '../utils';
-import { WalletType } from '../store/wallet';
+import {
+  DEFAULT_ETH,
+  DerivationPath,
+  getFullPath,
+  TREZOR_DERIVATION_PATHS,
+  WalletType
+} from '@findeth/shared';
 
-export default class Trezor extends HardwareWallet {
+export class Trezor extends HardwareWallet {
   private cache: { [key: string]: KeyInfo } = {};
 
   public async initialize(): Promise<void> {

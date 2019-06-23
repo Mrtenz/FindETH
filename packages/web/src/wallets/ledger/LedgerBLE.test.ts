@@ -1,10 +1,10 @@
-import LedgerBLE from './LedgerBLE';
+import { LedgerBLE } from './LedgerBLE';
 import {
   ALL_DERIVATION_PATHS,
   DEFAULT_ETH,
   LEDGER_DERIVATION_PATHS,
   LEDGER_LIVE_ETH
-} from '../../config';
+} from '@findeth/shared';
 
 jest.mock('@ledgerhq/hw-transport-web-ble');
 

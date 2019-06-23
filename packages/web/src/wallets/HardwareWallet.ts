@@ -1,9 +1,6 @@
-import Wallet from './Wallet';
 import HDKey from 'hdkey';
 import { computeAddress } from '@ethersproject/transactions';
-import { DerivationPath } from '../config';
-import { WalletResult, WalletType } from '../store/wallet';
-import { getFullPath } from '../utils';
+import { DerivationPath, getFullPath, Wallet, WalletResult, WalletType } from '@findeth/shared';
 
 export interface KeyInfo {
   publicKey: string;

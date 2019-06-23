@@ -1,11 +1,11 @@
 import TransportU2F from '@ledgerhq/hw-transport-u2f';
 import EthereumApp from '@ledgerhq/hw-app-eth';
-import Ledger from './Ledger';
+import { Ledger } from './Ledger';
 
 /**
  * Ledger U2F based transport, used as a fallback when WebUSB is not supported.
  */
-export default class LedgerU2F extends Ledger {
+export class LedgerU2F extends Ledger {
   protected transport: TransportU2F | null = null;
   protected app: EthereumApp | null = null;
 

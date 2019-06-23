@@ -1,9 +1,9 @@
 import { DescriptorEvent } from '@ledgerhq/hw-transport';
 import EthereumApp from '@ledgerhq/hw-app-eth';
 import TransportWebBLE from '@ledgerhq/hw-transport-web-ble';
-import Ledger from './Ledger';
+import { Ledger } from './Ledger';
 
-export default class LedgerBLE extends Ledger {
+export class LedgerBLE extends Ledger {
   protected transport: TransportWebBLE | null = null;
   protected app: EthereumApp | null = null;
 

@@ -1,10 +1,10 @@
-import LedgerU2F from './LedgerU2F';
+import { LedgerU2F } from './LedgerU2F';
 import {
   ALL_DERIVATION_PATHS,
   DEFAULT_ETH,
   LEDGER_DERIVATION_PATHS,
   LEDGER_LIVE_ETH
-} from '../../config';
+} from '@findeth/shared';
 
 jest.mock('@ledgerhq/hw-transport-u2f');
 

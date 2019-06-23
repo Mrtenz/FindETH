@@ -1,5 +1,5 @@
-import MnemonicPhrase from './MnemonicPhrase';
-import { ALL_DERIVATION_PATHS, DEFAULT_ETH, LEDGER_LIVE_ETH } from '../config';
+import { MnemonicPhrase } from './MnemonicPhrase';
+import { ALL_DERIVATION_PATHS, DEFAULT_ETH, LEDGER_LIVE_ETH } from '@findeth/shared';
 
 const VALID_MNEMONIC = 'measure awake inject because stay profit soup dawn rare wave news cook';
 const INVALID_MNEMONIC = 'setup safe obscure bus poem very fatal sock color design bridge garden';

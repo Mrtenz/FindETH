@@ -1,12 +1,12 @@
 import TrezorConnect from 'trezor-connect';
-import Trezor from './Trezor';
+import { Trezor } from './Trezor';
 import {
   ALL_DERIVATION_PATHS,
   DEFAULT_ETH,
   LEDGER_LIVE_ETH,
   TESTNET_ETH,
   TREZOR_DERIVATION_PATHS
-} from '../config';
+} from '@findeth/shared';
 
 jest.mock('trezor-connect');
 

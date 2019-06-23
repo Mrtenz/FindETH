@@ -1,11 +1,15 @@
 import HardwareWallet, { KeyInfo } from '../HardwareWallet';
 import Transport from '@ledgerhq/hw-transport';
 import EthereumApp from '@ledgerhq/hw-app-eth';
-import { DerivationPath, LEDGER_DERIVATION_PATHS, LEDGER_ETH } from '../../config';
-import { getFullPath } from '../../utils';
-import { WalletType } from '../../store/wallet';
+import {
+  DerivationPath,
+  getFullPath,
+  LEDGER_DERIVATION_PATHS,
+  LEDGER_ETH,
+  WalletType
+} from '@findeth/shared';
 
-export default abstract class Ledger extends HardwareWallet {
+export abstract class Ledger extends HardwareWallet {
   protected abstract transport: Transport<any> | null = null;
   protected abstract app: EthereumApp | null = null;
 

@@ -1,3 +1,3 @@
 # @findeth/common
 
-Contains logic that can be shared between the other packages.
+The main application. This package contains most of the front-end code, which is shared across the desktop and web version.

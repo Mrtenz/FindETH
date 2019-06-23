@@ -1,10 +1,14 @@
-import Wallet from './Wallet';
 import { HDNode, isValidMnemonic } from '@ethersproject/hdnode';
-import { ALL_DERIVATION_PATHS, DerivationPath } from '../config';
-import { getFullPath } from '../utils';
-import { MnemonicPhraseResult, WalletType } from '../store/wallet';
+import {
+  ALL_DERIVATION_PATHS,
+  DerivationPath,
+  getFullPath,
+  MnemonicPhraseResult,
+  Wallet,
+  WalletType
+} from '@findeth/shared';
 
-export default class MnemonicPhrase implements Wallet {
+export class MnemonicPhrase implements Wallet {
   private readonly mnemonicPhrase: string;
   private readonly password: string;
 
