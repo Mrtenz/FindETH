@@ -8,6 +8,15 @@
       "path": "packages/desktop"
     },
     {
+      "path": "packages/enclave"
+    },
+    {
+      "path": "packages/server"
+    },
+    {
+      "path": "packages/shared"
+    },
+    {
       "path": "packages/web"
     }
   ]
