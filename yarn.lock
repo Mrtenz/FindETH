@@ -885,9 +885,9 @@
     "@ethersproject/strings" ">5.0.0-beta.0"
 
 "@ethersproject/hdnode@^5.0.0-beta.125":
-  version "5.0.0-beta.125"
-  resolved "https://registry.yarnpkg.com/@ethersproject/hdnode/-/hdnode-5.0.0-beta.125.tgz#4bb651994ef27e6b5185d75c96ecade0f1bc3093"
-  integrity sha512-2Z3/WfrQwH4aqN5iNtBjJXNQqJLtH85ZVCeSqPHOrSI9dEsfzWv5FlAByupKBr5HFOnrZOtZAF9TzNhRHkOYBA==
+  version "5.0.0-beta.126"
+  resolved "https://registry.yarnpkg.com/@ethersproject/hdnode/-/hdnode-5.0.0-beta.126.tgz#db27d72a4a7ddbaaa93e558408818e31d5c2ad92"
+  integrity sha512-Py0UAtYjcbBpgKw0BkkyJWc7edWW2ZcLWgEHDODRrKegiPAFN3wmB4q6bJ7BFcy90NaGh7EDncY11+v6xtY2lA==
   dependencies:
     "@ethersproject/abstract-signer" ">5.0.0-beta.0"
     "@ethersproject/basex" ">5.0.0-beta.0"
