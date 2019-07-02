@@ -2244,9 +2244,9 @@
   integrity sha512-tELeN5A5SeB1CMv8g+z76Ryi2x/HqcdTTAAIpLz/iB1ObkYniQ/xbn1YoDHgKX7E65w5TvJLvbiBosQ6hoR5wQ==
 
 "@types/enzyme@^3.9.3":
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.9.3.tgz#d1029c0edd353d7b00f3924803eb88216460beed"
-  integrity sha512-jDKoZiiMA3lGO3skSO7dfqEHNvmiTLLV+PHD9EBQVlJANJvpY6qq1zzjRI24ZOtG7F+CS7BVWDXKewRmN8PjHQ==
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.10.1.tgz#74a7f7345075a4c03e574661068d3f96a054f495"
+  integrity sha512-Jd2hvn3w/0rBH8qD2n+JLMq2GjmZoKTZc5TTg8q9cDnJ9jkR7gzPV+ZdipKwGkWpMRXKDm9kuc9UiUqsW5s20w==
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
