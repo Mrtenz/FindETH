@@ -854,9 +854,9 @@
     "@ethersproject/bignumber" ">5.0.0-beta.0"
 
 "@ethersproject/contracts@^5.0.0-beta.129":
-  version "5.0.0-beta.129"
-  resolved "https://registry.yarnpkg.com/@ethersproject/contracts/-/contracts-5.0.0-beta.129.tgz#a57e9c8bd6745bb34424d4259e2af621ca9020e8"
-  integrity sha512-8+0dul5MjN0UySlfazrrzlVCl6NvW0z+KgggerfguSizfkxWa6zr8YAnP74uZe5kHDjqQONF8/Prlm/AjEMM+A==
+  version "5.0.0-beta.136"
+  resolved "https://registry.yarnpkg.com/@ethersproject/contracts/-/contracts-5.0.0-beta.136.tgz#d1eb5369ffab34a8008ad00629bf1c282806edf0"
+  integrity sha512-m46SCwBXb0trrTDBjf8jH8lNVu2H3/9KdmsDxujFgE7Tu6urng9U5upt7cjNpuZ+XuJWXvjBoDEEf7WQojCeYQ==
   dependencies:
     "@ethersproject/abi" ">5.0.0-beta.0"
     "@ethersproject/abstract-provider" ">5.0.0-beta.0"
@@ -865,7 +865,7 @@
     "@ethersproject/bignumber" ">5.0.0-beta.0"
     "@ethersproject/bytes" ">5.0.0-beta.0"
     "@ethersproject/constants" ">5.0.0-beta.0"
-    "@ethersproject/errors" ">5.0.0-beta.0"
+    "@ethersproject/logger" ">5.0.0-beta.0"
     "@ethersproject/properties" ">5.0.0-beta.0"
     "@ethersproject/transactions" ">5.0.0-beta.0"
 
@@ -909,6 +909,11 @@
   dependencies:
     "@ethersproject/bytes" ">5.0.0-beta.0"
     js-sha3 "0.5.7"
+
+"@ethersproject/logger@>5.0.0-beta.0":
+  version "5.0.0-beta.128"
+  resolved "https://registry.yarnpkg.com/@ethersproject/logger/-/logger-5.0.0-beta.128.tgz#1cfb0447b5aa98ce177d11df3b6a76a0e8783bbf"
+  integrity sha512-9sPvKQRtuBmGCH+vnidQg0BvWXccB8HU2G8oOQAkbg9lAzaRwmFe9V4YwkR4raCZQtpQNdcuxYXF0O6o23XjwA==
 
 "@ethersproject/networks@>5.0.0-beta.0":
   version "5.0.0-beta.125"
