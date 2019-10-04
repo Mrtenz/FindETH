@@ -2040,18 +2040,18 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@mycrypto/ui@^0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.16.3.tgz#473d153edaed961d7eff27b1a76e619550e3667e"
-  integrity sha512-79Hw+j6aOl3QR8UJDD5I7sDM265CIN5WqtlyLUuiaObGdVetdVPfiSkZg7U3RzRDFiHtqo4XuThj+kEMr/Lggw==
+"@mycrypto/ui@^0.20.1":
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/@mycrypto/ui/-/ui-0.20.1.tgz#0ffc4311f3e062e0e94c130dbcfe61b82db6d2ad"
+  integrity sha512-aHlzqe1/46jv9//H1aof28bGBF8UV3fhgZaANMC5BuER8JkG/OKUY1nqQFn3ETFtItDVkuYmM80BsSQRQ25etA==
   dependencies:
     "@types/dom-clipboard-api" "^1.0.1"
     "@types/lodash.throttle" "^4.1.4"
-    "@types/react-inlinesvg" "^0.8.0"
+    "@types/react-inlinesvg" "^0.8.1"
     ethereum-blockies-base64 "^1.0.2"
     lodash.throttle "^4.1.1"
     polished "^2.2.0"
-    react-inlinesvg "^0.8.3"
+    react-inlinesvg "^0.8.4"
 
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
@@ -2421,7 +2421,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-inlinesvg@^0.8.0":
+"@types/react-inlinesvg@^0.8.1":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@types/react-inlinesvg/-/react-inlinesvg-0.8.1.tgz#c3b9ab683c356a81869b3294dbd3e4f0f191aa4a"
   integrity sha512-pONmeCNqot4diXLhxb+jajDWX57rH/JmMu9H4NQWNMl5WUHAHmcrOfDfB05IgYBfRUX1Cvyjl9EZzKHxSxZpAA==
@@ -10434,7 +10434,7 @@ react-hot-loader@^4.11.0:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-inlinesvg@^0.8.3:
+react-inlinesvg@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/react-inlinesvg/-/react-inlinesvg-0.8.4.tgz#5cdcece95c633d924092fdcabbf4dcab8baef1bd"
   integrity sha512-pMkYa09gsP+5mA5uYDon5TxJbu76rJqdPSQ9nTRZbVacH58Eo3tFxD0Z382cioxNrpeqWHI/hquzt00GaahnkA==
