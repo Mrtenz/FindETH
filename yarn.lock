@@ -1279,10 +1279,24 @@
     "@ledgerhq/logs" "^4.61.0"
     rxjs "^6.5.2"
 
+"@ledgerhq/devices@^4.72.1":
+  version "4.72.1"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/devices/-/devices-4.72.1.tgz#725c89c434ce764a30bfb1c14df6e3a5066f8427"
+  integrity sha512-Y0b6mMMawsTaq+xfze11CPiDN++Yq6TUz0THb9xp+KB+77F7fs5A1A0q+MKoISg7rlgKF9IWsWtc5aQIuOOewQ==
+  dependencies:
+    "@ledgerhq/errors" "^4.72.1"
+    "@ledgerhq/logs" "^4.72.0"
+    rxjs "^6.5.3"
+
 "@ledgerhq/errors@^4.61.0":
   version "4.61.0"
   resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.61.0.tgz#dca01039453d2bf7b1e4fe866d55e82585b77567"
   integrity sha512-sEbAF7H/0EL8WiQ+m2qaZFzIJjtrXUFaxHyI4J/FSgK3uszDAVcnXwetq7TFOswZtPS2u2g/5oa1/iuoNVKwXQ==
+
+"@ledgerhq/errors@^4.72.1":
+  version "4.72.1"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.72.1.tgz#de2d0390476078d5bd5a0659dae796f36ed3970a"
+  integrity sha512-zzxy/pGSLPBkd9RJXhiQj53lsx4c3vMFMy0rMymhnKcBZboI+uD2E7WOToHvxtY34jka9vnH/ySjUIB/Ytvyzg==
 
 "@ledgerhq/hw-app-eth@^4.60.3":
   version "4.61.0"
@@ -1293,12 +1307,12 @@
     "@ledgerhq/hw-transport" "^4.61.0"
 
 "@ledgerhq/hw-transport-mocker@^4.60.3":
-  version "4.61.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-mocker/-/hw-transport-mocker-4.61.0.tgz#fe4f0e696c258ef9690aaa62e3cef3f35100c099"
-  integrity sha512-kPNmk8+6aZaN9hafzc5aMBXx5CY6jwG+OqzwvGsuVtW9pj3Sd8O48fXuEjqVLDWRzrmfaPgjWnnC+kqy7Wvexg==
+  version "4.72.1"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-mocker/-/hw-transport-mocker-4.72.1.tgz#25100ed2e8122e3e445a706b31abf500c410aebf"
+  integrity sha512-zldymdnQriw291DwhCQiO7yJf3RaFlC0NhDti96c9om4nDKHoalDsL4v1APtrDDaD5wO0EfD4/LvVjW8/p2RRw==
   dependencies:
-    "@ledgerhq/hw-transport" "^4.61.0"
-    "@ledgerhq/logs" "^4.61.0"
+    "@ledgerhq/hw-transport" "^4.72.1"
+    "@ledgerhq/logs" "^4.72.0"
 
 "@ledgerhq/hw-transport-node-hid-noevents@^4.60.3":
   version "4.61.0"
@@ -1342,19 +1356,19 @@
     "@ledgerhq/hw-transport" "^4.61.0"
     "@ledgerhq/logs" "^4.61.0"
 
-"@ledgerhq/hw-transport@^4.56.0", "@ledgerhq/hw-transport@^4.61.0":
-  version "4.61.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.61.0.tgz#709d9ec3c0c536181374a438db27e635059d3328"
-  integrity sha512-jsITF3HAttITBVKZOEASeTSBENbnrhcZmyxhiI1ijRFqDSEAPp7LuttNnI1d99301/4dWZV9NSe40naBsCJHXQ==
+"@ledgerhq/hw-transport@^4.56.0", "@ledgerhq/hw-transport@^4.61.0", "@ledgerhq/hw-transport@^4.72.1":
+  version "4.72.1"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.72.1.tgz#431be99e883c71be6fc6bd7480902bcd41ae24a0"
+  integrity sha512-6RBiDALBiVfBWK6zaZzhVj/jPZR4vEfxfRvh8iDerxYhcFY/uVVbQkoegt6dBtCX0q5T4nDLAWp5jqV8j0dcZw==
   dependencies:
-    "@ledgerhq/devices" "^4.61.0"
-    "@ledgerhq/errors" "^4.61.0"
+    "@ledgerhq/devices" "^4.72.1"
+    "@ledgerhq/errors" "^4.72.1"
     events "^3.0.0"
 
-"@ledgerhq/logs@^4.61.0":
-  version "4.61.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-4.61.0.tgz#bbcba49d7a7a4e20d6584bbfc10ed93b212c804c"
-  integrity sha512-AObEnA+tgzKEwY306i6FOT/hlc+zjF817Bty/IxG3f2wPJFRK9cJuD3Ijl4pfJP2pt7KubN4YbRGXREXhEsknQ==
+"@ledgerhq/logs@^4.61.0", "@ledgerhq/logs@^4.72.0":
+  version "4.72.0"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-4.72.0.tgz#43df23af013ad1135407e5cf33ca6e4c4c7708d5"
+  integrity sha512-o+TYF8vBcyySRsb2kqBDv/KMeme8a2nwWoG+lAWzbDmWfb2/MrVWYCVYDYvjXdSoI/Cujqy1i0gIDrkdxa9chA==
 
 "@lerna/add@3.15.0":
   version "3.15.0"
@@ -11102,6 +11116,13 @@ rxjs@^6.3.3, rxjs@^6.4.0, rxjs@^6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"
   integrity sha512-HUb7j3kvb7p7eCUHE3FqjoDsC1xfZQ4AHFWfTKSpZ+sAhhz5X1WX0ZuUqWbzB2QhSLp3DoLUG+hMdEDKqWo2Zg==
+  dependencies:
+    tslib "^1.9.0"
+
+rxjs@^6.5.3:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.3.tgz#510e26317f4db91a7eb1de77d9dd9ba0a4899a3a"
+  integrity sha512-wuYsAYYFdWTAnAaPoKGNhfpWwKZbJW+HgAJ+mImp+Epl7BG8oNWBCTyRM8gba9k4lk8BgWdoYm21Mo/RYhhbgA==
   dependencies:
     tslib "^1.9.0"
 
