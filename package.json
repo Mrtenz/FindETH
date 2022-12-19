@@ -1,22 +1,40 @@
 {
-  "name": "findeth",
-  "version": "1.1.2",
-  "description": "A tool to help you find your lost Ethereum address, Ether or tokens, by searching through a bunch of derivation paths",
-  "main": "src/index.tsx",
-  "repository": "https://github.com/Mrtenz/findeth",
   "author": "Maarten Zuidhoorn <maarten@zuidhoorn.com>",
-  "license": "MIT",
-  "scripts": {
-    "serve": "cross-env NODE_ENV=production IS_LOCAL=true ts-node --files src/server",
-    "start": "webpack-dev-server --config ./webpack/development.ts",
-    "build": "cross-env NODE_ENV=production webpack --config ./webpack/production.ts",
-    "analyze": "webpack --config ./webpack/analyzer.ts",
-    "tscheck": "tsc --noEmit --project tsconfig.json",
-    "tslint": "tslint --project .",
-    "prettier:diff": "prettier --write --config ./.prettierrc --list-different './**/*.ts' './**/*.tsx'",
-    "test": "jest",
-    "snapshot": "jest -u"
+  "dependencies": {
+    "@ethersproject/bignumber": "^5.0.0-beta.126",
+    "@ethersproject/contracts": "^5.0.0-beta.129",
+    "@ethersproject/hdnode": "^5.0.0-beta.125",
+    "@ethersproject/keccak256": "^5.0.0-beta.124",
+    "@ethersproject/providers": "^5.0.0-beta.133",
+    "@ethersproject/strings": "^5.0.0-beta.125",
+    "@ethersproject/transactions": "^5.0.0-beta.125",
+    "@ethersproject/units": "^5.0.0-beta.124",
+    "@hot-loader/react-dom": "^16.8.6",
+    "@ledgerhq/hw-app-eth": "^4.60.3",
+    "@ledgerhq/hw-transport": "^4.56.0",
+    "@ledgerhq/hw-transport-u2f": "^4.60.2",
+    "@ledgerhq/hw-transport-web-ble": "^4.58.0",
+    "@ledgerhq/hw-transport-webusb": "^4.56.0",
+    "@mycrypto/ui": "^0.16.3",
+    "eth-scan": "^0.1.2",
+    "hdkey": "^1.1.1",
+    "polished": "^3.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.1",
+    "react-svg-loader": "^3.0.3",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.0.2",
+    "regenerator-runtime": "^0.13.2",
+    "rxjs": "^6.5.2",
+    "styled-components": "4.3.1",
+    "trezor-connect": "^7.0.3",
+    "typeface-lato": "^0.0.54",
+    "typeface-roboto-mono": "^0.0.54"
   },
+  "description": "A tool to help you find your lost Ethereum address, Ether or tokens, by searching through a bunch of derivation paths",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
@@ -75,11 +93,11 @@
     "serve-static": "^1.14.1",
     "sitemap-webpack-plugin": "^0.6.0",
     "style-loader": "^0.23.1",
-    "ts-node": "^8.1.0",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-microsoft-contrib": "^6.1.1",
     "tslint-react": "^4.0.0",
+    "ts-node": "^8.1.0",
     "typescript": "^3.4.5",
     "webpack": "^4.33.0",
     "webpack-bundle-analyzer": "^3.3.2",
@@ -87,40 +105,12 @@
     "webpack-dev-server": "^3.7.1",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {
-    "@ethersproject/bignumber": "^5.0.0-beta.126",
-    "@ethersproject/contracts": "^5.0.0-beta.129",
-    "@ethersproject/hdnode": "^5.0.0-beta.125",
-    "@ethersproject/keccak256": "^5.0.0-beta.124",
-    "@ethersproject/providers": "^5.0.0-beta.133",
-    "@ethersproject/strings": "^5.0.0-beta.125",
-    "@ethersproject/transactions": "^5.0.0-beta.125",
-    "@ethersproject/units": "^5.0.0-beta.124",
-    "@hot-loader/react-dom": "^16.8.6",
-    "@ledgerhq/hw-app-eth": "^4.60.3",
-    "@ledgerhq/hw-transport": "^4.56.0",
-    "@ledgerhq/hw-transport-u2f": "^4.60.2",
-    "@ledgerhq/hw-transport-web-ble": "^4.58.0",
-    "@ledgerhq/hw-transport-webusb": "^4.56.0",
-    "@mycrypto/ui": "^0.16.3",
-    "eth-scan": "^0.1.2",
-    "hdkey": "^1.1.1",
-    "polished": "^3.4.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
-    "react-router-dom": "^5.0.1",
-    "react-svg-loader": "^3.0.3",
-    "redux": "^4.0.1",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-saga": "^1.0.2",
-    "regenerator-runtime": "^0.13.2",
-    "rxjs": "^6.5.2",
-    "styled-components": "4.3.1",
-    "trezor-connect": "^7.0.3",
-    "typeface-lato": "^0.0.54",
-    "typeface-roboto-mono": "^0.0.54"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run tscheck && yarn run test && lint-staged"
+    }
   },
+  "license": "MIT",
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write --config ./.prettierrc --config-precedence file-override",
@@ -132,9 +122,19 @@
       "git add"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run tscheck && yarn run test && lint-staged"
-    }
-  }
+  "main": "src/index.tsx",
+  "name": "findeth",
+  "repository": "https://github.com/Mrtenz/findeth",
+  "scripts": {
+    "serve": "cross-env NODE_ENV=production IS_LOCAL=true ts-node --files src/server",
+    "start": "webpack-dev-server --config ./webpack/development.ts",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack/production.ts",
+    "analyze": "webpack --config ./webpack/analyzer.ts",
+    "tscheck": "tsc --noEmit --project tsconfig.json",
+    "tslint": "tslint --project .",
+    "prettier:diff": "prettier --write --config ./.prettierrc --list-different './**/*.ts' './**/*.tsx'",
+    "test": "jest",
+    "snapshot": "jest -u"
+  },
+  "version": "1.1.2"
 }
