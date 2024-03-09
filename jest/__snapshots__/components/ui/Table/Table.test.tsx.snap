@@ -1,7 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<StyledComponent
+.c0 {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media screen and (max-width: 36rem) {
+  .c1,
+  .c1 thead,
+  .c1 tbody,
+  .c1 th,
+  .c1 td,
+  .c1 tr {
+    display: block;
+  }
+
+  .c1 thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .c1 tr {
+    border: 1px solid;
+    margin-bottom: 1.2rem;
+  }
+
+  .c1 tr td:last-child {
+    border-bottom: none;
+  }
+
+  .c1 tr:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .c1 td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding: 0.75rem 0.75rem 0.75rem 50%;
+  }
+
+  .c1 td:before {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 45%;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+    box-sizing: border-box;
+    padding: 0.75rem;
+  }
+
+  .c1 td:nth-of-type(1):before {
+    content: 'Foo';
+  }
+
+  .c1 td:nth-of-type(2):before {
+    content: 'Bar';
+  }
+}
+
+<AbstractTable
   body={
     Array [
       Array [
@@ -14,100 +78,9 @@ exports[`renders a snapshot 1`] = `
       ],
     ]
   }
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "Table-stidn8-0",
-        "isStatic": false,
-        "rules": Array [
-          "
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-",
-          "@media screen and (max-width:",
-          "36",
-          "rem){",
-          "    
-    &,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-      display: block;
-    }
-    
-    thead tr { 
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
-    
-    tr {
-      border: 1px solid ",
-          [Function],
-          ";
-      margin-bottom: 1.2rem;
-      
-      td:last-child {
-        border-bottom: none;
-      }
-    }
-    
-    tr:last-of-type {
-      margin-bottom: 0;
-    }
-    
-    td { 
-      border: none;
-      border-bottom: 1px solid #eee; 
-      position: relative;
-      padding: 0.75rem 0.75rem 0.75rem 50%;
-    }
-    
-    td:before { 
-      position: absolute;
-      height: 100%;
-      top: 0;
-      left: 0;
-      width: 45%; 
-      white-space: nowrap;
-      color: ",
-          [Function],
-          ";
-      text-transform: uppercase;
-      letter-spacing: 0.0625em;
-      background: ",
-          [Function],
-          ";
-      box-sizing: border-box;
-      padding: 0.75rem;
-    }
-    
-    ",
-          [Function],
-          ";
-  ",
-          "}",
-          ";",
-        ],
-      },
-      "displayName": "Table",
-      "foldedComponentIds": Array [
-        "sc-gisBJw",
-      ],
-      "render": [Function],
-      "styledComponentId": "Table-stidn8-0",
-      "target": [Function],
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
-  }
-  forwardedRef={null}
+  className="c0 c1"
+  config={Object {}}
+  groups={Array []}
   head={
     Array [
       "Foo",

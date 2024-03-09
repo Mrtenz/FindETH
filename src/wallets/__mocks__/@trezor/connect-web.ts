@@ -1,12 +1,12 @@
-import { Data, EthereumGetAddressPayload, GetPublicKeyPayload, Path } from 'trezor-connect';
+import { DerivationPath, GetPublicKey, GetAddress } from '@trezor/connect-web';
 
 export default {
-  manifest: jest.fn(),
+  init: jest.fn(),
 
   async getPublicKey(params: {
-    path?: Path;
-    bundle?: Path[];
-  }): Promise<Data<GetPublicKeyPayload | GetPublicKeyPayload[]>> {
+    path?: DerivationPath;
+    bundle?: DerivationPath[];
+  }): Promise<GetPublicKey | GetPublicKey[]> {
     let payload;
 
     if (params.bundle) {
@@ -31,15 +31,17 @@ export default {
     }
 
     return {
+      // @ts-ignore
       id: 0,
       payload,
       success: true
     };
   },
 
-  async ethereumGetAddress(params: Path): Promise<Data<EthereumGetAddressPayload>> {
+  async ethereumGetAddress(params: DerivationPath): Promise<GetAddress> {
     let payload;
 
+    // @ts-ignore
     if (params.path === `m/44'/60'/10'/0/0`) {
       payload = {
         address: '0x0719f46C96047A4f8A791394E338c8108E56F246',
@@ -55,6 +57,7 @@ export default {
     }
 
     return {
+      // @ts-ignore
       id: 0,
       payload,
       success: true

@@ -7,11 +7,11 @@ exports[`renders a snapshot 1`] = `
   <StyledAddress__StyledIdenticon
     address="0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520"
   />
-  <Typography
+  <Styled(styled.p)
     muted={true}
     noMargin={true}
   >
     0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520
-  </Typography>
+  </Styled(styled.p)>
 </StyledAddress__StyledAddressContainer>
 `;

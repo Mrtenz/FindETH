@@ -103,7 +103,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   clearResolved: () => dispatch(setResolvedAddress(undefined))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SelectAddress);
+export default connect(mapStateToProps, mapDispatchToProps)(SelectAddress);

@@ -25,7 +25,7 @@ type Props = OwnProps &
 const Typography = styled(UITypography)<Props>`
   margin: ${({ noMargin }) => (noMargin ? '0' : '1rem')} 0;
 
-  ${fluidRange({ prop: 'font-size', fromSize: '1rem', toSize: '1.125rem' }, '0px', '1000px')};
+  ${fluidRange({ prop: 'font-size', fromSize: '1rem', toSize: '1.125rem' }, '0rem', '62.5rem')};
 
   ${({ large }) =>
     large &&

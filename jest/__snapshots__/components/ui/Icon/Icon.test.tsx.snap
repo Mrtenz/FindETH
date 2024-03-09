@@ -1,29 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<StyledComponent
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "StyledIcon-sc-1sfwmv9-0",
-        "isStatic": true,
-        "rules": Array [
-          "vertical-align:middle;margin-right:9px;",
-        ],
-      },
-      "displayName": "StyledIcon",
-      "foldedComponentIds": Array [],
-      "render": [Function],
-      "styledComponentId": "StyledIcon-sc-1sfwmv9-0",
-      "target": [Function],
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
-  }
-  forwardedRef={null}
+.c0 {
+  vertical-align: middle;
+  margin-right: 9px;
+}
+
+<Icon
+  className="c0"
   icon="add"
 />
 `;

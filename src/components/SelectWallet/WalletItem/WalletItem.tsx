@@ -73,7 +73,4 @@ export const handleInitialize = (
     });
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WalletItem);
+export default connect(mapStateToProps, mapDispatchToProps)(WalletItem);

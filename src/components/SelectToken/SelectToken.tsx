@@ -64,7 +64,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   handleFetchToken: (address: string) => dispatch(fetchToken(address))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SelectToken);
+export default connect(mapStateToProps, mapDispatchToProps)(SelectToken);

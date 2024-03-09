@@ -1,5 +1,5 @@
 import HardwareWallet, { KeyInfo } from './HardwareWallet';
-import TrezorConnect from 'trezor-connect';
+import TrezorConnect from '@trezor/connect-web';
 import { DEFAULT_ETH, DerivationPath, TREZOR_DERIVATION_PATHS } from '../config';
 import { getFullPath } from '../utils';
 import { WalletType } from '../store/wallet';
@@ -8,9 +8,11 @@ export default class Trezor extends HardwareWallet {
   private cache: { [key: string]: KeyInfo } = {};
 
   public async initialize(): Promise<void> {
-    TrezorConnect.manifest({
-      email: 'maarten@zuidhoorn.com',
-      appUrl: 'https://findeth.io'
+    await TrezorConnect.init({
+      manifest: {
+        email: 'maarten@zuidhoorn.com',
+        appUrl: 'https://findeth.io'
+      }
     });
 
     this.cache = {};
@@ -23,6 +25,9 @@ export default class Trezor extends HardwareWallet {
     const bundle = paths.filter(path => !path.isHardened).map(path => ({ path: path.prefix }));
 
     const response = await TrezorConnect.getPublicKey({ bundle });
+    if (!response.success) {
+      throw new Error('Failed to prefetch addresses: ' + response.payload.error);
+    }
 
     for (const { serializedPath, chainCode, publicKey } of response.payload) {
       this.cache[serializedPath] = { chainCode, publicKey };
@@ -45,6 +50,9 @@ export default class Trezor extends HardwareWallet {
     }
 
     const response = await TrezorConnect.getPublicKey({ path: path.prefix });
+    if (!response.success) {
+      throw new Error('Failed to get public key: ' + response.payload.error);
+    }
 
     return {
       publicKey: response.payload.publicKey,
@@ -58,6 +66,10 @@ export default class Trezor extends HardwareWallet {
      * https://github.com/trezor/connect/blob/develop/docs/methods/ethereumGetAddress.md
      */
     const response = await TrezorConnect.ethereumGetAddress({ path: getFullPath(path, index) });
+
+    if (!response.success) {
+      throw new Error('Failed to get address: ' + response.payload.error);
+    }
 
     return response.payload.address;
   }

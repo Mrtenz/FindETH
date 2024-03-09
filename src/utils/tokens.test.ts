@@ -3,9 +3,7 @@ import { getTokenInfo } from './tokens';
 
 jest.setTimeout(100000);
 
-const provider = new JsonRpcProvider(
-  'https://mainnet.infura.io/v3/bfea47cc97c440a687c8762553739a94'
-);
+const provider = new JsonRpcProvider('https://cloudflare-eth.com');
 
 it('fetches token metadata for ERC-20 tokens', async () => {
   await expect(

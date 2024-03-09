@@ -4,10 +4,11 @@ import EthereumApp from '@ledgerhq/hw-app-eth';
 import { createTransportReplayer, RecordStore } from '@ledgerhq/hw-transport-mocker';
 
 export default class LedgerUSB extends Ledger {
+  public readonly store: RecordStore;
   protected transport: Transport<any> | null = null;
   protected app: EthereumApp | null = null;
 
-  public constructor(public readonly store: RecordStore) {
+  public constructor(store: RecordStore) {
     super();
     this.store = store;
   }

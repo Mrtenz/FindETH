@@ -1,6 +1,4 @@
-import { SimpleInterpolation, ThemedCssFunction } from 'styled-components';
 import { css } from './styled-components';
-import { FindETHTheme } from './theme';
 
 /**
  * Breakpoints in pixels.
@@ -13,10 +11,10 @@ export const breakpoints = {
   extraLarge: 1200
 };
 
-type MinMedia = { [key in keyof typeof breakpoints]: ThemedCssFunction<FindETHTheme> };
+type MinMedia = { [key in keyof typeof breakpoints]: any };
 
 interface MaxMedia {
-  max: { [key in keyof typeof breakpoints]: ThemedCssFunction<FindETHTheme> };
+  max: { [key in keyof typeof breakpoints]: any };
 }
 
 type Media = MinMedia & MaxMedia;
@@ -29,26 +27,23 @@ const INITIAL_VALUE: Partial<Media> = {
   `
 };
 
-export const media = Object.keys(breakpoints).reduce<Media>(
-  (target, key) => {
-    const breakpoint = breakpoints[key as keyof typeof breakpoints];
+export const media = Object.keys(breakpoints).reduce<Media>((target, key) => {
+  const breakpoint = breakpoints[key as keyof typeof breakpoints];
 
-    return {
-      ...target,
-      max: {
-        ...target.max,
-        [key]: (...args: [TemplateStringsArray, ...SimpleInterpolation[]]) => css`
-          @media screen and (max-width: ${breakpoint / 16}rem) {
-            ${css(...args)}
-          }
-        `
-      },
-      [key]: (...args: [TemplateStringsArray, ...SimpleInterpolation[]]) => css`
-        @media screen and (min-width: ${breakpoint / 16}rem) {
+  return {
+    ...target,
+    max: {
+      ...target.max,
+      [key]: (...args: [TemplateStringsArray, ...any[]]) => css`
+        @media screen and (max-width: ${breakpoint / 16}rem) {
           ${css(...args)}
         }
       `
-    };
-  },
-  INITIAL_VALUE as any
-);
+    },
+    [key]: (...args: [TemplateStringsArray, ...any[]]) => css`
+      @media screen and (min-width: ${breakpoint / 16}rem) {
+        ${css(...args)}
+      }
+    `
+  };
+}, INITIAL_VALUE as any);

@@ -25,7 +25,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (dispatc
   toggleAll: () => dispatch(toggleDerivationPaths(state))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(ToggleButton);
+export default connect(null, mapDispatchToProps)(ToggleButton);

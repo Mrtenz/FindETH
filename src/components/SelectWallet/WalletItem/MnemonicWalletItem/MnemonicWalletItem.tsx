@@ -72,7 +72,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (dispatc
   }
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MnemonicWalletItem);
+export default connect(mapStateToProps, mapDispatchToProps)(MnemonicWalletItem);

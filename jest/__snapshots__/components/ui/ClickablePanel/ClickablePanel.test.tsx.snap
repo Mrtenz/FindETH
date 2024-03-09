@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<StyledClickablePanel__PanelContainer>
-  <Panel
+<styled.div>
+  <Styled(Panel)
     onClick={[Function]}
   >
-    <StyledClickablePanel__PanelHeader
+    <Styled(Styled(styled.p))
       as="h3"
     >
       Foo
-    </StyledClickablePanel__PanelHeader>
-    <StyledClickablePanel__PanelImage>
+    </Styled(Styled(styled.p))>
+    <styled.div>
       <Icon />
-    </StyledClickablePanel__PanelImage>
-  </Panel>
-</StyledClickablePanel__PanelContainer>
+    </styled.div>
+  </Styled(Panel)>
+</styled.div>
 `;

@@ -47,7 +47,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (
   }
 });
 
-export default connect(
-  () => ({}),
-  mapDispatchToProps
-)(Path);
+export default connect(() => ({}), mapDispatchToProps)(Path);

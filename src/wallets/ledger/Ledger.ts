@@ -6,8 +6,8 @@ import { getFullPath } from '../../utils';
 import { WalletType } from '../../store/wallet';
 
 export default abstract class Ledger extends HardwareWallet {
-  protected abstract transport: Transport<any> | null = null;
-  protected abstract app: EthereumApp | null = null;
+  protected abstract transport: Transport<any> | null;
+  protected abstract app: EthereumApp | null;
 
   public async initialize(): Promise<void> {
     await this.checkConnection();
@@ -24,7 +24,7 @@ export default abstract class Ledger extends HardwareWallet {
     return WalletType.Ledger;
   }
 
-  protected abstract async checkConnection(): Promise<void>;
+  protected abstract checkConnection(): Promise<void>;
 
   protected async getKeyInfo(dPath: DerivationPath): Promise<KeyInfo> {
     await this.checkConnection();

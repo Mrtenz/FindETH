@@ -50,9 +50,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps>
   }
 });
 
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(AddressFlow)
-);
+export default withRouter(connect(null, mapDispatchToProps)(AddressFlow));

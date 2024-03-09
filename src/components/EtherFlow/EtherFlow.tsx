@@ -51,9 +51,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, RouteComponentProps>
   }
 });
 
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(EtherFlow)
-);
+export default withRouter(connect(null, mapDispatchToProps)(EtherFlow));

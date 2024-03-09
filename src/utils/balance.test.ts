@@ -5,9 +5,7 @@ import { WalletResult, WalletType } from '../store/wallet';
 
 jest.setTimeout(100000);
 
-const provider = new JsonRpcProvider(
-  'https://mainnet.infura.io/v3/bfea47cc97c440a687c8762553739a94'
-);
+const provider = new JsonRpcProvider('https://cloudflare-eth.com');
 
 it('fetches Ether balances for multiple addresses', async () => {
   const addresses: WalletResult[] = [

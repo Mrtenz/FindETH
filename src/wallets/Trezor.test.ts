@@ -1,15 +1,15 @@
-import TrezorConnect from 'trezor-connect';
+import TrezorConnect from '@trezor/connect-web';
 import Trezor from './Trezor';
 import { DEFAULT_ETH, LEDGER_LIVE_ETH, TESTNET_ETH } from '../config';
 
-jest.mock('trezor-connect');
+jest.mock('@trezor/connect-web');
 
 describe('Trezor', () => {
   it('generates an address from a derivation path', async () => {
     const wallet = new Trezor();
     await wallet.initialize();
 
-    expect(TrezorConnect.manifest).toHaveBeenCalledTimes(1);
+    expect(TrezorConnect.init).toHaveBeenCalledTimes(1);
 
     await expect(wallet.getAddress(DEFAULT_ETH, 10)).resolves.toMatchSnapshot();
     await expect(wallet.getAddress(DEFAULT_ETH, 15)).resolves.toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('Trezor', () => {
     const wallet = new Trezor();
     await wallet.initialize();
 
-    expect(TrezorConnect.manifest).toHaveBeenCalledTimes(2);
+    expect(TrezorConnect.init).toHaveBeenCalledTimes(2);
 
     await expect(wallet.getAddress(LEDGER_LIVE_ETH, 10)).resolves.toMatchSnapshot();
     await expect(wallet.getAddress(LEDGER_LIVE_ETH, 15)).resolves.toMatchSnapshot();

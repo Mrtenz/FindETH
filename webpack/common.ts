@@ -1,7 +1,7 @@
 import { join, resolve } from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { Configuration, EnvironmentPlugin } from 'webpack';
+import { Configuration, EnvironmentPlugin, ProvidePlugin } from 'webpack';
 
 const configuration: Configuration = {
   entry: resolve(__dirname, '../src/index.tsx'),
@@ -16,6 +16,13 @@ const configuration: Configuration = {
     alias: {
       'react-dom': '@hot-loader/react-dom',
       'styled-components': join(__dirname, '../node_modules/styled-components')
+    },
+    fallback: {
+      assert: require.resolve('assert/'),
+      buffer: require.resolve('buffer/'),
+      crypto: require.resolve('crypto-browserify'),
+      stream: require.resolve('stream-browserify'),
+      vm: false
     }
   },
   module: {
@@ -45,7 +52,7 @@ const configuration: Configuration = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -57,6 +64,10 @@ const configuration: Configuration = {
     new EnvironmentPlugin({
       NODE_ENV: 'development',
       IS_LOCAL: false
+    }),
+    new ProvidePlugin({
+      Buffer: ['buffer/', 'Buffer'],
+      process: 'process/browser'
     })
   ]
 };

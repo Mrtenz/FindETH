@@ -1,38 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<StyledComponent
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "Button-uilaai-0",
-        "isStatic": false,
-        "rules": Array [
-          "margin-top:18px;background:",
-          [Function],
-          ";font-size:1rem;color:",
-          [Function],
-          ";&:hover{background:",
-          [Function],
-          ";cursor:",
-          [Function],
-          ";}",
-        ],
-      },
-      "displayName": "Button",
-      "foldedComponentIds": Array [],
-      "render": [Function],
-      "styledComponentId": "Button-uilaai-0",
-      "target": [Function],
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
-  }
-  forwardedRef={null}
+.c0 {
+  margin-top: 18px;
+  font-size: 1rem;
+  color: white;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+<Button
+  className="c0"
 >
   Foo
-</StyledComponent>
+</Button>
 `;

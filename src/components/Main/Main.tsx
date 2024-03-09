@@ -12,11 +12,7 @@ import {
 } from '@ethersproject/providers';
 import { NETWORK_OFFLINE } from '../../config';
 
-interface Web3 {
-  currentProvider: any;
-}
-
-declare const window: { web3?: Web3 } & Window;
+declare const window: { ethereum?: any } & Window;
 
 interface DispatchProps {
   handleConnect(provider: Provider): void;
@@ -28,14 +24,13 @@ type Props = DispatchProps;
 
 const Main: FunctionComponent<Props> = ({ handleConnect, handleOffline, children }) => {
   const initialize = () => {
-    const provider =
-      window.web3 && window.web3.currentProvider
-        ? new Web3Provider(window.web3.currentProvider)
-        : new FallbackProvider([
-            new JsonRpcProvider('https://api.mycryptoapi.com/eth'),
-            new InfuraProvider(),
-            new EtherscanProvider()
-          ]);
+    const provider = window.ethereum
+      ? new Web3Provider(window.ethereum)
+      : new FallbackProvider([
+          new JsonRpcProvider('https://cloudflare-eth.com'),
+          new InfuraProvider(),
+          new EtherscanProvider()
+        ]);
 
     handleConnect(provider);
   };
@@ -68,7 +63,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   handleOffline: () => dispatch(setNetwork(NETWORK_OFFLINE))
 });
 
-export default connect(
-  () => ({}),
-  mapDispatchToProps
-)(Main);
+export default connect(() => ({}), mapDispatchToProps)(Main);

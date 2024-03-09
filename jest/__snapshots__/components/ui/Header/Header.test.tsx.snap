@@ -9,16 +9,16 @@ exports[`renders a snapshot 1`] = `
     onClose={[Function]}
     onConfirm={[Function]}
   >
-    <Typography>
+    <Styled(styled.p)>
       Are you sure you want to stop searching?
-    </Typography>
+    </Styled(styled.p)>
   </Modal>
-  <StyledHeader__StyledHeading
+  <Styled(Styled(Styled(styled.p)))
     as="h1"
   >
     <Logo
       onClick={[Function]}
     />
-  </StyledHeader__StyledHeading>
+  </Styled(Styled(Styled(styled.p)))>
 </Container>
 `;

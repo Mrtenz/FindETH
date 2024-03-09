@@ -45,7 +45,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   handleSetTheme: (theme: Theme) => dispatch(setTheme(theme))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ThemeProvider);
+export default connect(mapStateToProps, mapDispatchToProps)(ThemeProvider);

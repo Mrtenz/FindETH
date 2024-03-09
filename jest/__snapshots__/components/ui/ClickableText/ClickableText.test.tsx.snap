@@ -1,49 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<StyledComponent
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "ClickableText-sc-18v8zdz-0",
-        "isStatic": false,
-        "rules": Array [
-          "margin:",
-          [Function],
-          " 0;",
-          "font-size: 1rem;",
-          "@media (min-width: 0px) {",
-          "font-size: calc(1.00rem + 0.01vw);",
-          "}",
-          "@media (min-width: 1000px) {",
-          "font-size: 1.125rem;",
-          "}",
-          ";",
-          [Function],
-          ";",
-          [Function],
-          ";",
-          "cursor:pointer;color:",
-          [Function],
-          ";text-decoration:none;font-weight:bold;",
-        ],
-      },
-      "displayName": "ClickableText",
-      "foldedComponentIds": Array [
-        "Typography-sc-98k3z5-0-span",
-      ],
-      "render": [Function],
-      "styledComponentId": "ClickableText-sc-18v8zdz-0",
-      "target": "span",
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
+.c0 {
+  font-size: 16px;
+  font-family: Lato,sans-serif;
+  line-height: 1.5;
+}
+
+.c0 a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.c1 {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.c2 {
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (min-width: 400px) {
+  .c0 {
+    font-size: calc(14.67px + 0.33vw);
   }
-  forwardedRef={null}
+}
+
+@media (min-width: 1000px) {
+  .c0 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 0rem) {
+  .c1 {
+    font-size: calc(1.00rem + 0.20vw);
+  }
+}
+
+@media (min-width: 62.5rem) {
+  .c1 {
+    font-size: 1.125rem;
+  }
+}
+
+<p
+  className="c0 c1 c2"
 >
   Foo
-</StyledComponent>
+</p>
 `;

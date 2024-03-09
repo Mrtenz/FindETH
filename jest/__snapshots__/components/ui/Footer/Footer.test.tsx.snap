@@ -8,25 +8,25 @@ exports[`renders a snapshot 1`] = `
   paddingBottom="1.175rem"
   paddingTop="1.175rem"
 >
-  <StyledFooter__FooterContainer>
-    <StyledFooter__FooterItem>
-      <StyledFooter__FooterTypography>
+  <styled.footer>
+    <styled.div>
+      <Styled(Styled(styled.p))>
         Powered by 
         <MyCryptoLogo />
-      </StyledFooter__FooterTypography>
-    </StyledFooter__FooterItem>
-    <StyledFooter__FooterItem>
+      </Styled(Styled(styled.p))>
+    </styled.div>
+    <styled.div>
       <Connect(ThemeProvider) />
-    </StyledFooter__FooterItem>
-    <StyledFooter__FooterItem>
-      <StyledFooter__FooterItemContainer>
-        <StyledFooter__FooterTypography>
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <Styled(Styled(styled.p))>
           Made by Maarten Zuidhoorn 
           <GitHubIcon />
-        </StyledFooter__FooterTypography>
+        </Styled(Styled(styled.p))>
         <Donate />
-      </StyledFooter__FooterItemContainer>
-    </StyledFooter__FooterItem>
-  </StyledFooter__FooterContainer>
+      </styled.div>
+    </styled.div>
+  </styled.footer>
 </Section>
 `;

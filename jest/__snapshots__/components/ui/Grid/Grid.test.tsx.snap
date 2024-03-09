@@ -1,38 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a snapshot 1`] = `
-<StyledComponent
+.c0 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1rem, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+<div
+  className="c0"
   columnWidth="1rem"
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "Grid-sc-9fwwrc-0",
-        "isStatic": false,
-        "rules": Array [
-          "display:grid;grid-template-columns:",
-          [Function],
-          ";grid-column-gap:",
-          [Function],
-          ";grid-row-gap:",
-          [Function],
-          ";margin-bottom:",
-          [Function],
-          ";",
-        ],
-      },
-      "displayName": "Grid",
-      "foldedComponentIds": Array [],
-      "render": [Function],
-      "styledComponentId": "Grid-sc-9fwwrc-0",
-      "target": "div",
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
-  }
-  forwardedRef={null}
   gap="1rem"
 />
 `;

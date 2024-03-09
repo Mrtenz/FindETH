@@ -43,7 +43,4 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
   handleChange: event => dispatch(setDepth(Number(event.target.value)))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Depth);
+export default connect(mapStateToProps, mapDispatchToProps)(Depth);
